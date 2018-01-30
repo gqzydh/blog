@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="">
+  
+    <link rel="icon" href="/images/favicon_16X16.ico">
+  
+    
+  <title>Hexo使用笔记 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>Hexo使用笔记</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月12日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Hexo" class='tag'>Hexo</a>
+
+
+            
+          </div>
+          <h2 id="Hexo新建笔记"><a href="#Hexo新建笔记" class="headerlink" title="Hexo新建笔记"></a>Hexo新建笔记</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo -g  //安装  </span><br><span class="line">npm update hexo -g 	//升级 </span><br><span class="line">hexo version  	//查看hexo的版本</span><br><span class="line">hexo init nodejs-hexo   //创建nodejs-hexo 名字的本地文件</span><br><span class="line">hexo init nodejs-hexo    //创建博客</span><br><span class="line">hexo init blog   //初始化，生成文件夹为blog</span><br><span class="line">cd blog  	//进入blog文件夹</span><br><span class="line">npm install     //安装依赖库</span><br><span class="line">hexo generate   //生成一套静态网页</span><br><span class="line">hexo server  //运行测试,浏览器打开地址，http://localhost:4000/</span><br><span class="line">hexo deploy   //进行部署。</span><br><span class="line"></span><br><span class="line">hexo new &quot;new article&quot;  //新建文章‘new article’</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<blockquote>
+<blockquote>
+<p>新建的笔记文件路径：<code>source/_posts</code> 目录下, <code>new-article.md</code> 的文件, 打开文件, 文件开头采用的是yaml格式，用三条短横线分隔。下面是文章正文，采用用的是markdown格式。</p>
+<p>####新建、删除或修改文章后，不需要重启hexo server，刷新一下即可预览。####</p>
+</blockquote>
+</blockquote>
+<h2 id="Hexo文章属性设置"><a href="#Hexo文章属性设置" class="headerlink" title="Hexo文章属性设置"></a>Hexo文章属性设置</h2><p>设置            描述            Default<br>layout        Layout        post或page<br>title        文章的标题<br>date        创建日期        文件的创建日期<br>updated        修改日期        文件的修改日期<br>comments    是否开启评论    true<br>tags        标签<br>categories    分类<br>permalink    url中的名字    文件名</p>
+<h2 id="Hexo摘要"><a href="#Hexo摘要" class="headerlink" title="Hexo摘要"></a>Hexo摘要</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">这里是文章的摘要部分&lt;!--more--&gt;后面才是文章的正文内容</span><br></pre></td></tr></table></figure>
+<h2 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h2><p>如果你修改了layout，在<code>scaffolds</code>文件夹里一定要有名字对应的模版文件，否则会采用默认模版。</p>
+<h2 id="Hexo草稿"><a href="#Hexo草稿" class="headerlink" title="Hexo草稿"></a>Hexo草稿</h2><p>草稿相当于很多博客都有的“私密文章”功能。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new draft &quot;new draft&quot;</span><br></pre></td></tr></table></figure></p>
+<p>草稿会在<code>source/_drafts</code>目录下生成一个<code>new-draft.md</code>文件。但是这个文件不被显示在页面上，链接也访问不到。也就是说如果你想把某一篇文章移除显示，又不舍得删除，可以把它移动到<code>_drafts</code>目录之中。</p>
+<p>如果你希望强行预览草稿，更改配置文件：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">render_drafts: true</span><br></pre></td></tr></table></figure></p>
+<p>或者，如下方式启动预览：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server --drafts</span><br></pre></td></tr></table></figure></p>
+<p>下面这条命令可以把草稿变成文章，或者页面：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="找不到git部署"><a href="#找不到git部署" class="headerlink" title="找不到git部署"></a>找不到git部署</h2><p>ERROR Deployer not found: git<br>解决方法：npm install hexo-deployer-git –save </p>
+<h2 id="hexo更换皮肤"><a href="#hexo更换皮肤" class="headerlink" title="hexo更换皮肤"></a>hexo更换皮肤</h2><ol>
+<li><a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo官网选择皮肤:</a>  <code>git clone</code> </li>
+<li>放到themes目录下</li>
+<li>编辑文件_config.yml，找到theme一行，改成 theme: pacman</li>
+<li>本地启动hexo服务器，打开浏览器 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></li>
+</ol>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo新建笔记"><span class="toc-number">1.</span> <span class="toc-text">Hexo新建笔记</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo文章属性设置"><span class="toc-number">2.</span> <span class="toc-text">Hexo文章属性设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo摘要"><span class="toc-number">3.</span> <span class="toc-text">Hexo摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#layout"><span class="toc-number">4.</span> <span class="toc-text">layout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo草稿"><span class="toc-number">5.</span> <span class="toc-text">Hexo草稿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#找不到git部署"><span class="toc-number">6.</span> <span class="toc-text">找不到git部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo更换皮肤"><span class="toc-number">7.</span> <span class="toc-text">hexo更换皮肤</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+  
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+      
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+
+
+</body>
+</html>
