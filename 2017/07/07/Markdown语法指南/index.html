@@ -9,11 +9,11 @@
   
     <link rel="icon" href="/images/favicon_16X16.ico">
   
-    
+  
   <title>Markdown语法指南 | 前端博客</title>
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
 </head>
 
 <body>
@@ -224,6 +224,8 @@ yield from range(x)
   </div>
 </footer>
 
+<script src="/js/script.js"></script>
+
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="/lib/in-view.min.js"></script>
@@ -234,7 +236,7 @@ yield from range(x)
   inView.offset(50)
 
   document.body.addEventListener('touchstart', function(){});
-  
+
   window.addEventListener('scroll', _.throttle(e => {
     var currentY = window.scrollY
     if((oldY - currentY) < 0) {
@@ -252,7 +254,7 @@ yield from range(x)
 
   $('.toc-link').each(function() {
       var href = $(this).attr("href");
-      
+
       inView(href).on('exit', () => {
         if (isDown) {
           handleActive(href)
@@ -282,7 +284,7 @@ yield from range(x)
     document.querySelector(".toc [href='"+ href +"']").classList.add('active')
   }
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
 
 
 </body>

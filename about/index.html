@@ -9,11 +9,11 @@
   
     <link rel="icon" href="/images/favicon_16X16.ico">
   
-    
+  
   <title>关于 | 前端博客</title>
   <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
 </head>
 
 <body>
@@ -148,7 +148,7 @@
       <div class="content">
         <form action="//www.google.com/search" target="_blank" class="search-form">
           <input type="text" name="q" maxlength="20" placeholder="搜索">
-          <input type="hidden" name='sitesearch' value="http://tangtangblog.com">
+          <input type="hidden" name='sitesearch' value="http://gq1986.com">
         </form>
       </div>
     </div>
@@ -213,6 +213,8 @@
   </div>
 </footer>
 
+<script src="/js/script.js"></script>
+
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="/lib/in-view.min.js"></script>
@@ -223,7 +225,7 @@
   inView.offset(50)
 
   document.body.addEventListener('touchstart', function(){});
-  
+
   window.addEventListener('scroll', _.throttle(e => {
     var currentY = window.scrollY
     if((oldY - currentY) < 0) {
@@ -241,7 +243,7 @@
 
   $('.toc-link').each(function() {
       var href = $(this).attr("href");
-      
+
       inView(href).on('exit', () => {
         if (isDown) {
           handleActive(href)
@@ -271,7 +273,7 @@
     document.querySelector(".toc [href='"+ href +"']").classList.add('active')
   }
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
 
 
 </body>
