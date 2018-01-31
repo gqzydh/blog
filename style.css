@@ -1,6 +1,6 @@
 @charset "UTF-8";
 html {
-  background-color: #ffffff; }
+  background-color: #f4f5f5; }
 
 body {
   font: 14px Arial, "open sans", "Helvetica Neue", Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft Yahei, sans-serif;
@@ -8,7 +8,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #ffffff;
+  background-color: #f4f5f5;
   -webkit-font-smoothing: antialiased; }
 
 a {
@@ -38,7 +38,8 @@ footer {
   line-height: 22px;
   border-color: #e0e0e0;
   font-size: 0.85em;
-  background-color: #222; }
+  background-color: #222;
+  margin-top: 20px; }
   footer .copyright {
     max-width: 1000px;
     padding: 0 16px;
