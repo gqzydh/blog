@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_16X16.ico">
+  
+  
+  <title>jQuery ajax读取json文件内容 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>jQuery ajax读取json文件内容</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Ajax" class='tag'>Ajax</a>
+
+
+            
+          </div>
+          <p>##<strong>ajax 代码</strong>##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">$(document).ready(function() &#123;  </span><br><span class="line">    $.ajax(&#123;  </span><br><span class="line">        type:&quot;GET&quot;,  //请求方式为get  </span><br><span class="line">        url:&quot;user.json&quot;, //json文件位置  </span><br><span class="line">        dataType: &quot;json&quot;,  //返回数据格式为json  </span><br><span class="line">        //请求成功完成后要执行的方法  </span><br><span class="line">        success: function(data)&#123;  </span><br><span class="line">         console.log(date.button);</span><br><span class="line">         var aav = date.button;</span><br><span class="line">            //使用$.each方法遍历返回的数据date,插入到id为#result中 </span><br><span class="line">           $.each(aav,function(ii,item)&#123;</span><br><span class="line">               var conter = item.type+&quot;,&quot;+item.name+&quot;,&quot;+item.key;  </span><br><span class="line">                $(&quot;#result&quot;).append(content);  </span><br><span class="line">            &#125;)  </span><br><span class="line">        &#125;,</span><br><span class="line">        error:function(jqXHR)&#123;                   alert(&quot;发生错误：&quot;+jqXHR.status);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)  </span><br><span class="line">&#125;);  </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>##<strong>json文件</strong>##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     &quot;button&quot;:[</span><br><span class="line">     &#123;  </span><br><span class="line">          &quot;type&quot;:&quot;click&quot;,</span><br><span class="line">          &quot;name&quot;:&quot;今日歌曲&quot;,</span><br><span class="line">          &quot;key&quot;:&quot;V1001_TODAY_MUSIC&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">           &quot;name&quot;:&quot;菜单&quot;,</span><br><span class="line">           &quot;sub_button&quot;:[</span><br><span class="line">           &#123;    </span><br><span class="line">               &quot;type&quot;:&quot;view&quot;,</span><br><span class="line">               &quot;name&quot;:&quot;搜索&quot;,</span><br><span class="line">               &quot;url&quot;:&quot;http://www.soso.com/&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">               &quot;type&quot;:&quot;view&quot;,</span><br><span class="line">               &quot;name&quot;:&quot;视频&quot;,</span><br><span class="line">               &quot;url&quot;:&quot;http://v.qq.com/&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">               &quot;type&quot;:&quot;click&quot;,</span><br><span class="line">               &quot;name&quot;:&quot;赞一下我们&quot;,</span><br><span class="line">               &quot;key&quot;:&quot;V1001_GOOD&quot;</span><br><span class="line">            &#125;]</span><br><span class="line">       &#125;]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>获取数据 展示<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(function($) &#123;</span><br><span class="line">  $(&apos;td[data-reveal-id]&apos;).on(&apos;click&apos;, function(e) &#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">    var modalLocation = $(this).attr(&apos;data-reveal-id&apos;);</span><br><span class="line">    $(&apos;#&apos;+modalLocation).reveal($(this).data());</span><br><span class="line">    var bidId = $(this).attr(&quot;data-id&quot;)</span><br><span class="line"></span><br><span class="line">     $.ajax(&#123;</span><br><span class="line">            url: &apos;/front/invest/bidInfo&apos;,</span><br><span class="line">            type:&quot;GET&quot;,</span><br><span class="line">            dataType: &apos;json&apos;,</span><br><span class="line">            data:&#123;&quot;bidId&quot;:bidId&#125;,</span><br><span class="line">            success: function(data) &#123;</span><br><span class="line">               var datalist = data.infos;</span><br><span class="line">               var html = &quot;&quot;;</span><br><span class="line">               for (var i =0; i&lt;datalist.length; i++) &#123;</span><br><span class="line">                     html += &apos;&lt;div class=&quot;introdiv&quot;&gt;&lt;h3 class=&quot;titintro&quot;&gt;&apos;+datalist[i].title+&apos;&lt;/h3&gt;&lt;dl class=&quot;indl01&quot;&gt;&apos;+datalist[i].content+&apos;&lt;dd&gt;&lt;/dd&gt;&lt;/dl&gt;&lt;/div&gt;&apos;;</span><br><span class="line">               &#125;</span><br><span class="line">               $(&quot;#contentnr&quot;).html(html)</span><br><span class="line"></span><br><span class="line">            &#125;,</span><br><span class="line">            error: function(err) &#123;</span><br><span class="line">                alert(&apos;数据获取失败，请重试&apos;, &apos;warning&apos;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">                </span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

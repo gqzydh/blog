@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_16X16.ico">
+  
+  
+  <title>Javascript浏览器对象 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>Javascript浏览器对象</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+
+            
+          </div>
+          <ol>
+<li>使用navigator.userAgent.toLowerCase()判断浏览器类型</li>
+<li>区分各个浏览器</li>
+</ol>
+<h2 id="计时方法："><a href="#计时方法：" class="headerlink" title="计时方法："></a>计时方法：</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1）：setInterval() 间隔指定的毫秒数不停地执行指定的代码</span><br><span class="line">clearInterval()  方法用于停止setIntearval()方法执行的函数代码</span><br><span class="line"></span><br><span class="line">2）：setTimeout() 暂停指定的毫秒数后执行指定的代码</span><br><span class="line">clearTimeout()  方法用于停止执行setTimeout() 方法的函数代码</span><br><span class="line"></span><br><span class="line">History 对象包含浏览器的历史（url）的集合</span><br><span class="line">history.back()  与在浏览器点击后退按钮相同</span><br><span class="line">history.forward() 与在浏览器中点击按钮向前相同</span><br><span class="line">history.go()  进入历史中的某个页面</span><br><span class="line"></span><br><span class="line">Location 对象用于获取得当前页面的地址（URL），并把浏览器重定向到新的页面</span><br><span class="line">属性：location.hostname  返回web主机的域名</span><br><span class="line">        location.pathname  返回当前页面的路径和文件名</span><br><span class="line">        location.pry 返回web主机的端口</span><br><span class="line">        location.protocol  返回所使用的web协议（http://或https://）</span><br><span class="line">        location.href  属性返回当前页面的URL</span><br><span class="line">        location.assign()  方法加载新的文档</span><br><span class="line"></span><br><span class="line">screen  对象包含有关用户屏幕的信息</span><br><span class="line">    screen,availWidth   可用的屏幕宽度</span><br><span class="line">    screen.availHeight   可用的屏幕高度</span><br><span class="line">    screen.height    屏幕高度</span><br><span class="line">    screen.width      屏幕宽度</span><br></pre></td></tr></table></figure>
+<h2 id="使用navigator-userAgent-toLowerCase-判断浏览器类型"><a href="#使用navigator-userAgent-toLowerCase-判断浏览器类型" class="headerlink" title="使用navigator.userAgent.toLowerCase()判断浏览器类型"></a>使用navigator.userAgent.toLowerCase()判断浏览器类型</h2><p>在跨平台，不同浏览器，移动设备兼容的时候，经常要判断浏览器类型，设备进行区分<br>有 ios, android, micromessenger(微信), iphone, ipad, pc浏览器</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var ua = window.navigator.userAgent.toLowerCase(); </span><br><span class="line">if(navigator.userAgent.toLowerCase() === &apos;iosclient&apos;)&#123;</span><br><span class="line">    console.log(&quot;ios&quot;)</span><br><span class="line">&#125;else if(navigator.userAgent.toLowerCase() === &apos;androidclient&apos;)&#123;</span><br><span class="line">    console.log(&quot;android&quot;)</span><br><span class="line">&#125;else if(ua.match(/MicroMessenger/i)==&quot;micromessenger&quot;)&#123;</span><br><span class="line">    console.log(&quot;微信&quot;)</span><br><span class="line">&#125;else if(ua.match(/iPhone/i)) == &quot;iPhone&quot;)&#123;  </span><br><span class="line">    alert(&quot;iPhone&quot;);  </span><br><span class="line">&#125;else if(ua.match(/iPad/i)) == &quot;iPad&quot;)&#123;  </span><br><span class="line">    alert(&quot;iPad&quot;);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="区分各个浏览器"><a href="#区分各个浏览器" class="headerlink" title="区分各个浏览器"></a>区分各个浏览器</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var ua=navigator.userAgent.toLowerCase();    </span><br><span class="line">if(/msie/i.test(ua) &amp;&amp; !/opera/.test(ua))&#123;    </span><br><span class="line">    alert(&quot;IE&quot;);    </span><br><span class="line">    return ;    </span><br><span class="line">&#125;else if(/firefox/i.test(ua))&#123;    </span><br><span class="line">    alert(&quot;Firefox&quot;);    </span><br><span class="line">    return ;    </span><br><span class="line">&#125;else if(/chrome/i.test(ua) &amp;&amp; /webkit/i.test(ua) &amp;&amp; /mozilla/i.test(ua))&#123;    </span><br><span class="line">    alert(&quot;Chrome&quot;);    </span><br><span class="line">    return ;    </span><br><span class="line">&#125;else if(/opera/i.test(ua))&#123;    </span><br><span class="line">    alert(&quot;Opera&quot;);    </span><br><span class="line">    return ;    </span><br><span class="line">&#125;else if(/iPad/i)&#123;   </span><br><span class="line">    alert(&quot;ipad&quot;);   </span><br><span class="line">    return ;   </span><br><span class="line">&#125;  </span><br><span class="line"> if(/webkit/i.test(ua) &amp;&amp;!(/chrome/i.test(ua) &amp;&amp; /webkit/i.test(ua) &amp;&amp; /mozilla/i.test(ua)))&#123;    </span><br><span class="line">    alert(&quot;Safari&quot;);    </span><br><span class="line">    return ;    </span><br><span class="line">&#125;else&#123;    </span><br><span class="line">    alert(&quot;unKnow&quot;);    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#计时方法："><span class="toc-number">1.</span> <span class="toc-text">计时方法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用navigator-userAgent-toLowerCase-判断浏览器类型"><span class="toc-number">2.</span> <span class="toc-text">使用navigator.userAgent.toLowerCase()判断浏览器类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区分各个浏览器"><span class="toc-number">3.</span> <span class="toc-text">区分各个浏览器</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

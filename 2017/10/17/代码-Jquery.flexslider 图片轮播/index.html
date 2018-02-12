@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_16X16.ico">
+  
+  
+  <title>Jquery.flexslider 图片轮播使用 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>Jquery.flexslider 图片轮播使用</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tags" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#插件" class='tag'>插件</a>
+
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+
+            
+          </div>
+          <p>flexslider2官网：<a href="http://flexslider.woothemes.com/" target="_blank" rel="noopener">http://flexslider.woothemes.com/</a></p>
+<p>Flexslider具有以下特性：</p>
+<ul>
+<li>支持滑动和淡入淡出效果。</li>
+<li>支持水平、垂直方向滑动。</li>
+<li>支持键盘方向键控制。</li>
+<li>支持触控滑动。</li>
+<li>支持图文混排，支持各种html元素。</li>
+<li>自适应屏幕尺寸。</li>
+<li>可控制滑动单元个数。</li>
+<li>更多选项设置和回调函数。</li>
+</ul>
+<p>HTML</p>
+<p>首先在页面head部位载入jquery库文件和Flexslider插件，以及Flexslider所需的基本css样式文件。</p>
+<p>然后在body中加入以下HTML代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;divclass=&quot;flexslider&quot;&gt;</span><br><span class="line">&lt;ulclass=&quot;slides&quot;&gt;</span><br><span class="line">&lt;li&gt;&lt;imgsrc=&quot;images/s1.jpg&quot;/&gt;&lt;/li&gt;</span><br><span class="line">&lt;li&gt;&lt;imgsrc=&quot;images/s2.jpg&quot;/&gt;&lt;/li&gt;</span><br><span class="line">&lt;li&gt;&lt;imgsrc=&quot;images/s3.jpg&quot;/&gt;&lt;/li&gt;</span><br><span class="line">&lt;li&gt;&lt;imgsrc=&quot;images/s4.jpg&quot;/&gt;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>我们使用了.flexslider来包括所有需要滚动的内容元素，然后使用<ul class="slides">这个class非常关键，内部的滚动内容都是针对.slides的，然后在<li>内部加入任意html元素，包括图片和文字。<br>jQuery</li></ul></p>
+<p>调用Flexslider插件非常简单，使用如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(function()&#123;</span><br><span class="line">$(&quot;.flexslider&quot;).flexslider();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>然后预览网页效果，一个内容切换效果就完成了，当然想要更多个性化设置，flexslider提供了丰富的选项配置以及回调函数绝对可以满足大多数开发者需求。<br>Flexslider选项设置</p>
+<p>参数  描述  默认值<br>animation   动画效果类型，有”fade”：淡入淡出，”slide”：滑动  “fade”<br>easing  内容切换时缓动效果，需要jquery easing插件支持   “swing”<br>direction   内容滚动方向，有”horizontal”：水平方向 和”vertical”：垂直方向  “horizontal”<br>animationLoop   是否循环滚动  true<br>startAt 初始滑动时的起始位置，定位从第几个开始滑动   0<br>slideshow   是否自动滑动  true<br>slideshowSpeed  滑动内容展示时间(ms)    7000<br>animationSpeed  内容切换时间(ms)  600<br>initDelay   初始化时延时时间    0<br>pauseOnHover    鼠标滑向滚动内容时，是否暂停滚动    false<br>touch   是否支持触摸滑动    true<br>directionNav    是否显示左右方向箭头按钮    true<br>keyboard    是否支持键盘方向键操作 true<br>minItems    一次最少展示滑动内容的单元个数 1<br>maxItems    一次最多展示滑动内容的单元个数 0<br>move    一次滑动的单元个数   0<br>回调函数    start: function(){},<br>before: function(){},<br>after: function(){},<br>end: function(){},<br>added: function(){},<br>removed: function(){},<br>init: function(){}, -<br>更多Flexslider相关信息可以访问Flexslider 【1】官网地址：<a href="http://www.woothemes.com/flexslider/" target="_blank" rel="noopener">http://www.woothemes.com/flexslider/</a><br>flexslider【2】官网：<a href="http://flexslider.woothemes.com/" target="_blank" rel="noopener">http://flexslider.woothemes.com/</a></p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

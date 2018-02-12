@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_16X16.ico">
+  
+  
+  <title>jquery最佳开发实践 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>jquery最佳开发实践</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tags" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#jQuery" class='tag'>jQuery</a>
+
+  <a href="/tags/#读书" class='tag'>读书</a>
+
+
+            
+          </div>
+          <ol>
+<li>缓存变量,避免全局变量</li>
+<li>使用匈牙利命名法</li>
+<li>使用 var 链（单 var 模式）</li>
+<li>请使用 ‘on’</li>
+<li>精简 javascript</li>
+<li>链式操作</li>
+<li>维持代码的可读性</li>
+<li>选择短路求值</li>
+<li>选择捷径</li>
+<li>熟记技巧</li>
+<li>使用子查询缓存的父元素</li>
+<li>避免通用选择符</li>
+<li>避免隐式通用选择符</li>
+</ol>
+<h2 id="缓存变量"><a href="#缓存变量" class="headerlink" title="缓存变量"></a>缓存变量</h2><p>DOM 遍历是昂贵的，所以尽量将会重用的元素缓存。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 糟糕   </span><br><span class="line">h = $(&apos;#element&apos;).height();</span><br><span class="line">$(&apos;#element&apos;).css(&apos;height&apos;, h-20);</span><br><span class="line">// 糟糕   jQuery 与 javascript 一样，一般来说，最好确保你的变量在函数作用域内。</span><br><span class="line">$element = $(&apos;#element&apos;);</span><br><span class="line">h = $element.height();</span><br><span class="line">$element.css(&apos;height&apos;, h-20);</span><br><span class="line"></span><br><span class="line">// 建议   </span><br><span class="line">var $element = $(&apos;#element&apos;);</span><br><span class="line">var h = $element.height();</span><br><span class="line">$element.css(&apos;height&apos;, h-20);</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用匈牙利命名法"><a href="#使用匈牙利命名法" class="headerlink" title="使用匈牙利命名法"></a>使用匈牙利命名法</h2><p>在变量前加 $ 前缀，便于识别出 jQuery 对象。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 糟糕   </span><br><span class="line">var first = $(&apos;#first&apos;);</span><br><span class="line">var second = $(&apos;#second&apos;);</span><br><span class="line">var value = $first.val();</span><br><span class="line"></span><br><span class="line">// 建议 - 在 jQuery 对象前加 $ 前缀  </span><br><span class="line">var $first = $(&apos;#first&apos;);</span><br><span class="line">var $second = $(&apos;#second&apos;),</span><br><span class="line">var value = $first.val();</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用-var-链（单-var-模式）"><a href="#使用-var-链（单-var-模式）" class="headerlink" title="使用 var 链（单 var 模式）"></a>使用 var 链（单 var 模式）</h2><p>将多条<code>var</code> 语句合并为一条语句，我建议将未赋值的变量放到后面。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var </span><br><span class="line">  $first = $(&apos;#first&apos;),</span><br><span class="line">  $second = $(&apos;#second&apos;),</span><br><span class="line">  value = $first.val(),</span><br><span class="line">  k = 3,</span><br><span class="line">  cookiestring = &apos;SOMECOOKIESPLEASE&apos;,</span><br><span class="line">  i,</span><br><span class="line">  j,</span><br><span class="line">  myArray = &#123;&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="请使用-‘on’"><a href="#请使用-‘on’" class="headerlink" title="请使用 ‘on’"></a>请使用 ‘on’</h2><p>在新版 jQuery 中，更短的 on(“click”) 用来取代类似 click() 这样的函数。 在之前的版本中 on() 就是 bind()。 自从 jQuery 1.7 版本后，on() 附加事件处理程序的首选方法。 然而，出于一致性考虑，你可以简单的全部使用 on() 方法。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 糟糕   </span><br><span class="line">$first.click(function()&#123;</span><br><span class="line">    $first.css(&apos;border&apos;,&apos;1px solid red&apos;);</span><br><span class="line">    $first.css(&apos;color&apos;,&apos;blue&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">$first.hover(function()&#123;</span><br><span class="line">    $first.css(&apos;border&apos;,&apos;1px solid red&apos;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 建议</span><br><span class="line">$first.on(&apos;click&apos;,function()&#123;</span><br><span class="line">    $first.css(&apos;border&apos;,&apos;1px solid red&apos;);</span><br><span class="line">    $first.css(&apos;color&apos;,&apos;blue&apos;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$first.on(&apos;hover&apos;,function()&#123;</span><br><span class="line">    $first.css(&apos;border&apos;,&apos;1px solid red&apos;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="精简-javascript"><a href="#精简-javascript" class="headerlink" title="精简 javascript"></a>精简 javascript</h2><p>一般来说，最好尽可能合并函数。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 糟糕   </span><br><span class="line">$first.click(function()&#123;</span><br><span class="line">    $first.css(&apos;border&apos;,&apos;1px solid red&apos;);</span><br><span class="line">    $first.css(&apos;color&apos;,&apos;blue&apos;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 建议   </span><br><span class="line">$first.on(&apos;click&apos;,function()&#123;</span><br><span class="line">    $first.css(&#123;</span><br><span class="line">        &apos;border&apos;:&apos;1px solid red&apos;,</span><br><span class="line">        &apos;color&apos;:&apos;blue&apos;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="链式操作"><a href="#链式操作" class="headerlink" title="链式操作"></a>链式操作</h2><p>jQuery 实现方法的链式操作是非常容易的。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 糟糕   </span><br><span class="line">$second.html(value);</span><br><span class="line">$second.on(&apos;click&apos;, function()&#123;</span><br><span class="line">    alert(&apos;hello everybody&apos;);</span><br><span class="line">&#125;);</span><br><span class="line">$second.fadeIn(&apos;slow&apos;);</span><br><span class="line">$second.animate(&#123;height:&apos;120px&apos;&#125;, 500);</span><br><span class="line"></span><br><span class="line">// 建议   </span><br><span class="line">$second.html(value);</span><br><span class="line">$second.on(&apos;click&apos;, function()&#123;</span><br><span class="line">    alert(&apos;hello everybody&apos;);</span><br><span class="line">&#125;).fadeIn(&apos;slow&apos;).animate(&#123;height:&apos;120px&apos;&#125;, 500);</span><br></pre></td></tr></table></figure></p>
+<h2 id="维持代码的可读性"><a href="#维持代码的可读性" class="headerlink" title="维持代码的可读性"></a>维持代码的可读性</h2><p>伴随着精简代码和使用链式的同时，可能带来代码的难以阅读。 添加缩紧和换行能起到很好的效果。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 糟糕   </span><br><span class="line">$second.html(value);</span><br><span class="line">$second.on(&apos;click&apos;,function()&#123;</span><br><span class="line">    alert(&apos;hello everybody&apos;);</span><br><span class="line">&#125;).fadeIn(&apos;slow&apos;).animate(&#123;height:&apos;120px&apos;&#125;,500);</span><br><span class="line"></span><br><span class="line">// 建议   </span><br><span class="line">$second.html(value);</span><br><span class="line">$second</span><br><span class="line">    .on(&apos;click&apos;,function()&#123; alert(&apos;hello everybody&apos;);&#125;)</span><br><span class="line">    .fadeIn(&apos;slow&apos;)</span><br><span class="line">    .animate(&#123;height:&apos;120px&apos;&#125;,500);</span><br></pre></td></tr></table></figure></p>
+<h2 id="选择短路求值"><a href="#选择短路求值" class="headerlink" title="选择短路求值"></a>选择短路求值</h2><p>短路求值是一个从左到右求值的表达式，用 &amp;&amp;（逻辑与）或 ||（逻辑或）操作符。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 糟糕   </span><br><span class="line">function initVar($myVar) &#123;</span><br><span class="line">    if(!$myVar) &#123;</span><br><span class="line">        $myVar = $(&apos;#selector&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 建议   </span><br><span class="line">function initVar($myVar) &#123;</span><br><span class="line">    $myVar = $myVar || $(&apos;#selector&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="选择捷径"><a href="#选择捷径" class="headerlink" title="选择捷径"></a>选择捷径</h2><p>精简代码的其中一种方式是利用编码捷径。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 糟糕   </span><br><span class="line">if(collection.length &gt; 0)&#123;..&#125;</span><br><span class="line">// 建议   </span><br><span class="line">if(collection.length)&#123;..&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="熟记技巧"><a href="#熟记技巧" class="headerlink" title="熟记技巧"></a>熟记技巧</h2><p>你可能对使用<code>jQuery</code>中的方法缺少经验，一定要查看的文档，可能会有一个更好或更快的方法来使用它。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 糟糕   </span><br><span class="line">$(&apos;#id&apos;).data(key,value);</span><br><span class="line">// 建议 (高效)  </span><br><span class="line">$.data(&apos;#id&apos;,key,value);</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用子查询缓存的父元素"><a href="#使用子查询缓存的父元素" class="headerlink" title="使用子查询缓存的父元素"></a>使用子查询缓存的父元素</h2><p>正如前面所提到的，DOM 遍历是一项昂贵的操作。 典型做法是缓存父元素并在选择子元素时重用这些缓存元素。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 糟糕   </span><br><span class="line">var </span><br><span class="line">    $container = $(&apos;#container&apos;),</span><br><span class="line">    $containerLi = $(&apos;#container li&apos;),</span><br><span class="line">    $containerLiSpan = $(&apos;#container li span&apos;);</span><br><span class="line">// 建议 (高效)  </span><br><span class="line">var </span><br><span class="line">    $container = $(&apos;#container &apos;),</span><br><span class="line">    $containerLi = $container.find(&apos;li&apos;),</span><br><span class="line">    $containerLiSpan= $containerLi.find(&apos;span&apos;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="避免通用选择符"><a href="#避免通用选择符" class="headerlink" title="避免通用选择符"></a>避免通用选择符</h2><p>将通用选择符放到后代选择符中，性能非常糟糕。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 糟糕   </span><br><span class="line">$(&apos;.container &gt; *&apos;); </span><br><span class="line">// 建议   </span><br><span class="line">$(&apos;.container&apos;).children();  //children() 方法返回返回被选元素的所有直接子元素。</span><br></pre></td></tr></table></figure></p>
+<h2 id="避免隐式通用选择符"><a href="#避免隐式通用选择符" class="headerlink" title="避免隐式通用选择符"></a>避免隐式通用选择符</h2><p>通用选择符有时是隐式的，不容易发现。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 糟糕   </span><br><span class="line">$(&apos;.someclass :radio&apos;); </span><br><span class="line">// 建议   </span><br><span class="line">$(&apos;.someclass input:radio&apos;);</span><br></pre></td></tr></table></figure></p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存变量"><span class="toc-number">1.</span> <span class="toc-text">缓存变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用匈牙利命名法"><span class="toc-number">2.</span> <span class="toc-text">使用匈牙利命名法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-var-链（单-var-模式）"><span class="toc-number">3.</span> <span class="toc-text">使用 var 链（单 var 模式）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#请使用-‘on’"><span class="toc-number">4.</span> <span class="toc-text">请使用 ‘on’</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#精简-javascript"><span class="toc-number">5.</span> <span class="toc-text">精简 javascript</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#链式操作"><span class="toc-number">6.</span> <span class="toc-text">链式操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#维持代码的可读性"><span class="toc-number">7.</span> <span class="toc-text">维持代码的可读性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择短路求值"><span class="toc-number">8.</span> <span class="toc-text">选择短路求值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择捷径"><span class="toc-number">9.</span> <span class="toc-text">选择捷径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#熟记技巧"><span class="toc-number">10.</span> <span class="toc-text">熟记技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用子查询缓存的父元素"><span class="toc-number">11.</span> <span class="toc-text">使用子查询缓存的父元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免通用选择符"><span class="toc-number">12.</span> <span class="toc-text">避免通用选择符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#避免隐式通用选择符"><span class="toc-number">13.</span> <span class="toc-text">避免隐式通用选择符</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>
