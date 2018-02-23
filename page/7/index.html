@@ -56,30 +56,18 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017/10/17/css-css3动画效果/">
+        <a href="/2017/10/17/vue.js笔记_02/">
           <h3 class='post-head'>
-            css3 动画效果【仓库】
+            vue笔记_02
           </h3>
         </a>
         
         <div class="post-content">
           
-            <ol>
-<li>animates.css</li>
-<li></li>
-</ol>
-<h2 id="css3常用动画库"><a href="#css3常用动画库" class="headerlink" title="css3常用动画库"></a>css3常用动画库</h2><ul>
-<li><p><a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">animates.css</a>:<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">https://daneden.github.io/animate.css/</a></p>
-<blockquote>
-<p>animate.css是一款CSS3的动画效果小类库。包含了60多款不同类型的CSS3动画，包括：晃动，闪动，各种淡出淡出效果，如果你想快速的整合各种CSS3动画特效的话，使用它即可方便的实现。</p>
-</blockquote>
-</li>
-<li><p><a href="http://vivify.mkcreative.cz" target="_blank" rel="noopener">vivify.css</a>:<a href="http://vivify.mkcreative.cz" target="_blank" rel="noopener">http://vivify.mkcreative.cz</a> </p>
-<blockquote>
-<p>Vivify.css是一个带68种动画效果的CSS3动画库。vivify.css动画库和Animate.css类似,为网页元素提供各种CSS3动画效果。</p>
-</blockquote>
-</li>
-</ul>
+            
+              
+                <h2 id="Vue-实例对象"><a href="#Vue-实例对象" class="headerlink" title="Vue 实例对象"></a>Vue 实例对象</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new Vue(&#123;   //根组建</span><br><span class="line">  el: &apos;#app&apos;,  //装载的位置</span><br><span class="line">  template: &apos;&lt;App/&gt;&apos;,  //模版</span><br><span class="line">  data: &#123;  </span><br><span class="line">    fruit: &apos;apple&apos; //数据</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+              
           
         </div>
         <div class='post-meta'>
@@ -87,7 +75,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/css/">css</a>
+    <a class="article-category-link" href="/categories/Vue/">Vue</a>
   </div>
 
 
@@ -99,7 +87,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#css" class='tag'>css</a>
+  <a href="/tags/#Vue" class='tag'>Vue</a>
 
 
           
@@ -107,9 +95,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/blog-Typecho-博客插件安装/">
+        <a href="/2017/10/17/代码-JQuery示例/">
           <h3 class='post-head'>
-            Typecho 博客插件
+            JQuery 示例
           </h3>
         </a>
         
@@ -117,7 +105,7 @@
           
             
               
-                <ul>
+                <ol>
               
           
         </div>
@@ -126,7 +114,171 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/博客/">博客</a>
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#JQuery" class='tag'>JQuery</a>
+
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/代码-Base64加密/">
+          <h3 class='post-head'>
+            base64加密
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;base64加密&lt;/title&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 定义字符串  </span><br><span class="line">var string = &apos;15000870973&apos;;  </span><br><span class="line">  </span><br><span class="line">// 加密  </span><br><span class="line">var encodedString = Base64.encode(string);  </span><br><span class="line">console.log(encodedString); // 输出: &quot;SGVsbG8gV29ybGQh&quot;  </span><br><span class="line">  </span><br><span class="line">// 解密  </span><br><span class="line">var decodedString = Base64.decode(encodedString);  </span><br><span class="line">console.log(decodedString); // 输出: &quot;Hello World!&quot;  </span><br><span class="line">&lt;/script&gt;  </span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#加密" class='tag'>加密</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/代码-JQuery ScrollTo滚动插件/">
+          <h3 class='post-head'>
+            JQuery ScrollTo滚动插件使用
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p>##jQuery ScrollTo滚动插件##</p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#插件" class='tag'>插件</a>
+
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/代码-Js用户注册校验/">
+          <h3 class='post-head'>
+            Js用户注册校验
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="Js用户注册校验"><a href="#Js用户注册校验" class="headerlink" title="Js用户注册校验"></a>Js用户注册校验</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;scripttype=&quot;text/javascript&quot;&gt;</span><br><span class="line">      functionsave()&#123;</span><br><span class="line">             varusername = document.getElementById(&quot;username&quot;);</span><br><span class="line">             if(username.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;用户名不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varpassword = document.getElementById(&quot;password&quot;);</span><br><span class="line">             if(password.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;密码不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varrepassword = document.getElementById(&quot;repassword&quot;);</span><br><span class="line">             if(repassword.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;确认密码不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             if(password.value != repassword.value)&#123;</span><br><span class="line">                   alert(&quot;两次输入密码不一致！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varage = document.getElementById(&quot;age&quot;);</span><br><span class="line">             if(age.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;年龄不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             if(isNaN(age.value))&#123;</span><br><span class="line">                   alert(&quot;年龄为数字！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#注册登录" class='tag'>注册登录</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/笔记-pc常用插件/">
+          <h3 class='post-head'>
+            pc常用插件
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <ol>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/笔记/">笔记</a>
   </div>
 
 
@@ -140,7 +292,7 @@
              
   <a href="/tags/#笔记" class='tag'>笔记</a>
 
-  <a href="/tags/#Typecho" class='tag'>Typecho</a>
+  <a href="/tags/#pc" class='tag'>pc</a>
 
 
           
@@ -148,15 +300,18 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/css-css3嵌入字体@font-face调用字体/">
+        <a href="/2017/10/17/代码-Jquery.flexslider 图片轮播/">
           <h3 class='post-head'>
-            CSS3嵌入字体@font-face调用字体
+            Jquery.flexslider 图片轮播使用
           </h3>
         </a>
         
         <div class="post-content">
           
-            <p>@font-face可以实现从服务器端加载字体，所有浏览器中使用的字体就可以不受本地字体的限制。@font-face真的不是什么新鲜玩意，早在2001年时就被提出来，只不过近两年才被各浏览器广泛支持。而且各浏览器支持的字体文件格式也可能不同，一般来说如下四种格式可覆盖所有浏览器。</p>
+            
+              
+                <p>flexslider2官网：<a href="http://flexslider.woothemes.com/" target="_blank" rel="noopener">http://flexslider.woothemes.com/</a></p>
+              
           
         </div>
         <div class='post-meta'>
@@ -164,7 +319,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/css/">css</a>
+    <a class="article-category-link" href="/categories/代码/">代码</a>
   </div>
 
 
@@ -173,10 +328,12 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tag" aria-hidden="true"></i>
+                <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#css" class='tag'>css</a>
+  <a href="/tags/#插件" class='tag'>插件</a>
+
+  <a href="/tags/#代码" class='tag'>代码</a>
 
 
           
@@ -184,9 +341,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/css-css中的一些黑科技/">
+        <a href="/2017/10/17/代码-同意协议-注册登录/">
           <h3 class='post-head'>
-            css中的一些黑科技
+            同意协议【注册登录】
           </h3>
         </a>
         
@@ -194,7 +351,7 @@
           
             
               
-                <h1 id="css中的一些黑科技"><a href="#css中的一些黑科技" class="headerlink" title="css中的一些黑科技"></a>css中的一些黑科技</h1><ul>
+                <h2 id="同意协议"><a href="#同意协议" class="headerlink" title="同意协议"></a>同意协议</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;yes&quot; /&gt;同意！&lt;/label&gt;</span><br><span class="line">&lt;button id=&quot;zhuce&quot; disabled=&quot;true&quot;&gt;注册&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">(function()&#123;</span><br><span class="line">var cb=document.getElementById(&quot;yes&quot;);</span><br><span class="line">cb.onclick=function()&#123;</span><br><span class="line">    if(cb.checked==true)&#123;</span><br><span class="line">        document.getElementById(&quot;zhuce&quot;).disabled=false;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        document.getElementById(&quot;zhuce&quot;).disabled=true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -203,7 +360,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/css/">css</a>
+    <a class="article-category-link" href="/categories/代码/">代码</a>
   </div>
 
 
@@ -212,10 +369,12 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tag" aria-hidden="true"></i>
+                <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#css" class='tag'>css</a>
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#注册登录" class='tag'>注册登录</a>
 
 
           
@@ -223,9 +382,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/css-css常用技巧/">
+        <a href="/2017/10/17/代码-Js用户注册校验的副本/">
           <h3 class='post-head'>
-            css 常用技巧
+            JQuery 滚动到页面指定元素位置
           </h3>
         </a>
         
@@ -233,7 +392,7 @@
           
             
               
-                <ol>
+                <h2 id="1-滚动到页面指定元素位置"><a href="#1-滚动到页面指定元素位置" class="headerlink" title="1. 滚动到页面指定元素位置"></a>1. 滚动到页面指定元素位置</h2><p> Js<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//JQuery  引用</span><br><span class="line">&lt;script src=&quot;https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;scripttype=&quot;text/javascript&quot;&gt;</span><br><span class="line">$(document).ready(function() &#123;</span><br><span class="line">    $(&quot;#scroll&quot;).click(function() &#123;</span><br><span class="line">        $(&apos;html, body&apos;).animate(&#123;</span><br><span class="line">            scrollTop: $(&quot;#commentlist&quot;).offset().top   //指定id位置</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
@@ -242,7 +401,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/css/">css</a>
+    <a class="article-category-link" href="/categories/代码/">代码</a>
   </div>
 
 
@@ -251,10 +410,12 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tag" aria-hidden="true"></i>
+                <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#css" class='tag'>css</a>
+  <a href="/tags/#JQuery" class='tag'>JQuery</a>
+
+  <a href="/tags/#代码" class='tag'>代码</a>
 
 
           
@@ -262,9 +423,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/css-reset.css样式重置/">
+        <a href="/2017/10/17/代码-请使用竖屏浏览/">
           <h3 class='post-head'>
-            CSS样式重置-reset.css
+            wap-请使用竖屏浏览
           </h3>
         </a>
         
@@ -272,7 +433,7 @@
           
             
               
-                <ol>
+                <p>手机防横屏浏览，为了更好的体验，请使用竖屏浏览<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line"> /* 样式放在结尾，防止 base64 图片造成拥塞 */</span><br><span class="line">    @-webkit-keyframes rotation &#123;</span><br><span class="line">        10% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        50%, 60% &#123; transform: rotate(0deg); -webkit-transform: rotate(0deg) &#125;</span><br><span class="line">        90% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        100% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    @keyframes rotation &#123;</span><br><span class="line">        10% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        50%, 60% &#123; transform: rotate(0deg); -webkit-transform: rotate(0deg) &#125;</span><br><span class="line">        90% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        100% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    #orientLayer &#123; display: none; &#125;</span><br><span class="line">    @media screen and (min-aspect-ratio: 13/9) &#123; #orientLayer &#123; display: block; &#125; &#125;</span><br><span class="line">    .mod-orient-layer &#123; display: none; position: fixed; width: 100%; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 9997 &#125;</span><br><span class="line">    .mod-orient-layer__content &#123; position: absolute; width: 100%; top: 45%; margin-top: -75px; text-align: center &#125;</span><br><span class="line">    .mod-orient-layer__icon-orient &#123;background-image:url(img/iphone.png);display: inline-block; width: 67px; height: 109px;</span><br><span class="line">        transform: rotate(90deg); -webkit-transform: rotate(90deg); -webkit-animation: rotation infinite 1.5s ease-in-out; animation: rotation infinite 1.5s ease-in-out; -webkit-background-size: 67px; background-size: 67px &#125;</span><br><span class="line">    .mod-orient-layer__desc &#123; margin-top: 20px; font-size: 15px; color: #fff &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;orientLayer&quot; class=&quot;mod-orient-layer&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;mod-orient-layer__content&quot;&gt; &lt;i class=&quot;icon mod-orient-layer__icon-orient&quot;&gt;&lt;/i&gt;</span><br><span class="line">    &lt;div class=&quot;mod-orient-layer__desc&quot;&gt;为了更好的体验，请使用竖屏浏览&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
@@ -281,85 +442,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/css/">css</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#css" class='tag'>css</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/Js-JS闭包学习/">
-          <h3 class='post-head'>
-            JS闭包学习
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <ol>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Javascript" class='tag'>Javascript</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/Wap-移动端常用技巧/">
-          <h3 class='post-head'>
-            移动端常用技巧
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <p>手机页面禁止长按保存图片<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">img &#123; pointer-events: none; &#125;</span><br><span class="line">img &#123; -webkit-user-select: none; &#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">window.ontouchstart = function(e) &#123; e.preventDefault(); &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/移动端/">移动端</a>
+    <a class="article-category-link" href="/categories/代码/">代码</a>
   </div>
 
 
@@ -372,84 +455,6 @@
               
              
   <a href="/tags/#移动端" class='tag'>移动端</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/Js-Javascript 面向对象编程/">
-          <h3 class='post-head'>
-            Javascript面向对象编程
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><ul>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Javascript" class='tag'>Javascript</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/Js-Javascript最佳实践/">
-          <h3 class='post-head'>
-            Javascript 最佳实践
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <ol>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Javascript" class='tag'>Javascript</a>
 
 
           

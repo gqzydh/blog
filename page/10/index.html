@@ -95,6 +95,60 @@
       </section>
     
       <section>
+        <a href="/2017/10/15/笔记-wap常用插件/">
+          <h3 class='post-head'>
+            Wap常用插件
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            <ol>
+<li>遮罩层 2秒 后自动关闭</li>
+<li></li>
+</ol>
+<h2 id="遮罩层-2秒-后自动关闭"><a href="#遮罩层-2秒-后自动关闭" class="headerlink" title="遮罩层 2秒 后自动关闭"></a>遮罩层 2秒 后自动关闭</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot; style=&quot;width:100%; height:100%; overflow:hidden; background:rgba(0,0,0,0.6); position:fixed; top:0; left:0; padding-bottom:100%&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;div2&quot; style=&quot; position:fixed; top: 20%; left:5%; width:90%;&quot;&gt;&lt;a onclick=&quot;document.getElementById(&apos;div1&apos;).style.display=&apos;none&apos;;document.getElementById(&apos;div2&apos;).style.display=&apos;none&apos;;&quot; style=&quot;position: absolute; right:0; width:8%;&quot;&gt;&lt;img src=&quot;http://bank.wo.cn/public/upres/20170314152522.png&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;img src=&quot;http://bank.wo.cn/public/upres/20170314152506.png&quot; width=&quot;100%&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    setTimeout(function()&#123;document.getElementById(&apos;div1&apos;).style.display=&apos;none&apos;;document.getElementById(&apos;div2&apos;).style.display=&apos;none&apos;;&#125;,2000);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="应用到的Js技术"><a href="#应用到的Js技术" class="headerlink" title="应用到的Js技术"></a>应用到的Js技术</h2><h4 id="require-js"><a href="#require-js" class="headerlink" title="require.js"></a>require.js</h4><blockquote>
+<ol>
+<li>实现js文件的异步加载，避免网页失去响应；</li>
+<li>管理模块之间的依赖性，便于代码的编写和维护。</li>
+</ol>
+</blockquote>
+<ul>
+<li>使用AMD模块的写法<blockquote>
+<p>具体来说，就是模块必须采用特定的define()函数来定义,如果一个模块不依赖其他模块，那么可以直接定义在define()函数之中。</p>
+</blockquote>
+</li>
+</ul>
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月15日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/笔记/">笔记</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#笔记" class='tag'>笔记</a>
+
+  <a href="/tags/#wap" class='tag'>wap</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
         <a href="/2017/10/15/笔记-wap工作笔记/">
           <h3 class='post-head'>
             Wap端 - 工作笔记
@@ -147,39 +201,26 @@
       </section>
     
       <section>
-        <a href="/2017/10/15/笔记-wap常用插件/">
+        <a href="/2017/10/12/命令-node命令/">
           <h3 class='post-head'>
-            Wap常用插件
+            nodejs 命令
           </h3>
         </a>
         
         <div class="post-content">
           
-            <ol>
-<li>遮罩层 2秒 后自动关闭</li>
-<li></li>
-</ol>
-<h2 id="遮罩层-2秒-后自动关闭"><a href="#遮罩层-2秒-后自动关闭" class="headerlink" title="遮罩层 2秒 后自动关闭"></a>遮罩层 2秒 后自动关闭</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot; style=&quot;width:100%; height:100%; overflow:hidden; background:rgba(0,0,0,0.6); position:fixed; top:0; left:0; padding-bottom:100%&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;div2&quot; style=&quot; position:fixed; top: 20%; left:5%; width:90%;&quot;&gt;&lt;a onclick=&quot;document.getElementById(&apos;div1&apos;).style.display=&apos;none&apos;;document.getElementById(&apos;div2&apos;).style.display=&apos;none&apos;;&quot; style=&quot;position: absolute; right:0; width:8%;&quot;&gt;&lt;img src=&quot;http://bank.wo.cn/public/upres/20170314152522.png&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;img src=&quot;http://bank.wo.cn/public/upres/20170314152506.png&quot; width=&quot;100%&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    setTimeout(function()&#123;document.getElementById(&apos;div1&apos;).style.display=&apos;none&apos;;document.getElementById(&apos;div2&apos;).style.display=&apos;none&apos;;&#125;,2000);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="应用到的Js技术"><a href="#应用到的Js技术" class="headerlink" title="应用到的Js技术"></a>应用到的Js技术</h2><h4 id="require-js"><a href="#require-js" class="headerlink" title="require.js"></a>require.js</h4><blockquote>
-<ol>
-<li>实现js文件的异步加载，避免网页失去响应；</li>
-<li>管理模块之间的依赖性，便于代码的编写和维护。</li>
-</ol>
-</blockquote>
-<ul>
-<li>使用AMD模块的写法<blockquote>
-<p>具体来说，就是模块必须采用特定的define()函数来定义,如果一个模块不依赖其他模块，那么可以直接定义在define()函数之中。</p>
-</blockquote>
-</li>
-</ul>
+            
+              
+                <ol>
+              
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月15日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月12日</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/笔记/">笔记</a>
+    <a class="article-category-link" href="/categories/Node/">Node</a>
   </div>
 
 
@@ -188,12 +229,10 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tags" aria-hidden="true"></i>
+                <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#笔记" class='tag'>笔记</a>
-
-  <a href="/tags/#wap" class='tag'>wap</a>
+  <a href="/tags/#Node" class='tag'>Node</a>
 
 
           
@@ -250,48 +289,9 @@
                 <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#Hexo" class='tag'>Hexo</a>
-
   <a href="/tags/#笔记" class='tag'>笔记</a>
 
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/12/命令-node命令/">
-          <h3 class='post-head'>
-            nodejs 命令
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <ol>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月12日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Node/">Node</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Node" class='tag'>Node</a>
+  <a href="/tags/#Hexo" class='tag'>Hexo</a>
 
 
           
