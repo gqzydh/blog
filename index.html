@@ -133,9 +133,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Ajax-jQuery.ajax()方法获取数据/">
+        <a href="/2017/10/17/Ajax笔记/">
           <h3 class='post-head'>
-            jQuery.ajax()方法获取数据
+            Ajax笔记
           </h3>
         </a>
         
@@ -143,7 +143,7 @@
           
             
               
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line"> url: &quot;http://www.hzhuti.com&quot;, //请求的url地址</span><br><span class="line"> dataType: &quot;json&quot;, //返回格式为json</span><br><span class="line"> async: true, //请求是否异步，默认为异步，这也是ajax重要特性</span><br><span class="line"> data: &#123; &quot;id&quot;: &quot;value&quot; &#125;, //参数值</span><br><span class="line"> type: &quot;GET&quot;, //请求方式</span><br><span class="line"> beforeSend: function() &#123;</span><br><span class="line">  //请求前的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> success: function(req) &#123;</span><br><span class="line">  //请求成功时处理</span><br><span class="line"> &#125;,</span><br><span class="line"> complete: function() &#123;</span><br><span class="line">  //请求完成的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> error: function() &#123;</span><br><span class="line">  //请求出错处理</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">responseText： //获得字符串形式的响应数据</span><br><span class="line">responseXML： //获得 XML 形式的响应数据</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -293,6 +293,45 @@
       </section>
     
       <section>
+        <a href="/2017/10/17/JQuery事件/">
+          <h3 class='post-head'>
+            JQuery事件
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="委托事件"><a href="#委托事件" class="headerlink" title="委托事件"></a>委托事件</h2><p>delegate()委托事件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bindPageEvent()&#123;</span><br><span class="line">    $(&apos;#pag&apos;).delegate(&apos;li.clickable&apos;, &apos;click&apos;, function()&#123;  </span><br><span class="line">            $this = $(this);</span><br><span class="line">            $this.data(&apos;id&apos;);</span><br><span class="line">            refreshClasses($this.data(&apos;id&apos;));</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">bindPageEvent();  //事件执行</span><br></pre></td></tr></table></figure></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#jQuery" class='tag'>jQuery</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
         <a href="/2017/10/17/Bootstrap的基本的HTML引用/">
           <h3 class='post-head'>
             Bootstrap的基本的HTML引用
@@ -373,9 +412,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/JQuery事件/">
+        <a href="/2017/10/17/JQuery使用技巧/">
           <h3 class='post-head'>
-            JQuery事件
+            jQuery使用技巧
           </h3>
         </a>
         
@@ -383,7 +422,7 @@
           
             
               
-                <p>##委托事件##<br>delegate()委托事件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bindPageEvent()&#123;</span><br><span class="line">    $(&apos;#pag&apos;).delegate(&apos;li.clickable&apos;, &apos;click&apos;, function()&#123;  </span><br><span class="line">            $this = $(this);</span><br><span class="line">            $this.data(&apos;id&apos;);</span><br><span class="line">            refreshClasses($this.data(&apos;id&apos;));</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">bindPageEvent();  //事件执行</span><br></pre></td></tr></table></figure></p>
+                <p>本文收集整理工作中有用的jQuery技巧，与大家分享。</p>
               
           
         </div>
@@ -405,45 +444,6 @@
               
              
   <a href="/tags/#jQuery" class='tag'>jQuery</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/JQuery常用方法/">
-          <h3 class='post-head'>
-            JQuery常用方法
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <ol>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JQuery/">JQuery</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#JQuery" class='tag'>JQuery</a>
 
 
           
