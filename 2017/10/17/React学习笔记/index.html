@@ -10,7 +10,7 @@
     <link rel="icon" href="/images/favicon_16X16.ico">
   
   
-  <title>create-react-app | 前端博客</title>
+  <title>React 学习笔记 | 前端博客</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
@@ -56,9 +56,9 @@
   <div class="content">
     <article>
         <section class="content markdown-body">
-          <h1>create-react-app</h1>
+          <h1>React 学习笔记</h1>
           <div class='post-meta'>
-            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018年04月11日</time>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
             
               | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
@@ -73,19 +73,16 @@
                   <i class="fa fa-tag" aria-hidden="true"></i>
                 
                
-  <a href="/tags/#create-react-app" class='tag'>create-react-app</a>
+  <a href="/tags/#React Native" class='tag'>React Native</a>
 
 
             
           </div>
-          <p><a href="https://github.com/facebook/create-react-app" target="_blank" rel="noopener">create-react-app</a></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g create-react-app</span><br><span class="line">create-react-app my-app</span><br><span class="line">cd my-app/</span><br><span class="line">npm start   //启动</span><br><span class="line"></span><br><span class="line">npm run build  //线上编译命令</span><br></pre></td></tr></table></figure>
-<p>运行下面两条命令，可以查看线上生产环境的运行效果。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g pushstate-server</span><br><span class="line">pushstate-server build</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>api开发<br>create-react-app提供了一个超级简单的方法，只需要在package.json文件中，加一个配置项就可以了。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;proxy&quot;: &quot;http://localhost:3001/&quot;,  //这个选项，只对开发环境有效，线上环境还是保持react应用和api应用同一个端口。</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install --save react-router-dom  //DOM绑定路由器</span><br></pre></td></tr></table></figure>
+          <h2 id="生成-React-组件的方式"><a href="#生成-React-组件的方式" class="headerlink" title="生成 React 组件的方式"></a>生成 React 组件的方式</h2><p><code>import default export</code>  es6的语法,导入导出<br>class方式声明组件</p>
+<h2 id="向构造react组件模板的函数中传入路由参数"><a href="#向构造react组件模板的函数中传入路由参数" class="headerlink" title="向构造react组件模板的函数中传入路由参数"></a>向构造react组件模板的函数中传入路由参数</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123;BrowserRouter, Route, Link&#125; from &apos;react-router-dom&apos;;</span><br><span class="line">注意使用Router作为最外层标签，里面只能有一个一级子节点，用Link来导航 ，to指定路径，Route指定要导航到的组件，这样一个路由的基本使用就成型了</span><br></pre></td></tr></table></figure>
+<h2 id="路由的嵌套和路径中参数传递"><a href="#路由的嵌套和路径中参数传递" class="headerlink" title="路由的嵌套和路径中参数传递"></a>路由的嵌套和路径中参数传递</h2><blockquote>
+<p>组件名称总是以大写字母开始。</p>
+</blockquote>
 
         </section>
     </article>
@@ -103,7 +100,7 @@
     <div class="toc-container">
         <h1>目录</h1>
         <div class="content">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm"><span class="toc-number">2.</span> <span class="toc-text">npm</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#生成-React-组件的方式"><span class="toc-number">1.</span> <span class="toc-text">生成 React 组件的方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#向构造react组件模板的函数中传入路由参数"><span class="toc-number">2.</span> <span class="toc-text">向构造react组件模板的函数中传入路由参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路由的嵌套和路径中参数传递"><span class="toc-number">3.</span> <span class="toc-text">路由的嵌套和路径中参数传递</span></a></li></ol>
         </div>
     </div>
     
