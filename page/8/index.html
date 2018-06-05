@@ -56,86 +56,6 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017/10/17/笔记-前后分离开发实践/">
-          <h3 class='post-head'>
-            前后分离开发实践
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <p>基于 webpack 的前后端分离开发环境实践</p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/笔记/">笔记</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#前后分离开" class='tag'>前后分离开</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/代码-Js用户注册校验/">
-          <h3 class='post-head'>
-            Js用户注册校验
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="Js用户注册校验"><a href="#Js用户注册校验" class="headerlink" title="Js用户注册校验"></a>Js用户注册校验</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;scripttype=&quot;text/javascript&quot;&gt;</span><br><span class="line">      functionsave()&#123;</span><br><span class="line">             varusername = document.getElementById(&quot;username&quot;);</span><br><span class="line">             if(username.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;用户名不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varpassword = document.getElementById(&quot;password&quot;);</span><br><span class="line">             if(password.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;密码不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varrepassword = document.getElementById(&quot;repassword&quot;);</span><br><span class="line">             if(repassword.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;确认密码不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             if(password.value != repassword.value)&#123;</span><br><span class="line">                   alert(&quot;两次输入密码不一致！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varage = document.getElementById(&quot;age&quot;);</span><br><span class="line">             if(age.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;年龄不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             if(isNaN(age.value))&#123;</span><br><span class="line">                   alert(&quot;年龄为数字！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码/">代码</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#代码" class='tag'>代码</a>
-
-  <a href="/tags/#注册登录" class='tag'>注册登录</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
         <a href="/2017/10/17/vue.js笔记_02/">
           <h3 class='post-head'>
             vue笔记_02
@@ -175,9 +95,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/代码-同意协议-注册登录/">
+        <a href="/2017/10/17/代码-Base64加密/">
           <h3 class='post-head'>
-            同意协议【注册登录】
+            base64加密
           </h3>
         </a>
         
@@ -185,7 +105,7 @@
           
             
               
-                <h2 id="同意协议"><a href="#同意协议" class="headerlink" title="同意协议"></a>同意协议</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;yes&quot; /&gt;同意！&lt;/label&gt;</span><br><span class="line">&lt;button id=&quot;zhuce&quot; disabled=&quot;true&quot;&gt;注册&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">(function()&#123;</span><br><span class="line">var cb=document.getElementById(&quot;yes&quot;);</span><br><span class="line">cb.onclick=function()&#123;</span><br><span class="line">    if(cb.checked==true)&#123;</span><br><span class="line">        document.getElementById(&quot;zhuce&quot;).disabled=false;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        document.getElementById(&quot;zhuce&quot;).disabled=true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;base64加密&lt;/title&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 定义字符串  </span><br><span class="line">var string = &apos;15000870973&apos;;  </span><br><span class="line">  </span><br><span class="line">// 加密  </span><br><span class="line">var encodedString = Base64.encode(string);  </span><br><span class="line">console.log(encodedString); // 输出: &quot;SGVsbG8gV29ybGQh&quot;  </span><br><span class="line">  </span><br><span class="line">// 解密  </span><br><span class="line">var decodedString = Base64.decode(encodedString);  </span><br><span class="line">console.log(decodedString); // 输出: &quot;Hello World!&quot;  </span><br><span class="line">&lt;/script&gt;  </span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -208,7 +128,7 @@
              
   <a href="/tags/#代码" class='tag'>代码</a>
 
-  <a href="/tags/#注册登录" class='tag'>注册登录</a>
+  <a href="/tags/#加密" class='tag'>加密</a>
 
 
           
@@ -216,9 +136,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/代码-Jquery.flexslider 图片轮播/">
+        <a href="/2017/10/17/代码-JQuery ScrollTo滚动插件/">
           <h3 class='post-head'>
-            Jquery.flexslider 图片轮播使用
+            JQuery ScrollTo滚动插件使用
           </h3>
         </a>
         
@@ -226,7 +146,7 @@
           
             
               
-                <p>flexslider2官网：<a href="http://flexslider.woothemes.com/" target="_blank" rel="noopener">http://flexslider.woothemes.com/</a></p>
+                <p>##jQuery ScrollTo滚动插件##</p>
               
           
         </div>
@@ -298,9 +218,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/代码-纯css实现图片自动闪光划过效果/">
+        <a href="/2017/10/17/代码-Js用户注册校验/">
           <h3 class='post-head'>
-            纯css实现图片自动闪光划过效果
+            Js用户注册校验
           </h3>
         </a>
         
@@ -308,7 +228,7 @@
           
             
               
-                <h2 id="纯css实现图片自动闪光划过效果"><a href="#纯css实现图片自动闪光划过效果" class="headerlink" title="纯css实现图片自动闪光划过效果"></a>纯css实现图片自动闪光划过效果</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">*, *:before, *:after &#123; -webkit-box-sizing: inherit; -moz-box-sizing: inherit; box-sizing: inherit; &#125;</span><br><span class="line">.logo_flash&#123; position: relative; margin: 0 auto; transition-duration: .5s; &#125;</span><br><span class="line">.logo_flash&#123; width: 255px; overflow: hidden; &#125;</span><br><span class="line">.logo_flash:before&#123;</span><br><span class="line">content:&quot;&quot;;</span><br><span class="line">position: absolute;</span><br><span class="line">left: -665px;</span><br><span class="line">top: -460px;</span><br><span class="line">width: 200px;</span><br><span class="line">height: 15px;</span><br><span class="line">background-color: rgba(255,255,255,.5);</span><br><span class="line">-webkit-transform: rotate(-45deg);</span><br><span class="line">-moz-transform: rotate(-45deg);</span><br><span class="line">-ms-transform: rotate(-45deg);</span><br><span class="line">-o-transform: rotate(-45deg);</span><br><span class="line">transform: rotate(-45deg);</span><br><span class="line">-webkit-animation: searchLights 1s ease-in 1s infinite;</span><br><span class="line">-o-animation: searchLights 1s ease-in 1s infinite;</span><br><span class="line">animation: searchLights 1s ease-in 1s infinite;</span><br><span class="line">&#125;</span><br><span class="line">@-webkit-keyframes searchLights &#123;</span><br><span class="line">0% &#123; left: -100px; top: 0; &#125;</span><br><span class="line">to &#123; left: 120px; top: 100px; &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-o-keyframes searchLights &#123;</span><br><span class="line">0% &#123; left: -100px; top: 0; &#125;</span><br><span class="line">to &#123; left: 120px; top: 100px; &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-moz-keyframes searchLights &#123;</span><br><span class="line">0% &#123; left: -100px; top: 0; &#125;</span><br><span class="line">to &#123; left: 120px; top: 100px; &#125;</span><br><span class="line">&#125;</span><br><span class="line">@keyframes searchLights &#123;</span><br><span class="line">0% &#123; left: -100px; top: 0; &#125;</span><br><span class="line">to &#123; left: 120px; top: 100px; &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;logo_flash&quot;&gt;</span><br><span class="line">  &lt;a href=&quot;https://www.jinshare.cn/&quot;&gt;&lt;img src=&quot;https://www.jinshare.cn/wp-content/uploads/2016/03/logo.png&quot; width=&quot;255&quot; height=&quot;75&quot; alt=&quot;&quot;&gt;&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+                <h2 id="Js用户注册校验"><a href="#Js用户注册校验" class="headerlink" title="Js用户注册校验"></a>Js用户注册校验</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;scripttype=&quot;text/javascript&quot;&gt;</span><br><span class="line">      functionsave()&#123;</span><br><span class="line">             varusername = document.getElementById(&quot;username&quot;);</span><br><span class="line">             if(username.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;用户名不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varpassword = document.getElementById(&quot;password&quot;);</span><br><span class="line">             if(password.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;密码不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varrepassword = document.getElementById(&quot;repassword&quot;);</span><br><span class="line">             if(repassword.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;确认密码不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             if(password.value != repassword.value)&#123;</span><br><span class="line">                   alert(&quot;两次输入密码不一致！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varage = document.getElementById(&quot;age&quot;);</span><br><span class="line">             if(age.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;年龄不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             if(isNaN(age.value))&#123;</span><br><span class="line">                   alert(&quot;年龄为数字！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -329,9 +249,9 @@
                 <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#css" class='tag'>css</a>
-
   <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#注册登录" class='tag'>注册登录</a>
 
 
           
@@ -339,9 +259,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/代码-请使用竖屏浏览/">
+        <a href="/2017/10/17/网站-SEO优化/">
           <h3 class='post-head'>
-            wap-请使用竖屏浏览
+            网站SEO优化
           </h3>
         </a>
         
@@ -349,7 +269,48 @@
           
             
               
-                <p>手机防横屏浏览，为了更好的体验，请使用竖屏浏览<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line"> /* 样式放在结尾，防止 base64 图片造成拥塞 */</span><br><span class="line">    @-webkit-keyframes rotation &#123;</span><br><span class="line">        10% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        50%, 60% &#123; transform: rotate(0deg); -webkit-transform: rotate(0deg) &#125;</span><br><span class="line">        90% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        100% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    @keyframes rotation &#123;</span><br><span class="line">        10% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        50%, 60% &#123; transform: rotate(0deg); -webkit-transform: rotate(0deg) &#125;</span><br><span class="line">        90% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        100% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    #orientLayer &#123; display: none; &#125;</span><br><span class="line">    @media screen and (min-aspect-ratio: 13/9) &#123; #orientLayer &#123; display: block; &#125; &#125;</span><br><span class="line">    .mod-orient-layer &#123; display: none; position: fixed; width: 100%; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 9997 &#125;</span><br><span class="line">    .mod-orient-layer__content &#123; position: absolute; width: 100%; top: 45%; margin-top: -75px; text-align: center &#125;</span><br><span class="line">    .mod-orient-layer__icon-orient &#123;background-image:url(img/iphone.png);display: inline-block; width: 67px; height: 109px;</span><br><span class="line">        transform: rotate(90deg); -webkit-transform: rotate(90deg); -webkit-animation: rotation infinite 1.5s ease-in-out; animation: rotation infinite 1.5s ease-in-out; -webkit-background-size: 67px; background-size: 67px &#125;</span><br><span class="line">    .mod-orient-layer__desc &#123; margin-top: 20px; font-size: 15px; color: #fff &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;orientLayer&quot; class=&quot;mod-orient-layer&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;mod-orient-layer__content&quot;&gt; &lt;i class=&quot;icon mod-orient-layer__icon-orient&quot;&gt;&lt;/i&gt;</span><br><span class="line">    &lt;div class=&quot;mod-orient-layer__desc&quot;&gt;为了更好的体验，请使用竖屏浏览&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+                <h1 id="前端-页编人员主要负责站内优化，主要从四个方面入手"><a href="#前端-页编人员主要负责站内优化，主要从四个方面入手" class="headerlink" title="前端/页编人员主要负责站内优化，主要从四个方面入手"></a>前端/页编人员主要负责站内优化，主要从四个方面入手</h1><h2 id="1-站内结构优化"><a href="#1-站内结构优化" class="headerlink" title="1.站内结构优化"></a>1.站内结构优化</h2><p>合理规划站点结构(1、扁平化结构 2、辅助导航、面包屑导航、次导航)</p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/网站/">网站</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#网站" class='tag'>网站</a>
+
+  <a href="/tags/#SEO优化" class='tag'>SEO优化</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/代码-Jquery.flexslider 图片轮播/">
+          <h3 class='post-head'>
+            Jquery.flexslider 图片轮播使用
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p>flexslider2官网：<a href="http://flexslider.woothemes.com/" target="_blank" rel="noopener">http://flexslider.woothemes.com/</a></p>
               
           
         </div>
@@ -367,10 +328,53 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tag" aria-hidden="true"></i>
+                <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#移动端" class='tag'>移动端</a>
+  <a href="/tags/#插件" class='tag'>插件</a>
+
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/代码-同意协议-注册登录/">
+          <h3 class='post-head'>
+            同意协议【注册登录】
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="同意协议"><a href="#同意协议" class="headerlink" title="同意协议"></a>同意协议</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;yes&quot; /&gt;同意！&lt;/label&gt;</span><br><span class="line">&lt;button id=&quot;zhuce&quot; disabled=&quot;true&quot;&gt;注册&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">(function()&#123;</span><br><span class="line">var cb=document.getElementById(&quot;yes&quot;);</span><br><span class="line">cb.onclick=function()&#123;</span><br><span class="line">    if(cb.checked==true)&#123;</span><br><span class="line">        document.getElementById(&quot;zhuce&quot;).disabled=false;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        document.getElementById(&quot;zhuce&quot;).disabled=true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#注册登录" class='tag'>注册登录</a>
 
 
           
@@ -419,9 +423,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/代码-魔法师微信分享/">
+        <a href="/2017/10/17/代码-纯css实现图片自动闪光划过效果/">
           <h3 class='post-head'>
-            魔法师微信分享
+            纯css实现图片自动闪光划过效果
           </h3>
         </a>
         
@@ -429,7 +433,7 @@
           
             
               
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    // 微信分享</span><br><span class="line">        indexAction : function()&#123;</span><br><span class="line">            _class_.superClass.indexAction.apply(this, arguments);</span><br><span class="line">            var _this = this;</span><br><span class="line">            this.init();</span><br><span class="line">            var ppp = $(this.userId).selector;</span><br><span class="line">            var bid = this.id;</span><br><span class="line"></span><br><span class="line">            this.view(&quot;view/activity/moneyMagiciantwo.html&quot;, function(view)&#123;</span><br><span class="line">                this.renderContainer(view);</span><br><span class="line">                this.container.find(&quot;.page&quot;).html(this.render(&quot;tpl-main-view&quot;));</span><br><span class="line">                $(&quot;#main-container&quot;).removeClass(&quot;page-investment-purchase&quot;);</span><br><span class="line">                this.container.on(&quot;tap&quot;,&quot;.col&quot;,function()&#123;</span><br><span class="line">                    $(&quot;.box-wrap&quot;).hide();</span><br><span class="line">                &#125;)</span><br><span class="line">                this.container.on(&quot;tap&quot;,&quot;.btnn2&quot;,function(e)&#123;</span><br><span class="line">                    e.stopPropagation();</span><br><span class="line">                    e.preventDefault();</span><br><span class="line">                    _this.redirect(&quot;activity/springFestival&quot;, &#123;</span><br><span class="line">                         type : 1</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;)</span><br><span class="line"></span><br><span class="line">                _this.setXHR(&quot;weixin/sigin&quot;, function()&#123;</span><br><span class="line">                    var router = _this.getApiRouter(&quot;weixin/sigin&quot;, &#123;&#125;);</span><br><span class="line">                    return _this.postData(router.url, router.data, function(json)&#123;</span><br><span class="line">                        console.log(&quot;weixinshouquan2:&quot;,json.jsapi_ticket)</span><br><span class="line">                        console.log(&quot;weixinshouquan3:&quot;,json.access_token)</span><br><span class="line"></span><br><span class="line">                        var jsapi_t = json.jsapi_ticket;</span><br><span class="line">                        var access_t = json.access_token;</span><br><span class="line">                        var wxTimes = new Date().getTime() ;</span><br><span class="line">                        //noncestr</span><br><span class="line">                        var stra_z = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;;</span><br><span class="line">                        var n = 16, s = &quot;&quot;;</span><br><span class="line">                        for(var i = 0; i &lt; n; i++)&#123;</span><br><span class="line">                            var rand = Math.floor(Math.random() * stra_z.length);</span><br><span class="line">                            s += stra_z.charAt(rand);</span><br><span class="line">                        &#125;</span><br><span class="line">                        var wxnoncestr = s</span><br><span class="line">                        // var wxurl = encodeURIComponent(window.location.href.split(&apos;#&apos;)[0]);</span><br><span class="line">                        var wxurl = window.location.href.split(&apos;#&apos;)[0];</span><br><span class="line">                        //signature</span><br><span class="line">                        var wxstring1 =&quot;jsapi_ticket=&quot;+jsapi_t + &quot;&amp;noncestr=&quot; + wxnoncestr + &quot;&amp;timestamp=&quot; + wxTimes+ &quot;&amp;url=&quot; + wxurl</span><br><span class="line">                        var sha = hex_sha1(wxstring1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                    wx.config(&#123;</span><br><span class="line">                        debug: true,</span><br><span class="line">                        appId: &apos;wxe7b4769315&apos;,</span><br><span class="line">                        timestamp: wxTimes,</span><br><span class="line">                        nonceStr: wxnoncestr,</span><br><span class="line">                        signature: sha,</span><br><span class="line">                        jsApiList: [</span><br><span class="line">                            // 所有要调用的 API 都要加到这个列表中</span><br><span class="line">                            &apos;onMenuShareAppMessage&apos;,</span><br><span class="line">                            &apos;onMenuShareTimeline&apos;,</span><br><span class="line">                            &apos;onMenuShareQQ&apos;,</span><br><span class="line">                            &apos;onMenuShareQZone&apos;,</span><br><span class="line">                            &apos;onMenuShareWeibo&apos;</span><br><span class="line">                          ]</span><br><span class="line">                    &#125;); </span><br><span class="line">                    wx.ready(function () &#123; </span><br><span class="line">                        //分享到朋友圈</span><br><span class="line">                        wx.onMenuShareTimeline(&#123;</span><br><span class="line">                            title: &apos;丰厚奖金等你瓜分&apos;, // 分享标题</span><br><span class="line">                            link: &apos;http://wx.xxxx.com/#activity/moneyMagiciantwo&apos;, // 分享链接</span><br><span class="line">                            imgUrl: &apos;http://wx.xxxx.com/static/img/magiciantwo/wx_mf2.png&apos;, // 分享图标</span><br><span class="line">                            success: function () &#123; </span><br><span class="line">                                // 用户确认分享后执行的回调函数</span><br><span class="line">                                    _this.setXHR(&quot;activity/moneyMagiciantwo&quot;, function()&#123;</span><br><span class="line">                                        var router = _this.getApiRouter(&quot;activity/moneyMagiciantwo&quot;, &#123;</span><br><span class="line">                                            id : ppp ,</span><br><span class="line">                                            investId : bid </span><br><span class="line">                                        &#125;);</span><br><span class="line">                                        return _this.postData(router.url, router.data, function(json)&#123;</span><br><span class="line">                                            console.log(&quot;666666666:&quot;,json)</span><br><span class="line">                                        &#125;)</span><br><span class="line">                                     &#125;)</span><br><span class="line">                                    window.location.href=&quot;http://wx.xxxx.com/#user/invest&quot;;</span><br><span class="line">                            &#125;,</span><br><span class="line"></span><br><span class="line">                            cancel: function () &#123; </span><br><span class="line">                                // 用户取消分享后执行的回调函数</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;);</span><br><span class="line">                        wx.onMenuShareAppMessage(&#123;</span><br><span class="line">                            title: &apos;丰厚奖金等你瓜分&apos;, // 分享标题</span><br><span class="line">                            desc: &apos;丰厚奖金等你瓜分&apos;, // 分享描述</span><br><span class="line">                            link: &apos;http://wx.xxxx.com/#activity/moneyMagiciantwo&apos;, // 分享链接</span><br><span class="line">                            imgUrl: &apos;http://wx.xxxx.com/static/img/magiciantwo/wx_mf2.png&apos;, // 分享图标</span><br><span class="line">                            dataUrl: &apos;&apos;, // 如果type是music或video，则要提供数据链接，默认为空</span><br><span class="line">                            success: function () &#123; </span><br><span class="line">                                // 用户确认分享后执行的回调函数</span><br><span class="line">                                    _this.setXHR(&quot;activity/moneyMagiciantwo&quot;, function()&#123;</span><br><span class="line">                                        var router = _this.getApiRouter(&quot;activity/moneyMagiciantwo&quot;, &#123;</span><br><span class="line">                                            id : ppp ,</span><br><span class="line">                                            investId : bid </span><br><span class="line">                                        &#125;);</span><br><span class="line">                                        return _this.postData(router.url, router.data, function(json)&#123;</span><br><span class="line">                                            console.log(&quot;666666666:&quot;,json)</span><br><span class="line">                                        &#125;)</span><br><span class="line">                                     &#125;)</span><br><span class="line">                                    window.location.href=&quot;http://wx.xxxx.com/#user/invest&quot;;</span><br><span class="line">                            &#125;,</span><br><span class="line">                            cancel: function () &#123; </span><br><span class="line">                                // 用户取消分享后执行的回调函数</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;);</span><br><span class="line">                        wx.onMenuShareQQ(&#123;</span><br><span class="line">                            title: &apos;丰厚奖金等你瓜分&apos;, // 分享标题</span><br><span class="line">                            desc: &apos;丰厚奖金等你瓜分&apos;,  // 分享描述</span><br><span class="line">                            link: &apos;http://wx.xxxx.com/#activity/moneyMagiciantwo&apos;, // 分享链接</span><br><span class="line">                            imgUrl: &apos;http://wx.xxxx.com/static/img/magiciantwo/wx_mf2.png&apos;, // 分享图标</span><br><span class="line">                            success: function () &#123; </span><br><span class="line">                               // 用户确认分享后执行的回调函数</span><br><span class="line">                                _this.setXHR(&quot;activity/moneyMagiciantwo&quot;, function()&#123;</span><br><span class="line">                                        var router = _this.getApiRouter(&quot;activity/moneyMagiciantwo&quot;, &#123;</span><br><span class="line">                                            id : ppp ,</span><br><span class="line">                                            investId : bid </span><br><span class="line">                                        &#125;);</span><br><span class="line">                                        return _this.postData(router.url, router.data, function(json)&#123;</span><br><span class="line">                                            console.log(&quot;666666666:&quot;,json)</span><br><span class="line">                                        &#125;)</span><br><span class="line">                                     &#125;)</span><br><span class="line">                                window.location.href=&quot;http://wx.xxxx.com/#user/invest&quot;;</span><br><span class="line">                            &#125;,</span><br><span class="line">                            cancel: function () &#123; </span><br><span class="line">                               // 用户取消分享后执行的回调函数</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;);</span><br><span class="line">                        wx.onMenuShareQZone(&#123;</span><br><span class="line">                            title: &apos;丰厚奖金等你瓜分&apos;, // 分享标题</span><br><span class="line">                            desc: &apos;丰厚奖金等你瓜分&apos;,  // 分享描述</span><br><span class="line">                            link: &apos;http://wx.xxxx.com/#activity/moneyMagiciantwo&apos;, // 分享链接</span><br><span class="line">                            imgUrl: &apos;http://wx.xxxx.com/static/img/magiciantwo/wx_mf2.png&apos;, // 分享图标</span><br><span class="line">                            success: function () &#123; </span><br><span class="line">                               // 用户确认分享后执行的回调函数</span><br><span class="line">                                _this.setXHR(&quot;activity/moneyMagiciantwo&quot;, function()&#123;</span><br><span class="line">                                        var router = _this.getApiRouter(&quot;activity/moneyMagiciantwo&quot;, &#123;</span><br><span class="line">                                            id : ppp ,</span><br><span class="line">                                            investId : bid </span><br><span class="line">                                        &#125;);</span><br><span class="line">                                        return _this.postData(router.url, router.data, function(json)&#123;</span><br><span class="line">                                            console.log(&quot;666666666:&quot;,json)</span><br><span class="line">                                        &#125;)</span><br><span class="line">                                     &#125;)</span><br><span class="line">                                window.location.href=&quot;http://wx.xxxx.com/#user/invest&quot;;</span><br><span class="line">                            &#125;,</span><br><span class="line">                            cancel: function () &#123; </span><br><span class="line">                                // 用户取消分享后执行的回调函数</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;);</span><br><span class="line"></span><br><span class="line">                    &#125;);</span><br><span class="line"></span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+                <h2 id="纯css实现图片自动闪光划过效果"><a href="#纯css实现图片自动闪光划过效果" class="headerlink" title="纯css实现图片自动闪光划过效果"></a>纯css实现图片自动闪光划过效果</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">*, *:before, *:after &#123; -webkit-box-sizing: inherit; -moz-box-sizing: inherit; box-sizing: inherit; &#125;</span><br><span class="line">.logo_flash&#123; position: relative; margin: 0 auto; transition-duration: .5s; &#125;</span><br><span class="line">.logo_flash&#123; width: 255px; overflow: hidden; &#125;</span><br><span class="line">.logo_flash:before&#123;</span><br><span class="line">content:&quot;&quot;;</span><br><span class="line">position: absolute;</span><br><span class="line">left: -665px;</span><br><span class="line">top: -460px;</span><br><span class="line">width: 200px;</span><br><span class="line">height: 15px;</span><br><span class="line">background-color: rgba(255,255,255,.5);</span><br><span class="line">-webkit-transform: rotate(-45deg);</span><br><span class="line">-moz-transform: rotate(-45deg);</span><br><span class="line">-ms-transform: rotate(-45deg);</span><br><span class="line">-o-transform: rotate(-45deg);</span><br><span class="line">transform: rotate(-45deg);</span><br><span class="line">-webkit-animation: searchLights 1s ease-in 1s infinite;</span><br><span class="line">-o-animation: searchLights 1s ease-in 1s infinite;</span><br><span class="line">animation: searchLights 1s ease-in 1s infinite;</span><br><span class="line">&#125;</span><br><span class="line">@-webkit-keyframes searchLights &#123;</span><br><span class="line">0% &#123; left: -100px; top: 0; &#125;</span><br><span class="line">to &#123; left: 120px; top: 100px; &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-o-keyframes searchLights &#123;</span><br><span class="line">0% &#123; left: -100px; top: 0; &#125;</span><br><span class="line">to &#123; left: 120px; top: 100px; &#125;</span><br><span class="line">&#125;</span><br><span class="line">@-moz-keyframes searchLights &#123;</span><br><span class="line">0% &#123; left: -100px; top: 0; &#125;</span><br><span class="line">to &#123; left: 120px; top: 100px; &#125;</span><br><span class="line">&#125;</span><br><span class="line">@keyframes searchLights &#123;</span><br><span class="line">0% &#123; left: -100px; top: 0; &#125;</span><br><span class="line">to &#123; left: 120px; top: 100px; &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;logo_flash&quot;&gt;</span><br><span class="line">  &lt;a href=&quot;https://www.jinshare.cn/&quot;&gt;&lt;img src=&quot;https://www.jinshare.cn/wp-content/uploads/2016/03/logo.png&quot; width=&quot;255&quot; height=&quot;75&quot; alt=&quot;&quot;&gt;&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -450,9 +454,9 @@
                 <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#代码" class='tag'>代码</a>
+  <a href="/tags/#css" class='tag'>css</a>
 
-  <a href="/tags/#微信分享" class='tag'>微信分享</a>
+  <a href="/tags/#代码" class='tag'>代码</a>
 
 
           
@@ -483,7 +487,7 @@
           文章分类
         </h1>
         <div class="content">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Bootstrap/">Bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Nodejs/">Nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React Native</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue-js/">Vue.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码/">代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/命令/">命令</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/模板引擎/">模板引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站/">网站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/资源/">资源</a></li></ul>
+          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Bootstrap/">Bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Nodejs/">Nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React Native</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue-js/">Vue.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码/">代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/命令/">命令</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/模板引擎/">模板引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站/">网站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/资源/">资源</a></li></ul>
         </div>
       </div>
     
@@ -495,7 +499,7 @@
           标签云
         </h1>
       <div class="content tagcloud">
-            <a href="/tags/Ajax/" style="font-size: 18px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 14px;">Angular</a> <a href="/tags/Atom/" style="font-size: 16px;">Atom</a> <a href="/tags/Bootstrap/" style="font-size: 18px;">Bootstrap</a> <a href="/tags/BrowserSync/" style="font-size: 14px;">BrowserSync</a> <a href="/tags/Grunt/" style="font-size: 14px;">Grunt</a> <a href="/tags/Handlebars/" style="font-size: 14px;">Handlebars</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/JQuery/" style="font-size: 20px;">JQuery</a> <a href="/tags/Jade/" style="font-size: 16px;">Jade</a> <a href="/tags/Javascript/" style="font-size: 32px;">Javascript</a> <a href="/tags/Js设计/" style="font-size: 16px;">Js设计</a> <a href="/tags/Markdown/" style="font-size: 14px;">Markdown</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/Node/" style="font-size: 14px;">Node</a> <a href="/tags/Nodejs/" style="font-size: 14px;">Nodejs</a> <a href="/tags/React/" style="font-size: 14px;">React</a> <a href="/tags/React-Native/" style="font-size: 16px;">React Native</a> <a href="/tags/SEO优化/" style="font-size: 14px;">SEO优化</a> <a href="/tags/Sublime-Text3/" style="font-size: 14px;">Sublime Text3</a> <a href="/tags/Sublime-text/" style="font-size: 14px;">Sublime text</a> <a href="/tags/Sublime-text3/" style="font-size: 14px;">Sublime text3</a> <a href="/tags/Template-js/" style="font-size: 14px;">Template.js</a> <a href="/tags/Typecho/" style="font-size: 14px;">Typecho</a> <a href="/tags/Vue-js/" style="font-size: 22px;">Vue.js</a> <a href="/tags/Webpack/" style="font-size: 14px;">Webpack</a> <a href="/tags/Web前端框架/" style="font-size: 14px;">Web前端框架</a> <a href="/tags/Web前端资源/" style="font-size: 14px;">Web前端资源</a> <a href="/tags/WordPress/" style="font-size: 14px;">WordPress</a> <a href="/tags/Yeoman/" style="font-size: 14px;">Yeoman</a> <a href="/tags/bower/" style="font-size: 14px;">bower</a> <a href="/tags/create-react-app/" style="font-size: 14px;">create-react-app</a> <a href="/tags/css/" style="font-size: 26px;">css</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/jQuery/" style="font-size: 24px;">jQuery</a> <a href="/tags/pc/" style="font-size: 16px;">pc</a> <a href="/tags/wap/" style="font-size: 16px;">wap</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/代码/" style="font-size: 28px;">代码</a> <a href="/tags/前后分离开/" style="font-size: 14px;">前后分离开</a> <a href="/tags/前端工具/" style="font-size: 20px;">前端工具</a> <a href="/tags/前端框架/" style="font-size: 14px;">前端框架</a> <a href="/tags/加密/" style="font-size: 14px;">加密</a> <a href="/tags/命令/" style="font-size: 14px;">命令</a> <a href="/tags/工作/" style="font-size: 14px;">工作</a> <a href="/tags/微信分享/" style="font-size: 16px;">微信分享</a> <a href="/tags/成长之路/" style="font-size: 14px;">成长之路</a> <a href="/tags/插件/" style="font-size: 22px;">插件</a> <a href="/tags/正则表达式/" style="font-size: 20px;">正则表达式</a> <a href="/tags/注册登录/" style="font-size: 16px;">注册登录</a> <a href="/tags/移动端/" style="font-size: 22px;">移动端</a> <a href="/tags/笔记/" style="font-size: 30px;">笔记</a> <a href="/tags/网站/" style="font-size: 14px;">网站</a> <a href="/tags/设计/" style="font-size: 14px;">设计</a> <a href="/tags/读书/" style="font-size: 20px;">读书</a> <a href="/tags/面试/" style="font-size: 14px;">面试</a>
+            <a href="/tags/Ajax/" style="font-size: 18px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 14px;">Angular</a> <a href="/tags/Atom/" style="font-size: 16px;">Atom</a> <a href="/tags/Bootstrap/" style="font-size: 18px;">Bootstrap</a> <a href="/tags/BrowserSync/" style="font-size: 14px;">BrowserSync</a> <a href="/tags/Grunt/" style="font-size: 14px;">Grunt</a> <a href="/tags/Handlebars/" style="font-size: 14px;">Handlebars</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/JQuery/" style="font-size: 20px;">JQuery</a> <a href="/tags/Jade/" style="font-size: 16px;">Jade</a> <a href="/tags/Javascript/" style="font-size: 32px;">Javascript</a> <a href="/tags/Js设计/" style="font-size: 16px;">Js设计</a> <a href="/tags/Markdown/" style="font-size: 14px;">Markdown</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/Node/" style="font-size: 14px;">Node</a> <a href="/tags/Nodejs/" style="font-size: 14px;">Nodejs</a> <a href="/tags/React/" style="font-size: 14px;">React</a> <a href="/tags/React-Native/" style="font-size: 16px;">React Native</a> <a href="/tags/SEO优化/" style="font-size: 14px;">SEO优化</a> <a href="/tags/Sublime-Text3/" style="font-size: 14px;">Sublime Text3</a> <a href="/tags/Sublime-text/" style="font-size: 14px;">Sublime text</a> <a href="/tags/Sublime-text3/" style="font-size: 14px;">Sublime text3</a> <a href="/tags/Template-js/" style="font-size: 14px;">Template.js</a> <a href="/tags/Typecho/" style="font-size: 14px;">Typecho</a> <a href="/tags/Vue-js/" style="font-size: 22px;">Vue.js</a> <a href="/tags/Vue-js-axios/" style="font-size: 14px;">Vue.js, axios</a> <a href="/tags/Webpack/" style="font-size: 14px;">Webpack</a> <a href="/tags/Web前端框架/" style="font-size: 14px;">Web前端框架</a> <a href="/tags/Web前端资源/" style="font-size: 14px;">Web前端资源</a> <a href="/tags/WordPress/" style="font-size: 14px;">WordPress</a> <a href="/tags/Yeoman/" style="font-size: 14px;">Yeoman</a> <a href="/tags/bower/" style="font-size: 14px;">bower</a> <a href="/tags/create-react-app/" style="font-size: 14px;">create-react-app</a> <a href="/tags/css/" style="font-size: 26px;">css</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/html/" style="font-size: 14px;">html</a> <a href="/tags/jQuery/" style="font-size: 24px;">jQuery</a> <a href="/tags/pc/" style="font-size: 16px;">pc</a> <a href="/tags/wap/" style="font-size: 16px;">wap</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/代码/" style="font-size: 28px;">代码</a> <a href="/tags/前后分离开/" style="font-size: 14px;">前后分离开</a> <a href="/tags/前端工具/" style="font-size: 20px;">前端工具</a> <a href="/tags/前端框架/" style="font-size: 14px;">前端框架</a> <a href="/tags/加密/" style="font-size: 14px;">加密</a> <a href="/tags/命令/" style="font-size: 14px;">命令</a> <a href="/tags/工作/" style="font-size: 14px;">工作</a> <a href="/tags/微信分享/" style="font-size: 16px;">微信分享</a> <a href="/tags/成长之路/" style="font-size: 14px;">成长之路</a> <a href="/tags/插件/" style="font-size: 22px;">插件</a> <a href="/tags/正则表达式/" style="font-size: 20px;">正则表达式</a> <a href="/tags/注册登录/" style="font-size: 16px;">注册登录</a> <a href="/tags/移动端/" style="font-size: 22px;">移动端</a> <a href="/tags/笔记/" style="font-size: 30px;">笔记</a> <a href="/tags/网站/" style="font-size: 14px;">网站</a> <a href="/tags/设计/" style="font-size: 14px;">设计</a> <a href="/tags/读书/" style="font-size: 20px;">读书</a> <a href="/tags/面试/" style="font-size: 14px;">面试</a>
       </div>
     </div>
     
