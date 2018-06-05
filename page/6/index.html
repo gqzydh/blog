@@ -56,9 +56,9 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017/10/17/Wap-Js判断pc端和手机端/">
+        <a href="/2017/10/17/Wap-移动端常用技巧/">
           <h3 class='post-head'>
-            Js判断pc端和手机端
+            移动端常用技巧
           </h3>
         </a>
         
@@ -66,7 +66,7 @@
           
             
               
-                <p><strong>方法一</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">function browserRedirect() &#123; </span><br><span class="line">var sUserAgent= navigator.userAgent.toLowerCase(); </span><br><span class="line">var bIsIpad= sUserAgent.match(/ipad/i) == &quot;ipad&quot;; </span><br><span class="line">var bIsIphoneOs= sUserAgent.match(/iphone os/i) == &quot;iphone os&quot;; </span><br><span class="line">var bIsMidp= sUserAgent.match(/midp/i) == &quot;midp&quot;; </span><br><span class="line">var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == &quot;rv:1.2.3.4&quot;; </span><br><span class="line">var bIsUc= sUserAgent.match(/ucweb/i) == &quot;ucweb&quot;; </span><br><span class="line">var bIsAndroid= sUserAgent.match(/android/i) == &quot;android&quot;; </span><br><span class="line">var bIsCE= sUserAgent.match(/windows ce/i) == &quot;windows ce&quot;; </span><br><span class="line">var bIsWM= sUserAgent.match(/windows mobile/i) == &quot;windows mobile&quot;; </span><br><span class="line"> </span><br><span class="line">if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) &#123; </span><br><span class="line">window.location.href= &apos;http://www.baidu.com&apos;; </span><br><span class="line">&#125; else &#123; </span><br><span class="line">window.location= &apos;https://www.taobao.com/&apos;; </span><br><span class="line">&#125; </span><br><span class="line">&#125; </span><br><span class="line">browserRedirect(); </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+                <p>手机页面禁止长按保存图片<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">img &#123; pointer-events: none; &#125;</span><br><span class="line">img &#123; -webkit-user-select: none; &#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">window.ontouchstart = function(e) &#123; e.preventDefault(); &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
@@ -134,86 +134,6 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Web前端面试/">
-          <h3 class='post-head'>
-            Web前端面试
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="如何面试Web前端开发工程师"><a href="#如何面试Web前端开发工程师" class="headerlink" title="如何面试Web前端开发工程师"></a>如何面试Web前端开发工程师</h2><ul>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#面试" class='tag'>面试</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/blog-Typecho-博客插件安装/">
-          <h3 class='post-head'>
-            Typecho 博客插件
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <ul>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/博客/">博客</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#笔记" class='tag'>笔记</a>
-
-  <a href="/tags/#Typecho" class='tag'>Typecho</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
         <a href="/2017/10/17/Web前端框架/">
           <h3 class='post-head'>
             Web前端框架
@@ -253,9 +173,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/blog-WordPress/">
+        <a href="/2017/10/17/Web前端工程师编程能力成长之路/">
           <h3 class='post-head'>
-            WordPress
+            web前端工程师编程能力成长之路
           </h3>
         </a>
         
@@ -263,7 +183,7 @@
           
             
               
-                <p>WordPress  中文官网:<a href="https://cn.wordpress.org/" target="_blank" rel="noopener">https://cn.wordpress.org/</a><br>慕课网学习:<a href="http://www.imooc.com/video/10465" target="_blank" rel="noopener">http://www.imooc.com/video/10465</a></p>
+                <h2 id="【前言】"><a href="#【前言】" class="headerlink" title="##【前言】##"></a>##【前言】##</h2><p>所谓的天才，只不过是比平常人更快的掌握技能、完成工作罢了； 只要你找到了正确的方向，并辅以足够的时间，你一样能够踏上成功彼岸。</p>
               
           
         </div>
@@ -272,7 +192,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/博客/">博客</a>
+    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
   </div>
 
 
@@ -281,12 +201,49 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tags" aria-hidden="true"></i>
+                <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#笔记" class='tag'>笔记</a>
+  <a href="/tags/#成长之路" class='tag'>成长之路</a>
 
-  <a href="/tags/#WordPress" class='tag'>WordPress</a>
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/Web前端面试/">
+          <h3 class='post-head'>
+            Web前端面试
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="如何面试Web前端开发工程师"><a href="#如何面试Web前端开发工程师" class="headerlink" title="如何面试Web前端开发工程师"></a>如何面试Web前端开发工程师</h2><ul>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#面试" class='tag'>面试</a>
 
 
           
@@ -350,9 +307,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Ajax-jQuery ajax读取json文件内容/">
+        <a href="/2017/10/17/blog-Typecho-博客插件安装/">
           <h3 class='post-head'>
-            jQuery ajax读取json文件内容
+            Typecho 博客插件
           </h3>
         </a>
         
@@ -360,7 +317,48 @@
           
             
               
-                <p>##<strong>ajax 代码</strong>##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">$(document).ready(function() &#123;  </span><br><span class="line">    $.ajax(&#123;  </span><br><span class="line">        type:&quot;GET&quot;,  //请求方式为get  </span><br><span class="line">        url:&quot;user.json&quot;, //json文件位置  </span><br><span class="line">        dataType: &quot;json&quot;,  //返回数据格式为json  </span><br><span class="line">        //请求成功完成后要执行的方法  </span><br><span class="line">        success: function(data)&#123;  </span><br><span class="line">         console.log(date.button);</span><br><span class="line">         var aav = date.button;</span><br><span class="line">            //使用$.each方法遍历返回的数据date,插入到id为#result中 </span><br><span class="line">           $.each(aav,function(ii,item)&#123;</span><br><span class="line">               var conter = item.type+&quot;,&quot;+item.name+&quot;,&quot;+item.key;  </span><br><span class="line">                $(&quot;#result&quot;).append(content);  </span><br><span class="line">            &#125;)  </span><br><span class="line">        &#125;,</span><br><span class="line">        error:function(jqXHR)&#123;                   alert(&quot;发生错误：&quot;+jqXHR.status);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)  </span><br><span class="line">&#125;);  </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+                <ul>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/博客/">博客</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#笔记" class='tag'>笔记</a>
+
+  <a href="/tags/#Typecho" class='tag'>Typecho</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/Ajax-jQuery.ajax()方法获取数据/">
+          <h3 class='post-head'>
+            jQuery.ajax()方法获取数据
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line"> url: &quot;http://www.hzhuti.com&quot;, //请求的url地址</span><br><span class="line"> dataType: &quot;json&quot;, //返回格式为json</span><br><span class="line"> async: true, //请求是否异步，默认为异步，这也是ajax重要特性</span><br><span class="line"> data: &#123; &quot;id&quot;: &quot;value&quot; &#125;, //参数值</span><br><span class="line"> type: &quot;GET&quot;, //请求方式</span><br><span class="line"> beforeSend: function() &#123;</span><br><span class="line">  //请求前的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> success: function(req) &#123;</span><br><span class="line">  //请求成功时处理</span><br><span class="line"> &#125;,</span><br><span class="line"> complete: function() &#123;</span><br><span class="line">  //请求完成的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> error: function() &#123;</span><br><span class="line">  //请求出错处理</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
               
           
         </div>
