@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_16X16.ico">
+  
+  
+  <title>JS,JQ操作LocalStorage/SessionStorage的方法 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>JS,JQ操作LocalStorage/SessionStorage的方法</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018年06月05日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML/">HTML</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#html" class='tag'>html</a>
+
+
+            
+          </div>
+          <h2 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h2><ul>
+<li>是对Cookie的优化</li>
+<li>没有时间限制的数据存储</li>
+<li>在隐私模式下不可读取</li>
+<li>大小限制在500万字符左右，各个浏览器不一致</li>
+<li>在所有同源窗口中都是共享的</li>
+<li>本质是在读写文件，数据多的话会比较卡（firefox会一次性将数据导入内存）</li>
+<li>不能被爬虫爬取，不要用它完全取代URL传参</li>
+<li>IE７及以下不支持外，其他标准浏览器都完全支持</li>
+</ul>
+<h2 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h2><ul>
+<li>针对一个 session 的数据存储</li>
+<li>大小限制在5M左右，各个浏览器不一致</li>
+<li>仅在当前浏览器窗口关闭前有效（适合会话验证）</li>
+<li>不在不同的浏览器窗口中共享，即使是同一个页面</li>
+</ul>
+<h2 id="JS下的操作方法"><a href="#JS下的操作方法" class="headerlink" title="JS下的操作方法"></a>JS下的操作方法</h2><ul>
+<li>获取键值：localStorage.getItem(“key”)</li>
+<li>设置键值：localStorage.setItem(“key”,”value”)</li>
+<li>清除键值：localStorage.removeItem(“key”)</li>
+<li>清除所有键值：localStorage.clear()</li>
+<li>获取键值2：localStorage.keyName</li>
+<li>设置键值2：localStorage.keyName = “value”</li>
+</ul>
+<h2 id="JQ下的操作方法（JS方法前加”window-”）"><a href="#JQ下的操作方法（JS方法前加”window-”）" class="headerlink" title="JQ下的操作方法（JS方法前加”window.”）"></a>JQ下的操作方法（JS方法前加”window.”）</h2><ul>
+<li>获取键值：window.localStorage.getItem(“key”)</li>
+<li>设置键值：window.localStorage.setItem(“key”,”value”)</li>
+<li>清除键值：window.localStorage.removeItem(“key”)</li>
+<li>清除所有键值：window.localStorage.clear()</li>
+<li>获取键值2：window.localStorage.keyName</li>
+<li>设置键值2：window.localStorage.keyName = “value”</li>
+</ul>
+<blockquote>
+<p>注：typeOf(localStorage.keyName)可与”undefined”进行判断该键值是否已存在</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head lang=&quot;en&quot;&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; charset=&quot;utf-8&quot; src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">        // JS操作部分</span><br><span class="line">        localStorage.JSa=&quot;JSA&quot;;</span><br><span class="line">        document.write(localStorage.JSa);</span><br><span class="line">        localStorage.setItem(&apos;JSb&apos;,&apos;&amp;nbsp;JSB&apos;);</span><br><span class="line">        document.write(localStorage.getItem(&apos;JSb&apos;));</span><br><span class="line">        // JQuery操作部分</span><br><span class="line">        $(function()&#123;</span><br><span class="line">            window.localStorage.JQa=&quot;JQA&quot;;</span><br><span class="line">            $(&quot;#a&quot;).text(window.localStorage.JQa);</span><br><span class="line">            window.localStorage.setItem(&apos;JQb&apos;,&apos;JQB&apos;);</span><br><span class="line">            $(&quot;#b&quot;).text(window.localStorage.getItem(&apos;JQb&apos;));</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p id=&quot;a&quot;&gt;&lt;/p&gt;</span><br><span class="line">    &lt;p id=&quot;b&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LocalStorage"><span class="toc-number">1.</span> <span class="toc-text">LocalStorage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SessionStorage"><span class="toc-number">2.</span> <span class="toc-text">SessionStorage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS下的操作方法"><span class="toc-number">3.</span> <span class="toc-text">JS下的操作方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JQ下的操作方法（JS方法前加”window-”）"><span class="toc-number">4.</span> <span class="toc-text">JQ下的操作方法（JS方法前加”window.”）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-number">5.</span> <span class="toc-text">示例</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

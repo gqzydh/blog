@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_16X16.ico">
+  
+  
+  <title>Html常用技巧 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>Html常用技巧</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018年06月05日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML/">HTML</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#html" class='tag'>html</a>
+
+
+            
+          </div>
+          <h2 id="去掉主页右面的滚动条"><a href="#去掉主页右面的滚动条" class="headerlink" title="去掉主页右面的滚动条"></a>去掉主页右面的滚动条</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body scroll=&quot;no&quot;&gt;</span><br><span class="line">&lt;body style=&quot;overflow-y:hidden&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="不使用页面缓存"><a href="#不使用页面缓存" class="headerlink" title="不使用页面缓存"></a>不使用页面缓存</h2><p>即每一次打开页面时不是调用缓存中的东西<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;META HTTP-EQUIV=&quot;Pragma&quot; CONTENT=&quot;no-cache&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="忽视右键"><a href="#忽视右键" class="headerlink" title="忽视右键"></a>忽视右键</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body oncontextmenu=&quot;return false&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="同一页面内控制不同链接的CSS属性"><a href="#同一页面内控制不同链接的CSS属性" class="headerlink" title="同一页面内控制不同链接的CSS属性"></a>同一页面内控制不同链接的CSS属性</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">a:active&#123;&#125;</span><br><span class="line">a:link&#123;&#125;</span><br><span class="line">a:visited&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="电子邮件处理提交表单"><a href="#电子邮件处理提交表单" class="headerlink" title="电子邮件处理提交表单"></a>电子邮件处理提交表单</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;form name=&quot;form1&quot; method=&quot;post&quot; action=&quot;http://www.pc123.org/html/web/Dreamweaver/200806/mailto:webmail@pc123.org&quot; enctype=&quot;text/plain&quot;&gt;</span><br><span class="line">&lt;input type=submit&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="根据屏幕分辨率调用相对应的页面"><a href="#根据屏幕分辨率调用相对应的页面" class="headerlink" title="根据屏幕分辨率调用相对应的页面"></a>根据屏幕分辨率调用相对应的页面</h2><p>onclick=alert(“你的显示分辩率为:”+screen.width+”×”+screen.height)<br>先做好几个页面，比如一个htm1.htm是800<em>600，一个是htm2.htm是1024</em>768的<br>然后在你的入口页面 index.htm 中判断：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function mHref() &#123;</span><br><span class="line">if (screen.width == 1024) location.href = &quot;htm2.htm&quot;;</span><br><span class="line">else if (screen.width == 800) location.href = &quot;htm1.htm&quot;;</span><br><span class="line">else return(false);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;body onload=&quot;mHref();&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="弹出只有状态栏的窗口"><a href="#弹出只有状态栏的窗口" class="headerlink" title="弹出只有状态栏的窗口"></a>弹出只有状态栏的窗口</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;open() close()&lt;/title&gt;</span><br><span class="line">&lt;script language=&quot;javascript&quot; type=&quot;text/javascript&quot;&gt;</span><br><span class="line">&lt;!--</span><br><span class="line">function openWin()</span><br><span class="line">&#123;</span><br><span class="line">var newWin=open(&quot;&quot;,&quot;&quot;,&quot;menubar=1,height=200&quot;);</span><br><span class="line">newWin.document.write(&quot;&lt;form&gt;&quot;);</span><br><span class="line">newWin.document.write(&quot;单击以下按钮关闭窗口：&lt;p&gt;&quot;);</span><br><span class="line">newWin.document.write(&quot;&lt;input type=button value=&apos;关闭&apos; onclick=window.close()&gt;&quot;);</span><br><span class="line">newWin.document.write(&quot;&lt;/form&gt;&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div align=center&gt;</span><br><span class="line">&lt;h2&gt;单击以下按钮显示新窗口...&lt;/h2&gt;</span><br><span class="line">&lt;form name=form1&gt;</span><br><span class="line">&lt;input type=button value=&quot;新窗口1[只显示地址栏]&quot; onclick=window.open(&apos;&apos;,&apos;new1&apos;,&apos;location=1&apos;)&gt;</span><br><span class="line">&lt;input type=button value=&quot;新窗口2[只显示状态栏]&quot; onclick=window.open(&apos;&apos;,&apos;&apos;,&apos;status=1&apos;)&gt;</span><br><span class="line">&lt;input type=button value=&quot;新窗口3[只显示工具栏]&quot; onclick=window.open(&apos;&apos;,&apos;new2&apos;,&apos;toolbar=1,height=200,width=450&apos;)&gt;</span><br><span class="line">&lt;input type=button value=&quot;新窗口4[只显示菜单栏]&quot; onclick=openWin()&gt;</span><br><span class="line">&lt;input type=button value=&quot;新窗口5[一个不少]&quot; onclick=window.open(&apos;&apos;,&apos;new5&apos;)&gt;</span><br><span class="line">&lt;input type=button value=&quot;新窗口6[光棍但可调大小]&quot; onclick=window.open(&apos;http://www.pc123.org/forumdisplay.php?forumid=32#thread&apos;,&apos;new6&apos;,&apos;resizable=1&apos;)&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#去掉主页右面的滚动条"><span class="toc-number">1.</span> <span class="toc-text">去掉主页右面的滚动条</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不使用页面缓存"><span class="toc-number">2.</span> <span class="toc-text">不使用页面缓存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#忽视右键"><span class="toc-number">3.</span> <span class="toc-text">忽视右键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同一页面内控制不同链接的CSS属性"><span class="toc-number">4.</span> <span class="toc-text">同一页面内控制不同链接的CSS属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#电子邮件处理提交表单"><span class="toc-number">5.</span> <span class="toc-text">电子邮件处理提交表单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#根据屏幕分辨率调用相对应的页面"><span class="toc-number">6.</span> <span class="toc-text">根据屏幕分辨率调用相对应的页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#弹出只有状态栏的窗口"><span class="toc-number">7.</span> <span class="toc-text">弹出只有状态栏的窗口</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>
