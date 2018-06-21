@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_16X16.ico">
+  
+  
+  <title>jQuery学习笔记 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>jQuery学习笔记</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tags" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#jQuery" class='tag'>jQuery</a>
+
+  <a href="/tags/#笔记" class='tag'>笔记</a>
+
+
+            
+          </div>
+          <p><a href="http://www.365mini.com/page/jquery-quickstart.htm" target="_blank" rel="noopener">jQuery 快速入门教程</a></p>
+<p><code>bind()</code> 方法为被选元素添加一个或多个事件处理程序，并规定事件发生时运行的函数。</p>
+<p><code>.stopPropagation();</code><br>终止事件在传播过程的捕获、目标处理或起泡阶段进一步传播。</p>
+<p><code>e.preventDefault();</code><br>取消事件的默认动作。</p>
+<p><code>attr()</code> 方法设置或返回被选元素的属性值</p>
+<p><code>$(selector).addClass(class)</code><br>向被选元素添加一个或多个类。<br><code>$(selector).removeClass(class)</code><br>方法从被选元素移除一个或多个类。<br>如果没有规定参数，则该方法将从被选元素中删除所有类。</p>
+<p><code>scroll</code>当用户滚动指定的元素时，会发生 scroll 事件。<br>scroll 事件适用于所有可滚动的元素和 window 对象（浏览器窗口）。</p>
+<p><code>offset()</code>方法返回或设置匹配元素相对于文档的偏移（位置）。</p>
+<p><code>scrollTop()</code>方法返回或设置匹配元素的滚动条的垂直位置。</p>
+<p>##JQuery 常用方法、定义和用法<br>setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。<br>setInterval() 方法会不停地调用函数，直到 clearInterval() 被调用或窗口被关闭。由 setInterval() 返回的 ID 值可用作 clearInterval() 方法的参数。</p>
+<p>val() 方法返回或设置被选元素的值。<br>元素的值是通过 value 属性设置的。该方法大多用于 input 元素。<br>如果该方法未设置参数，则返回被选元素的当前值。</p>
+<p>attr() 方法设置或返回被选元素的属性值。</p>
+<p>remove() 方法移除被选元素，包括所有文本和子节点。</p>
+<p>addClass()  向匹配的元素添加指定的类名。<br>after()  在匹配的元素之后插入内容。<br>append()  向匹配的元素内部追加内容。<br>appendTo()  向匹配的元素内部追加内容。<br>attr()  设置或返回匹配元素的属性和值。<br>before()  在每个匹配的元素之前插入内容。<br>clone()  创建匹配元素集合的副本。<br>detach()  从 DOM 中移除匹配元素集合。<br>empty()  删除匹配的元素集合中所有的子节点。<br>hasClass()  检查匹配的元素是否拥有指定的类。<br>html()  设置或返回匹配的元素集合中的 HTML 内容。<br>insertAfter()  把匹配的元素插入到另一个指定的元素集合的后面。<br>insertBefore()  把匹配的元素插入到另一个指定的元素集合的前面。<br>prepend()  向每个匹配的元素内部前置内容。<br>prependTo()  向每个匹配的元素内部前置内容。<br>remove()  移除所有匹配的元素。<br>removeAttr()  从所有匹配的元素中移除指定的属性。<br>removeClass()  从所有匹配的元素中删除全部或者指定的类。<br>replaceAll()  用匹配的元素替换所有匹配到的元素。<br>replaceWith()  用新内容替换匹配的元素。<br>text()  设置或返回匹配元素的内容。<br>toggleClass()  从匹配的元素中添加或删除一个类。<br>unwrap()  移除并替换指定元素的父元素。<br>val()  设置或返回匹配元素的值。<br>wrap()  把匹配的元素用指定的内容或元素包裹起来。<br>wrapAll()  把所有匹配的元素用指定的内容或元素包裹起来。<br>wrapinner()  将每一个匹配的元素的子内容用指定的内容或元素包裹起来。 </p>
+<p>//关闭弹出窗口点击ESC键盘按钮时<br>//close popup when clicking the esc keyboard button<br>    $(document).keyup(function(event){<br>        if(event.which==’27’){<br>            $(‘.cd-popup’).removeClass(‘is-visible’);<br>        }<br>    });</p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

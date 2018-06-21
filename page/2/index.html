@@ -94,9 +94,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/blog-Typecho-博客插件安装/">
+        <a href="/2017/10/17/Ajax-jQuery.ajax()方法获取数据/">
           <h3 class='post-head'>
-            Typecho 博客插件
+            jQuery.ajax()方法获取数据
           </h3>
         </a>
         
@@ -104,7 +104,7 @@
           
             
               
-                <ul>
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line"> url: &quot;http://www.hzhuti.com&quot;, //请求的url地址</span><br><span class="line"> dataType: &quot;json&quot;, //返回格式为json</span><br><span class="line"> async: true, //请求是否异步，默认为异步，这也是ajax重要特性</span><br><span class="line"> data: &#123; &quot;id&quot;: &quot;value&quot; &#125;, //参数值</span><br><span class="line"> type: &quot;GET&quot;, //请求方式</span><br><span class="line"> beforeSend: function() &#123;</span><br><span class="line">  //请求前的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> success: function(req) &#123;</span><br><span class="line">  //请求成功时处理</span><br><span class="line"> &#125;,</span><br><span class="line"> complete: function() &#123;</span><br><span class="line">  //请求完成的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> error: function() &#123;</span><br><span class="line">  //请求出错处理</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -113,7 +113,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/博客/">博客</a>
+    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
   </div>
 
 
@@ -122,12 +122,10 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tags" aria-hidden="true"></i>
+                <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#笔记" class='tag'>笔记</a>
-
-  <a href="/tags/#Typecho" class='tag'>Typecho</a>
+  <a href="/tags/#Ajax" class='tag'>Ajax</a>
 
 
           
@@ -135,9 +133,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/JQuery【锋利的JQuery】/">
+        <a href="/2017/10/17/JQuery事件/">
           <h3 class='post-head'>
-            JQuery【锋利的JQuery】
+            JQuery事件
           </h3>
         </a>
         
@@ -145,7 +143,85 @@
           
             
               
-                <h2 id="1-文本框"><a href="#1-文本框" class="headerlink" title="1. 文本框"></a>1. 文本框</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">focus  //文本框触发</span><br><span class="line">blur   //表单元素，离开表单框触发</span><br><span class="line">trigger() 方法触发被选元素的指定事件类型。</span><br><span class="line">triggerHandler() 方法触发被选元素的指定事件类型。但不会执行浏览器默认动作，也不会产生事件冒泡。</span><br><span class="line">triggerHandler() 方法与 trigger() 方法类似。不同的是它不会触发事件（比如表单提交）的默认行为，而且只影响第一个匹配元素。</span><br><span class="line"></span><br><span class="line">animate    //可以创建动画效果</span><br><span class="line">remove() 方法移除被选元素，包括所有文本和子节点。</span><br><span class="line">appendTo() 方法在被选元素的结尾（仍然在内部）插入指定内容。</span><br><span class="line">dblclick()当双击元素时，会发生 dblclick 事件。</span><br><span class="line">append() 方法在被选元素的结尾（仍然在内部）插入指定内容。</span><br><span class="line"></span><br><span class="line">keyup 事件能在用户每次松开按键时触发，实现即时提醒。</span><br><span class="line">focus 事件能在元素得到焦点时候触发，也可以实现即时提醒。</span><br></pre></td></tr></table></figure>
+                <h2 id="委托事件"><a href="#委托事件" class="headerlink" title="委托事件"></a>委托事件</h2><p>delegate()委托事件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bindPageEvent()&#123;</span><br><span class="line">    $(&apos;#pag&apos;).delegate(&apos;li.clickable&apos;, &apos;click&apos;, function()&#123;  </span><br><span class="line">            $this = $(this);</span><br><span class="line">            $this.data(&apos;id&apos;);</span><br><span class="line">            refreshClasses($this.data(&apos;id&apos;));</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">bindPageEvent();  //事件执行</span><br></pre></td></tr></table></figure></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#jQuery" class='tag'>jQuery</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/JQuery使用技巧/">
+          <h3 class='post-head'>
+            jQuery使用技巧
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p>本文收集整理工作中有用的jQuery技巧，与大家分享。</p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#jQuery" class='tag'>jQuery</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/JQuery学习笔记【1】/">
+          <h3 class='post-head'>
+            jQuery学习笔记
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p><a href="http://www.365mini.com/page/jquery-quickstart.htm" target="_blank" rel="noopener">jQuery 快速入门教程</a></p>
               
           
         </div>
@@ -168,7 +244,7 @@
              
   <a href="/tags/#jQuery" class='tag'>jQuery</a>
 
-  <a href="/tags/#读书" class='tag'>读书</a>
+  <a href="/tags/#笔记" class='tag'>笔记</a>
 
 
           
@@ -186,7 +262,7 @@
           
             
               
-                <p><a href="http://www.365mini.com/page/jquery-quickstart.htm" target="_blank" rel="noopener">jQuery 快速入门教程</a></p>
+                <p>jQuery大部分功能需要根据文档的DOM模型来工作，首先需要正确地解析到整个文档的DOM模型结构。使用jQuery需要在整个文档被浏览器完全加载后才开始进行<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(document).ready(function () &#123;</span><br><span class="line">    alert(&quot;Hello World!&quot;);</span><br><span class="line">    $(&quot;p&quot;).click(function (event) &#123;</span><br><span class="line">        alert(&quot;Thanks for visiting!&quot;);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
@@ -256,86 +332,6 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/JQuery事件/">
-          <h3 class='post-head'>
-            JQuery事件
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="委托事件"><a href="#委托事件" class="headerlink" title="委托事件"></a>委托事件</h2><p>delegate()委托事件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bindPageEvent()&#123;</span><br><span class="line">    $(&apos;#pag&apos;).delegate(&apos;li.clickable&apos;, &apos;click&apos;, function()&#123;  </span><br><span class="line">            $this = $(this);</span><br><span class="line">            $this.data(&apos;id&apos;);</span><br><span class="line">            refreshClasses($this.data(&apos;id&apos;));</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">bindPageEvent();  //事件执行</span><br></pre></td></tr></table></figure></p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#jQuery" class='tag'>jQuery</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/Bootstrap实用扩展插件/">
-          <h3 class='post-head'>
-            Bootstrap实用扩展插件
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <ol>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Bootstrap/">Bootstrap</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Bootstrap" class='tag'>Bootstrap</a>
-
-  <a href="/tags/#插件" class='tag'>插件</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
         <a href="/2017/10/17/JQuery最佳开发实践/">
           <h3 class='post-head'>
             jquery最佳开发实践
@@ -377,9 +373,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/JQuery根据页面窗口自动缩放的背景图片/">
+        <a href="/2017/10/17/资源-设计资源/">
           <h3 class='post-head'>
-            jQuery根据页面窗口自动缩放的背景图片
+            设计资源
           </h3>
         </a>
         
@@ -387,7 +383,7 @@
           
             
               
-                <h2 id="自动缩放的背景图片"><a href="#自动缩放的背景图片" class="headerlink" title="自动缩放的背景图片"></a>自动缩放的背景图片</h2><blockquote>
+                <h2 id="Typecho-博客插件安装："><a href="#Typecho-博客插件安装：" class="headerlink" title="Typecho 博客插件安装："></a>Typecho 博客插件安装：</h2>
               
           
         </div>
@@ -396,7 +392,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+    <a class="article-category-link" href="/categories/资源/">资源</a>
   </div>
 
 
@@ -408,7 +404,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#jQuery" class='tag'>jQuery</a>
+  <a href="/tags/#设计" class='tag'>设计</a>
 
 
           
@@ -416,9 +412,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/JQuery获取屏幕宽高/">
+        <a href="/2017/10/17/JQuery根据页面窗口自动缩放的背景图片/">
           <h3 class='post-head'>
-            jQuery获取屏幕宽高
+            jQuery根据页面窗口自动缩放的背景图片
           </h3>
         </a>
         
@@ -426,7 +422,7 @@
           
             
               
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alert($(window).height()); //浏览器当前窗口可视区域高度 </span><br><span class="line">alert($(document).height()); //浏览器当前窗口文档的高度 </span><br><span class="line">alert($(document.body).height());//浏览器当前窗口文档body的高度 </span><br><span class="line">alert($(document.body).outerHeight(true));//浏览器当前窗口文档body的总高度 包括border padding margin </span><br><span class="line">alert($(window).width()); //浏览器当前窗口可视区域宽度 </span><br><span class="line">alert($(document).width());//浏览器当前窗口文档对象宽度 </span><br><span class="line">alert($(document.body).width());//浏览器当前窗口文档body的高度 </span><br><span class="line">alert($(document.body).outerWidth(true));//浏览器当前窗口文档body的总宽度 包括border padding margin</span><br></pre></td></tr></table></figure>
+                <h2 id="自动缩放的背景图片"><a href="#自动缩放的背景图片" class="headerlink" title="自动缩放的背景图片"></a>自动缩放的背景图片</h2><blockquote>
               
           
         </div>
