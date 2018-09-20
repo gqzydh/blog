@@ -56,9 +56,9 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017/10/17/JQuery事件/">
+        <a href="/2017/10/17/css-reset.css样式重置/">
           <h3 class='post-head'>
-            JQuery事件
+            CSS样式重置-reset.css
           </h3>
         </a>
         
@@ -66,7 +66,7 @@
           
             
               
-                <h2 id="委托事件"><a href="#委托事件" class="headerlink" title="委托事件"></a>委托事件</h2><p>delegate()委托事件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bindPageEvent()&#123;</span><br><span class="line">    $(&apos;#pag&apos;).delegate(&apos;li.clickable&apos;, &apos;click&apos;, function()&#123;  </span><br><span class="line">            $this = $(this);</span><br><span class="line">            $this.data(&apos;id&apos;);</span><br><span class="line">            refreshClasses($this.data(&apos;id&apos;));</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">bindPageEvent();  //事件执行</span><br></pre></td></tr></table></figure></p>
+                <ol>
               
           
         </div>
@@ -75,7 +75,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+    <a class="article-category-link" href="/categories/css/">css</a>
   </div>
 
 
@@ -87,7 +87,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#jQuery" class='tag'>jQuery</a>
+  <a href="/tags/#css" class='tag'>css</a>
 
 
           
@@ -95,9 +95,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/vue.js 组件/">
+        <a href="/2017/10/17/vue-axios/">
           <h3 class='post-head'>
-            vue.js 组件
+            axios
           </h3>
         </a>
         
@@ -105,7 +105,7 @@
           
             
               
-                <p><strong>移动端组件</strong></p>
+                <p>一、安装<br>1、 利用npm安装npm install axios –save<br>2、 利用bower安装bower install axios –save<br>3、 直接利用cdn引入<script src="https://unpkg.com/axios/dist/axios.min.js"></script></p>
               
           
         </div>
@@ -126,7 +126,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
+  <a href="/tags/#Vue.js, axios" class='tag'>Vue.js, axios</a>
 
 
           
@@ -134,9 +134,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/vue.js笔记/">
+        <a href="/2017/10/17/vue.js笔记_02/">
           <h3 class='post-head'>
-            vue笔记
+            vue笔记_02
           </h3>
         </a>
         
@@ -144,7 +144,7 @@
           
             
               
-                <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>绝大部分项目中，目录结构都会差不太多，我们可以综合一下来个通用的 src 目录：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">src</span><br><span class="line">├── assets          // 资源目录 图片，样式，iconfont</span><br><span class="line">├── components      // 全局通用组件目录</span><br><span class="line">├── config          // 项目配置，拦截器，开关</span><br><span class="line">├── plugins         // 插件相关，生成路由、请求、store 等实例，并挂载 Vue 实例</span><br><span class="line">├── directives      // 拓展指令集合</span><br><span class="line">├── routes          // 路由配置</span><br><span class="line">├── service         // 服务层</span><br><span class="line">├── utils           // 工具类</span><br><span class="line">└── views           // 视图层</span><br></pre></td></tr></table></figure></p>
+                <h2 id="Vue-实例对象"><a href="#Vue-实例对象" class="headerlink" title="Vue 实例对象"></a>Vue 实例对象</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new Vue(&#123;   //根组建</span><br><span class="line">  el: &apos;#app&apos;,  //装载的位置</span><br><span class="line">  template: &apos;&lt;App/&gt;&apos;,  //模版</span><br><span class="line">  data: &#123;  </span><br><span class="line">    fruit: &apos;apple&apos; //数据</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -212,45 +212,6 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/vue.js笔记_02/">
-          <h3 class='post-head'>
-            vue笔记_02
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="Vue-实例对象"><a href="#Vue-实例对象" class="headerlink" title="Vue 实例对象"></a>Vue 实例对象</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new Vue(&#123;   //根组建</span><br><span class="line">  el: &apos;#app&apos;,  //装载的位置</span><br><span class="line">  template: &apos;&lt;App/&gt;&apos;,  //模版</span><br><span class="line">  data: &#123;  </span><br><span class="line">    fruit: &apos;apple&apos; //数据</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
         <a href="/2017/10/17/vue.js笔记_03/">
           <h3 class='post-head'>
             vue笔记_03
@@ -283,47 +244,6 @@
               
              
   <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/代码-Base64加密/">
-          <h3 class='post-head'>
-            base64加密
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;base64加密&lt;/title&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 定义字符串  </span><br><span class="line">var string = &apos;15000870973&apos;;  </span><br><span class="line">  </span><br><span class="line">// 加密  </span><br><span class="line">var encodedString = Base64.encode(string);  </span><br><span class="line">console.log(encodedString); // 输出: &quot;SGVsbG8gV29ybGQh&quot;  </span><br><span class="line">  </span><br><span class="line">// 解密  </span><br><span class="line">var decodedString = Base64.decode(encodedString);  </span><br><span class="line">console.log(decodedString); // 输出: &quot;Hello World!&quot;  </span><br><span class="line">&lt;/script&gt;  </span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码/">代码</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#代码" class='tag'>代码</a>
-
-  <a href="/tags/#加密" class='tag'>加密</a>
 
 
           
@@ -372,9 +292,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/代码-JQuery示例/">
+        <a href="/2017/10/17/代码-Base64加密/">
           <h3 class='post-head'>
-            JQuery 示例
+            base64加密
           </h3>
         </a>
         
@@ -382,7 +302,7 @@
           
             
               
-                <ol>
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;base64加密&lt;/title&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 定义字符串  </span><br><span class="line">var string = &apos;15000870973&apos;;  </span><br><span class="line">  </span><br><span class="line">// 加密  </span><br><span class="line">var encodedString = Base64.encode(string);  </span><br><span class="line">console.log(encodedString); // 输出: &quot;SGVsbG8gV29ybGQh&quot;  </span><br><span class="line">  </span><br><span class="line">// 解密  </span><br><span class="line">var decodedString = Base64.decode(encodedString);  </span><br><span class="line">console.log(decodedString); // 输出: &quot;Hello World!&quot;  </span><br><span class="line">&lt;/script&gt;  </span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -403,9 +323,9 @@
                 <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#JQuery" class='tag'>JQuery</a>
-
   <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#加密" class='tag'>加密</a>
 
 
           
@@ -413,9 +333,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/笔记-前后分离开发实践/">
+        <a href="/2017/10/17/vue.js笔记/">
           <h3 class='post-head'>
-            前后分离开发实践
+            vue笔记
           </h3>
         </a>
         
@@ -423,7 +343,7 @@
           
             
               
-                <p>基于 webpack 的前后端分离开发环境实践</p>
+                <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>绝大部分项目中，目录结构都会差不太多，我们可以综合一下来个通用的 src 目录：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">src</span><br><span class="line">├── assets          // 资源目录 图片，样式，iconfont</span><br><span class="line">├── components      // 全局通用组件目录</span><br><span class="line">├── config          // 项目配置，拦截器，开关</span><br><span class="line">├── plugins         // 插件相关，生成路由、请求、store 等实例，并挂载 Vue 实例</span><br><span class="line">├── directives      // 拓展指令集合</span><br><span class="line">├── routes          // 路由配置</span><br><span class="line">├── service         // 服务层</span><br><span class="line">├── utils           // 工具类</span><br><span class="line">└── views           // 视图层</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
@@ -432,7 +352,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/笔记/">笔记</a>
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
   </div>
 
 
@@ -444,7 +364,89 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#前后分离开" class='tag'>前后分离开</a>
+  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/网站-SEO优化/">
+          <h3 class='post-head'>
+            网站SEO优化
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h1 id="前端-页编人员主要负责站内优化，主要从四个方面入手"><a href="#前端-页编人员主要负责站内优化，主要从四个方面入手" class="headerlink" title="前端/页编人员主要负责站内优化，主要从四个方面入手"></a>前端/页编人员主要负责站内优化，主要从四个方面入手</h1><h2 id="1-站内结构优化"><a href="#1-站内结构优化" class="headerlink" title="1.站内结构优化"></a>1.站内结构优化</h2><p>合理规划站点结构(1、扁平化结构 2、辅助导航、面包屑导航、次导航)</p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/网站/">网站</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#网站" class='tag'>网站</a>
+
+  <a href="/tags/#SEO优化" class='tag'>SEO优化</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/代码-Js用户注册校验/">
+          <h3 class='post-head'>
+            Js用户注册校验
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="Js用户注册校验"><a href="#Js用户注册校验" class="headerlink" title="Js用户注册校验"></a>Js用户注册校验</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;scripttype=&quot;text/javascript&quot;&gt;</span><br><span class="line">      functionsave()&#123;</span><br><span class="line">             varusername = document.getElementById(&quot;username&quot;);</span><br><span class="line">             if(username.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;用户名不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varpassword = document.getElementById(&quot;password&quot;);</span><br><span class="line">             if(password.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;密码不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varrepassword = document.getElementById(&quot;repassword&quot;);</span><br><span class="line">             if(repassword.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;确认密码不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             if(password.value != repassword.value)&#123;</span><br><span class="line">                   alert(&quot;两次输入密码不一致！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varage = document.getElementById(&quot;age&quot;);</span><br><span class="line">             if(age.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;年龄不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             if(isNaN(age.value))&#123;</span><br><span class="line">                   alert(&quot;年龄为数字！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#注册登录" class='tag'>注册登录</a>
 
 
           
