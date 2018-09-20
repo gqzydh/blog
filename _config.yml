@@ -11,9 +11,14 @@ email: gqzydh@qq.com
 language: zh-CN
 timezone:
 
+
+# ## SEO
+# Set default keywords (Use a comma to separate)
+keywords: web前端, Web, 前端开发, 前端博客
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://gq1986.com/child' and root as '/child/'
-url: http://tangtangblog.com/
+url: http://gq1986.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -62,6 +67,10 @@ tag_map:
 # favicon
 favicon: /images/favicon_16X16.ico
 
+# scripts loaded in the end of the body
+scripts:
+- /js/script.js
+
 # Aside
 ## search
 ## avatar
@@ -100,4 +109,4 @@ theme: aath
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/gqzydh/blog.git
+  repository: http://github.com/gqzydh/blog.git

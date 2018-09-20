@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_16X16.ico">
+  
+  
+  <title>正则表达式笔记 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>正则表达式笔记</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#正则表达式" class='tag'>正则表达式</a>
+
+
+            
+          </div>
+          <p>##语法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+  号代表前面的字符必须至少出现一次（1次或多次）</span><br><span class="line">* 号代表字符可以不出现，也可以出现一次或者多次（0次、或1次、或多次）</span><br><span class="line">? 问号代表前面的字符最多只可以出现一次（0次、或1次）</span><br></pre></td></tr></table></figure></p>
+<p>##正则表达式类型<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;g&quot;、&quot;i&quot; ，分别用于指定全局匹配、区分大小写的匹配。</span><br></pre></td></tr></table></figure></p>
+<p>##正则写法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">•   [abc] 查找方括号之间的任何字符。</span><br><span class="line">var str=&quot;Is this all there is?&quot;; </span><br><span class="line">var patt1=/[a-h]/g;</span><br><span class="line"> console.log(str.match(patt1)); </span><br><span class="line">•   [^abc] 查找任何不在方括号之间的字符。</span><br><span class="line">var str=&quot;hello jikexueyuan!&quot;; </span><br><span class="line">var patt1=/[^jike]/g; </span><br><span class="line">console.log(str.match(patt1)); </span><br><span class="line">•   [0-9] 查找任何从 0 至 9 的数字。</span><br><span class="line">•   [a-z] 查找任何从小写 a 到小写 z 的字符。</span><br><span class="line">•   [A-Z] 查找任何从大写 A 到大写 Z 的字符。</span><br><span class="line">•   [A-z] 查找任何从大写 A 到小写 z 的字符。</span><br><span class="line">•   [adgk] 查找给定集合内的任何字符。</span><br><span class="line">•   [^adgk] 查找给定集合外的任何字符。</span><br><span class="line">•   red|blue|green 查找任何指定的选项。</span><br><span class="line">•   \w 查找单词字符(字母、数字、下划线)。</span><br><span class="line">•   \W 查找非单词字符。</span><br><span class="line">•   \d 查找数字。</span><br><span class="line">•   \D 查找非数字字符。</span><br><span class="line">•   \s 查找空白字符(空格、tab、换行、回车)。</span><br><span class="line">•   \S 查找非空白字符。</span><br><span class="line">•   \b 匹配单词边界。</span><br><span class="line">•   \B 匹配非单词边界。</span><br><span class="line">•   \n 查找换行符。</span><br><span class="line">var patt1=/\n/g; document.write(str.search(patt1)); </span><br><span class="line">•   n+ 匹配任何包含至少一个 n 的字符串。</span><br><span class="line">var str=&quot;Hello HHunger! Hello World!&quot;;  </span><br><span class="line">var patt1=/H+/g; </span><br><span class="line">document.write(str.match(patt1));  </span><br><span class="line">var str=&quot;Hello Hunger! Hello World!&quot;; </span><br><span class="line"> var patt1=/\w+/g; document.write(str.match(patt1)); </span><br><span class="line">•   n* 匹配任何包含零个或多个 n 的字符串。</span><br><span class="line">•   n? 匹配任何包含零个或一个 n 的字符串。</span><br><span class="line">var str=&quot;1, 100 or 1000?&quot;;  var patt1=/10?/g; document.write(str.match(patt1)); </span><br><span class="line">•   n&#123;X&#125; 匹配包含 X 个 n 的序列的字符串。</span><br><span class="line">var str=&quot;100, 1000 or 10000?&quot;; var patt1=/\d&#123;4&#125;/g;  document.write(str.match(patt1)); </span><br><span class="line">•   n&#123;X,Y&#125; 匹配包含 X 或 Y 个 n 的序列的字符串。</span><br><span class="line">var str=&quot;100, 1000 or 10000?&quot;; var patt1=/\d&#123;3,4&#125;/g;  document.write(str.match(patt1)); </span><br><span class="line">•   n&#123;X,&#125; 匹配包含至少 X 个 n 的序列的字符串。</span><br><span class="line">var str=&quot;100, 1000 or 10000?&quot;; var patt1=/\d&#123;3,&#125;/g;  document.write(str.match(patt1)); </span><br><span class="line">•   n$ 匹配任何结尾为 n 的字符串。</span><br><span class="line">var str=&quot;Is this his&quot;; var patt1=/is$/g; document.write(str.match(patt1)); </span><br><span class="line">•   ^n 匹配任何开头为 n 的字符串。</span><br><span class="line">var str=&quot;Is this his&quot;; var pa![](leanote://file/getImage?fileId=598c7980ab644136cb002702)</span><br></pre></td></tr></table></figure></p>
+<p>##字符串正则<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1. search</span><br><span class="line">字符串查找</span><br><span class="line">var str=&quot;Visit W3School!&quot;; </span><br><span class="line">console.log(str.search(/w3school/)); //-1 console.log(str.serach(/w3school/i)); // 6 </span><br><span class="line">2. match</span><br><span class="line">字符串匹配</span><br><span class="line">var str=&quot;1 plus 2 equal 33&quot;; </span><br><span class="line">console.log(str.match(/\d+/));   //[1] </span><br><span class="line">console.log(str.match(/\d+/g));  //[1,2,33] </span><br><span class="line">3. replace</span><br><span class="line">字符串替换</span><br><span class="line">var str=&quot;Hello JI! oh I am hunger&quot; </span><br><span class="line">console.log(str.replace(/Hunger/, &quot;valley&quot;)); console.log(str.replace(/hunger/ig, &quot;hunger&quot;)); </span><br><span class="line">4. split</span><br><span class="line">字符串分割</span><br><span class="line">var str = &quot;Hello Hunger   , oh I am Hunger&quot;; </span><br><span class="line">str.split(&quot;&quot;);</span><br><span class="line">str.split(/\s+/);</span><br></pre></td></tr></table></figure></p>
+<p>##常见正则<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">汉字： [\u4e00-\u9fa5]</span><br><span class="line">手机号： 1[0-9]&#123;10&#125;</span><br><span class="line">邮箱： (\S)+[@]&#123;1&#125;(\S)+[.]&#123;1&#125;(\w)+</span><br></pre></td></tr></table></figure></p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

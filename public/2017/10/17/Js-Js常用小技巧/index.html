@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_16X16.ico">
+  
+  
+  <title>Js常用小技巧 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>Js常用小技巧</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+
+            
+          </div>
+          <h2 id="固定的页脚"><a href="#固定的页脚" class="headerlink" title="固定的页脚"></a>固定的页脚</h2><blockquote>
+<p>如果你的页面的主体内容很少，那么页脚部分的下面会留出一大片空白，如果你想让页脚永远在浏览窗口的最底部，可以使用下面这段 Javasciprt 代码。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> pushtobottom();</span><br><span class="line">        $(window).scroll(pushtobottom).resize(pushtobottom);</span><br><span class="line">        function pushtobottom() &#123;</span><br><span class="line">            var docHeight = $(document.body).height() - $(&quot;#push-to-bottom&quot;).height();</span><br><span class="line">            if (docHeight  0) &#123;</span><br><span class="line">                    $(&quot;#bottom&quot;).before(&apos;</span><br><span class="line">&apos;);</span><br><span class="line">                &#125;</span><br><span class="line">                $(&quot;#push-to-bottom&quot;).height(diff);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">// Tip #bootom是你想要固定显示在页面窗口底部的元素上的 ID。</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="JQ生成二维码图片地址"><a href="#JQ生成二维码图片地址" class="headerlink" title="JQ生成二维码图片地址"></a>JQ生成二维码图片地址</h2><blockquote>
+<p>可以用手机或平板上的二维码扫描软件扫一下页面上出现的二维码，这样可以直接打开这个页面。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var currentURL = window.location.hostname + window.location.pathname;</span><br><span class="line">var qrimgURL = &quot;http://chart.googleapis.com/chart?cht=qr&amp;chl=http://&quot; + currentURL + &quot;&amp;chs=120x120&quot;;</span><br><span class="line">var qrimg = (&quot;&lt;img class=&apos;img-rounded&apos; src=&apos;&quot; + qrimgURL + &quot;&apos; style=&apos;float:left&apos;&gt; &quot;);</span><br><span class="line">$(&quot;.qrimg&quot;).append(qrimg);</span><br><span class="line">// 1.要确定你的网页里加载使用了 jQuery 。2.找到页面中包含 .qrimg 类的元素，然后把二维码图片放在里面。</span><br></pre></td></tr></table></figure></p>
+<p><strong>解释</strong>：第一行代码可以获得当前页面的地址，第二行使用了 Google Chart API，生成包含当前页面地址内容的二维码，二维码图片的大小是120 x 120 像素。第三行代码就把生成的二维码图片的地址用一个<img>标签表示出来。第四行代码可以把生成的二维码图片放在页面中带有.qrimg类的元素中显示出来。</p>
+</blockquote>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#固定的页脚"><span class="toc-number">1.</span> <span class="toc-text">固定的页脚</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JQ生成二维码图片地址"><span class="toc-number">2.</span> <span class="toc-text">JQ生成二维码图片地址</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>
