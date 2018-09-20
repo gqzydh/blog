@@ -6,6 +6,7 @@
     "version": "3.4.4"
   },
   "dependencies": {
+    "cryptiles": "^4.1.2",
     "hexo": "^3.2.0",
     "hexo-deployer-git": "^0.3.1",
     "hexo-generator-archive": "^0.1.4",
@@ -16,6 +17,8 @@
     "hexo-renderer-marked": "^0.3.0",
     "hexo-renderer-sass": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.1",
-    "hexo-server": "^0.2.0"
+    "hexo-server": "^0.2.0",
+    "lodash": "^4.17.11",
+    "sshpk": "^1.14.2"
   }
 }
