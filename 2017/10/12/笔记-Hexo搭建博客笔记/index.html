@@ -62,7 +62,7 @@
             
               | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/博客/">博客</a>
+    <a class="article-category-link" href="/categories/笔记/">笔记</a>
   </div>
 
 
@@ -80,37 +80,17 @@
 
             
           </div>
-          <ol>
-<li>Hexo常用命令</li>
-<li>hexo简写</li>
-<li>Hexo起服务</li>
-<li>Hexo摘要,及显示文章的描述</li>
-<li>Hexo写博客常用方法</li>
-<li>Hexo文章属性设置</li>
-<li>hexo更换皮肤</li>
-<li>找不到git部署</li>
-<li>Hexo不常用的命令</li>
-<li>标签插件</li>
-<li>引用块</li>
-<li>代码块</li>
-<li>引用资源</li>
-<li>RSS不显示</li>
-<li>开启评论</li>
-<li>其他</li>
-<li>参考资料</li>
-</ol>
-<blockquote>
+          <blockquote>
 <p>生命在于运动 ， 技术在于折腾</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo -g  //安装  </span><br><span class="line">npm update hexo -g 	//升级 </span><br><span class="line">hexo version  	//查看hexo的版本</span><br><span class="line">hexo init nodejs-hexo   //创建nodejs-hexo 名字的本地文件</span><br><span class="line">hexo init nodejs-hexo    //创建博客</span><br><span class="line">hexo init blog   //初始化，生成文件夹为blog</span><br><span class="line">cd blog  	//进入blog文件夹</span><br><span class="line">npm install     //安装依赖库</span><br><span class="line">hexo generate   //生成一套静态网页</span><br><span class="line">hexo server  //运行测试,浏览器打开地址，http://localhost:4000/</span><br><span class="line">hexo deploy   //进行部署</span><br><span class="line"></span><br><span class="line">hexo new &quot;new article&quot;  //新建文章‘new article’</span><br><span class="line">hexo new page &quot;about&quot;  //新建页面 ‘about’</span><br></pre></td></tr></table></figure>
+<h2 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo -g   //安装  </span><br><span class="line">npm update hexo -g 	  //升级 </span><br><span class="line">hexo version  	      //查看hexo的版本</span><br><span class="line">hexo init nodejs-hexo   //创建nodejs-hexo 名字的本地文件</span><br><span class="line">hexo init nodejs-hexo    //创建博客</span><br><span class="line">hexo init blog          //初始化，生成文件夹为blog</span><br><span class="line">cd blog  	             //进入blog文件夹</span><br><span class="line">npm install            //安装依赖库</span><br><span class="line">hexo generate           //生成一套静态网页</span><br><span class="line">hexo server         //运行测试,浏览器打开地址，http://localhost:4000/</span><br><span class="line">hexo deploy         //进行部署</span><br><span class="line"></span><br><span class="line">hexo new &quot;new article&quot;  //新建文章‘new article’</span><br><span class="line">hexo new page &quot;about&quot;  //新建页面 ‘about’</span><br><span class="line"></span><br><span class="line">hexo n &quot;我的博客&quot;` == `hexo new` &quot;我的博客&quot;    //新建文章</span><br><span class="line">hexo g == hexo generate        //生成`</span><br><span class="line">hexo s == hexo server          //启动服务预览</span><br><span class="line">hexo d == hexo deploy          //部署</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>新建的笔记文件路径：<code>source/_posts</code> 目录下, <code>new-article.md</code> 的文件, 打开文件, 文件开头采用的是yaml格式，用三条短横线分隔。下面是文章正文，采用用的是markdown格式。</p>
 <blockquote>
 <p>新建、删除或修改文章后，不需要重启hexo server，刷新一下即可预览。</p>
 </blockquote>
 </blockquote>
-<h2 id="hexo简写"><a href="#hexo简写" class="headerlink" title="hexo简写"></a>hexo简写</h2><p><code>hexo n &quot;我的博客&quot;</code> == <code>hexo new</code> “我的博客” #新建文章<br><code>hexo p</code> == <code>hexo publish</code><br><code>hexo g</code> == <code>hexo generate</code>     #生成<code></code>hexo s<code>==</code>hexo server<code>#启动服务预览</code>hexo d<code>==</code>hexo deploy`   #部署</p>
 <h2 id="Hexo起服务"><a href="#Hexo起服务" class="headerlink" title="Hexo起服务"></a>Hexo起服务</h2><p><code>hexo server</code> #Hexo 会监视文件变动并自动更新，您无须重启服务器。<br><code>hexo server -s</code> #静态模式<br><code>hexo server -p 5000</code> #更改端口<br><code>hexo server -i 192.168.1.1</code> #自定义 IP</p>
 <p><code>hexo clean</code> #清除缓存 网页正常情况下可以忽略此条命令<br><code>hexo g</code> #生成静态网页<br><code>hexo d</code> #开始部署`</p>
 <h2 id="Hexo写博客常用方法"><a href="#Hexo写博客常用方法" class="headerlink" title="Hexo写博客常用方法"></a>Hexo写博客常用方法</h2><ul>
@@ -139,6 +119,24 @@
 <p>如果你希望强行预览草稿，更改配置文件：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">render_drafts: true</span><br></pre></td></tr></table></figure></p>
 <p>或者，如下方式启动预览：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo server --drafts</span><br></pre></td></tr></table></figure></p>
 <p>下面这条命令可以把草稿变成文章，或者页面：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="github上hexo搭建博客-绑定域名"><a href="#github上hexo搭建博客-绑定域名" class="headerlink" title="github上hexo搭建博客-绑定域名"></a>github上hexo搭建博客-绑定域名</h2><p>这里选择阿里云域名</p>
+<ol>
+<li>登陆阿里云控制台，选择域名，选择要绑定的域名，点解析</li>
+<li>解析页，添加记录，<ul>
+<li>记录类型 <code>A</code></li>
+<li>主机记录 <code>WWW</code>, <code>@</code></li>
+<li>记录值  填写对应的github的ip地址  </li>
+</ul>
+</li>
+<li>Github的ip地址获取<ul>
+<li>clone 你创建的仓库, 用户名.github.io</li>
+<li>输入 <code>ping  www.用户名.github.io</code></li>
+<li><code>Ping sni.github.map.fastly.net [151.202.68.147]</code>, IP地址</li>
+</ul>
+</li>
+<li>在source目录下创建这个<code>CNAME</code>文件，输入域名</li>
+<li>提交代码，点击域名，一般很快就生效。</li>
+</ol>
 <h2 id="标签插件"><a href="#标签插件" class="headerlink" title="标签插件"></a>标签插件</h2><p>Hexo 的标签插件是独立于 Markdown 的渲染引擎的，标签插件采用独有的方式渲染,虽然有的时候可能和 Markdown 渲染效果一样，在这里我就不说 Markdown 的渲染方式了，如果想要了解 Markdown 的请参考这篇文章 <a href="http://gq1986.com/2017/07/07/Markdown%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/">MarkDown语法指南</a></p>
 <h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><p>-在文章中插入引言，可包含作者、来源和标题。</p>
 <ul>
@@ -211,7 +209,7 @@
     <div class="toc-container">
         <h1>目录</h1>
         <div class="content">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo常用命令"><span class="toc-number">1.</span> <span class="toc-text">Hexo常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo简写"><span class="toc-number">2.</span> <span class="toc-text">hexo简写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo起服务"><span class="toc-number">3.</span> <span class="toc-text">Hexo起服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo写博客常用方法"><span class="toc-number">4.</span> <span class="toc-text">Hexo写博客常用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo文章属性设置"><span class="toc-number">5.</span> <span class="toc-text">Hexo文章属性设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo摘要"><span class="toc-number">6.</span> <span class="toc-text">Hexo摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo更换皮肤"><span class="toc-number">7.</span> <span class="toc-text">hexo更换皮肤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#找不到git部署"><span class="toc-number">8.</span> <span class="toc-text">找不到git部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo不常用的命令"><span class="toc-number">9.</span> <span class="toc-text">Hexo不常用的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#render"><span class="toc-number">10.</span> <span class="toc-text">render</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list"><span class="toc-number">11.</span> <span class="toc-text">list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo草稿"><span class="toc-number">12.</span> <span class="toc-text">Hexo草稿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签插件"><span class="toc-number">13.</span> <span class="toc-text">标签插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用块"><span class="toc-number">14.</span> <span class="toc-text">引用块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码块"><span class="toc-number">15.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iframe"><span class="toc-number">16.</span> <span class="toc-text">iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Image"><span class="toc-number">17.</span> <span class="toc-text">Image</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Link"><span class="toc-number">18.</span> <span class="toc-text">Link</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#include-Code"><span class="toc-number">19.</span> <span class="toc-text">include Code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Youtube"><span class="toc-number">20.</span> <span class="toc-text">Youtube</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用文章"><span class="toc-number">21.</span> <span class="toc-text">引用文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用资源"><span class="toc-number">22.</span> <span class="toc-text">引用资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSS不显示"><span class="toc-number">23.</span> <span class="toc-text">RSS不显示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启评论"><span class="toc-number">24.</span> <span class="toc-text">开启评论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">25.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">26.</span> <span class="toc-text">参考资料</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo常用命令"><span class="toc-number">1.</span> <span class="toc-text">Hexo常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo起服务"><span class="toc-number">2.</span> <span class="toc-text">Hexo起服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo写博客常用方法"><span class="toc-number">3.</span> <span class="toc-text">Hexo写博客常用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo文章属性设置"><span class="toc-number">4.</span> <span class="toc-text">Hexo文章属性设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo摘要"><span class="toc-number">5.</span> <span class="toc-text">Hexo摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo更换皮肤"><span class="toc-number">6.</span> <span class="toc-text">hexo更换皮肤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#找不到git部署"><span class="toc-number">7.</span> <span class="toc-text">找不到git部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo不常用的命令"><span class="toc-number">8.</span> <span class="toc-text">Hexo不常用的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#render"><span class="toc-number">9.</span> <span class="toc-text">render</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list"><span class="toc-number">10.</span> <span class="toc-text">list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo草稿"><span class="toc-number">11.</span> <span class="toc-text">Hexo草稿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github上hexo搭建博客-绑定域名"><span class="toc-number">12.</span> <span class="toc-text">github上hexo搭建博客-绑定域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签插件"><span class="toc-number">13.</span> <span class="toc-text">标签插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用块"><span class="toc-number">14.</span> <span class="toc-text">引用块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码块"><span class="toc-number">15.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iframe"><span class="toc-number">16.</span> <span class="toc-text">iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Image"><span class="toc-number">17.</span> <span class="toc-text">Image</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Link"><span class="toc-number">18.</span> <span class="toc-text">Link</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#include-Code"><span class="toc-number">19.</span> <span class="toc-text">include Code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Youtube"><span class="toc-number">20.</span> <span class="toc-text">Youtube</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用文章"><span class="toc-number">21.</span> <span class="toc-text">引用文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用资源"><span class="toc-number">22.</span> <span class="toc-text">引用资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSS不显示"><span class="toc-number">23.</span> <span class="toc-text">RSS不显示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启评论"><span class="toc-number">24.</span> <span class="toc-text">开启评论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">25.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">26.</span> <span class="toc-text">参考资料</span></a></li></ol>
         </div>
     </div>
     
