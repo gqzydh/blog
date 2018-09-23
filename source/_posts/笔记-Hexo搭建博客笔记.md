@@ -5,62 +5,43 @@ tags:
 - Hexo
 - 笔记
 categories:
-- 博客
+- 笔记
 ---
-
-1. Hexo常用命令
-2. hexo简写
-3. Hexo起服务
-4. Hexo摘要,及显示文章的描述
-5. Hexo写博客常用方法
-6. Hexo文章属性设置
-7. hexo更换皮肤
-8. 找不到git部署
-9. Hexo不常用的命令
-10. 标签插件
-11. 引用块
-12. 代码块
-13. 引用资源
-14. RSS不显示
-15. 开启评论
-16. 其他
-17. 参考资料
 
 
 > 生命在于运动 ， 技术在于折腾
 
 <!-- more -->
 
-## Hexo常用命令 ##
+## Hexo常用命令 
 
 ```
-npm install hexo -g  //安装  
-npm update hexo -g 	//升级 
-hexo version  	//查看hexo的版本
+npm install hexo -g   //安装  
+npm update hexo -g 	  //升级 
+hexo version  	      //查看hexo的版本
 hexo init nodejs-hexo   //创建nodejs-hexo 名字的本地文件
 hexo init nodejs-hexo    //创建博客
-hexo init blog   //初始化，生成文件夹为blog
-cd blog  	//进入blog文件夹
-npm install     //安装依赖库
-hexo generate   //生成一套静态网页
-hexo server  //运行测试,浏览器打开地址，http://localhost:4000/
-hexo deploy   //进行部署
+hexo init blog          //初始化，生成文件夹为blog
+cd blog  	             //进入blog文件夹
+npm install            //安装依赖库
+hexo generate           //生成一套静态网页
+hexo server         //运行测试,浏览器打开地址，http://localhost:4000/
+hexo deploy         //进行部署
 
 hexo new "new article"  //新建文章‘new article’
 hexo new page "about"  //新建页面 ‘about’
+
+hexo n "我的博客"` == `hexo new` "我的博客"    //新建文章
+hexo g == hexo generate        //生成`
+hexo s == hexo server          //启动服务预览
+hexo d == hexo deploy          //部署
 ```
 > 新建的笔记文件路径：` source/_posts` 目录下, `new-article.md` 的文件, 打开文件, 文件开头采用的是yaml格式，用三条短横线分隔。下面是文章正文，采用用的是markdown格式。
 
 >> 新建、删除或修改文章后，不需要重启hexo server，刷新一下即可预览。
 
-## hexo简写 ##
-`hexo n "我的博客"` == `hexo new` "我的博客" #新建文章
-`hexo p` == `hexo publish`
-`hexo g` == `hexo generate`     #生成`
-`hexo s` == `hexo server`   #启动服务预览
-`hexo d` == `hexo deploy`   #部署
 
-## Hexo起服务 ##
+## Hexo起服务 
 `hexo server` #Hexo 会监视文件变动并自动更新，您无须重启服务器。
 `hexo server -s` #静态模式
 `hexo server -p 5000` #更改端口
@@ -70,13 +51,13 @@ hexo new page "about"  //新建页面 ‘about’
 `hexo g` #生成静态网页
 `hexo d` #开始部署`
 
-## Hexo写博客常用方法 ##
+## Hexo写博客常用方法 
 - 插入图片
 <img src="/images/gq_001.png" width="650" height="250">
 - 引用链接
 [GitHub](https://github.com/
 
-## Hexo文章属性设置 ##
+## Hexo文章属性设置 
 
 设置	- - - -	描述 - - - -	Default
 layout	- - - -	Layout - - - -		post或page
@@ -88,24 +69,24 @@ tags	- - - -	标签
 categories	- - - -	分类	 
 permalink	- - - -	url中的名字 - - - -	文件名
 
-## Hexo摘要 ##
+## Hexo摘要 
 ```
 这里是文章的摘要部分<!--more-->后面才是文章的正文内容
 
 <blockquote>在 markdown 文件顶部添加 description 属性，可以在首页文章列表显示文章的描述，如果没有这个属性，会自动截取文章内容作为文章的描述。</blockquote>
 ```
 
-## hexo更换皮肤 ##
+## hexo更换皮肤
 1. [hexo官网选择皮肤:](https://hexo.io/themes/)  `git clone` 
 2. 放到themes目录下
 3. 编辑文件_config.yml，找到theme一行，改成 theme: pacman
 4. 本地启动hexo服务器，打开浏览器 http://localhost:4000
 
-## 找不到git部署 ##
+## 找不到git部署 
 ERROR Deployer not found: git
 解决方法：npm install hexo-deployer-git --save 
 
-## Hexo不常用的命令 ##
+## Hexo不常用的命令 
 ---
 ## render
 
@@ -126,7 +107,7 @@ hexo render path1/xxx.md -o path2/xxx.yyy
 hexo list page
 ```
 
-## Hexo草稿 ##
+## Hexo草稿 
 草稿相当于很多博客都有的“私密文章”功能。
 ```
 $ hexo new draft "new draft"
@@ -145,12 +126,25 @@ $ hexo server --drafts
 ```
 $ hexo publish [layout] <filename>
 ```
+## github上hexo搭建博客-绑定域名
+这里选择阿里云域名
+1. 登陆阿里云控制台，选择域名，选择要绑定的域名，点解析
+2. 解析页，添加记录，
+    - 记录类型 `A`
+    - 主机记录 `WWW`, `@`
+    - 记录值  填写对应的github的ip地址  
+3. Github的ip地址获取
+    - clone 你创建的仓库, 用户名.github.io
+    - 输入 `ping  www.用户名.github.io`
+    - `Ping sni.github.map.fastly.net [151.202.68.147]`, IP地址
+4. 在source目录下创建这个`CNAME`文件，输入域名
+5. 提交代码，点击域名，一般很快就生效。
 
-## 标签插件 ##
+## 标签插件
 
 Hexo 的标签插件是独立于 Markdown 的渲染引擎的，标签插件采用独有的方式渲染,虽然有的时候可能和 Markdown 渲染效果一样，在这里我就不说 Markdown 的渲染方式了，如果想要了解 Markdown 的请参考这篇文章 [MarkDown语法指南](http://gq1986.com/2017/07/07/Markdown%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/)
 
-## 引用块 ##
+## 引用块 
 
 -在文章中插入引言，可包含作者、来源和标题。
 - 语法格式

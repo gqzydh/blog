@@ -4,7 +4,7 @@ date: 2017-10-17 14:51:01
 tags:
 - git
 categories: 
-- 命令
+- 笔记
 ---
 
 
@@ -28,6 +28,8 @@ git config user.email
 ```
 
 ## 工作流程 
+
+<img src="/images/git_01.png" width="750" height="270">
 
 方式一：从远程仓库上克隆代码修改并提交
 ```
@@ -101,7 +103,7 @@ git commit -a -m "注释" //能提交修改过，但是没有添加到缓存区�
 git push  //推送到远程主机
 git push origin gh-pages    //提交到远程分支
 ```
-## 分支(branch)操作 
+## 分支操作 
 
 ```
 git branch  //查看本地分支
@@ -115,6 +117,12 @@ git merge [name]  //合并分支 #将名称为[name]的分支与当前分支合�
 git push origin [name]   //创建远程分支(本地分支 push 到远程)
 git push origin :heads/[name]  //删除远程分支
 git checkout -b gh-pages origin/gh-pages   //改分支gh-pages 
+```
+
+## 切换到远程分支
+```
+git branch -va   //查看本地+远程分支列表
+git checkout -t origin/xxxxxx   //直接新建本地分支，将远程分支提取出来。
 ```
 
 ## 远程仓库 
@@ -192,9 +200,9 @@ $ vim ~/.ssh/id_rsa.pub    //打开id_rsa.pub，复制里面的key
 ssh -T git@github.com   //测试github链接成功
 ```
 
-## github 新建和推送文件 ## 
+## github 新建和推送文件 
 
-#### 在命令行上创建一个新的存储库 
+在命令行上创建一个新的存储库 
 ```
 echo "# Javascript-Demo" >> README.md
 git initgit add README.mdgit commit -m "first commit"
@@ -202,7 +210,7 @@ git remote add origin https://github.com/gqzydh/Javascript-Demo.git
 git push -u origin master
 ```
 
-#### 从命令行推送现有存储库 
+从命令行推送现有存储库 
 ```
 git remote add origin https://github.com/gqzydh/Javascript-Demo.git
 re
@@ -211,5 +219,9 @@ re
 ## 问题-解决
 问题： git无法pull仓库 报错 `fatal: refusing to merge unrelated histories`
 解决： `git pull origin master ----allow-unrelated-histories`
+
+## 供参考
+Git教程 - 廖雪峰的官方网站:https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
+易百教程: https://www.yiibai.com/git/
 
 
