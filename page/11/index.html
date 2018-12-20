@@ -56,18 +56,15 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017/10/17/笔记-pc工作笔记/">
+        <a href="/2017/10/17/笔记-git常用命令/">
           <h3 class='post-head'>
-            pc工作笔记
+            git常用命令
           </h3>
         </a>
         
         <div class="post-content">
           
-            
-              
-                <ol>
-              
+            <h2 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h2><p>配置用户信息<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;Your username&quot;  //配置 用户名</span><br><span class="line">git config --global user.email &quot;Your@email.com&quot;  //配置 电子邮件地址</span><br></pre></td></tr></table></figure></p>
           
         </div>
         <div class='post-meta'>
@@ -84,12 +81,10 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tags" aria-hidden="true"></i>
+                <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#笔记" class='tag'>笔记</a>
-
-  <a href="/tags/#pc" class='tag'>pc</a>
+  <a href="/tags/#git" class='tag'>git</a>
 
 
           
@@ -138,45 +133,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/工具-前端工具/">
+        <a href="/2017/10/17/模板引擎-Jade命令/">
           <h3 class='post-head'>
-            前端编辑工具
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            <p>前端常用工具汇聚</p>
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工具/">工具</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#前端工具" class='tag'>前端工具</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/模板引擎-Jade入门系列之标签和注释/">
-          <h3 class='post-head'>
-            Jade入门系列之标签和注释
+            Jade命令
           </h3>
         </a>
         
@@ -184,7 +143,7 @@
           
             
               
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    1、jade中标签如何解析：</span><br><span class="line"> </span><br><span class="line">  ● html</span><br><span class="line">     解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;html&gt;&lt;/html&gt;  </span><br><span class="line"> </span><br><span class="line">  ● div#wrap  或者 #wrap</span><br><span class="line">     解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;div id=&quot;wrap&quot;&gt;&lt;/div&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  ● div.wrap  或者.wrap</span><br><span class="line">      解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;div class=&quot;wrap&quot;&gt;&lt;/div&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  ● input#age.big.input</span><br><span class="line">      解析后：</span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;input id=&quot;age&quot; class=&quot;big input&quot;/&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  ● p 我是一个段落</span><br><span class="line">      解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;p&gt;我是一个段落&lt;/p&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">   2、 jade中注释如何解析：</span><br><span class="line"> </span><br><span class="line">  ● 单行注释：//单行注释</span><br><span class="line">       解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;!-- 单行注释 --&gt;  </span><br><span class="line"> </span><br><span class="line">  ● 支持不输出的注释，前面加一个-（短横线）</span><br><span class="line">       //-这个注释不会显示 </span><br><span class="line"> </span><br><span class="line">  ● 块注释</span><br><span class="line">   会根据注释来处理</span><br><span class="line"> </span><br><span class="line">Jade代码  </span><br><span class="line"></span><br><span class="line">  1. //  </span><br><span class="line">  2.  ul.test  </span><br><span class="line">  3.    li 第一版  </span><br><span class="line">  4.    li 第二版  </span><br><span class="line">  5.    li 第三版  </span><br><span class="line"> </span><br><span class="line">    编译后：</span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;!--  </span><br><span class="line">  2. &lt;ul class=&quot;test&quot;&gt;  </span><br><span class="line">  3.   &lt;li&gt;第一版&lt;/li&gt;  </span><br><span class="line">  4.   &lt;li&gt;第二版&lt;/li&gt;  </span><br><span class="line">  5.   &lt;li&gt;第三版&lt;/li&gt;  </span><br><span class="line">  6. &lt;/ul&gt;--&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  ● 条件注释：</span><br><span class="line">Jade代码  </span><br><span class="line"></span><br><span class="line">  1. // if lt IE 8  </span><br><span class="line">  2.    script(src=&quot;forIE.js&quot;)  </span><br><span class="line"> </span><br><span class="line">    编译后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;!--[if lt IE 8]&gt;&lt;script src=&quot;forIE.js&quot;&gt;&lt;/script&gt;&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure>
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir  新建文件夹</span><br><span class="line"></span><br><span class="line">subl .  打开目录/文件</span><br><span class="line"></span><br><span class="line">jade index.jade   编译当前的index.jade文件</span><br><span class="line"></span><br><span class="line">jade -P -w index.jade  -P:不压缩  -w:开启监视模式</span><br><span class="line"></span><br><span class="line">反编译：</span><br><span class="line">npm install html2jade -g</span><br><span class="line">html2jade http://www.imooc.com &gt; imooc.jade</span><br><span class="line">html2jade index.html &gt; index.jade</span><br><span class="line"></span><br><span class="line">子级元素必须要缩进。</span><br><span class="line">标签和文本必须要留有空行。</span><br><span class="line"></span><br><span class="line">block desc</span><br><span class="line"></span><br><span class="line">extends layout   关键字</span><br><span class="line"></span><br><span class="line">include head    模块引用</span><br><span class="line"></span><br><span class="line">npm install html2jade -g</span><br><span class="line"></span><br><span class="line">html2jade 文件.html &gt; 文件名</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -206,6 +165,47 @@
               
              
   <a href="/tags/#Jade" class='tag'>Jade</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/工具-Yeoman/">
+          <h3 class='post-head'>
+            Yeoman
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p>打个比喻：如果前端项目是工厂的产品的话，yeoman就像工厂的流水线，标准化、傻瓜化、批量化产品生产，生产过程乏味了，但效率提高了。</p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工具/">工具</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#笔记" class='tag'>笔记</a>
+
+  <a href="/tags/#Yeoman" class='tag'>Yeoman</a>
 
 
           
@@ -252,45 +252,6 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/模板引擎-Jade命令/">
-          <h3 class='post-head'>
-            Jade命令
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir  新建文件夹</span><br><span class="line"></span><br><span class="line">subl .  打开目录/文件</span><br><span class="line"></span><br><span class="line">jade index.jade   编译当前的index.jade文件</span><br><span class="line"></span><br><span class="line">jade -P -w index.jade  -P:不压缩  -w:开启监视模式</span><br><span class="line"></span><br><span class="line">反编译：</span><br><span class="line">npm install html2jade -g</span><br><span class="line">html2jade http://www.imooc.com &gt; imooc.jade</span><br><span class="line">html2jade index.html &gt; index.jade</span><br><span class="line"></span><br><span class="line">子级元素必须要缩进。</span><br><span class="line">标签和文本必须要留有空行。</span><br><span class="line"></span><br><span class="line">block desc</span><br><span class="line"></span><br><span class="line">extends layout   关键字</span><br><span class="line"></span><br><span class="line">include head    模块引用</span><br><span class="line"></span><br><span class="line">npm install html2jade -g</span><br><span class="line"></span><br><span class="line">html2jade 文件.html &gt; 文件名</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/模板引擎/">模板引擎</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Jade" class='tag'>Jade</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
         <a href="/2017/10/17/模板引擎-Template.js/">
           <h3 class='post-head'>
             Template.js
@@ -330,15 +291,18 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/笔记-git常用命令/">
+        <a href="/2017/10/17/模板引擎-Jade入门系列之标签和注释/">
           <h3 class='post-head'>
-            git常用命令
+            Jade入门系列之标签和注释
           </h3>
         </a>
         
         <div class="post-content">
           
-            <h2 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h2><p>配置用户信息<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;Your username&quot;  //配置 用户名</span><br><span class="line">git config --global user.email &quot;Your@email.com&quot;  //配置 电子邮件地址</span><br></pre></td></tr></table></figure></p>
+            
+              
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    1、jade中标签如何解析：</span><br><span class="line"> </span><br><span class="line">  ● html</span><br><span class="line">     解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;html&gt;&lt;/html&gt;  </span><br><span class="line"> </span><br><span class="line">  ● div#wrap  或者 #wrap</span><br><span class="line">     解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;div id=&quot;wrap&quot;&gt;&lt;/div&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  ● div.wrap  或者.wrap</span><br><span class="line">      解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;div class=&quot;wrap&quot;&gt;&lt;/div&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  ● input#age.big.input</span><br><span class="line">      解析后：</span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;input id=&quot;age&quot; class=&quot;big input&quot;/&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  ● p 我是一个段落</span><br><span class="line">      解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;p&gt;我是一个段落&lt;/p&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">   2、 jade中注释如何解析：</span><br><span class="line"> </span><br><span class="line">  ● 单行注释：//单行注释</span><br><span class="line">       解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;!-- 单行注释 --&gt;  </span><br><span class="line"> </span><br><span class="line">  ● 支持不输出的注释，前面加一个-（短横线）</span><br><span class="line">       //-这个注释不会显示 </span><br><span class="line"> </span><br><span class="line">  ● 块注释</span><br><span class="line">   会根据注释来处理</span><br><span class="line"> </span><br><span class="line">Jade代码  </span><br><span class="line"></span><br><span class="line">  1. //  </span><br><span class="line">  2.  ul.test  </span><br><span class="line">  3.    li 第一版  </span><br><span class="line">  4.    li 第二版  </span><br><span class="line">  5.    li 第三版  </span><br><span class="line"> </span><br><span class="line">    编译后：</span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;!--  </span><br><span class="line">  2. &lt;ul class=&quot;test&quot;&gt;  </span><br><span class="line">  3.   &lt;li&gt;第一版&lt;/li&gt;  </span><br><span class="line">  4.   &lt;li&gt;第二版&lt;/li&gt;  </span><br><span class="line">  5.   &lt;li&gt;第三版&lt;/li&gt;  </span><br><span class="line">  6. &lt;/ul&gt;--&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  ● 条件注释：</span><br><span class="line">Jade代码  </span><br><span class="line"></span><br><span class="line">  1. // if lt IE 8  </span><br><span class="line">  2.    script(src=&quot;forIE.js&quot;)  </span><br><span class="line"> </span><br><span class="line">    编译后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;!--[if lt IE 8]&gt;&lt;script src=&quot;forIE.js&quot;&gt;&lt;/script&gt;&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure>
+              
           
         </div>
         <div class='post-meta'>
@@ -346,7 +310,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/笔记/">笔记</a>
+    <a class="article-category-link" href="/categories/模板引擎/">模板引擎</a>
   </div>
 
 
@@ -358,7 +322,46 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#git" class='tag'>git</a>
+  <a href="/tags/#Jade" class='tag'>Jade</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/资源-Web前端框架/">
+          <h3 class='post-head'>
+            前端框架
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <ol>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/资源/">资源</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#前端框架" class='tag'>前端框架</a>
 
 
           
@@ -560,7 +563,7 @@
 
 
 
-  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
