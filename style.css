@@ -38,7 +38,7 @@ footer {
   line-height: 22px;
   border-color: #e0e0e0;
   font-size: 0.85em;
-  background-color: #222;
+  background-color: #1d2935;
   margin-top: 20px; }
   footer .copyright {
     max-width: 1000px;
@@ -70,9 +70,9 @@ header {
     align-items: center;
     height: 60px; }
     header .header-container .logo {
-      background-color: #000;
       color: #fff;
       padding: 18px 26px;
+      font-size: 21px;
       font-weight: 700; }
     header .header-container .right-header {
       margin: 0;
@@ -84,7 +84,7 @@ header {
         header .header-container .right-header li:last-child {
           padding-right: 25px; }
       header .header-container .right-header .nav-item .active {
-        color: #FF5151;
+        color: #fff;
         font-weight: 700; }
 
 @media (max-width: 700px) {
