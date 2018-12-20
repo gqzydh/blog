@@ -1,20 +1,20 @@
 @charset "UTF-8";
 html {
-  background-color: #f4f5f5; }
+  background-color: #f8fafc; }
 
 body {
-  font: 14px Arial, "open sans", "Helvetica Neue", Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+  font: 14px/1.5 "PingFang SC","微软雅黑","Microsoft YaHei",Helvetica,"Helvetica Neue",Tahoma,Arial,sans-serif;
   margin: 0;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #f4f5f5;
+  background-color: #f8fafc;
   -webkit-font-smoothing: antialiased; }
 
 a {
   text-decoration: none;
   cursor: pointer;
-  color: #909090;
+  color: #5e5e5e;
   -webkit-font-smoothing: antialiased; }
 
 h2 {
@@ -23,7 +23,7 @@ h2 {
 main {
   flex-grow: 1;
   display: flex;
-  max-width: 1000px;
+  max-width: 1100px;
   padding: 0 16px;
   margin: 0 auto; }
 
@@ -41,7 +41,7 @@ footer {
   background-color: #1d2935;
   margin-top: 20px; }
   footer .copyright {
-    max-width: 1000px;
+    max-width: 1100px;
     padding: 0 16px;
     margin: 0 auto;
     display: flex;
@@ -59,9 +59,9 @@ header {
   color: #909090;
   margin-bottom: 15px;
   box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.05);
-  border-top: 2px solid #222; }
+  box-shadow: 0 8px 16px 0 rgba(28, 31, 33, 0.1); }
   header .header-container {
-    max-width: 1000px;
+    max-width: 1100px;
     padding: 0 16px;
     margin: 0 auto;
     display: flex;
@@ -108,11 +108,11 @@ header {
   display: inline-block; }
 
 #archive {
-  width: 1000px; }
+  width: 1100px; }
   #archive .content {
     width: 70%;
     background-color: #ffffff;
-    border-radius: 2px;
+    border-radius: 12px;
     box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     box-sizing: border-box;
@@ -149,7 +149,7 @@ header {
 
 @media (min-width: 1032px) {
   #archive {
-    width: 1000px; } }
+    width: 1100px; } }
 
 @media (max-width: 1032px) {
   #archive {
@@ -166,7 +166,7 @@ header {
 #about .posts-list {
   width: 70%;
   background-color: #ffffff;
-  border-radius: 2px;
+  border-radius: 12px;
   box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   box-sizing: border-box;
@@ -269,7 +269,7 @@ header {
     display: block; }
 
 .paging {
-  max-width: 1000px;
+  max-width: 1100px;
   padding: 0 16px;
   margin: 0 auto;
   padding-top: 1em; }
@@ -295,18 +295,18 @@ header {
 
 @media (min-width: 1032px) {
   #about {
-    width: 1000px; } }
+    width: 1100px; } }
 
 @media (max-width: 700px) {
   #about .posts-list {
     width: 70%; } }
 
 #post {
-  width: 1000px; }
+  width: 1100px; }
   #post .content article {
     width: 70%;
     background-color: #ffffff;
-    border-radius: 2px;
+    border-radius: 12px;
     box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     box-sizing: border-box;
@@ -318,7 +318,7 @@ header {
   #post .content > .comment {
     width: 70%;
     background-color: #ffffff;
-    border-radius: 2px;
+    border-radius: 12px;
     box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.05);
     overflow: hidden;
     box-sizing: border-box;
@@ -345,7 +345,6 @@ header {
     #post aside .toc-container {
       margin-left: 15px;
       box-sizing: border-box;
-      background-color: #ffffff;
       position: sticky;
       top: 15px;
       align-self: flex-start; }
@@ -356,7 +355,7 @@ header {
         height: 45px;
         line-height: 45px;
         box-sizing: border-box;
-        border-bottom: 1px solid rgba(178, 186, 194, 0.15);
+        border-bottom: 1px solid rgba(43, 51, 59, 0.1);
         font-weight: normal; }
       #post aside .toc-container .content {
         padding: 20px;
@@ -380,7 +379,7 @@ header {
 
 @media (min-width: 1032px) {
   #post {
-    width: 1000px; } }
+    width: 1100px; } }
 
 @media (max-width: 1032px) {
   #post {
@@ -793,12 +792,13 @@ header {
 #index .posts-list {
   width: 70%;
   background-color: #ffffff;
-  border-radius: 2px;
+  border-radius: 12px;
   box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   box-sizing: border-box;
   flex-basis: 70%;
-  align-self: flex-start; }
+  align-self: flex-start;
+  border-radius: 12px; }
   #index .posts-list section {
     padding: 20px 25px;
     border-bottom: 1px solid rgba(178, 186, 194, 0.15); }
@@ -847,10 +847,9 @@ header {
   #index aside > div {
     margin-left: 15px;
     box-sizing: border-box;
-    background-color: #ffffff;
     margin-bottom: 15px;
     box-sizing: border-box;
-    border-radius: 2px; }
+    border-radius: 12px; }
     #index aside > div h1 {
       font-size: 1.1em;
       padding-left: 20px;
@@ -858,7 +857,7 @@ header {
       height: 45px;
       line-height: 45px;
       box-sizing: border-box;
-      border-bottom: 1px solid rgba(178, 186, 194, 0.15);
+      border-bottom: 1px solid rgba(43, 51, 59, 0.1);
       font-weight: normal; }
     #index aside > div > .content {
       color: #909090;
@@ -901,7 +900,7 @@ header {
   line-height: 1.7; }
 
 .paging {
-  max-width: 1000px;
+  max-width: 1100px;
   padding: 0 16px;
   margin: 0 auto;
   padding-top: 1em; }
@@ -927,9 +926,9 @@ header {
 
 @media (min-width: 1032px) {
   #index {
-    width: 1000px; }
+    width: 1100px; }
   .paging {
-    width: 1000px; } }
+    width: 1100px; } }
 
 @media (max-width: 1032px) {
   .paging {
@@ -953,7 +952,7 @@ header {
 #tags .tags-container {
   width: 70%;
   background-color: #ffffff;
-  border-radius: 2px;
+  border-radius: 12px;
   box-shadow: 0 2px 5px -2px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   box-sizing: border-box;
@@ -1018,7 +1017,7 @@ header {
 
 @media (min-width: 1032px) {
   #tags {
-    width: 1000px; } }
+    width: 1100px; } }
 
 @media (max-width: 700px) {
   #tags .tags-container {

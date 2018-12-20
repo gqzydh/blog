@@ -56,9 +56,9 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017/10/17/Web前端面试/">
+        <a href="/2017/10/17/Ajax-jQuery.ajax()方法获取数据/">
           <h3 class='post-head'>
-            Web前端面试
+            jQuery.ajax()方法获取数据
           </h3>
         </a>
         
@@ -66,7 +66,7 @@
           
             
               
-                <h2 id="如何面试Web前端开发工程师"><a href="#如何面试Web前端开发工程师" class="headerlink" title="如何面试Web前端开发工程师"></a>如何面试Web前端开发工程师</h2><ul>
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line"> url: &quot;http://www.hzhuti.com&quot;, //请求的url地址</span><br><span class="line"> dataType: &quot;json&quot;, //返回格式为json</span><br><span class="line"> async: true, //请求是否异步，默认为异步，这也是ajax重要特性</span><br><span class="line"> data: &#123; &quot;id&quot;: &quot;value&quot; &#125;, //参数值</span><br><span class="line"> type: &quot;GET&quot;, //请求方式</span><br><span class="line"> beforeSend: function() &#123;</span><br><span class="line">  //请求前的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> success: function(req) &#123;</span><br><span class="line">  //请求成功时处理</span><br><span class="line"> &#125;,</span><br><span class="line"> complete: function() &#123;</span><br><span class="line">  //请求完成的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> error: function() &#123;</span><br><span class="line">  //请求出错处理</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -75,7 +75,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
+    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
   </div>
 
 
@@ -87,7 +87,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#面试" class='tag'>面试</a>
+  <a href="/tags/#Ajax" class='tag'>Ajax</a>
 
 
           
@@ -95,9 +95,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Bootstrap(JS插件)/">
+        <a href="/2017/10/17/blog-WordPress/">
           <h3 class='post-head'>
-            Bootstrap(JS插件)
+            WordPress
           </h3>
         </a>
         
@@ -105,7 +105,7 @@
           
             
               
-                <p>##一次性导入##<br>一次性导入的方法：即引入“bootstrap.min.js”</p>
+                <p>WordPress  中文官网:<a href="https://cn.wordpress.org/" target="_blank" rel="noopener">https://cn.wordpress.org/</a><br>慕课网学习:<a href="http://www.imooc.com/video/10465" target="_blank" rel="noopener">http://www.imooc.com/video/10465</a></p>
               
           
         </div>
@@ -114,7 +114,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Bootstrap/">Bootstrap</a>
+    <a class="article-category-link" href="/categories/博客/">博客</a>
   </div>
 
 
@@ -126,9 +126,9 @@
                 <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#Bootstrap" class='tag'>Bootstrap</a>
+  <a href="/tags/#笔记" class='tag'>笔记</a>
 
-  <a href="/tags/#插件" class='tag'>插件</a>
+  <a href="/tags/#WordPress" class='tag'>WordPress</a>
 
 
           
@@ -180,6 +180,45 @@
               
              
   <a href="/tags/#css" class='tag'>css</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/HTML5-笔记_01/">
+          <h3 class='post-head'>
+            vue笔记_01
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="一些注意事项"><a href="#一些注意事项" class="headerlink" title="一些注意事项"></a>一些注意事项</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● 一个 &lt;image&gt; 的 src 属性在赋值时会产生一个 HTTP 请求，所以当模板在第一次被解析时会产生一个 404 请求。这种情况下更适合用 v-attr。</span><br><span class="line">● Internet Explorer 在解析 HTML 时会移除非法的内联 style 属性，所以如果你想支持 IE，请在绑定内联 CSS 的时候始终使用 v-style。</span><br><span class="line">● 可以使用三对花括号来回避 HTML 代码，而这种写法会在底层转换为 v-html：&#123;&#123;&#123; safeHTMLString &#125;&#125;&#125;</span><br><span class="line">● 可以在你的 mustache 绑定里加入 * 来注明这是一个一次性撰写的数据，这样的话它就不会响应后续的数据变化：&#123;&#123;* onlyOnce &#125;&#125;</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
 
 
           
@@ -417,47 +456,6 @@
         </div>
       </section>
     
-      <section>
-        <a href="/2017/10/17/JQuery【锋利的JQuery】/">
-          <h3 class='post-head'>
-            JQuery【锋利的JQuery】
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="1-文本框"><a href="#1-文本框" class="headerlink" title="1. 文本框"></a>1. 文本框</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">focus  //文本框触发</span><br><span class="line">blur   //表单元素，离开表单框触发</span><br><span class="line">trigger() 方法触发被选元素的指定事件类型。</span><br><span class="line">triggerHandler() 方法触发被选元素的指定事件类型。但不会执行浏览器默认动作，也不会产生事件冒泡。</span><br><span class="line">triggerHandler() 方法与 trigger() 方法类似。不同的是它不会触发事件（比如表单提交）的默认行为，而且只影响第一个匹配元素。</span><br><span class="line"></span><br><span class="line">animate    //可以创建动画效果</span><br><span class="line">remove() 方法移除被选元素，包括所有文本和子节点。</span><br><span class="line">appendTo() 方法在被选元素的结尾（仍然在内部）插入指定内容。</span><br><span class="line">dblclick()当双击元素时，会发生 dblclick 事件。</span><br><span class="line">append() 方法在被选元素的结尾（仍然在内部）插入指定内容。</span><br><span class="line"></span><br><span class="line">keyup 事件能在用户每次松开按键时触发，实现即时提醒。</span><br><span class="line">focus 事件能在元素得到焦点时候触发，也可以实现即时提醒。</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#jQuery" class='tag'>jQuery</a>
-
-  <a href="/tags/#读书" class='tag'>读书</a>
-
-
-          
-        </div>
-      </section>
-    
   </div>
   <aside>
     
@@ -494,7 +492,7 @@
           标签云
         </h1>
       <div class="content tagcloud">
-            <a href="/tags/Ajax/" style="font-size: 17.6px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 14px;">Angular</a> <a href="/tags/Atom/" style="font-size: 15.8px;">Atom</a> <a href="/tags/Bootstrap/" style="font-size: 17.6px;">Bootstrap</a> <a href="/tags/BrowserSync/" style="font-size: 14px;">BrowserSync</a> <a href="/tags/Grunt/" style="font-size: 14px;">Grunt</a> <a href="/tags/Handlebars/" style="font-size: 14px;">Handlebars</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/JQuery/" style="font-size: 19.4px;">JQuery</a> <a href="/tags/Jade/" style="font-size: 15.8px;">Jade</a> <a href="/tags/Javascript/" style="font-size: 32px;">Javascript</a> <a href="/tags/Js设计/" style="font-size: 15.8px;">Js设计</a> <a href="/tags/Markdown/" style="font-size: 14px;">Markdown</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/Node/" style="font-size: 14px;">Node</a> <a href="/tags/Nodejs/" style="font-size: 14px;">Nodejs</a> <a href="/tags/React/" style="font-size: 14px;">React</a> <a href="/tags/React-Native/" style="font-size: 15.8px;">React Native</a> <a href="/tags/SEO优化/" style="font-size: 14px;">SEO优化</a> <a href="/tags/Sublime-Text3/" style="font-size: 14px;">Sublime Text3</a> <a href="/tags/Sublime-text/" style="font-size: 14px;">Sublime text</a> <a href="/tags/Sublime-text3/" style="font-size: 14px;">Sublime text3</a> <a href="/tags/Template-js/" style="font-size: 14px;">Template.js</a> <a href="/tags/Typecho/" style="font-size: 14px;">Typecho</a> <a href="/tags/Vue-js/" style="font-size: 23px;">Vue.js</a> <a href="/tags/Vue-js-axios/" style="font-size: 14px;">Vue.js, axios</a> <a href="/tags/Webpack/" style="font-size: 14px;">Webpack</a> <a href="/tags/Web前端框架/" style="font-size: 14px;">Web前端框架</a> <a href="/tags/Web前端资源/" style="font-size: 14px;">Web前端资源</a> <a href="/tags/WordPress/" style="font-size: 14px;">WordPress</a> <a href="/tags/Yeoman/" style="font-size: 14px;">Yeoman</a> <a href="/tags/bower/" style="font-size: 14px;">bower</a> <a href="/tags/create-react-app/" style="font-size: 14px;">create-react-app</a> <a href="/tags/css/" style="font-size: 26.6px;">css</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/html/" style="font-size: 19.4px;">html</a> <a href="/tags/jQuery/" style="font-size: 24.8px;">jQuery</a> <a href="/tags/pc/" style="font-size: 15.8px;">pc</a> <a href="/tags/wap/" style="font-size: 15.8px;">wap</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/代码/" style="font-size: 28.4px;">代码</a> <a href="/tags/前后分离开/" style="font-size: 14px;">前后分离开</a> <a href="/tags/前端工具/" style="font-size: 19.4px;">前端工具</a> <a href="/tags/前端框架/" style="font-size: 14px;">前端框架</a> <a href="/tags/加密/" style="font-size: 14px;">加密</a> <a href="/tags/命令/" style="font-size: 14px;">命令</a> <a href="/tags/工作/" style="font-size: 14px;">工作</a> <a href="/tags/微信分享/" style="font-size: 15.8px;">微信分享</a> <a href="/tags/成长之路/" style="font-size: 14px;">成长之路</a> <a href="/tags/插件/" style="font-size: 21.2px;">插件</a> <a href="/tags/正则表达式/" style="font-size: 19.4px;">正则表达式</a> <a href="/tags/注册登录/" style="font-size: 15.8px;">注册登录</a> <a href="/tags/移动端/" style="font-size: 21.2px;">移动端</a> <a href="/tags/笔记/" style="font-size: 30.2px;">笔记</a> <a href="/tags/网站/" style="font-size: 14px;">网站</a> <a href="/tags/设计/" style="font-size: 14px;">设计</a> <a href="/tags/读书/" style="font-size: 19.4px;">读书</a> <a href="/tags/跳转/" style="font-size: 14px;">跳转</a> <a href="/tags/面试/" style="font-size: 14px;">面试</a>
+            <a href="/tags/Ajax/" style="font-size: 18px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 14px;">Angular</a> <a href="/tags/Atom/" style="font-size: 16px;">Atom</a> <a href="/tags/Bootstrap/" style="font-size: 18px;">Bootstrap</a> <a href="/tags/BrowserSync/" style="font-size: 14px;">BrowserSync</a> <a href="/tags/Grunt/" style="font-size: 14px;">Grunt</a> <a href="/tags/Handlebars/" style="font-size: 14px;">Handlebars</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/JQuery/" style="font-size: 20px;">JQuery</a> <a href="/tags/Jade/" style="font-size: 16px;">Jade</a> <a href="/tags/Javascript/" style="font-size: 32px;">Javascript</a> <a href="/tags/Js设计/" style="font-size: 16px;">Js设计</a> <a href="/tags/Markdown/" style="font-size: 14px;">Markdown</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/Node/" style="font-size: 14px;">Node</a> <a href="/tags/Nodejs/" style="font-size: 14px;">Nodejs</a> <a href="/tags/React/" style="font-size: 14px;">React</a> <a href="/tags/React-Native/" style="font-size: 16px;">React Native</a> <a href="/tags/SEO优化/" style="font-size: 14px;">SEO优化</a> <a href="/tags/Sublime-Text3/" style="font-size: 14px;">Sublime Text3</a> <a href="/tags/Sublime-text/" style="font-size: 14px;">Sublime text</a> <a href="/tags/Sublime-text3/" style="font-size: 14px;">Sublime text3</a> <a href="/tags/Template-js/" style="font-size: 14px;">Template.js</a> <a href="/tags/Typecho/" style="font-size: 14px;">Typecho</a> <a href="/tags/Vue-js/" style="font-size: 24px;">Vue.js</a> <a href="/tags/Vue-js-axios/" style="font-size: 14px;">Vue.js, axios</a> <a href="/tags/Webpack/" style="font-size: 14px;">Webpack</a> <a href="/tags/Web前端框架/" style="font-size: 14px;">Web前端框架</a> <a href="/tags/Web前端资源/" style="font-size: 14px;">Web前端资源</a> <a href="/tags/WordPress/" style="font-size: 14px;">WordPress</a> <a href="/tags/Yeoman/" style="font-size: 14px;">Yeoman</a> <a href="/tags/bower/" style="font-size: 14px;">bower</a> <a href="/tags/create-react-app/" style="font-size: 14px;">create-react-app</a> <a href="/tags/css/" style="font-size: 26px;">css</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/html/" style="font-size: 20px;">html</a> <a href="/tags/jQuery/" style="font-size: 24px;">jQuery</a> <a href="/tags/pc/" style="font-size: 16px;">pc</a> <a href="/tags/wap/" style="font-size: 16px;">wap</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/代码/" style="font-size: 28px;">代码</a> <a href="/tags/前后分离开/" style="font-size: 14px;">前后分离开</a> <a href="/tags/前端工具/" style="font-size: 20px;">前端工具</a> <a href="/tags/前端框架/" style="font-size: 14px;">前端框架</a> <a href="/tags/加密/" style="font-size: 14px;">加密</a> <a href="/tags/命令/" style="font-size: 14px;">命令</a> <a href="/tags/工作/" style="font-size: 14px;">工作</a> <a href="/tags/微信分享/" style="font-size: 16px;">微信分享</a> <a href="/tags/成长之路/" style="font-size: 14px;">成长之路</a> <a href="/tags/插件/" style="font-size: 22px;">插件</a> <a href="/tags/正则表达式/" style="font-size: 20px;">正则表达式</a> <a href="/tags/注册登录/" style="font-size: 16px;">注册登录</a> <a href="/tags/移动端/" style="font-size: 22px;">移动端</a> <a href="/tags/笔记/" style="font-size: 30px;">笔记</a> <a href="/tags/网站/" style="font-size: 14px;">网站</a> <a href="/tags/设计/" style="font-size: 14px;">设计</a> <a href="/tags/读书/" style="font-size: 20px;">读书</a> <a href="/tags/跳转/" style="font-size: 14px;">跳转</a> <a href="/tags/面试/" style="font-size: 14px;">面试</a>
       </div>
     </div>
     
