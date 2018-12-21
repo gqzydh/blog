@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_16X16.ico">
+  
+  
+  <title>HTML5 文件上传下载 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</header>
+
+  <main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h1>HTML5 文件上传下载</h1>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018年12月20日</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML5/">HTML5</a>
+  </div>
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#HTML5" class='tag'>HTML5</a>
+
+
+            
+          </div>
+          <p>HTML5 中提供的文件API在前端中有着丰富的应用，上传、下载、读取内容等在日常的交互中很常见。而且在各个浏览器的兼容也比较好，包括移动端，除了 IE 只支持 IE10 以上的版本。想要更好地掌握好操作文件的功能，先要熟悉每个API。</p>
+<p>HTML 中的 input[type=”file”] 用该元素可以实现页面上传文件的功能</p>
+<h2 id="input-type-”file”-里的对象及属性"><a href="#input-type-”file”-里的对象及属性" class="headerlink" title="input[type=”file”] 里的对象及属性"></a>input[type=”file”] 里的对象及属性</h2><ul>
+<li>multiple 属性规定输入字段可选择多个值。</li>
+<li>FileList 对象则就是表示用户选择的文件列表。</li>
+<li>file 列表中的每一个文件，就是一个 file 对象</li>
+<li>accept 属性，可以用来规定能够通过文件上传进行提交的文件类型。</li>
+</ul>
+<p>file 对象的属性：</p>
+<ul>
+<li>name : 文件名，不包含路径。</li>
+<li>type : 文件类型。图片类型的文件都会以 image/ 开头，可以由此来限制只允许上传图片。</li>
+<li>size : 文件大小。可以根据文件大小来进行其他操作。</li>
+<li>lastModified : 文件最后修改的时间。</li>
+</ul>
+<p>示例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; id=&quot;files&quot; multiple=&quot;multiple&quot; accept=&quot;image/gif, image/jpeg&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var elem = document.getElementById(&apos;files&apos;);</span><br><span class="line">    elem.onchange = function (event) &#123;</span><br><span class="line">        var files = event.target.files;</span><br><span class="line">        for (var i = 0; i &lt; files.length; i++) &#123;</span><br><span class="line">            // 文件类型为 image 并且文件大小小于 200kb</span><br><span class="line">            if(files[i].type.indexOf(&apos;image/&apos;) !== -1 &amp;&amp; files[i].size &lt; 204800)&#123;</span><br><span class="line">                console.log(files[i].name);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>accept=”image/*” 可以用来限制只允许上传图像格式。但是在 Webkit 浏览器下却出现了响应滞慢的问题，要等上好几秒才弹出文件选择框。</p>
+<p><em>解决方法</em> 就是将 * 通配符改为指定的 MIME 类型。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; accept=&quot;image/gif,image/jpeg,image/jpg,image/png&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Blob对象"><a href="#Blob对象" class="headerlink" title="Blob对象"></a>Blob对象</h2><p>Blob 对象相当于一个容器，可以用于存放二进制数据。它有两个属性，size 属性表示字节长度，type 属性表示 MIME 类型。</p>
+<ul>
+<li>如何创建<br>Blob 对象可以使用 Blob() 构造函数来创建。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var blob = new Blob([&apos;hello&apos;], &#123;type:&quot;text/plain&quot;&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Blob 构造函数中的第一个参数是一个数组，可以存放 ArrayBuffer对象、ArrayBufferView 对象、Blob对象和字符串。</p>
+<p>Blob 对象可以通过 slice() 方法来返回一个新的 Blob 对象。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var newblob = blob.slice(0,5, &#123;type:&quot;text/plain&quot;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>slice() 方法使用三个参数，均为可选。</p>
+<ul>
+<li>第一个参数代表要从Blob对象中的二进制数据的起始位置开始复制，</li>
+<li>第二个参数代表复制的结束位置，</li>
+<li>第三个参数为 Blob 对象的 MIME 类型。</li>
+</ul>
+<p>canvas.toBlob() 也可以创建 Blob 对象。toBlob() 使用三个参数，第一个为回调函数，第二个为图片类型，默认为 image/png，第三个为图片质量，值在0到1之间。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var canvas = document.getElementById(&apos;canvas&apos;);</span><br><span class="line">canvas.toBlob(function(blob)&#123; console.log(blob); &#125;, &quot;image/jpeg&quot;, 0.5);</span><br></pre></td></tr></table></figure>
+<h2 id="下载文件"><a href="#下载文件" class="headerlink" title="下载文件"></a>下载文件</h2><p>Blod 对象可以通过 window.URL 对象生成一个网络地址，结合 a 标签的 download 属性来实现下载文件功能。</p>
+<h5 id="比如把-canvas-下载为一个图片文件。"><a href="#比如把-canvas-下载为一个图片文件。" class="headerlink" title="比如把 canvas 下载为一个图片文件。"></a>比如把 canvas 下载为一个图片文件。</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var canvas = document.getElementById(&apos;canvas&apos;);</span><br><span class="line">canvas.toBlob(function(blob)&#123;</span><br><span class="line">    // 使用 createObjectURL 生成地址，格式为 blob:null/fd95b806-db11-4f98-b2ce-5eb16b38ba36</span><br><span class="line">    var url = URL.createObjectURL(blob);</span><br><span class="line">    var a = document.createElement(&apos;a&apos;);</span><br><span class="line">    a.download = &apos;canvas&apos;;</span><br><span class="line">    a.href = url;</span><br><span class="line">    // 模拟a标签点击进行下载</span><br><span class="line">    a.click();</span><br><span class="line">    // 下载后告诉浏览器不再需要保持这个文件的引用了</span><br><span class="line">    URL.revokeObjectURL(url);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>也可以将字符串保存为一个文本文件，方法类似。</p>
+<h2 id="FileReader-对象"><a href="#FileReader-对象" class="headerlink" title="FileReader 对象"></a>FileReader 对象</h2><p>FileReader 对象主要用来把文件读入内存，并且读取文件中的数据。通过构造函数创建一个 FileReader 对象.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var reader = new FileReader();</span><br></pre></td></tr></table></figure></p>
+<p>该对象有以下方法：</p>
+<ul>
+<li>abort：中断读取操作。</li>
+<li>readAsArrayBuffer：读取文件内容到ArrayBuffer对象中。</li>
+<li>readAsBinaryString：将文件读取为二进制数据。</li>
+<li>readAsDataURL：将文件读取为data: URL格式的字符串。</li>
+<li>readAsText：将文件读取为文本。</li>
+</ul>
+<h2 id="上传图片预览"><a href="#上传图片预览" class="headerlink" title="上传图片预览"></a>上传图片预览</h2><p>在常见的应用就是在客户端上传图片之后通过 readAsDataURL() 来显示图片。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; id=&quot;files&quot; accept=&quot;image/jpeg,image/jpg,image/png&quot;&gt;</span><br><span class="line">&lt;img src=&quot;blank.gif&quot; id=&quot;preview&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var elem = document.getElementById(&apos;files&apos;),</span><br><span class="line">        img = document.getElementById(&apos;preview&apos;);</span><br><span class="line">    elem.onchange = function () &#123;</span><br><span class="line">        var files = elem.files,</span><br><span class="line">            reader = new FileReader();</span><br><span class="line">        if(files &amp;&amp; files[0])&#123;</span><br><span class="line">            reader.onload = function (ev) &#123;</span><br><span class="line">                img.src = ev.target.result;</span><br><span class="line">            &#125;</span><br><span class="line">            reader.readAsDataURL(files[0]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>但是在一些手机上竖着拍照上传照片时会有bug，会发现照片倒了，包括三星和iPhone。。。解决方案这里不做讲解，有兴趣可以查看：(移动端图片上传旋转、压缩的解决方案)[<a href="https://github.com/lin-xin/blog/issues/18" target="_blank" rel="noopener">https://github.com/lin-xin/blog/issues/18</a>]</p>
+<h2 id="数据备份与恢复"><a href="#数据备份与恢复" class="headerlink" title="数据备份与恢复"></a>数据备份与恢复</h2><p>FileReader 对象的 readAsText() 可以读取文件的文本，结合 Blob 对象下载文件的功能，那就可以实现将数据导出文件备份到本地，当数据要恢复时，通过 input 把备份文件上传，使用 readAsText() 读取文本，恢复数据。</p>
+<p>代码跟上面功能类似，这里不重复，具体的应用可以参考：notepad</p>
+<h2 id="Base64-编码"><a href="#Base64-编码" class="headerlink" title="Base64 编码"></a>Base64 编码</h2><p>在 HTML5 中新增了 atob 和 btoa 方法来支持 Base64 编码。它们的命名也很简单，b to a 和 a to b，即代表着编码和解码。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var a = &quot;https://lin-xin.github.io&quot;;</span><br><span class="line">var b = btoa(a);</span><br><span class="line">var c = atob(b);</span><br><span class="line">console.log(a);     // https://lin-xin.github.io</span><br><span class="line">console.log(b);     // aHR0cHM6Ly9saW4teGluLmdpdGh1Yi5pbw==</span><br><span class="line">console.log(c);     // https://lin-xin.github.io</span><br></pre></td></tr></table></figure></p>
+<p>btoa 方法对字符串 a 进行编码，不会改变 a 的值，返回一个编码后的值。<br>atob 方法对编码后的字符串进行解码。</p>
+<p>但是参数中带中文，已经超出了8位ASCII编码的字符范围，浏览器就会报错。所以需要先对中文进行 encodeURIComponent 编码处理。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var a = &quot;哈喽 世界&quot;;</span><br><span class="line">var b = btoa(encodeURIComponent(a));</span><br><span class="line">var c = decodeURIComponent(atob(b));</span><br><span class="line">console.log(b);     // JUU1JTkzJTg4JUU1JTk2JUJEJTIwJUU0JUI4JTk2JUU3JTk1JThD</span><br><span class="line">console.log(c);     // 哈喽 世界</span><br></pre></td></tr></table></figure>
+<p>转载 （HTML5 进阶系列：文件上传下载）[<a href="http://blog.gdfengshuo.com/article/18/" target="_blank" rel="noopener">http://blog.gdfengshuo.com/article/18/</a>]</p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h1>目录</h1>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#input-type-”file”-里的对象及属性"><span class="toc-number">1.</span> <span class="toc-text">input[type=”file”] 里的对象及属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Blob对象"><span class="toc-number">2.</span> <span class="toc-text">Blob对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载文件"><span class="toc-number">3.</span> <span class="toc-text">下载文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#比如把-canvas-下载为一个图片文件。"><span class="toc-number">3.0.0.1.</span> <span class="toc-text">比如把 canvas 下载为一个图片文件。</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FileReader-对象"><span class="toc-number">4.</span> <span class="toc-text">FileReader 对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#上传图片预览"><span class="toc-number">5.</span> <span class="toc-text">上传图片预览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据备份与恢复"><span class="toc-number">6.</span> <span class="toc-text">数据备份与恢复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Base64-编码"><span class="toc-number">7.</span> <span class="toc-text">Base64 编码</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+
+<script src="/js/script.js"></script>
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>
