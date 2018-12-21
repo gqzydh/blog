@@ -18,15 +18,23 @@
 
 <body>
   <header>
-  <div class="header-container">
+  <div class="header-nav">
+    <div class="header-container">
     <a class='logo' href="/">
       <span>前端博客</span>
     </a>
+
     <ul class="right-header">
       
         <li class="nav-item">
           
             <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
           
         </li>
       
@@ -50,13 +58,15 @@
       
     </ul>
   </div>
+  </div>
+
 </header>
 
   <main id='post'>
   <div class="content">
     <article>
         <section class="content markdown-body">
-          <h1>Hexo搭建博客笔记</h1>
+          <h2>Hexo搭建博客笔记</h2>
           <div class='post-meta'>
             <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月12日</time>
             
@@ -137,7 +147,7 @@
 <li>在source目录下创建这个<code>CNAME</code>文件，输入域名</li>
 <li>提交代码，点击域名，一般很快就生效。</li>
 </ol>
-<h2 id="标签插件"><a href="#标签插件" class="headerlink" title="标签插件"></a>标签插件</h2><p>Hexo 的标签插件是独立于 Markdown 的渲染引擎的，标签插件采用独有的方式渲染,虽然有的时候可能和 Markdown 渲染效果一样，在这里我就不说 Markdown 的渲染方式了，如果想要了解 Markdown 的请参考这篇文章 <a href="http://gq1986.com/2017/07/07/Markdown%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/">MarkDown语法指南</a></p>
+<h2 id="标签插件"><a href="#标签插件" class="headerlink" title="标签插件"></a>标签插件</h2><p>Hexo 的标签插件是独立于 Markdown 的渲染引擎的，标签插件采用独有的方式渲染,虽然有的时候可能和 Markdown 渲染效果一样，在这里我就不说 Markdown 的渲染方式了，如果想要了解 Markdown 的请参考这篇文章 <a href="http://gq1986.com/2017/07/07/Markdown%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener">MarkDown语法指南</a></p>
 <h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><p>-在文章中插入引言，可包含作者、来源和标题。</p>
 <ul>
 <li><p>语法格式</p>
@@ -207,7 +217,7 @@
   <aside>
     
     <div class="toc-container">
-        <h1>目录</h1>
+        <h2>目录</h2>
         <div class="content">
             <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo常用命令"><span class="toc-number">1.</span> <span class="toc-text">Hexo常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo起服务"><span class="toc-number">2.</span> <span class="toc-text">Hexo起服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo写博客常用方法"><span class="toc-number">3.</span> <span class="toc-text">Hexo写博客常用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo文章属性设置"><span class="toc-number">4.</span> <span class="toc-text">Hexo文章属性设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo摘要"><span class="toc-number">5.</span> <span class="toc-text">Hexo摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo更换皮肤"><span class="toc-number">6.</span> <span class="toc-text">hexo更换皮肤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#找不到git部署"><span class="toc-number">7.</span> <span class="toc-text">找不到git部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo不常用的命令"><span class="toc-number">8.</span> <span class="toc-text">Hexo不常用的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#render"><span class="toc-number">9.</span> <span class="toc-text">render</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list"><span class="toc-number">10.</span> <span class="toc-text">list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo草稿"><span class="toc-number">11.</span> <span class="toc-text">Hexo草稿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github上hexo搭建博客-绑定域名"><span class="toc-number">12.</span> <span class="toc-text">github上hexo搭建博客-绑定域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签插件"><span class="toc-number">13.</span> <span class="toc-text">标签插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用块"><span class="toc-number">14.</span> <span class="toc-text">引用块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码块"><span class="toc-number">15.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iframe"><span class="toc-number">16.</span> <span class="toc-text">iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Image"><span class="toc-number">17.</span> <span class="toc-text">Image</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Link"><span class="toc-number">18.</span> <span class="toc-text">Link</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#include-Code"><span class="toc-number">19.</span> <span class="toc-text">include Code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Youtube"><span class="toc-number">20.</span> <span class="toc-text">Youtube</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用文章"><span class="toc-number">21.</span> <span class="toc-text">引用文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用资源"><span class="toc-number">22.</span> <span class="toc-text">引用资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSS不显示"><span class="toc-number">23.</span> <span class="toc-text">RSS不显示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启评论"><span class="toc-number">24.</span> <span class="toc-text">开启评论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">25.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">26.</span> <span class="toc-text">参考资料</span></a></li></ol>
         </div>

@@ -18,15 +18,23 @@
 
 <body>
   <header>
-  <div class="header-container">
+  <div class="header-nav">
+    <div class="header-container">
     <a class='logo' href="/">
       <span>前端博客</span>
     </a>
+
     <ul class="right-header">
       
         <li class="nav-item">
           
             <a href="/" class="item-link active">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
           
         </li>
       
@@ -50,6 +58,8 @@
       
     </ul>
   </div>
+  </div>
+
 </header>
 
   <main id='index'>
@@ -90,47 +100,6 @@
   <a href="/tags/#JQuery" class='tag'>JQuery</a>
 
   <a href="/tags/#代码" class='tag'>代码</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/代码-Js用户注册校验/">
-          <h3 class='post-head'>
-            Js用户注册校验
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="Js用户注册校验"><a href="#Js用户注册校验" class="headerlink" title="Js用户注册校验"></a>Js用户注册校验</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;scripttype=&quot;text/javascript&quot;&gt;</span><br><span class="line">      functionsave()&#123;</span><br><span class="line">             varusername = document.getElementById(&quot;username&quot;);</span><br><span class="line">             if(username.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;用户名不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varpassword = document.getElementById(&quot;password&quot;);</span><br><span class="line">             if(password.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;密码不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varrepassword = document.getElementById(&quot;repassword&quot;);</span><br><span class="line">             if(repassword.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;确认密码不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             if(password.value != repassword.value)&#123;</span><br><span class="line">                   alert(&quot;两次输入密码不一致！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varage = document.getElementById(&quot;age&quot;);</span><br><span class="line">             if(age.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;年龄不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             if(isNaN(age.value))&#123;</span><br><span class="line">                   alert(&quot;年龄为数字！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码/">代码</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#代码" class='tag'>代码</a>
-
-  <a href="/tags/#注册登录" class='tag'>注册登录</a>
 
 
           
@@ -211,6 +180,88 @@
               
              
   <a href="/tags/#插件" class='tag'>插件</a>
+
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/代码-Js用户注册校验/">
+          <h3 class='post-head'>
+            Js用户注册校验
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="Js用户注册校验"><a href="#Js用户注册校验" class="headerlink" title="Js用户注册校验"></a>Js用户注册校验</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;scripttype=&quot;text/javascript&quot;&gt;</span><br><span class="line">      functionsave()&#123;</span><br><span class="line">             varusername = document.getElementById(&quot;username&quot;);</span><br><span class="line">             if(username.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;用户名不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varpassword = document.getElementById(&quot;password&quot;);</span><br><span class="line">             if(password.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;密码不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varrepassword = document.getElementById(&quot;repassword&quot;);</span><br><span class="line">             if(repassword.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;确认密码不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             if(password.value != repassword.value)&#123;</span><br><span class="line">                   alert(&quot;两次输入密码不一致！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             varage = document.getElementById(&quot;age&quot;);</span><br><span class="line">             if(age.value ==&quot;&quot;)&#123;</span><br><span class="line">                   alert(&quot;年龄不能为空！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">             if(isNaN(age.value))&#123;</span><br><span class="line">                   alert(&quot;年龄为数字！&quot;);</span><br><span class="line">                   returnfalse;</span><br><span class="line">             &#125;</span><br><span class="line">      &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#注册登录" class='tag'>注册登录</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017/10/17/代码-Js用户注册校验的副本/">
+          <h3 class='post-head'>
+            JQuery 滚动到页面指定元素位置
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="1-滚动到页面指定元素位置"><a href="#1-滚动到页面指定元素位置" class="headerlink" title="1. 滚动到页面指定元素位置"></a>1. 滚动到页面指定元素位置</h2><p> Js<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//JQuery  引用</span><br><span class="line">&lt;script src=&quot;https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;scripttype=&quot;text/javascript&quot;&gt;</span><br><span class="line">$(document).ready(function() &#123;</span><br><span class="line">    $(&quot;#scroll&quot;).click(function() &#123;</span><br><span class="line">        $(&apos;html, body&apos;).animate(&#123;</span><br><span class="line">            scrollTop: $(&quot;#commentlist&quot;).offset().top   //指定id位置</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#JQuery" class='tag'>JQuery</a>
 
   <a href="/tags/#代码" class='tag'>代码</a>
 
@@ -422,47 +473,6 @@
         </div>
       </section>
     
-      <section>
-        <a href="/2017/10/17/代码-Js用户注册校验的副本/">
-          <h3 class='post-head'>
-            JQuery 滚动到页面指定元素位置
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="1-滚动到页面指定元素位置"><a href="#1-滚动到页面指定元素位置" class="headerlink" title="1. 滚动到页面指定元素位置"></a>1. 滚动到页面指定元素位置</h2><p> Js<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//JQuery  引用</span><br><span class="line">&lt;script src=&quot;https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;scripttype=&quot;text/javascript&quot;&gt;</span><br><span class="line">$(document).ready(function() &#123;</span><br><span class="line">    $(&quot;#scroll&quot;).click(function() &#123;</span><br><span class="line">        $(&apos;html, body&apos;).animate(&#123;</span><br><span class="line">            scrollTop: $(&quot;#commentlist&quot;).offset().top   //指定id位置</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码/">代码</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#JQuery" class='tag'>JQuery</a>
-
-  <a href="/tags/#代码" class='tag'>代码</a>
-
-
-          
-        </div>
-      </section>
-    
   </div>
   <!-- 右-侧边栏 -->
   <aside>
@@ -479,9 +489,9 @@
    
     
       <div class="categories">
-        <h1>
+        <h2>
           文章分类
-        </h1>
+        </h2>
         <div class="content">
           <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Bootstrap/">Bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Node/">Node</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Nodejs/">Nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React Native</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue-js/">Vue.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码/">代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/命令/">命令</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/模板引擎/">模板引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站/">网站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/资源/">资源</a></li></ul>
         </div>
@@ -491,9 +501,9 @@
     <!-- 标签云 -->
     
      <div class="categories">
-        <h1>
+        <h2>
           标签云
-        </h1>
+        </h2>
       <div class="content tagcloud">
             <a href="/tags/Ajax/" style="font-size: 18px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 14px;">Angular</a> <a href="/tags/Atom/" style="font-size: 16px;">Atom</a> <a href="/tags/Bootstrap/" style="font-size: 18px;">Bootstrap</a> <a href="/tags/BrowserSync/" style="font-size: 14px;">BrowserSync</a> <a href="/tags/Grunt/" style="font-size: 14px;">Grunt</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/Handlebars/" style="font-size: 14px;">Handlebars</a> <a href="/tags/Hexo/" style="font-size: 14px;">Hexo</a> <a href="/tags/JQuery/" style="font-size: 20px;">JQuery</a> <a href="/tags/Jade/" style="font-size: 16px;">Jade</a> <a href="/tags/Javascript/" style="font-size: 32px;">Javascript</a> <a href="/tags/Js设计/" style="font-size: 16px;">Js设计</a> <a href="/tags/Markdown/" style="font-size: 14px;">Markdown</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/Node/" style="font-size: 14px;">Node</a> <a href="/tags/Nodejs/" style="font-size: 14px;">Nodejs</a> <a href="/tags/React/" style="font-size: 14px;">React</a> <a href="/tags/React-Native/" style="font-size: 16px;">React Native</a> <a href="/tags/SEO优化/" style="font-size: 14px;">SEO优化</a> <a href="/tags/Sublime-Text3/" style="font-size: 14px;">Sublime Text3</a> <a href="/tags/Sublime-text/" style="font-size: 14px;">Sublime text</a> <a href="/tags/Sublime-text3/" style="font-size: 14px;">Sublime text3</a> <a href="/tags/Template-js/" style="font-size: 14px;">Template.js</a> <a href="/tags/Typecho/" style="font-size: 14px;">Typecho</a> <a href="/tags/Vue-js/" style="font-size: 24px;">Vue.js</a> <a href="/tags/Vue-js-axios/" style="font-size: 14px;">Vue.js, axios</a> <a href="/tags/Webpack/" style="font-size: 14px;">Webpack</a> <a href="/tags/Web前端框架/" style="font-size: 14px;">Web前端框架</a> <a href="/tags/Web前端资源/" style="font-size: 14px;">Web前端资源</a> <a href="/tags/WordPress/" style="font-size: 14px;">WordPress</a> <a href="/tags/Yeoman/" style="font-size: 14px;">Yeoman</a> <a href="/tags/bower/" style="font-size: 14px;">bower</a> <a href="/tags/create-react-app/" style="font-size: 14px;">create-react-app</a> <a href="/tags/css/" style="font-size: 26px;">css</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/html/" style="font-size: 18px;">html</a> <a href="/tags/jQuery/" style="font-size: 24px;">jQuery</a> <a href="/tags/pc/" style="font-size: 16px;">pc</a> <a href="/tags/wap/" style="font-size: 16px;">wap</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/代码/" style="font-size: 28px;">代码</a> <a href="/tags/前后分离开/" style="font-size: 14px;">前后分离开</a> <a href="/tags/前端工具/" style="font-size: 20px;">前端工具</a> <a href="/tags/前端框架/" style="font-size: 14px;">前端框架</a> <a href="/tags/加密/" style="font-size: 14px;">加密</a> <a href="/tags/命令/" style="font-size: 14px;">命令</a> <a href="/tags/工作/" style="font-size: 14px;">工作</a> <a href="/tags/微信分享/" style="font-size: 16px;">微信分享</a> <a href="/tags/成长之路/" style="font-size: 14px;">成长之路</a> <a href="/tags/插件/" style="font-size: 22px;">插件</a> <a href="/tags/正则表达式/" style="font-size: 20px;">正则表达式</a> <a href="/tags/注册登录/" style="font-size: 16px;">注册登录</a> <a href="/tags/移动端/" style="font-size: 22px;">移动端</a> <a href="/tags/笔记/" style="font-size: 30px;">笔记</a> <a href="/tags/网站/" style="font-size: 14px;">网站</a> <a href="/tags/设计/" style="font-size: 14px;">设计</a> <a href="/tags/读书/" style="font-size: 20px;">读书</a> <a href="/tags/跳转/" style="font-size: 14px;">跳转</a> <a href="/tags/面试/" style="font-size: 14px;">面试</a>
       </div>
@@ -509,9 +519,9 @@
     
     
       <div class="links">
-        <h1>
+        <h2>
           友情链接
-        </h1>
+        </h2>
         <div class="content">
           
             <a href="https://www.baidu.com/" target="_blank">百度</a>

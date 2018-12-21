@@ -18,15 +18,23 @@
 
 <body>
   <header>
-  <div class="header-container">
+  <div class="header-nav">
+    <div class="header-container">
     <a class='logo' href="/">
       <span>前端博客</span>
     </a>
+
     <ul class="right-header">
       
         <li class="nav-item">
           
             <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
           
         </li>
       
@@ -50,13 +58,15 @@
       
     </ul>
   </div>
+  </div>
+
 </header>
 
   <main id='post'>
   <div class="content">
     <article>
         <section class="content markdown-body">
-          <h1>JS正则表达式常用实例</h1>
+          <h2>JS正则表达式常用实例</h2>
           <div class='post-meta'>
             <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年08月29日</time>
             
@@ -138,7 +148,7 @@
   <aside>
     
     <div class="toc-container">
-        <h1>目录</h1>
+        <h2>目录</h2>
         <div class="content">
             <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#验证手机号"><span class="toc-number">1.</span> <span class="toc-text">验证手机号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证座机号"><span class="toc-number">2.</span> <span class="toc-text">验证座机号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证邮箱"><span class="toc-number">3.</span> <span class="toc-text">验证邮箱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证只能是数字"><span class="toc-number">4.</span> <span class="toc-text">验证只能是数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证日期"><span class="toc-number">5.</span> <span class="toc-text">验证日期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证数字个数"><span class="toc-number">6.</span> <span class="toc-text">验证数字个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证数字是带1-2位小数的正数或负数"><span class="toc-number">7.</span> <span class="toc-text">验证数字是带1-2位小数的正数或负数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证只能是汉字"><span class="toc-number">8.</span> <span class="toc-text">验证只能是汉字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证只能是英文"><span class="toc-number">9.</span> <span class="toc-text">验证只能是英文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证只能是英文或者数字"><span class="toc-number">10.</span> <span class="toc-text">验证只能是英文或者数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#只能为数字或字母"><span class="toc-number">11.</span> <span class="toc-text">只能为数字或字母</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#只能为数字-字母和英文逗号"><span class="toc-number">12.</span> <span class="toc-text">只能为数字,字母和英文逗号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证只能是英文和数字，只能是字母开头-6-16位"><span class="toc-number">13.</span> <span class="toc-text">验证只能是英文和数字，只能是字母开头,6-16位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证只能是英文或者数字或者下划线"><span class="toc-number">14.</span> <span class="toc-text">验证只能是英文或者数字或者下划线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证域名"><span class="toc-number">15.</span> <span class="toc-text">验证域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证用户名"><span class="toc-number">16.</span> <span class="toc-text">验证用户名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证密码"><span class="toc-number">17.</span> <span class="toc-text">验证密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证身份证（18位）"><span class="toc-number">18.</span> <span class="toc-text">验证身份证（18位）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#判断输入的位数不超过16位"><span class="toc-number">19.</span> <span class="toc-text">判断输入的位数不超过16位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式-常用语句"><span class="toc-number">20.</span> <span class="toc-text">正则表达式 - 常用语句</span></a></li></ol>
         </div>
