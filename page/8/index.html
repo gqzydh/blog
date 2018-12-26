@@ -195,47 +195,6 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/vue-axios/">
-          <h3 class='post-head'>
-            axios
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <p>一、安装<br>1、 利用npm安装npm install axios –save<br>2、 利用bower安装bower install axios –save<br>3、 直接利用cdn引入<script src="https://unpkg.com/axios/dist/axios.min.js"></script></p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Vue.js, axios" class='tag'>Vue.js, axios</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
         <a href="/2017-10-17/vue.js笔记_01/">
           <h3 class='post-head'>
             vue笔记_01
@@ -313,6 +272,47 @@
   <a href="/tags/#jQuery" class='tag'>jQuery</a>
 
   <a href="/tags/#读书" class='tag'>读书</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/vue-axios/">
+          <h3 class='post-head'>
+            axios
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p>一、安装<br>1、 利用npm安装npm install axios –save<br>2、 利用bower安装bower install axios –save<br>3、 直接利用cdn引入<script src="https://unpkg.com/axios/dist/axios.min.js"></script></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Vue.js, axios" class='tag'>Vue.js, axios</a>
 
 
           
@@ -443,9 +443,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/代码-JQuery ScrollTo滚动插件/">
+        <a href="/2017-10-17/代码-Base64加密/">
           <h3 class='post-head'>
-            JQuery ScrollTo滚动插件使用
+            base64加密
           </h3>
         </a>
         
@@ -453,7 +453,7 @@
           
             
               
-                <p>##jQuery ScrollTo滚动插件##</p>
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;base64加密&lt;/title&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 定义字符串  </span><br><span class="line">var string = &apos;15000870973&apos;;  </span><br><span class="line">  </span><br><span class="line">// 加密  </span><br><span class="line">var encodedString = Base64.encode(string);  </span><br><span class="line">console.log(encodedString); // 输出: &quot;SGVsbG8gV29ybGQh&quot;  </span><br><span class="line">  </span><br><span class="line">// 解密  </span><br><span class="line">var decodedString = Base64.decode(encodedString);  </span><br><span class="line">console.log(decodedString); // 输出: &quot;Hello World!&quot;  </span><br><span class="line">&lt;/script&gt;  </span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -476,9 +476,9 @@
                 <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#插件" class='tag'>插件</a>
-
   <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#加密" class='tag'>加密</a>
 
 
           
@@ -536,11 +536,7 @@
         </h2>
         <div class="content">
           
-            <a href="https://www.baidu.com/" target="_blank">百度</a>
-          
-            <a href="https://www.google.com/" target="_blank">谷歌</a>
-          
-            <a href="https://www.zhihu.com/" target="_blank">知乎</a>
+            <a href="https://gqzydh.github.io/nav/" target="_blank">GQ个人导航网</a>
           
         </div>
       </div>
@@ -568,17 +564,24 @@
   <footer id="fooler">
   <div class="copyright">
     <div>
-      <span style="padding-right:30px;">
-      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
-    </span>
-      
-       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
-       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
-      
-
+      <ul>
+        <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+      </ul>
+  
     </div>
+
     <div>
-      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2018 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
     </div>
   </div>
 </footer>
@@ -587,6 +590,22 @@
 <script src="/lib/in-view.min.js"></script>
 <script src="/lib/lodash.min.js"></script>
 <script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
 
 
 <div class="nodisplay">

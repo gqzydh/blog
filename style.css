@@ -29,6 +29,12 @@ main {
   margin: 0 auto;
   margin-top: 80px; }
 
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
 .article-category {
   display: inline-block; }
 
@@ -46,7 +52,6 @@ footer {
     width: 1100px;
     padding: 0 16px;
     margin: 0 auto;
-    display: flex;
     line-height: 3em;
     color: #BABABA; }
     footer .copyright a:hover {

@@ -103,17 +103,24 @@
   <footer id="fooler">
   <div class="copyright">
     <div>
-      <span style="padding-right:30px;">
-      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
-    </span>
-      
-       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
-       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
-      
-
+      <ul>
+        <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+      </ul>
+  
     </div>
+
     <div>
-      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2018 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
     </div>
   </div>
 </footer>
@@ -122,6 +129,22 @@
 <script src="/lib/in-view.min.js"></script>
 <script src="/lib/lodash.min.js"></script>
 <script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
 
 
 <div class="nodisplay">
@@ -136,51 +159,13 @@
 
 </body>
 </html>
->
-                <span>
-                    jQuery学习笔记
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2017_10_17</time>
-              <a href="/2017-10-17/JQuery【锋利的JQuery】/">
-                <span>
-                    JQuery【锋利的JQuery】
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2017_10_17</time>
-              <a href="/2017-10-17/JQuery事件/">
-                <span>
-                    JQuery事件
-                </span>
-              </a>
-            </li>
-          
-        </ul>
+�次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
       </div>
-    
-  </div>
-</main>
-
-  <footer id="fooler">
-  <div class="copyright">
-    <div>
-      <span style="padding-right:30px;">
-      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
-    </span>
-      
-       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
-       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
-      
-
-    </div>
-    <div>
-      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
     </div>
   </div>
 </footer>
@@ -189,6 +174,22 @@
 <script src="/lib/in-view.min.js"></script>
 <script src="/lib/lodash.min.js"></script>
 <script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
 
 
 <div class="nodisplay">
