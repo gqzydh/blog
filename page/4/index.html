@@ -7,7 +7,7 @@
   <meta name="description" content="前端博客">
   <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
   
-    <link rel="icon" href="/images/favicon_16X16.ico">
+    <link rel="icon" href="/images/favicon_32X32.ico">
   
   
   <title>前端博客</title>
@@ -66,9 +66,9 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017/10/17/Angular.js入门/">
+        <a href="/2017-10-17/Js-Javascript浏览器对象/">
           <h3 class='post-head'>
-            Angular.js入门
+            Javascript浏览器对象
           </h3>
         </a>
         
@@ -76,56 +76,19 @@
           
             
               
-                <p>AngularJS 是一个 JavaScript 框架。它是一个以 JavaScript 编写的库。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script src=&quot;http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+                <ol>
               
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Angular/">Angular</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Angular" class='tag'>Angular</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/Js-Js常用函数/">
-          <h3 class='post-head'>
-            Js常用函数
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h3 id="共享onload事件，addloadEvent-函数"><a href="#共享onload事件，addloadEvent-函数" class="headerlink" title="共享onload事件，addloadEvent 函数"></a>共享onload事件，addloadEvent 函数</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function addloadEvent(func)&#123;</span><br><span class="line">  var oldonload = window.onload; //将现有的事件处理函数的值存入变量中</span><br><span class="line">  if(typeof window.onload != &apos;function&apos;)&#123;</span><br><span class="line">    window.onload = func; //如果这个事件处理函数没有绑定任何函数，就把新函数添加给它</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    window.onload = function()&#123;</span><br><span class="line">      oldonload();</span><br><span class="line">      func(); //如果已经绑定了函数，就把新函数追加到现有指令的末尾</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">addloadEvent(app);</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
   </div>
+
+
 
 
 
@@ -144,7 +107,89 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Js-Js学习笔记/">
+        <a href="/2017-10-17/Js-Javascript最佳实践/">
+          <h3 class='post-head'>
+            Javascript 最佳实践
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <ol>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/Bootstrap的基本的HTML引用/">
+          <h3 class='post-head'>
+            Bootstrap的基本的HTML引用
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p>##Bootstrap 模版##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">   &lt;head&gt;</span><br><span class="line">      &lt;title&gt;Bootstrap 模板&lt;/title&gt;</span><br><span class="line">      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">      &lt;!-- 引入 Bootstrap --&gt;</span><br><span class="line">      &lt;link href=&quot;http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line"></span><br><span class="line">      &lt;!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 --&gt;</span><br><span class="line">      &lt;!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 --&gt;</span><br><span class="line">      &lt;!--[if lt IE 9]&gt;</span><br><span class="line">         &lt;script src=&quot;https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">         &lt;script src=&quot;https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">      &lt;![endif]--&gt;</span><br><span class="line">   &lt;/head&gt;</span><br><span class="line">   &lt;body&gt;</span><br><span class="line">      &lt;h1&gt;Hello, world!&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">      &lt;!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) --&gt;</span><br><span class="line">      &lt;script src=&quot;https://code.jquery.com/jquery.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">      &lt;!-- 包括所有已编译的插件 --&gt;</span><br><span class="line">      &lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">   &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Bootstrap/">Bootstrap</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Bootstrap" class='tag'>Bootstrap</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/Js-Js学习笔记/">
           <h3 class='post-head'>
             Javascript高级技巧学习笔记
           </h3>
@@ -159,12 +204,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
   </div>
+
+
 
 
 
@@ -183,7 +230,89 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Js-Js常用小技巧/">
+        <a href="/2017-10-17/笔记-前后分离开发实践/">
+          <h3 class='post-head'>
+            前后分离开发实践
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p>基于 webpack 的前后端分离开发环境实践</p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/笔记/">笔记</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#前后分离开" class='tag'>前后分离开</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/Js-Js常用函数/">
+          <h3 class='post-head'>
+            Js常用函数
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h3 id="共享onload事件，addloadEvent-函数"><a href="#共享onload事件，addloadEvent-函数" class="headerlink" title="共享onload事件，addloadEvent 函数"></a>共享onload事件，addloadEvent 函数</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function addloadEvent(func)&#123;</span><br><span class="line">  var oldonload = window.onload; //将现有的事件处理函数的值存入变量中</span><br><span class="line">  if(typeof window.onload != &apos;function&apos;)&#123;</span><br><span class="line">    window.onload = func; //如果这个事件处理函数没有绑定任何函数，就把新函数添加给它</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    window.onload = function()&#123;</span><br><span class="line">      oldonload();</span><br><span class="line">      func(); //如果已经绑定了函数，就把新函数追加到现有指令的末尾</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">addloadEvent(app);</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/Js-Js常用小技巧/">
           <h3 class='post-head'>
             Js常用小技巧
           </h3>
@@ -198,12 +327,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
   </div>
+
+
 
 
 
@@ -222,46 +353,7 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Js-Js跳转/">
-          <h3 class='post-head'>
-            Javascript跳转
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            <ol>
-<li>普通跳转到指定链接</li>
-<li>带进度条 后跳转链接</li>
-</ol>
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Javascript" class='tag'>Javascript</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/Js-Js高级技巧/">
+        <a href="/2017-10-17/Js-Js高级技巧/">
           <h3 class='post-head'>
             Js高级技巧
           </h3>
@@ -276,12 +368,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
   </div>
+
+
 
 
 
@@ -300,7 +394,48 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Js-Jvavscript设计模式(一)/">
+        <a href="/2017-10-17/Js-Js跳转/">
+          <h3 class='post-head'>
+            Javascript跳转
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            <ol>
+<li>普通跳转到指定链接</li>
+<li>带进度条 后跳转链接</li>
+</ol>
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/Js-Jvavscript设计模式(一)/">
           <h3 class='post-head'>
             Javascript设计模式(一)
           </h3>
@@ -315,12 +450,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
   </div>
+
+
 
 
 
@@ -334,128 +471,6 @@
   <a href="/tags/#Javascript" class='tag'>Javascript</a>
 
   <a href="/tags/#Js设计" class='tag'>Js设计</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/Js-Jvavscript设计模式(三)/">
-          <h3 class='post-head'>
-            Javascript设计模式(一)
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="Javascript设计模式-组合模式"><a href="#Javascript设计模式-组合模式" class="headerlink" title="Javascript设计模式 - 组合模式"></a>Javascript设计模式 - 组合模式</h2><ul>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Javascript" class='tag'>Javascript</a>
-
-  <a href="/tags/#Js设计" class='tag'>Js设计</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/Js-javascript最佳开发实践/">
-          <h3 class='post-head'>
-            javascript最佳开发实践
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            <ol>
-<li>尽可能的保持代码简洁</li>
-<li>[] 比 new Array(); 更好</li>
-<li>尽量不要多次使用 var</li>
-</ol>
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#读书" class='tag'>读书</a>
-
-  <a href="/tags/#Javascript" class='tag'>Javascript</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/Js-localStorage存值取值以及存取Json/">
-          <h3 class='post-head'>
-            localStorage存值取值以及存取Json
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="localStorage存值取值调用方法"><a href="#localStorage存值取值调用方法" class="headerlink" title="localStorage存值取值调用方法"></a>localStorage存值取值调用方法</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">localStorage.setItem(&quot;key&quot;,&quot;value&quot;);//存储变量名为key，值为value的变量</span><br><span class="line">localStorage.key = &quot;value&quot;//存储变量名为key，值为value的变量</span><br><span class="line">localStorage.getItem(&quot;key&quot;);//获取存储的变量key的值www.it165.net</span><br><span class="line">localStorage.key;//获取存储的变量key的值</span><br><span class="line">localStorage.removeItem(&quot;key&quot;)//删除变量名为key的存储变量</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Javascript" class='tag'>Javascript</a>
 
 
           

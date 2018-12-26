@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>css3选择器 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>css3选择器</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/css/">css</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#css" class='tag'>css</a>
+
+
+            
+          </div>
+          <ol>
+<li>CSS 派生选择器</li>
+<li>CSS 后代选择器</li>
+<li>CSS 子元素选择器</li>
+<li>CSS 相邻兄弟选择器</li>
+<li>CSS 属性选择器</li>
+<li>结构性伪类选择器</li>
+<li>UI元素状态伪类选择器</li>
+</ol>
+<h2 id="CSS-派生选择器"><a href="#CSS-派生选择器" class="headerlink" title="CSS 派生选择器"></a>CSS 派生选择器</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">h2 &#123;color: red;&#125;</span><br><span class="line">h2 strong &#123;color: blue;&#125;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;The strongly emphasized word in this paragraph is&lt;strong&gt;red&lt;/strong&gt;.&lt;/p&gt;</span><br><span class="line">&lt;h2&gt;This subhead is also red.&lt;/h2&gt;</span><br><span class="line">&lt;h2&gt;The strongly emphasized word in this subhead is&lt;strong&gt;blue&lt;/strong&gt;.&lt;/h2&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="CSS-后代选择器"><a href="#CSS-后代选择器" class="headerlink" title="CSS 后代选择器"></a>CSS 后代选择器</h2><p>有关后代选择器有一个易被忽视的方面，即两个元素之间的层次间隔可以是无限的。不论嵌套层次多深.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">h1 em &#123;color:red;&#125;</span><br><span class="line">&lt;h1&gt;This is a &lt;em&gt;important&lt;/em&gt; heading&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;This is a &lt;em&gt;important&lt;/em&gt; paragraph.&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="CSS-子元素选择器"><a href="#CSS-子元素选择器" class="headerlink" title="CSS 子元素选择器"></a>CSS 子元素选择器</h2><p>不希望选择任意的后代元素，而是希望缩小范围，只选择某个元素的子元素，请使用子元素选择器<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">h1 &gt; strong &#123;color:red;&#125;</span><br><span class="line">&lt;h1&gt;This is &lt;strong&gt;very&lt;/strong&gt; &lt;strong&gt;very&lt;/strong&gt; important.&lt;/h1&gt;</span><br><span class="line">&lt;h1&gt;This is &lt;em&gt;really &lt;strong&gt;very&lt;/strong&gt;&lt;/em&gt; important.&lt;/h1&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="CSS-相邻兄弟选择器"><a href="#CSS-相邻兄弟选择器" class="headerlink" title="CSS 相邻兄弟选择器"></a>CSS 相邻兄弟选择器</h2><p>如果需要选择紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">li + li &#123;font-weight:bold;&#125;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li&gt;List item 1&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;List item 2&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;List item 3&lt;/li&gt;</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">  &lt;ol&gt;</span><br><span class="line">    &lt;li&gt;List item 1&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;List item 2&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;List item 3&lt;/li&gt;</span><br><span class="line">  &lt;/ol&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="CSS-属性选择器"><a href="#CSS-属性选择器" class="headerlink" title="CSS 属性选择器"></a>CSS 属性选择器</h2><p>[att] 用于选取带有指定属性的元素。<br>[att=“value”] 匹配属性等于某特定值的元素<br>[att|=”value”] 用于选取带有以指定值开头的属性值的元素，该值必须是整个单词。<br>[att^=”value”] 匹配属性包含以特定的值开头的元素<br>[att$=”value”] 匹配属性包含以特定的值结尾的元素<br>[att*=“value”] 匹配属性包含含有特定的值的元素<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[title~=hello] &#123; color:red; &#125;  </span><br><span class="line">&lt;h2 title=&quot;hello world&quot;&gt;Hello world&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">[lang|=en] &#123; color:red; &#125;</span><br><span class="line">&lt;p lang=&quot;en&quot;&gt;Hello!&lt;/p&gt;</span><br><span class="line">&lt;p lang=&quot;en-us&quot;&gt;Hi!&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">input[type=&quot;text&quot;]&#123;width:150px;display:block;background-color:yellow;&#125;</span><br><span class="line">input[type=&quot;button&quot;]&#123;width:120px;display:block;font-family: Verdana, Arial;&#125;</span><br><span class="line">&lt;form name=&quot;input&quot; action=&quot;&quot; method=&quot;get&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;text&quot; name=&quot;Name&quot; value=&quot;Bill&quot; size=&quot;20&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;text&quot; name=&quot;Name&quot; value=&quot;Gates&quot; size=&quot;20&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;button&quot; value=&quot;Example Button&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="结构性伪类选择器"><a href="#结构性伪类选择器" class="headerlink" title="结构性伪类选择器"></a>结构性伪类选择器</h2><p>:root    :not    :empty<br>:nth-child(n)  :nth-last-child(n)<br>:only-child<br>:first-child  :last-child</p>
+<ul>
+<li>详解：<br>:root 选择器匹配文档根元素。十有八九根节点是 <html> 元素.<br>:not(p) 设置非 <p> 元素的所有元素的样式<br>:empty  指定空的元素的背景色 ／当元素内容为空时被选中</p></html></li>
+</ul>
+<p>:nth-child(n) 选择器匹配属于其父元素的第 N 个子元素，不论元素的类型。<br>:nth-last-child(n) 与上个选择器的思想同样，但是从后面匹配元素</p>
+<ul>
+<li><p>倍数匹配<br>:nth-child(an) 匹配所有倍数为a的元素。其中参数an中的字母n不可缺省，它是倍数写法的标志，如3n、5n。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">li:nth-child(3n)&#123;background:orange;&#125;/*把第3、第6、第9、…、所有3的倍数的LI的背景设为橙色*/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>倍数分组匹配</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">li:nth-child(3n+1)&#123;background:orange;&#125;/*匹配第1、第4、第7、…、每3个为一组的第1个LI*/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>奇偶匹配</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:nth-child(odd) 与 :nth-child(even)</span><br><span class="line">  分别匹配序号为奇数与偶数的元素。奇数(odd)与(2n+1)结果一样；偶数(even)(2n)结果一样。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>:only-child 选择器匹配属于其父元素的唯一子元素的每个元素。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">p:only-child&#123;background:#ff0000;&#125;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">&lt;p&gt;这是一个段落。&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>:first-child 选择器用于选取属于其父元素的首个子元素的指定选择器。<br>:last-child 选择器匹配属于其父元素的最后一个子元素的每个元素。</p>
+<h2 id="UI元素状态伪类选择器"><a href="#UI元素状态伪类选择器" class="headerlink" title="UI元素状态伪类选择器"></a>UI元素状态伪类选择器</h2><blockquote>
+<p>共同点：指定的样式只有当元素处于某种状态下时才起作用</p>
+</blockquote>
+<p>:hover   选择器用于选择鼠标指针浮动在上面的元素。<br>:active  元素被激活（鼠标在元素上按下还没有松开）<br>:focus  选择器用于选取获得焦点的元素<br>:eabled  已启用的 input 元素设置背景色<br>:disabled  被禁用的 input 元素设置背景色<br>:read-only  选择器用于选取设置了 “readonly” 属性的元素。表单元素可以设置 “readonly” 属性来定义元素只读。<br>:read-write   选择器用于匹配可读及可写的元素。<br>:checked  选择器匹配每个已被选中的 input 元素（只用于单选按钮和复选框）。<br>::selection 选择器匹配被用户选取的选取是部分。<br>只能向 ::selection 选择器应用少量 CSS 属性：color、background、cursor 以及 outline</p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-派生选择器"><span class="toc-number">1.</span> <span class="toc-text">CSS 派生选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-后代选择器"><span class="toc-number">2.</span> <span class="toc-text">CSS 后代选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-子元素选择器"><span class="toc-number">3.</span> <span class="toc-text">CSS 子元素选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-相邻兄弟选择器"><span class="toc-number">4.</span> <span class="toc-text">CSS 相邻兄弟选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-属性选择器"><span class="toc-number">5.</span> <span class="toc-text">CSS 属性选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结构性伪类选择器"><span class="toc-number">6.</span> <span class="toc-text">结构性伪类选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UI元素状态伪类选择器"><span class="toc-number">7.</span> <span class="toc-text">UI元素状态伪类选择器</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="/js/script.js"></script>
+
+
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

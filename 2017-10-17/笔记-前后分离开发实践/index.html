@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>前后分离开发实践 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>前后分离开发实践</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/笔记/">笔记</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#前后分离开" class='tag'>前后分离开</a>
+
+
+            
+          </div>
+          <p>基于 webpack 的前后端分离开发环境实践</p>
+<blockquote>
+<p>webpack本身的定位是一个资源管理和打包构建工作，本身的强大之处在于对各种静态资源的依赖分析和预编译</p>
+</blockquote>
+<p>目前业界比较有代表性的前后端分离的例子是SPA(Single-page application)，所有用到的展现数据都是后端通过异步接口(AJAX/JSONP/WEBSOCKET)的方式提供的，</p>
+<p>现如今最火的前端框架如：React， Vue，Angular等也都推荐采用SPA的模式进行开发并且从组件化，数据流，状态容器再到网络请求，单页路由等都给出了完善的全家桶方案。</p>
+<p><img src="/images/mmbiz.png" width="587" height="607"></p>
+<h2 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h2><ul>
+<li>前端开发本地开发环境下该如何突破域的限制和服务端接口进行通信？</li>
+<li>一条命令，能否同时完成webpack和node server的启动？</li>
+<li>开发环境下的前端资源路径应该如何配置？</li>
+<li>mock数据应该怎么做？</li>
+<li>打包构建后的文件能否直接预览效果？</li>
+</ul>
+<h2 id="理想化的开发环境应根据具备以下几点要求："><a href="#理想化的开发环境应根据具备以下几点要求：" class="headerlink" title="理想化的开发环境应根据具备以下几点要求："></a>理想化的开发环境应根据具备以下几点要求：</h2><ul>
+<li>操作够简单，拉下代码后，只需要记住仅有的几个命令就能直接进入开发状态</li>
+<li>解耦够彻底，开发者只需要修改路由配置表就能无缝在多个请求接口中灵活切换</li>
+<li>资源够清晰，所有的开发资源都能到精确可控，同时支持一键打包构建，单页和多页模式可并存</li>
+<li>配置够灵活，可以根据自身项目的实际情况灵活添加各类中间件，扩展模块和第三方插件</li>
+</ul>
+<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><ul>
+<li>webpack-dev-server<br>在实际开发中官方还推荐了一个快速读取webpack配置的server环境webpack-dev-server<blockquote>
+<p>一个适用于开发环境的，基于express + webpack-dev-middleware实现的，支持实时更新，内存构建资源的开发服务器，通过简单的配置即可满足webpack开发环境中的一系列需求，但是当我们的开发环境日趋复杂和多样的时候，不仅需要对自定义配置的细节灵活可控，同时需要对进行加入各种第三方的插件进行功能扩展，才能最大程度的发挥webpack环境中的威力。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="打造项目专属的前端开发环境"><a href="#打造项目专属的前端开发环境" class="headerlink" title="打造项目专属的前端开发环境"></a>打造项目专属的前端开发环境</h1><h2 id="一、借助node和http-proxy实现跨域通信"><a href="#一、借助node和http-proxy实现跨域通信" class="headerlink" title="一、借助node和http-proxy实现跨域通信"></a>一、借助node和http-proxy实现跨域通信</h2><p>前后端分离开发中，本地前端开发调用接口会有跨域问题，解决方法：</p>
+<ul>
+<li>http-proxy：用nodejs搭建本地http服务器，并且判断访问接口URL时进行转发，由于利用了http-proxy正向代理的模式进行了转发，采用的是服务对服务的模式，能较为完美解决本地开发时候的跨域问题，也是本文中推荐的方式，配置如下：</li>
+</ul>
+<p>1 .搭建node和http-proxy环境<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install express # express作为node基础服务框架</span><br><span class="line">npm install http-proxy-middleware # http-proxy的express中间件</span><br><span class="line">npm install body-parser # bodyParser中间件用来解析http请求体</span><br><span class="line">npm install querystring    # querystring用来字符串化对象或解析字符串</span><br></pre></td></tr></table></figure></p>
+<p>工程项目下可以新建一个server的文件夹放置node资源，如下所示： &gt; server<br>├── main.js ├── proxy.config.js ├── routes └── views</p>
+<ol>
+<li>编写代理配置脚本：<br>proxy.config.js中可以配置对应需要代理的url和目标url，如下：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const proxy = [</span><br><span class="line">  &#123;</span><br><span class="line">    url: &apos;/back_end/auth/*&apos;,</span><br><span class="line">    target: &apos;http://10.2.0.1:8351&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    url: &apos;/back_end/*&apos;,</span><br><span class="line">    target: &apos;http://10.2.0.1:8352&apos;</span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line">module.exports = proxy;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>main.js中的配置如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const express = require(&apos;express&apos;)</span><br><span class="line">const bodyParser = require(&apos;body-parser&apos;)</span><br><span class="line">const proxy = require(&apos;http-proxy-middleware&apos;)</span><br><span class="line">const querystring = require(&apos;querystring&apos;)</span><br><span class="line">const app = express()</span><br><span class="line"></span><br><span class="line">// make http proxy middleware setting</span><br><span class="line">const createProxySetting = function (url) &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    target: url,</span><br><span class="line">    changeOrigin: true,</span><br><span class="line">    headers: &#123;</span><br><span class="line">      Accept: &apos;application/json&apos;,</span><br><span class="line">      &apos;X-Requested-With&apos;: &apos;XMLHttpRequest&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    onProxyReq: function (proxyReq, req) &#123;</span><br><span class="line">      if (req.method === &apos;POST&apos; &amp;&amp; req.body) &#123;</span><br><span class="line">        const bodyData = querystring.stringify(req.body)</span><br><span class="line">        proxyReq.write(bodyData)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">// parse application/json</span><br><span class="line">app.use(bodyParser.json())</span><br><span class="line"></span><br><span class="line">// parse application/x-www-form-urlencoded</span><br><span class="line">app.use(bodyParser.urlencoded(&#123; extended: false &#125;))</span><br><span class="line"></span><br><span class="line">// proxy</span><br><span class="line">proxyConfig.forEach(function (item) &#123;</span><br><span class="line">   app.use(item.url, proxy(createProxySetting(item.target)))</span><br><span class="line">&#125;)</span><br><span class="line">// eg: http://127.0.0.1:3000/back_end/oppor =&gt; http://10.2.0.1:8352/back_end/oppor</span><br></pre></td></tr></table></figure></p>
+<p>通过以上的配置我们就能轻松将指定url下的请求自动转发到匹配成功的目标接口下。<br>NODE_ENV=development node ./bin/dev-server.js</p>
+<p>isDebug: true [HPM] Proxy created: / -&gt; <a href="http://10.2.0.1:8351" target="_blank" rel="noopener">http://10.2.0.1:8351</a> [HPM] Proxy created: / -&gt; <a href="http://10.2.0.1:8352" target="_blank" rel="noopener">http://10.2.0.1:8352</a> Listening at 192.168.1.104:3000</p>
+<p>webpack built d558389f7a9a453af17f in 2018ms Hash: d558389f7a9a453af17f Version: webpack 1.14.0 Time: 2018ms</p>
+<h2 id="二、将webpack配置和node-server进程打通"><a href="#二、将webpack配置和node-server进程打通" class="headerlink" title="二、将webpack配置和node server进程打通"></a>二、将webpack配置和node server进程打通</h2><ul>
+<li>解耦webpack中的配置<br>由于webpack在开发和生产环境中经常需要做各种配置的切换，官方也提供了DefinePlugin来进行环境参数设置，但是大量的判断语句侵入webpack.config中其实会导致代码的可读性和复用性变差，也容易造成代码冗余，我们在此可以对配置文件进行重构，将之前的webpack配置文件拆解成了webpack.config.js，project.config.js和environments.config.js三个文件，三个文件各司其职，又可互相协作，减少维护成本，如下：</li>
+<li>environments.config.js: 主要的作用就是存放在特定环境下的需要变化的配置参数，包含有：publicpath, devtools, wanings，hash等</li>
+<li>project.config.js：主要的作用是存放于项目有关的基础配置，如：server，output，loader，externals，plugin等基础配置；通过一个overrides实现对environments中的配置信息重载。</li>
+<li>webpack.config.js：主要是读取project.config.js中的配置，再按标准的webpack字段填入project中的配置信息，原则上是该文件的信息只与构建工具有关，而与具体的项目工程无关，可以做到跨项目间复用。<blockquote>
+<p>config ├── environments.config.js ├── project.config.js └── webpack.config.js</p>
+</blockquote>
+</li>
+</ul>
+<p>environments.config.js中的关键实现：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// Here is where you can define configuration overrides based on the execution environment.</span><br><span class="line">// Supply a key to the default export matching the NODE_ENV that you wish to target, and</span><br><span class="line">// the base configuration will apply your overrides before exporting itself.</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  // ======================================================</span><br><span class="line">  // Overrides when NODE_ENV === &apos;development&apos;</span><br><span class="line">  // ======================================================</span><br><span class="line"></span><br><span class="line">  development : (config) =&gt; (&#123;</span><br><span class="line">    compiler_public_path : `http://$&#123;config.server_host&#125;:$&#123;config.server_port&#125;/`</span><br><span class="line">  &#125;),</span><br><span class="line"></span><br><span class="line">  // ======================================================</span><br><span class="line">  // Overrides when NODE_ENV === &apos;production&apos;</span><br><span class="line">  // ======================================================</span><br><span class="line"></span><br><span class="line">  production : (config) =&gt; (&#123;</span><br><span class="line">    compiler_base_route      : &apos;/apps/&apos;,</span><br><span class="line">    compiler_public_path     : &apos;/static/&apos;,</span><br><span class="line">    compiler_fail_on_warning : false,</span><br><span class="line">    compiler_hash_type       : &apos;chunkhash&apos;,</span><br><span class="line">    compiler_devtool         : false,</span><br><span class="line">    compiler_stats           : &#123;</span><br><span class="line">      chunks       : true,</span><br><span class="line">      chunkModules : true,</span><br><span class="line">      colors       : true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>project.config.js中的关键实现：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// project.config.js</span><br><span class="line"></span><br><span class="line">const config = &#123;</span><br><span class="line">  env : process.env.NODE_ENV || &apos;development&apos;,</span><br><span class="line"></span><br><span class="line">  // ----------------------------------</span><br><span class="line">  // Project Structure</span><br><span class="line">  // ----------------------------------</span><br><span class="line"></span><br><span class="line">  path_base  : path.resolve(__dirname, &apos;..&apos;),</span><br><span class="line">  dir_client : &apos;src&apos;,</span><br><span class="line">  dir_dist   : &apos;dist&apos;,</span><br><span class="line">  dir_public : &apos;public&apos;,</span><br><span class="line">  dir_server : &apos;server&apos;,</span><br><span class="line">  dir_test   : &apos;tests&apos;,</span><br><span class="line"></span><br><span class="line">  // ----------------------------------</span><br><span class="line">  // Server Configuration</span><br><span class="line">  // ----------------------------------</span><br><span class="line"></span><br><span class="line">  server_host : ip.address(), // use string &apos;localhost&apos; to prevent exposure on local network</span><br><span class="line">  server_port : process.env.PORT || 3000,</span><br><span class="line"></span><br><span class="line">  // ----------------------------------</span><br><span class="line">  // Compiler Configuration</span><br><span class="line">  // ----------------------------------</span><br><span class="line"></span><br><span class="line">  compiler_devtool         : &apos;source-map&apos;,</span><br><span class="line">  compiler_hash_type       : &apos;hash&apos;,</span><br><span class="line">  compiler_fail_on_warning : false,</span><br><span class="line">  compiler_quiet           : false,</span><br><span class="line">  compiler_public_path     : &apos;/&apos;,</span><br><span class="line">  compiler_stats           : &#123;</span><br><span class="line">    chunks : false,</span><br><span class="line">    chunkModules : false,</span><br><span class="line">    colors : true</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// 在此通过读取环境变量读取environments中对应的配置项，对前面的配置项进行覆盖</span><br><span class="line">const environments = require(&apos;./environments.config&apos;)</span><br><span class="line">const overrides = environments[config.env]</span><br><span class="line"></span><br><span class="line">if (overrides) &#123;</span><br><span class="line">  debug(&apos;Found overrides, applying to default configuration.&apos;)</span><br><span class="line">  Object.assign(config, overrides(config))</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  debug(&apos;No environment overrides found, defaults will be used.&apos;)</span><br><span class="line">&#125;</span><br><span class="line">module.exports = config</span><br></pre></td></tr></table></figure></p>
+<p>webpack.config.js中的关键实现：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const webpack = require(&apos;webpack&apos;)</span><br><span class="line">const project = require(&apos;./project.config&apos;)</span><br><span class="line">const debug = require(&apos;debug&apos;)(&apos;app:config:webpack&apos;)</span><br><span class="line">const UglifyJsParallelPlugin = require(&apos;webpack-uglify-parallel&apos;)</span><br><span class="line">const __DEV__ = project.globals.__DEV__</span><br><span class="line">const __PROD__ = project.globals.__PROD__</span><br><span class="line"></span><br><span class="line">const webpackConfig = &#123;</span><br><span class="line">  name    : &apos;client&apos;,</span><br><span class="line">  target  : &apos;web&apos;,</span><br><span class="line">  devtool : project.compiler_devtool,</span><br><span class="line">  resolve : &#123;</span><br><span class="line">    modules: [project.paths.client(), &apos;node_modules&apos;],</span><br><span class="line">    extensions: [&apos;.web.js&apos;, &apos;.js&apos;, &apos;.jsx&apos;, &apos;.json&apos;]</span><br><span class="line">  &#125;,</span><br><span class="line">  module : &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (__DEV__) &#123;</span><br><span class="line">  debug(&apos;Enabling plugins for live development (HMR, NoErrors).&apos;)</span><br><span class="line">  webpackConfig.plugins.push(</span><br><span class="line">      new webpack.HotModuleReplacementPlugin()</span><br><span class="line">  )</span><br><span class="line">&#125; else if (__PROD__) &#123;</span><br><span class="line">  debug(&apos;Enabling plugins for production (UglifyJS).&apos;)</span><br><span class="line">  webpackConfig.plugins.push(</span><br><span class="line">    new webpack.optimize.OccurrenceOrderPlugin(),</span><br><span class="line">    new webpack.optimize.DedupePlugin(),</span><br><span class="line">    new UglifyJsParallelPlugin(&#123;</span><br><span class="line">      workers: os.cpus().length,</span><br><span class="line">      mangle: true,</span><br><span class="line">      compressor: &#123;</span><br><span class="line">        warnings: false,</span><br><span class="line">        drop_debugger: true,</span><br><span class="line">        dead_code: true</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>由此可知，三者间的注入关系如下：&gt; environments -&gt; project -&gt; webpack</p>
+<ol>
+<li>整合webpack在开发环境中依赖的中间件<br>参考webapck-dev-server中的实现，我们可以将webpack-dev-middleware和webpack-hot-middleware加入到我们的express配置中，<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install webpack-dev-middleware</span><br><span class="line">npm install webpack-hot-middleware</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>具体配置如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const express = require(&apos;express&apos;)</span><br><span class="line">const debug = require(&apos;debug&apos;)(&apos;app:server&apos;)</span><br><span class="line">const webpack = require(&apos;webpack&apos;)</span><br><span class="line">const webpackConfig = require(&apos;../config/webpack.config&apos;)</span><br><span class="line">const project = require(&apos;../config/project.config&apos;)</span><br><span class="line">const app = express()</span><br><span class="line"></span><br><span class="line">// ------------------------------------</span><br><span class="line">// Apply Webpack HMR Middleware</span><br><span class="line">// ------------------------------------</span><br><span class="line"></span><br><span class="line">if (project.env === &apos;development&apos;) &#123;</span><br><span class="line">  const compiler = webpack(webpackConfig)</span><br><span class="line">  debug(&apos;Enabling webpack dev and HMR middleware&apos;)</span><br><span class="line">  app.use(require(&apos;webpack-dev-middleware&apos;)(compiler, &#123;</span><br><span class="line"></span><br><span class="line">    publicPath  : webpackConfig.output.publicPath,</span><br><span class="line">    contentBase : project.paths.client(),</span><br><span class="line">    hot         : true,</span><br><span class="line">    quiet       : project.compiler_quiet,</span><br><span class="line">    noInfo      : project.compiler_quiet,</span><br><span class="line">    lazy        : false,</span><br><span class="line">    stats       : project.compiler_stats</span><br><span class="line">  &#125;))</span><br><span class="line"></span><br><span class="line">  // webpack_hmr</span><br><span class="line">  app.use(require(&apos;webpack-hot-middleware&apos;)(compiler, &#123;</span><br><span class="line">    path: &apos;/__webpack_hmr&apos;</span><br><span class="line">  &#125;))</span><br><span class="line">  // proxy</span><br><span class="line">  .......</span><br><span class="line">&#125;</span><br><span class="line">module.exports = app.listen(project.server_port, function (err) &#123;</span><br><span class="line">  if (err) &#123;</span><br><span class="line">    console.log(err)</span><br><span class="line">    return</span><br><span class="line">  &#125;</span><br><span class="line">  var uri = project.server_host + &apos;:&apos; + project.server_port</span><br><span class="line">  console.log(&apos;Listening at &apos; + uri + &apos;n&apos;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这样当我们执行下述的时候，就能一键完成webpack基础配置，热更新以及epxress服务的启动，并且可以完全根据express的配置说明来自定义扩展我们的前端开发资源。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ENV=development node ./bin/dev-server.js</span><br></pre></td></tr></table></figure></p>
+<h2 id="三、前端资源路径设计"><a href="#三、前端资源路径设计" class="headerlink" title="三、前端资源路径设计"></a>三、前端资源路径设计</h2><p>实际开发中，所有涉及到的前端资源我们进行归类一般会有如下几种：</p>
+<ul>
+<li>html：html页面，结合到服务后一般称为模板资源，是所有资源的入口和结果呈现页；</li>
+<li>js：javascript执行脚本资源，基于现代Javascript框架开发后通常还需要借助babel，typescript等进行编译处理，分为build前后build后两套代码；</li>
+<li>css：样式资源，如果采用了less，sass等工具处理后会也会从.less和.sass编译成.css文件;</li>
+<li>static: 静态资源，通常会包含有font，image，audio，video等静态文件，结合到服务框架中一般需要设定特定的访问路径，直接读取文件加载。</li>
+<li>在wepback的配置中，前端资源路径我们通常是借助path和publicPath 对构建出来的前端资源进行索引，由于webpack采用了基于内存构建的方式，path通常用来用来存放打包后文件的输出目录，publicPath则用来指定资源文件引用的虚拟目录，具体示例如下：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  entry: path.join(__dirname,&quot;src&quot;,&quot;entry.js&quot;),</span><br><span class="line">  output: &#123;</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">        webpack-dev-server环境下，path、publicPath、--content-base 区别与联系</span><br><span class="line">        path：指定编译目录而已（/build/js/），不能用于html中的js引用。</span><br><span class="line">        publicPath：虚拟目录，自动指向path编译目录（/assets/ =&gt; /build/js/）。html中引用js文件时，必须引用此虚拟路径（但实际上引用的是内存中的文件，既不是/build/js/也不是/assets/）。</span><br><span class="line">        --content-base：必须指向应用根目录（即index.html所在目录），与上面两个配置项毫无关联。</span><br><span class="line"></span><br><span class="line">        ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝</span><br><span class="line"></span><br><span class="line">        发布至生产环境：</span><br><span class="line">        1.webpack进行编译（当然是编译到/build/js/）</span><br><span class="line">        2.把编译目录（/build/js/）下的文件，全部复制到/assets/目录下（注意：不是去修改index.html中引用bundle.js的路径）</span><br><span class="line">    */</span><br><span class="line"></span><br><span class="line">    path: path.join(__dirname,&quot;build&quot;,&quot;js&quot;),</span><br><span class="line">    publicPath: &quot;/assets/&quot;,</span><br><span class="line"></span><br><span class="line">    //publicPath: &quot;http://cdn.com/assets/&quot;,//你也可以加上完整的url，效果与上面一致（不需要修改index.html中引用bundle.js的路径，但发布生产环境时，需要使用插件才能批量修改引用地址为cdn地址）。</span><br><span class="line">    filename: &apos;bundle.js&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>有了如上的概念，我们就可以将path，publicpath和express中的配置结合起来，同时由于在开发环境中我们的资源入口通常又会按特定的目录来进行文件存放，如下图所示：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; project</span><br><span class="line">├── LICENSE ├── README.md ├── app.json ├── dist ├── bin ├── config ├── package.json ├── postcss.config.js ├── public ├── server ├── src └── yarn.lock</span><br></pre></td></tr></table></figure></p>
+<p>从中不难发现node server中需要配置的资源目录往往会和webpack的工程目录重叠，那么我们就需要在express中进行相应的配置，才能实现资源的正确索引。</p>
+<ol>
+<li>html模板资源读取<br>html作为webpack中的templates，在express中则会变成views，读取方式会发生变化，所以我们需要对资源进行如下配置：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install ejs  #让express支持html模板格式</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const ejs = require(&apos;ejs&apos;)</span><br><span class="line">const app = express()</span><br><span class="line"> </span><br><span class="line">// view engine, 默认可以指向dist</span><br><span class="line">app.set(&apos;views&apos;, project.paths.dist())</span><br><span class="line">app.engine(&apos;.html&apos;, ejs.__express)</span><br><span class="line">app.set(&apos;view engine&apos;, &apos;html&apos;)</span><br><span class="line"></span><br><span class="line">// 通过配置让express读取webpack的内存打包资源下的template文件</span><br><span class="line">app.use(&apos;/home&apos;, function (req, res, next) &#123;</span><br><span class="line">const filename = path.join(compiler.outputPath, &apos;index.html&apos;&apos;)</span><br><span class="line">compiler.outputFileSystem.readFile(filename, (err, result) =&gt; &#123;</span><br><span class="line">    if (err) &#123;</span><br><span class="line">     return next(err)</span><br><span class="line">    &#125;</span><br><span class="line">   res.set(&apos;content-type&apos;, &apos;text/html&apos;)</span><br><span class="line">     res.send(result)</span><br><span class="line">     res.end()</span><br><span class="line">   &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//让express所有的路由请求都落到index.html中，再有前端框架中的前端路由接管页面的跳转</span><br><span class="line">app.use(&apos;*&apos;, function (req, res, next) &#123;</span><br><span class="line">    const filename = path.join(compiler.outputPath, &apos;index.html&apos;)</span><br><span class="line">    compiler.outputFileSystem.readFile(filename, (err, result) =&gt; &#123;</span><br><span class="line">      if (err) &#123;</span><br><span class="line">        return next(err)</span><br><span class="line">      &#125;</span><br><span class="line">      res.set(&apos;content-type&apos;, &apos;text/html&apos;)</span><br><span class="line">      res.send(result)</span><br><span class="line">      res.end()</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    /*也可以指定到特定的views文件下进行模板资源读取*/</span><br><span class="line">     res.render(&apos;home.html&apos;, &#123;</span><br><span class="line">       name:&apos;home.html&apos;</span><br><span class="line">     &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+<p>2、js和css资源读取 js和css的引用地址在webpack的开发环境中通常会指向publicpath，所以在开发页面中会直接如下嵌入如下地址，由于是采用绝对地址指向，所以无需做任何配置：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;http://127.0.0.1:3000/css/app.qxdfa323434adfc23314.css&quot;/&gt;&lt;script src=&quot;http://127.0.0.1:3000/js/app.ab92c02d96a1a7cd4919.js&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>3、静态资源读取 其他类似font，images等静态读取，我们可以将一个图片放到工程结构中的public下，则访问地址可以按如下书写，支持真实路径和虚拟路径：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 真实路径，根目录访问：/demo.png -&gt; /pulbic/demo.png</span><br><span class="line">app.use(express.static(project.paths.public()))</span><br><span class="line"></span><br><span class="line">// 真实路径，子目录访问：/static/demo.png -&gt; /pulbic/static/demo.png</span><br><span class="line">app.use(express.static(project.paths.public()))</span><br><span class="line"></span><br><span class="line">// 虚拟路径，跟目录访问：/static/demo.png -&gt; /pulbic/demo.png</span><br><span class="line">app.use(&apos;/static/&apos;, express.static(project.paths.public()))</span><br><span class="line"></span><br><span class="line">// 虚拟路径，子目录访问：/static/img/demo.png -&gt; /pulbic/img/demo.png</span><br><span class="line">app.use(&apos;/static/&apos;, express.static(project.paths.public()))</span><br></pre></td></tr></table></figure></p>
+<p>通过以上配置，我们就可以在访问开发地址( eg: localhost:3000 )时即可得到所需的全部前端资源。</p>
+<h2 id="四、mock数据模拟"><a href="#四、mock数据模拟" class="headerlink" title="四、mock数据模拟"></a>四、mock数据模拟</h2><p>作为前端经常需要模拟后台数据，我们称之为mock。通常的方式为自己搭建一个服务器，返回我们想要的数据，既然我们已经将express集成到了我们的开发环境下，那么实现一个mock就会非常简单，以下介绍两种mock数据的方式。</p>
+<p>1、配置专属的mock路由模块 我们可以在我们的server项目下的routes模块中加入一个mock模块，如下所示： &gt; server ├── main.js ├── mock │ ├── opporList.json ├── routes │ ├── index.js │ └── mock.js └── views └── home.html</p>
+<p>然后再在我们的server下的配置文件中导入mock模块配置：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// main.js</span><br><span class="line">const mock = require(&apos;./routes/mock&apos;)</span><br><span class="line">if (project.env === &apos;development&apos;) &#123;</span><br><span class="line">  // mock routes</span><br><span class="line">  app.use(&apos;/mock, mock)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>routes中的mock.js中写入如下mock数据配置即可：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const express = require(&apos;express&apos;)</span><br><span class="line">const router = express.Router()</span><br><span class="line">const opporList = require(&apos;../mock/opporList.json&apos;);</span><br><span class="line">const Mock = require(&apos;mockjs&apos;);</span><br><span class="line"></span><br><span class="line">// 直接读取json文件导出</span><br><span class="line">router.get(&apos;/backend/opporList&apos;, function (req, res) &#123;</span><br><span class="line">  res.json(opporList)</span><br><span class="line">&#125;)</span><br><span class="line"> </span><br><span class="line">// 基于mockjs生成数据, 优势在于对项目代码无侵入，并且支持fetch，xhr等多种方式的拦截</span><br><span class="line">router.get(&apos;/backend/employee&apos;, function (req, res) &#123;</span><br><span class="line">  var data = Mock.mock(&#123;</span><br><span class="line">    // 属性 list 的值是一个数组，其中含有 1 到 10 个元素</span><br><span class="line">    &apos;list|1-10&apos;: [&#123;</span><br><span class="line">      // 属性 id 是一个自增数，起始值为 1，每次增 1</span><br><span class="line">      &apos;id|+1&apos;: 1</span><br><span class="line">    &#125;]</span><br><span class="line">  &#125;)</span><br><span class="line">  res.json(data)</span><br><span class="line">&#125;)</span><br><span class="line">module.exports = router</span><br></pre></td></tr></table></figure></p>
+<p>配置完成后，访问如下地址即可拿到mock数据：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:3000/mock/backend/opporList</span><br><span class="line">http://127.0.0.1:3000/mock/backend/employee</span><br></pre></td></tr></table></figure></p>
+<p>再利用我们的proxy.config修改node-proxy配置，将测试自动转到mock目标地址下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const proxy = [</span><br><span class="line">    &#123;</span><br><span class="line">      url: &apos;/backend/*&apos;,</span><br><span class="line">      target: &quot;http://127.0.0.1:3000/mock&quot;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line">module.exports = proxy</span><br></pre></td></tr></table></figure></p>
+<p>2、搭建独立的mock服务 如果企业中有部署独立的mock服务器，如puer+mock：我们也可以通过修改简单的proxy.config来直接实现需要mock的请求地址转发，相对修改就比较简单，如下：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const proxy = [</span><br><span class="line">    &#123;</span><br><span class="line">      url: &apos;/backend/*&apos;,</span><br><span class="line">      target: &quot;http://10.4.31.11:8080/mock&quot;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line">module.exports = proxy</span><br></pre></td></tr></table></figure></p>
+<h2 id="五、预览打包后的资源效果"><a href="#五、预览打包后的资源效果" class="headerlink" title="五、预览打包后的资源效果"></a>五、预览打包后的资源效果</h2><p>开发完成后，wepback通过编译可以得到我们需要的各种静态资源，这类文件通常是作为静态资源存在，需要放到cdn或者部署到服务器上才能访问，但是我们通过简单的配置也可以直接在本地环境下直接预览打包后的资源效果，具体操作如下：</p>
+<ol>
+<li><p>找到构建资源生成目录, 确认构建资源已存在：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">dist ├── css │ ├── app.5f5af15a.css │ ├── login.7cb6ada6.css │ └── vendors.54895ec1.css ├── images │ ├── login_bg.8953d181.png │ ├── logo.01cf3dce.png │ └── wap_ico.e4e9be83.png ├── index.html ├── js │ ├── app.eb852be2.js │ ├── login.9a049514.js │ ├── manifest.c75a01fc.js │ └── vendors.20a872dc.js └── login.html</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改express的文本配置信息，加入构建完成后的静态资源地址配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">app.set(&apos;views&apos;, project.paths.dist())</span><br><span class="line">if (project.env === &apos;development&apos;) &#123;</span><br><span class="line">  ....</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  debug(</span><br><span class="line">    &apos;Server is being run outside of live development mode&apos;</span><br><span class="line">  )</span><br><span class="line"></span><br><span class="line">  // 配置预览环境下的proxy.config，一般可以指向测试环境地址</span><br><span class="line">  const proxyConfig = require(&apos;./proxy.test.config&apos;)</span><br><span class="line">  const routes = require(&apos;./routes&apos;)</span><br><span class="line">  proxyConfig.forEach(function (item) &#123;</span><br><span class="line">    app.use(item.url, proxy(createProxySetting(item.target)))</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  // 修改静态资源指向地址，可以直接配置到dist目录下</span><br><span class="line">  app.use(project.compiler_public_path,express.static(project.paths.dist())</span><br><span class="line"></span><br><span class="line">  // 配置访问路由url，并在设置置真实的template文件地址，与webpack中的htmlplugin下的filename配置路径保持一致，一般都在dist目录下        </span><br><span class="line">  app.use(project.compiler_base_route, routes)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动预览页面，访问:localhost:3000即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">NODE_ENV=production node ./bin/dev-server.js</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>完整工程结构目录结构参考<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Project ├── LICENSE ├── README.md ├── app.json ├── bin │ ├── compile.js │ └── dev-server.js ├── config │ ├── environments.config.js │ ├── karma.config.js │ ├── npm-debug.log │ ├── project.config.js │ └── webpack.config.js ├── package.json ├── postcss.config.js ├── public │ ├── favicon.ico │ ├── humans.txt │ └── robots.txt ├── server │ ├── main.js │ ├── proxy.config.js │ ├── routes │ └── views ├── src │ ├── api │ ├── components │ ├── containers │ ├── index.html │ ├── layouts │ ├── main.js │ ├── routes │ ├── static │ ├── store │ └── until ├── tests │ ├── components │ ├── layouts │ ├── routes │ ├── store │ └── test-bundler.js └── yarn.lock</span><br></pre></td></tr></table></figure></p>
+<p>工程演示demo（<a href="https://github.com/taikongfeizhu/webpack-develop-startkit）" target="_blank" rel="noopener">https://github.com/taikongfeizhu/webpack-develop-startkit）</a></p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>将webpack的各类高级特性和node基础服务有效相结合，按需打造专属自身项目的开发平台，不仅能将项目体系从简单的页面开发转向工程化标准迈进，更能极大的改善前端开发的体验，提升开发效率。</p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题："><span class="toc-number">1.</span> <span class="toc-text">问题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#理想化的开发环境应根据具备以下几点要求："><span class="toc-number">2.</span> <span class="toc-text">理想化的开发环境应根据具备以下几点要求：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack"><span class="toc-number">3.</span> <span class="toc-text">webpack</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打造项目专属的前端开发环境"><span class="toc-number"></span> <span class="toc-text">打造项目专属的前端开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、借助node和http-proxy实现跨域通信"><span class="toc-number">1.</span> <span class="toc-text">一、借助node和http-proxy实现跨域通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、将webpack配置和node-server进程打通"><span class="toc-number">2.</span> <span class="toc-text">二、将webpack配置和node server进程打通</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、前端资源路径设计"><span class="toc-number">3.</span> <span class="toc-text">三、前端资源路径设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四、mock数据模拟"><span class="toc-number">4.</span> <span class="toc-text">四、mock数据模拟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五、预览打包后的资源效果"><span class="toc-number">5.</span> <span class="toc-text">五、预览打包后的资源效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结"><span class="toc-number">6.</span> <span class="toc-text">小结</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="/js/script.js"></script>
+
+
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

@@ -7,7 +7,7 @@
   <meta name="description" content="前端博客">
   <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
   
-    <link rel="icon" href="/images/favicon_16X16.ico">
+    <link rel="icon" href="/images/favicon_32X32.ico">
   
   
   <title>前端博客</title>
@@ -66,9 +66,9 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017/10/17/Js-Dom操作/">
+        <a href="/2017-10-17/JQuery根据页面窗口自动缩放的背景图片/">
           <h3 class='post-head'>
-            Javascript Dom操作
+            jQuery根据页面窗口自动缩放的背景图片
           </h3>
         </a>
         
@@ -76,56 +76,19 @@
           
             
               
-                <h4 id="querySelector-与-querySelectorAll"><a href="#querySelector-与-querySelectorAll" class="headerlink" title="querySelector 与 querySelectorAll"></a>querySelector 与 querySelectorAll</h4><p>querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素。<br>注意： querySelector() 方法仅仅返回匹配指定选择器的第一个元素。如果你需要返回所有的元素，请使用 querySelectorAll() 方法替代。</p>
+                <h2 id="自动缩放的背景图片"><a href="#自动缩放的背景图片" class="headerlink" title="自动缩放的背景图片"></a>自动缩放的背景图片</h2><blockquote>
               
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Javascript" class='tag'>Javascript</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/JQuery获取屏幕宽高/">
-          <h3 class='post-head'>
-            jQuery获取屏幕宽高
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alert($(window).height()); //浏览器当前窗口可视区域高度 </span><br><span class="line">alert($(document).height()); //浏览器当前窗口文档的高度 </span><br><span class="line">alert($(document.body).height());//浏览器当前窗口文档body的高度 </span><br><span class="line">alert($(document.body).outerHeight(true));//浏览器当前窗口文档body的总高度 包括border padding margin </span><br><span class="line">alert($(window).width()); //浏览器当前窗口可视区域宽度 </span><br><span class="line">alert($(document).width());//浏览器当前窗口文档对象宽度 </span><br><span class="line">alert($(document.body).width());//浏览器当前窗口文档body的高度 </span><br><span class="line">alert($(document.body).outerWidth(true));//浏览器当前窗口文档body的总宽度 包括border padding margin</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
   </div>
+
+
 
 
 
@@ -144,9 +107,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Ajax-jQuery ajax读取json文件内容/">
+        <a href="/2017-10-17/JQuery常用方法/">
           <h3 class='post-head'>
-            jQuery ajax读取json文件内容
+            JQuery常用方法
           </h3>
         </a>
         
@@ -154,17 +117,19 @@
           
             
               
-                <p>##<strong>ajax 代码</strong>##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">$(document).ready(function() &#123;  </span><br><span class="line">    $.ajax(&#123;  </span><br><span class="line">        type:&quot;GET&quot;,  //请求方式为get  </span><br><span class="line">        url:&quot;user.json&quot;, //json文件位置  </span><br><span class="line">        dataType: &quot;json&quot;,  //返回数据格式为json  </span><br><span class="line">        //请求成功完成后要执行的方法  </span><br><span class="line">        success: function(data)&#123;  </span><br><span class="line">         console.log(date.button);</span><br><span class="line">         var aav = date.button;</span><br><span class="line">            //使用$.each方法遍历返回的数据date,插入到id为#result中 </span><br><span class="line">           $.each(aav,function(ii,item)&#123;</span><br><span class="line">               var conter = item.type+&quot;,&quot;+item.name+&quot;,&quot;+item.key;  </span><br><span class="line">                $(&quot;#result&quot;).append(content);  </span><br><span class="line">            &#125;)  </span><br><span class="line">        &#125;,</span><br><span class="line">        error:function(jqXHR)&#123;                   alert(&quot;发生错误：&quot;+jqXHR.status);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)  </span><br><span class="line">&#125;);  </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+                <ol>
               
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
+    <a class="article-category-link" href="/categories/JQuery/">JQuery</a>
   </div>
+
+
 
 
 
@@ -175,7 +140,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#Ajax" class='tag'>Ajax</a>
+  <a href="/tags/#JQuery" class='tag'>JQuery</a>
 
 
           
@@ -183,7 +148,89 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Js-JS闭包学习/">
+        <a href="/2017-10-17/JQuery获取屏幕宽高/">
+          <h3 class='post-head'>
+            jQuery获取屏幕宽高
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alert($(window).height()); //浏览器当前窗口可视区域高度 </span><br><span class="line">alert($(document).height()); //浏览器当前窗口文档的高度 </span><br><span class="line">alert($(document.body).height());//浏览器当前窗口文档body的高度 </span><br><span class="line">alert($(document.body).outerHeight(true));//浏览器当前窗口文档body的总高度 包括border padding margin </span><br><span class="line">alert($(window).width()); //浏览器当前窗口可视区域宽度 </span><br><span class="line">alert($(document).width());//浏览器当前窗口文档对象宽度 </span><br><span class="line">alert($(document.body).width());//浏览器当前窗口文档body的高度 </span><br><span class="line">alert($(document.body).outerWidth(true));//浏览器当前窗口文档body的总宽度 包括border padding margin</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#jQuery" class='tag'>jQuery</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/Js-JS的一些事/">
+          <h3 class='post-head'>
+            JS的一些事
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="lodash-js"><a href="#lodash-js" class="headerlink" title="lodash.js"></a>lodash.js</h2><p><a href="https://www.lodashjs.com/" target="_blank" rel="noopener">Lodash:是一个一致性、模块化、高性能的 JavaScript 实用工具库。</a></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/Js-JS闭包学习/">
           <h3 class='post-head'>
             JS闭包学习
           </h3>
@@ -198,12 +245,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
   </div>
+
+
 
 
 
@@ -222,9 +271,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/资源-Web前端框架/">
+        <a href="/2017-10-17/Js-Dom操作/">
           <h3 class='post-head'>
-            前端框架
+            Javascript Dom操作
           </h3>
         </a>
         
@@ -232,17 +281,19 @@
           
             
               
-                <ol>
+                <h4 id="querySelector-与-querySelectorAll"><a href="#querySelector-与-querySelectorAll" class="headerlink" title="querySelector 与 querySelectorAll"></a>querySelector 与 querySelectorAll</h4><p>querySelector() 方法返回文档中匹配指定 CSS 选择器的一个元素。<br>注意： querySelector() 方法仅仅返回匹配指定选择器的第一个元素。如果你需要返回所有的元素，请使用 querySelectorAll() 方法替代。</p>
               
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/资源/">资源</a>
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
   </div>
+
+
 
 
 
@@ -253,7 +304,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#前端框架" class='tag'>前端框架</a>
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
 
 
           
@@ -261,9 +312,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Js-Javascript最佳实践/">
+        <a href="/2017-10-17/Bootstrap(JS插件)/">
           <h3 class='post-head'>
-            Javascript 最佳实践
+            Bootstrap(JS插件)
           </h3>
         </a>
         
@@ -271,17 +322,19 @@
           
             
               
-                <ol>
+                <p>##一次性导入##<br>一次性导入的方法：即引入“bootstrap.min.js”</p>
               
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+    <a class="article-category-link" href="/categories/Bootstrap/">Bootstrap</a>
   </div>
+
+
 
 
 
@@ -289,10 +342,12 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tag" aria-hidden="true"></i>
+                <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+  <a href="/tags/#Bootstrap" class='tag'>Bootstrap</a>
+
+  <a href="/tags/#插件" class='tag'>插件</a>
 
 
           
@@ -300,43 +355,7 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Js-Javascript模块化编程/">
-          <h3 class='post-head'>
-            Javascript模块化编程
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            <h3 id="js模块化-立即执行函数写法"><a href="#js模块化-立即执行函数写法" class="headerlink" title="js模块化-立即执行函数写法"></a>js模块化-立即执行函数写法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var module1 = (function()&#123;</span><br><span class="line">　　　　var _count = 0;</span><br><span class="line">　　　　var m1 = function()&#123;</span><br><span class="line">　　　　　　//...</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　　　var m2 = function()&#123;</span><br><span class="line">　　　　　　//...</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　　　return &#123;</span><br><span class="line">　　　　　　m1 : m1,</span><br><span class="line">　　　　　　m2 : m2</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　&#125;)();</span><br></pre></td></tr></table></figure>
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
-  </div>
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Javascript" class='tag'>Javascript</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/Js-Javascript 面向对象编程/">
+        <a href="/2017-10-17/Js-Javascript 面向对象编程/">
           <h3 class='post-head'>
             Javascript面向对象编程
           </h3>
@@ -351,12 +370,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
   </div>
+
+
 
 
 
@@ -375,7 +396,7 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/资源-Web前端插件/">
+        <a href="/2017-10-17/资源-Web前端插件/">
           <h3 class='post-head'>
             前端插件
           </h3>
@@ -407,12 +428,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/资源/">资源</a>
   </div>
+
+
 
 
 
@@ -431,27 +454,26 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/Js-Javascript浏览器对象/">
+        <a href="/2017-10-17/Js-Javascript模块化编程/">
           <h3 class='post-head'>
-            Javascript浏览器对象
+            Javascript模块化编程
           </h3>
         </a>
         
         <div class="post-content">
           
-            
-              
-                <ol>
-              
+            <h3 id="js模块化-立即执行函数写法"><a href="#js模块化-立即执行函数写法" class="headerlink" title="js模块化-立即执行函数写法"></a>js模块化-立即执行函数写法</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var module1 = (function()&#123;</span><br><span class="line">　　　　var _count = 0;</span><br><span class="line">　　　　var m1 = function()&#123;</span><br><span class="line">　　　　　　//...</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　　　var m2 = function()&#123;</span><br><span class="line">　　　　　　//...</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　　　return &#123;</span><br><span class="line">　　　　　　m1 : m1,</span><br><span class="line">　　　　　　m2 : m2</span><br><span class="line">　　　　&#125;;</span><br><span class="line">　　&#125;)();</span><br></pre></td></tr></table></figure>
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
   </div>
+
+
 
 
 

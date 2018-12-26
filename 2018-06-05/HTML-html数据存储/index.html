@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>Html数据存储 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>Html数据存储</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2018_06_05</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/HTML/">HTML</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#html" class='tag'>html</a>
+
+
+            
+          </div>
+          <p>Web 应用中数据可以保存到2个地方：Web服务器，Web客户端</p>
+<h2 id="Web存储分"><a href="#Web存储分" class="headerlink" title="Web存储分"></a>Web存储分</h2><ol>
+<li>本地存储： 对应<code>localStorage</code>  用于长期保存网站数据，和 <code>cookie</code> 放一起</li>
+<li>会话存储： 对应<code>sessionStorage</code>  用于临时保存一个窗口（标签页）的数据</li>
+</ol>
+<h2 id="存储方法"><a href="#存储方法" class="headerlink" title="存储方法"></a>存储方法</h2><p>保存数据： <code>localStorage.setItem(&quot;keyName&quot;, &quot;data&quot;);</code><br>获取数据： <code>var nameInput = document.getElementById(&quot;keyName&quot;);</code><br><em>sessionStorage</em> 存储方法同 <code>localStorage</code> 一样</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">localStorage.setItem(key,value)：将value存储到key字段</span><br><span class="line">localStorage.getItem(key):获取指定key本地存储的值</span><br><span class="line">localStorage.removeItem(key):删除指定key本地存储的值</span><br></pre></td></tr></table></figure>
+<h2 id="删除数据项"><a href="#删除数据项" class="headerlink" title="删除数据项"></a>删除数据项</h2><p>只需要调用 <code>removeItem()</code> 方法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">localStorage.removeItem(&quot;keyName&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>还有更厉害的 <code>clear()</code> 方法，清空网站在本地保存的会话数据<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sessionStorage.clear();</span><br></pre></td></tr></table></figure></p>
+<h2 id="查找所有数据项"><a href="#查找所有数据项" class="headerlink" title="查找所有数据项"></a>查找所有数据项</h2><p>不知道键名，可使用 <code>key()</code> 方法从本地或回话存储中取得（当前网站保存的）所有数据项</p>
+<p>实例：<br>遍历本地存储中的所有数据项<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;button onclick=&quot;findAllItems()&quot;&gt;点击查看本地存储的内容&lt;/button&gt;</span><br><span class="line">&lt;ul id=&quot;itemList&quot;&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">function findAllItems()&#123;</span><br><span class="line">    //取得用于保存数据项&lt;ul&gt;元素</span><br><span class="line">    var itemList = document.getElementById(&quot;itemList&quot;);</span><br><span class="line"></span><br><span class="line">    //清除列表</span><br><span class="line">    itemList.innerHTML = &quot;&quot;;</span><br><span class="line"></span><br><span class="line">    遍历所有数据项</span><br><span class="line">    for (var i=0; i&lt;localStorage.length; i++) &#123;</span><br><span class="line">        //取得当前位置数据项的键</span><br><span class="line">        var key = localStorage.key(i);</span><br><span class="line">        //取得以该键保存的数据值</span><br><span class="line">        var item = localStorage.getItem(key);</span><br><span class="line">        //用以上数据创建一个列表项</span><br><span class="line">        var newItem = document.createElement(&quot;li&quot;);</span><br><span class="line">        newItem.innerHTML = key + &quot;: &quot; + item;</span><br><span class="line">        //添加到页面中</span><br><span class="line">        itemList.appendChild(newItem);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="保存数值和日期"><a href="#保存数值和日期" class="headerlink" title="保存数值和日期"></a>保存数值和日期</h2><p>可以使用 <code>Number()</code><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">x = Number(localStorage.setItem(&quot;keyName&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>日期：先把日期转换成相应的文本，再根据文本创建日期对象<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(function timeData()&#123;</span><br><span class="line">    var today = new Date();</span><br><span class="line">    //按照YYYY/MM/DD的标准格式把日期转换成文本字符串</span><br><span class="line">    var todayString = today.getFullYear()+&apos;/&apos;+today.getMonth()+&apos;/&apos;+today.getDate();</span><br><span class="line">    //保存为文本</span><br><span class="line">    sessionStorage.setItem(&quot;session&quot;, todayString);</span><br><span class="line">    //取得日期文本，并基于该文本创建新的日期对象</span><br><span class="line">    today = new Date(sessionStorage.getItem(&quot;session&quot;));</span><br><span class="line">    alert(todayString);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<h2 id="保存对象"><a href="#保存对象" class="headerlink" title="保存对象"></a>保存对象</h2><p>JSON 把结构化数据，转换为文本的一种简便格式<br><code>JSON.stringify()</code> 转换为文本形式<br><code>JSON.parse()</code> 把文本转换回对象<br>自定义 <code>PersonalityScore</code> 对象，<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function PersonalityScore(o,c,e,a,n)&#123;</span><br><span class="line">    this.openess = 0;</span><br><span class="line">    this.conscientiousness = c;</span><br><span class="line">    this.exteaversion = e;</span><br><span class="line">    this.agreeableness = a;</span><br><span class="line">    this.neursticism = n;</span><br><span class="line">&#125;;</span><br><span class="line">//创建PersonalityScore 对象，</span><br><span class="line">var score = new PersonalityScore(o,c,e,a,n);</span><br><span class="line">//将其保存为方便的JSON格式</span><br><span class="line">sessionStorage.setItem(&quot;PersonalityScore&quot;, JSON.stringify(score));</span><br><span class="line">//转到结果页面</span><br><span class="line">window.location = PersonalityText_Score.html;</span><br><span class="line"></span><br><span class="line">到新页面后，从存储中取出JSON文本，使用JSON.parse()方法转换回对象</span><br><span class="line">//JSON文本转换为原来的对象</span><br><span class="line">var score =  JSON.parse(sessionStorage.getItem(&quot;personalityScore&quot;));</span><br><span class="line">//从对象中取得数据</span><br><span class="line">lblScoreInfo.innerHTML = &quot;你的数据是&quot; + score.extraversion;</span><br></pre></td></tr></table></figure></p>
+<h2 id="响应存储变化"><a href="#响应存储变化" class="headerlink" title="响应存储变化"></a>响应存储变化</h2><p><code>window.addEventListener</code> 存储发生变化时触发<br>实例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">第一个页面</span><br><span class="line">function addValue() &#123;</span><br><span class="line">  // 从两个文本框中获取值</span><br><span class="line">  var key = document.getElementById(&quot;key&quot;).value;</span><br><span class="line">  var item = document.getElementById(&quot;item&quot;).value;</span><br><span class="line"></span><br><span class="line">  // 将获取的值放在本地存储器中。</span><br><span class="line">  // (如果键已经存在，则新项替换旧项.)</span><br><span class="line">  localStorage.setItem(key, item);</span><br><span class="line">&#125;</span><br><span class="line">第二个页面</span><br><span class="line">window.onload = function() &#123;</span><br><span class="line">  window.addEventListener(&quot;storage&quot;, storageChanged, false);</span><br><span class="line">&#125;;</span><br><span class="line">//取得的信息，显示到页面上</span><br><span class="line">function storageChanged(e) &#123;</span><br><span class="line">  var message = document.getElementById(&quot;updateMessage&quot;);</span><br><span class="line">  message.innerHTML = &quot;Local storage updated.&quot;;</span><br><span class="line">  message.innerHTML += &quot;&lt;br&gt;Key: &quot; + e.key;</span><br><span class="line">  message.innerHTML += &quot;&lt;br&gt;Old Value: &quot; + e.oldValue;</span><br><span class="line">  message.innerHTML += &quot;&lt;br&gt;New Value: &quot; + e.newValue;</span><br><span class="line">  message.innerHTML += &quot;&lt;br&gt;URL: &quot; + e.url;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h2><blockquote>
+<p>取得文件的三种方式</p>
+</blockquote>
+<ol>
+<li>使用<code>&lt;input&gt;</code> 将<code>type=&#39;file&#39;</code>   这样就能得到一个标准的上传文件框，再编写一点 js 来利用file API, 就可以在本地打开文件</li>
+<li>隐藏<code>&lt;input&gt;</code>元素，设置一个按钮， 点击按钮通过js 调用<code>&lt;input&gt;</code>的<code>click()方法</code></li>
+<li>拖放</li>
+</ol>
+<blockquote>
+<p>用<input> 读取文本文件<br><code>var reader = new FileReader();</code>  <code>FileReader()</code> 提取文件内容</p>
+</blockquote>
+<ul>
+<li>调用FileReader对象的方法<br><code>FileReader</code> 的实例拥有 4 个方法，其中 3 个用以读取文件，另一个用来中断读取。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">abort      none     //中断读取</span><br><span class="line">readAsBinaryString   file    //将文件读取为二进制码</span><br><span class="line">readAsDataURL    file    //将文件读取为 DataURL</span><br><span class="line">readAsText   file, [encoding]    //将文件读取为文本</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>readAsText：该方法有两个参数，其中第二个参数是文本的编码方式，默认值为 UTF-8。这个方法非常容易理解，将文件以文本方式读取，读取的结果即是这个文本文件中的内容。<br>readAsBinaryString：该方法将文件读取为二进制字符串，通常我们将它传送到后端，后端可以通过这段字符串存储文件。<br>readAsDataURL：这是例子程序中用到的方法，该方法将文件读取为一段以 data: 开头的字符串，这段字符串的实质就是 Data URL，Data URL是一种将小文件直接嵌入文档的方案。这里的小文件通常是指图像与 html 等格式的文件。</p>
+<ul>
+<li>FileReader 处理事件<br>FileReader包含了一套完整的事件模型，用于捕获读取文件时的状态，下面这个表格归纳了这些事件<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">onabort    //中断时触发</span><br><span class="line">onerror    //出错时触发</span><br><span class="line">onload     //文件读取成功完成时触发</span><br><span class="line">onloadend      //读取完成触发，无论成功或失败</span><br><span class="line">onloadstart    //读取开始时触发</span><br><span class="line">onprogress     //读取中</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="替换标准的上传控件"><a href="#替换标准的上传控件" class="headerlink" title="替换标准的上传控件"></a>替换标准的上传控件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function processFiles(files) &#123;</span><br><span class="line">  var file = files[0];</span><br><span class="line">  var reader = new FileReader();</span><br><span class="line">  reader.onload = function (e) &#123;</span><br><span class="line">    // 当这个事件结束时，数据就准备好了</span><br><span class="line">    // 将其复制到页面上的&lt;div&gt;。</span><br><span class="line">    var output = document.getElementById(&quot;fileOutput&quot;);   </span><br><span class="line">    output.textContent = e.target.result;</span><br><span class="line">  &#125;;</span><br><span class="line">  reader.readAsDataURL(file);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function showFileInput() &#123;</span><br><span class="line">  var fileInput = document.getElementById(&quot;fileInput&quot;);</span><br><span class="line">  fileInput.click();</span><br><span class="line">&#125;</span><br><span class="line">html</span><br><span class="line">&lt;input id=&quot;fileInput&quot; type=&quot;file&quot; size=&quot;50&quot; onchange=&quot;processFiles(this.files)&quot;&gt;</span><br><span class="line">&lt;button onclick=&quot;showFileInput()&quot;&gt;Analyze a File&lt;/button&gt;</span><br><span class="line">&lt;div id=&quot;fileOutput&quot;&gt;显示文件内容&lt;/div&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="一次读取多个文件"><a href="#一次读取多个文件" class="headerlink" title="一次读取多个文件"></a>一次读取多个文件</h2><p>一次提交多个文件，只要为<code>&lt;input&gt;</code>元素添加 <code>multiple</code> 属性<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;input id=&quot;fileInput&quot; type=&quot;file&quot; onchange=&quot;processFiles(this.files)&quot; multiple&gt;</span><br></pre></td></tr></table></figure></p>
+<p>使用 for 循环来依次处理每个文件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for( var i=0; i&lt;files.length; i++ )&#123;</span><br><span class="line">    var file = files[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="通过拖拽读取图片文件"><a href="#通过拖拽读取图片文件" class="headerlink" title="通过拖拽读取图片文件"></a>通过拖拽读取图片文件</h2>
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Web存储分"><span class="toc-number">1.</span> <span class="toc-text">Web存储分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存储方法"><span class="toc-number">2.</span> <span class="toc-text">存储方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除数据项"><span class="toc-number">3.</span> <span class="toc-text">删除数据项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查找所有数据项"><span class="toc-number">4.</span> <span class="toc-text">查找所有数据项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存数值和日期"><span class="toc-number">5.</span> <span class="toc-text">保存数值和日期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#保存对象"><span class="toc-number">6.</span> <span class="toc-text">保存对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#响应存储变化"><span class="toc-number">7.</span> <span class="toc-text">响应存储变化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#读取文件"><span class="toc-number">8.</span> <span class="toc-text">读取文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#替换标准的上传控件"><span class="toc-number">9.</span> <span class="toc-text">替换标准的上传控件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一次读取多个文件"><span class="toc-number">10.</span> <span class="toc-text">一次读取多个文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过拖拽读取图片文件"><span class="toc-number">11.</span> <span class="toc-text">通过拖拽读取图片文件</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="/js/script.js"></script>
+
+
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

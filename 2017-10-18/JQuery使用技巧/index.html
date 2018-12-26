@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>jQuery使用技巧 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>jQuery使用技巧</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_18</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#jQuery" class='tag'>jQuery</a>
+
+
+            
+          </div>
+          <p>本文收集整理工作中有用的jQuery技巧，与大家分享。</p>
+<p>##1.通过方法返回Jquery对象实例##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">用 var someDiv = $(‘#someDiv’).hide(); </span><br><span class="line">代替 var someDiv = $(‘#someDiv’); someDiv.hide();</span><br></pre></td></tr></table></figure></p>
+<p>##2.使用find来查找##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">用 $(’#someDiv’).find(’p.someClass’).hide();</span><br><span class="line">代替 $(’#someDiv p.someClass’).hide(); //因为可以不必触发Jquery的Sizzle引擎，同时在写选择符的时候尽量让您的选择符简单同时优化最右边的选择符</span><br></pre></td></tr></table></figure></p>
+<p>##3.不要滥用$(this)##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">用 $(’#someAnchor’).click(function() &#123; alert( this.id ); &#125;); </span><br><span class="line">代替 $(’#someAnchor’).click(function() &#123;alert($(this).attr(’id’));&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>##4.ready的简写形式##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">用 $(function() &#123; &#125;); </span><br><span class="line">代替 $(document).ready(function() &#123;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>##5.让你的代码安全<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">方法1（使用noConflict）</span><br><span class="line">var j = jQuery.noConflict(); </span><br><span class="line">    j(’#someDiv’).hide(); // The line below will reference some other library’s $ function. </span><br><span class="line">    $(’someDiv’).style.display = ‘none’; </span><br><span class="line">方法2（传入参数Jquery）</span><br><span class="line">(function($) &#123; // Within this function, $ will always refer to jQuery </span><br><span class="line">&#125;)(jQuery); </span><br><span class="line"></span><br><span class="line">方法3（通过ready方法）</span><br><span class="line">jQuery(document).ready(function($) &#123; </span><br><span class="line">    // $ refers to jQuery </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>##6.简化代码<br>用<code>each</code>代替<code>for</code>，使用数组保存临时变量，使用<code>document</code> <code>fragment</code>，这其实和写原生的Javascript需要注意的一样。</p>
+<p>##7.使用Ajax的方法<br>Jquery提供了<code>get</code> <code>getJSON</code> <code>post</code> <code>ajax</code>这些有用的ajax方法。</p>
+<p>##8.访问原生的属性和方法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">比如获取元素id的方法有</span><br><span class="line">// OPTION 1 – Use jQuery </span><br><span class="line">var id = $(’#someAnchor’).attr(’id’); </span><br><span class="line">// OPTION 2 – Access the DOM element </span><br><span class="line">var id = $(’#someAnchor’)[0].id; </span><br><span class="line">// OPTION 3 – Use jQuery’s get method </span><br><span class="line">var id = $(’#someAnchor’).get(0).id; </span><br><span class="line">// OPTION 3b – Don’t pass an index to get </span><br><span class="line">anchorsArray = $(’.someAnchors’).get(); </span><br><span class="line">var thirdId = anchorsArray[2].id;</span><br></pre></td></tr></table></figure></p>
+<p>##9.使用PHP来检查Ajax请求</p>
+<p>通过使用<code>xhr.setRequestHeader(”X-Requested-With”, “XMLHttpRequest”);</code> 服务器端如PHP就可以通过<br><code>function isXhr() { 
+   return $_SERVER[&#39;HTTP_X_REQUESTED_WITH&#39;] === ‘XMLHttpRequest’; 
+}</code><br>来检查是不是Ajax请求，在一些禁用Javascript的情况下可能会用到。</p>
+<p>##10.Jquery和$的关系<br>在Jquery代码的最下面，可以看到下面的代码<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">window.jQuery = window.$ = jQuery; $其实就是Jquery的一个shortcut</span><br></pre></td></tr></table></figure></p>
+<p>##11.条件加载Jquery<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!– Grab Google CDN jQuery. fall back to local if necessary –&gt; </span><br><span class="line">&lt;script src=”http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js”&gt;&lt;/script&gt; </span><br><span class="line">&lt;script&gt;!window.jQuery &amp;&amp; document.write(’&lt;script src=”js/jquery-1.4.2.min.js”&gt;&lt;\/script&gt;’) </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果CDN没有下载到Jquery，则从本地读取。</p>
+<p>##12.Jquery Filters<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(’p:first’).data(’info’, ‘value’); // populates $’s data object to have something to work with </span><br><span class="line">$.extend( </span><br><span class="line">jQuery.expr[&quot;:&quot;], &#123; </span><br><span class="line">block: function(elem) &#123; </span><br><span class="line">return $(elem).css(”display”) === “block”; </span><br><span class="line">&#125;, </span><br><span class="line">hasData : function(elem) &#123; </span><br><span class="line">return !$.isEmptyObject( $(elem).data() ); </span><br><span class="line">&#125; </span><br><span class="line">&#125; </span><br><span class="line">); </span><br><span class="line">$(”p:hasData”).text(”has data”); // grabs paras that have data attached </span><br><span class="line">$(”p:block”).text(”are block level”); // grabs only paragraphs that have a display of “block” </span><br><span class="line">//注：$.expr[&quot;:&quot;]等价于$.expr.filters。</span><br></pre></td></tr></table></figure></p>
+<p>##13.hover方法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(’#someElement’).hover(function() &#123; </span><br><span class="line">//在这里可以使用toggle方法来实现滑过和滑出的效果 </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>##14.传入属性对象<br>当创建一个元素的时候，Jquery1.4可以传入一个属性对象<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(’&lt;/a&gt;’, &#123; </span><br><span class="line">  id : ’someId’, </span><br><span class="line">  className : ’someClass’, </span><br><span class="line">  href : ’somePath.html’ </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>甚至是Jquery指定的属性或事件如text, click。</p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="/js/script.js"></script>
+
+
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

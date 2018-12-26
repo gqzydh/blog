@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>pc常用插件 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>pc常用插件</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/笔记/">笔记</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tags" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#笔记" class='tag'>笔记</a>
+
+  <a href="/tags/#pc" class='tag'>pc</a>
+
+
+            
+          </div>
+          <ol>
+<li>轮播图片</li>
+<li>点击弹框(使用js引擎模版)</li>
+<li>点击自定义弹框</li>
+<li>点击触发</li>
+<li>输出服务器返回的时间</li>
+</ol>
+<h2 id="轮播图片-bxSlider"><a href="#轮播图片-bxSlider" class="headerlink" title="轮播图片 - bxSlider"></a>轮播图片 - bxSlider</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">bxSlider  //强大的支持手机端响应式的jQuery焦点图轮播特效插件bxslider.js</span><br><span class="line">bxSlider : function()&#123;</span><br><span class="line">            //页面加载banner特效</span><br><span class="line">            var slide = $(&quot;#slide-focus&quot;); </span><br><span class="line">            var list = slide.find(&quot;.slide-list&quot;);</span><br><span class="line">            var pagerCustom = slide.find(&quot;.slide-nav-list&quot;);  </span><br><span class="line">            var obj = list.bxSlider(&#123;</span><br><span class="line">                mode : &quot;fade&quot;,</span><br><span class="line">                speed : 400,</span><br><span class="line">                maxSlides: 1,</span><br><span class="line">                moveSlides : 1,</span><br><span class="line">                auto: true,</span><br><span class="line">                autoStart : true,</span><br><span class="line">                autoHover : true,                       </span><br><span class="line">                pause: 3000,</span><br><span class="line">                startSlide : 0, </span><br><span class="line">                controls : true,</span><br><span class="line">                pagerCustom : pagerCustom,</span><br><span class="line">                controls : false</span><br><span class="line">            &#125;); </span><br><span class="line">            slide.hover(function()&#123;</span><br><span class="line">                obj.stopAuto();</span><br><span class="line">            &#125;, function()&#123;</span><br><span class="line">                obj.startAuto();</span><br><span class="line">            &#125;);     </span><br><span class="line">        &#125;,</span><br></pre></td></tr></table></figure>
+<h2 id="点击弹框-一"><a href="#点击弹框-一" class="headerlink" title="点击弹框[一]"></a>点击弹框[一]</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;span id=&quot;btn&quot;&gt;点击&lt;/span&gt;</span><br><span class="line">&lt;script type=&quot;text/template&quot; id=&quot;tpl-otherWay&quot;&gt;</span><br><span class="line">&lt;!-- 弹出的内容 --&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">js</span><br><span class="line">$(&quot;#btn&quot;).click(function()&#123;</span><br><span class="line">    var dialog = XDK.ui.dialog.getInstance(&#123;</span><br><span class="line">        width : 600,</span><br><span class="line">        height : 600,</span><br><span class="line">        resizable : false,  //缩放</span><br><span class="line">        draggable : false,  //拖动</span><br><span class="line">        alphaFix : true,    //透明背景</span><br><span class="line">        title : &quot;其他充值方式&quot;,</span><br><span class="line">        content : _.template($(&quot;#tpl-otherWay&quot;).html(), &#123;&#125;),</span><br><span class="line">        events : &#123;</span><br><span class="line">            beforeclose : function(_self)&#123;</span><br><span class="line">                // closeBtns.off();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="点击弹框-二"><a href="#点击弹框-二" class="headerlink" title="点击弹框[二]"></a>点击弹框[二]</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;btnkk&quot;&gt;点击弹框&lt;/div&gt;</span><br><span class="line">// 设置模版引擎</span><br><span class="line">&lt;script type=&quot;text/html&quot; id=&quot;btnkk&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;bidPoolInvestBox&quot;&gt;</span><br><span class="line">    kkkkkkkkkkk</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">// js</span><br><span class="line">$(&apos;.btnkk&apos;).click(function()&#123;</span><br><span class="line">    $(&quot;.creditorsrights&quot;).attr(&quot;data-id&quot;,json.investDetail.billId)</span><br><span class="line">  $.ajax(&#123; </span><br><span class="line">        url: &apos;/front/bidpool/bidPoolDebtList&apos;, </span><br><span class="line">        type: &apos;POST&apos;, </span><br><span class="line">        dataType: &apos;json&apos;, </span><br><span class="line">        data : &#123;&quot;investId&quot;:strs,&quot;billId&quot;:json.investDetail.billId&#125;,</span><br><span class="line">        success:function(json)&#123;</span><br><span class="line">var json =&#123;json 数据&#125;</span><br><span class="line">var datas = json;</span><br><span class="line">var html = template(&apos;bidPoolInvestByInvest&apos;, datas); </span><br><span class="line">document.getElementById(&apos;bidPoolInvestByInvest&apos;).innerHTML = html; </span><br><span class="line"></span><br><span class="line">var jsons = json.list</span><br><span class="line">var htmls = template(&apos;detaiListaaa&apos;, jsons); </span><br><span class="line">document.getElementById(&apos;detaiListaaa&apos;).innerHTML = htmls; </span><br><span class="line"></span><br><span class="line">    var vol1ListTpls = $(&quot;#btnkk&quot;).html();</span><br><span class="line">    var dialogObj = XDK.ui.dialog.getInstance(&#123;</span><br><span class="line">        title : &quot;债权详情&quot;,</span><br><span class="line">        alphaFix : true,</span><br><span class="line">        width : 600,</span><br><span class="line">        height:&apos;auto&apos;,</span><br><span class="line">        resizable : false,</span><br><span class="line">        content : _.template(vol1ListTpls),</span><br><span class="line">        events : &#123;</span><br><span class="line">            beforeclose : function(_self)&#123;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;!-- 展示数据 --&gt;</span><br><span class="line">&lt;script type=&quot;text/html&quot; id=&quot;bidPoolInvestByInvest&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;bidPoolInvestBox&quot;&gt;</span><br><span class="line">  &#123;&#123;each list as value i&#125;&#125;</span><br><span class="line">     &lt;div class=&quot;bidPoolInvesttits&quot;&gt;kkkkkk&#123;&#123;value.amount&#125;&#125;&lt;/div&gt; </span><br><span class="line">     &lt;table class=&quot;bidPoolInvestlist&quot;&gt;</span><br><span class="line">        </span><br><span class="line">        &#123;&#123;include &apos;detaiListaaa&apos; value&#125;&#125;</span><br><span class="line">     </span><br><span class="line">     &lt;/table&gt;</span><br><span class="line">  &#123;&#123;/each&#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 格式模版 --&gt;</span><br><span class="line">&lt;script type=&quot;text/html&quot; id=&quot;detaiListaaa&quot;&gt;</span><br><span class="line">  &#123;&#123;each debtList as value i&#125;&#125;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">      &lt;td&gt;</span><br><span class="line">        &#123;&#123;value.title&#125;&#125;</span><br><span class="line">      &lt;/td&gt;</span><br><span class="line">      &lt;td&gt;</span><br><span class="line">        &#123;&#123;value.amount&#125;&#125;</span><br><span class="line">      &lt;/td&gt;</span><br><span class="line">      &lt;td&gt;</span><br><span class="line">        &#123;&#123;value.finishDate&#125;&#125;</span><br><span class="line">      &lt;/td&gt;</span><br><span class="line">      &lt;td&gt;</span><br><span class="line">        &lt;span&gt;查看协议&lt;/span&gt;</span><br><span class="line">      &lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;  </span><br><span class="line">  &#123;&#123;/each&#125;&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="点击自定义弹框"><a href="#点击自定义弹框" class="headerlink" title="点击自定义弹框"></a>点击自定义弹框</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">html</span><br><span class="line">&lt;div class=&quot;ibox&quot; style=&quot;position:absolute;top:0;left:0;background:rgba(0,0,0,0.5);width:100%;height:100%;z-index:9999;display:none;&quot;&gt;</span><br><span class="line">   &lt;div class=&quot;ui-grid box-d&quot;&gt;</span><br><span class="line">       &lt;div class=&quot;err&quot;&gt;</span><br><span class="line">           &lt;div class=&quot;tit fix&quot;&gt;</span><br><span class="line">               &lt;h4&gt;余额不足&lt;/h4&gt;</span><br><span class="line">               &lt;div class=&quot;c&quot;&gt;&lt;/div&gt;</span><br><span class="line">           &lt;/div&gt;</span><br><span class="line">           &lt;div class=&quot;ercon&quot;&gt;</span><br><span class="line">               &lt;p &gt;32165465&lt;/p&gt;</span><br><span class="line">               &lt;a  id=&quot;gorechange&quot; class=&quot;ui-btn&quot;&gt;前往充值&lt;/a&gt;</span><br><span class="line">           &lt;/div&gt;</span><br><span class="line">       &lt;/div&gt;</span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">javascript</span><br><span class="line">$(&apos;.c&apos;).click(function()&#123;</span><br><span class="line">   $(&apos;.ibox&apos;).hide();</span><br><span class="line">&#125;)</span><br><span class="line">css</span><br><span class="line">.box-d&#123;width:402px;height:250px;position:fixed;top:50%;left:50%;margin-top:-201px;margin-left:-125px;&#125;</span><br><span class="line">           .tit&#123;height:60px;line-height:60px;color:#fff;font-size:16px;background:#fd5e5e;&#125;</span><br><span class="line">           .tit h4&#123;float:left;padding-left:20px;&#125;</span><br><span class="line">           .tit .c&#123;float:right;width:60px;height:60px;background:url(/public/static/img/close.png) no-repeat center center;cursor:pointer;&#125;</span><br><span class="line">           .tit .c:hover&#123;opacity:0.6;filter:alpha(opacity=60);&#125;</span><br><span class="line">           .ercon&#123;height:190px;background:#fff;width:100%;&#125;</span><br><span class="line">           .ercon p&#123;padding:40px 0;text-align:center;font-size:16px;&#125;</span><br><span class="line">           .ercon a&#123;margin-top:20px;margin-left:23%;width:50%;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="点击触发"><a href="#点击触发" class="headerlink" title="点击触发"></a>点击触发</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(&quot;#btn-submit&quot;).click(function()&#123;</span><br><span class="line">    var amountmoney = $(&quot;#amount&quot;).val();</span><br><span class="line">    console.log(&apos;amountmoneyamountmoneyamountmoneyamountmoney:&apos;,amountmoney)</span><br><span class="line">    var txAmount = $(&apos;#p-money&apos;).val();                         </span><br><span class="line">    var smsSeq = &apos;&apos;</span><br><span class="line">    var smsCode = $(&apos;#inp-phoneCode&apos;).val();</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            type:&quot;POST&quot;,</span><br><span class="line">            url:&quot;/front/account/rechargeCommit&quot;,</span><br><span class="line">            /*                      txAmount : $(&apos;#p-money&apos;).val(),</span><br><span class="line">            smsSeq : &apos;&apos;,</span><br><span class="line">            smsCode = &apos;1234&apos;*/</span><br><span class="line"></span><br><span class="line">            data:&#123;txAmount,smsSeq,smsCode&#125;,</span><br><span class="line"></span><br><span class="line">            success:function(data)&#123;</span><br><span class="line">                console.log(&apos;ttttttt===&gt;&apos;,data)</span><br><span class="line">                $(&apos;#p-money&apos;).empty();</span><br><span class="line">                $(&apos;#inp-phoneCode&apos;).empty();</span><br><span class="line">              alert(&quot;充值成功&quot;);</span><br><span class="line"></span><br><span class="line">            &#125;,</span><br><span class="line">            error: function()&#123;</span><br><span class="line">                //请求出错处理</span><br><span class="line">                console.log( &apos;Error 错误码&apos;)</span><br><span class="line">            &#125;         </span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="输出服务器返回的时间"><a href="#输出服务器返回的时间" class="headerlink" title="输出服务器返回的时间"></a>输出服务器返回的时间</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var time = new Date(json.investDetail.lockDate.time);</span><br><span class="line">    var newDate = new Date(time);</span><br><span class="line">    var seconds=newDate.getSeconds();</span><br><span class="line">    var minutes=newDate.getMinutes();</span><br><span class="line">    var gdate = newDate.getDate() ;</span><br><span class="line">    var mosth = (newDate.getMonth()+1)</span><br><span class="line">    if(mosth&lt;=9)&#123;</span><br><span class="line">        mosth=&quot;0&quot;+mosth</span><br><span class="line">    &#125;if(gdate&lt;=9)&#123;</span><br><span class="line">        gdate=&quot;0&quot;+gdate</span><br><span class="line">    &#125;if(minutes&lt;=9)&#123;</span><br><span class="line">        minutes=&quot;0&quot;+minutes</span><br><span class="line">    &#125;if(seconds&lt;=9)&#123;</span><br><span class="line">        seconds=&quot;0&quot;+seconds</span><br><span class="line">    &#125;</span><br><span class="line">    var formatdate=newDate.getFullYear()+&quot;-&quot;+mosth+&quot;-&quot;+gdate+&quot;&quot;</span><br><span class="line">    console.log(&quot;kkkkkk====01&quot;,formatdate);</span><br><span class="line">    $(&quot;#formatdate&quot;).html(formatdate)</span><br></pre></td></tr></table></figure>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#轮播图片-bxSlider"><span class="toc-number">1.</span> <span class="toc-text">轮播图片 - bxSlider</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#点击弹框-一"><span class="toc-number">2.</span> <span class="toc-text">点击弹框[一]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#点击弹框-二"><span class="toc-number">3.</span> <span class="toc-text">点击弹框[二]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#点击自定义弹框"><span class="toc-number">4.</span> <span class="toc-text">点击自定义弹框</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#点击触发"><span class="toc-number">5.</span> <span class="toc-text">点击触发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出服务器返回的时间"><span class="toc-number">6.</span> <span class="toc-text">输出服务器返回的时间</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="/js/script.js"></script>
+
+
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

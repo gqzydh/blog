@@ -14,7 +14,7 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
-  color: #5e5e5e;
+  color: #acacac;
   -webkit-font-smoothing: antialiased; }
 
 h2 {
@@ -50,7 +50,7 @@ footer {
     line-height: 3em;
     color: #BABABA; }
     footer .copyright a:hover {
-      color: #FF5151; }
+      color: #f70000; }
 
 .nodisplay {
   display: none; }
@@ -212,6 +212,40 @@ header .header-nav {
   margin-right: 5px;
   display: inline-block; }
 
+#categories .content {
+  width: 100%;
+  align-self: flex-start; }
+  #categories .content .categories-wrap {
+    text-align: center;
+    padding: 0px 0px 25px 0px; }
+    #categories .content .categories-wrap :after {
+      display: block;
+      clear: both;
+      content: "";
+      visibility: hidden;
+      height: 0; }
+    #categories .content .categories-wrap .category-list {
+      margin-top: 30px; }
+      #categories .content .categories-wrap .category-list .category-list-item {
+        display: inline-block;
+        width: 24%;
+        line-height: 3.0;
+        margin: 2px 2px 3px 2px;
+        border-radius: 3px;
+        background: #fff;
+        box-shadow: 0 8px 16px 0 rgba(7, 17, 27, 0.05);
+        float: left; }
+        #categories .content .categories-wrap .category-list .category-list-item a {
+          display: block;
+          font-size: 16px; }
+
+#categories .category-list-item a:hover {
+  display: block;
+  width: 100%;
+  color: #fff;
+  font-weight: 700;
+  background-color: #ffc503; }
+
 #archive {
   width: 1100px; }
   #archive .content {
@@ -250,7 +284,7 @@ header .header-nav {
             color: #333;
             transition: 0.3s all; }
             #archive .content .year-list ul li a:hover {
-              color: #FF5151; }
+              color: #f70000; }
 
 @media (min-width: 1032px) {
   #archive {
@@ -309,7 +343,7 @@ header .header-nav {
       font-size: 14px;
       font-weight: 200; }
       #post .content .post-meta a:hover {
-        color: #FF5151; }
+        color: #f70000; }
   #post > .content {
     width: 70%; }
   #post aside {
@@ -347,7 +381,7 @@ header .header-nav {
         #post aside .toc-container ol a {
           transition: 0.3s all; }
           #post aside .toc-container ol a:hover, #post aside .toc-container ol a.active {
-            color: #FF5151; }
+            color: #f70000; }
 
 @media (min-width: 1032px) {
   #post {
@@ -777,7 +811,7 @@ header .header-nav {
     #index .posts-list section a {
       color: #333; }
       #index .posts-list section a:hover {
-        color: #FF5151; }
+        color: #f70000; }
       #index .posts-list section a h3 {
         margin: 0 0 23px;
         font-size: 22px;
@@ -837,7 +871,7 @@ header .header-nav {
         color: #444;
         transition: 0.3s all; }
         #index aside > div > .content a:hover {
-          color: #FF5151; }
+          color: #f70000; }
   #index aside .search form input {
     background: #fff 8px 9px no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6%2BR8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAG11AABzoAAA%2FN0AAINkAABw6AAA7GgAADA%2BAAAQkOTsmeoAAAESSURBVHjajNCxS9VRGMbxz71E4OwgoXPQxVEpXCI47%2BZqGP0LCoJO7UVD3QZzb3SwcHB7F3Uw3Zpd%2FAPCcJKG7Dj4u%2FK7Pwp94HDg5Xyf5z1Pr9YKImKANTzFXxzjU2ae6qhXaxURr%2FAFl9hHDy%2FwEK8z89sYVEp5gh84wMvMvGiSJ%2FEV85jNzLMR1McqfmN5BEBmnmMJFSvtpH7jdJiZv7q7Z%2BZPfMdcF6rN%2FT%2F1m2LGBkd4HhFT3dcRMY2FpskxaLNpayciHrWAGeziD7b%2BVfkithuTk8bkGa4wgWFmbrSTZOYeBvjc%2BucQj%2FEe6xHx4Taq1nrnKaW8K6XUUsrHWuvNevdRRLzFGwzvDbXAB9cDAHvhedDruuxSAAAAAElFTkSuQmCC);
     padding: 7px 11px 7px 28px;
@@ -949,14 +983,14 @@ header .header-nav {
     #tags .tags .tag:hover,
     #tags .tags .tag:active {
       color: white;
-      border-color: #FF5151;
-      background-color: #FF5151; }
+      border-color: #f70000;
+      background-color: #f70000; }
 
 #tags .tag-list {
   padding: 20px 25px 15px;
   border-bottom: 1px solid rgba(178, 186, 194, 0.15); }
   #tags .tag-list .listing-seperator {
-    color: #FF5151; }
+    color: #f70000; }
     #tags .tag-list .listing-seperator .tag-text {
       font-weight: 200;
       line-height: 1.7; }
@@ -966,7 +1000,7 @@ header .header-nav {
       color: #404040;
       transition: 0.3s all; }
       #tags .tag-list .post-preview h2.post-title:hover {
-        color: #FF5151; }
+        color: #f70000; }
 
 #tags .post-preview {
   position: relative; }

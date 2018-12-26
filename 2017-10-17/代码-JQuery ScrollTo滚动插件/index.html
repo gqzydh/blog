@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>JQuery ScrollTo滚动插件使用 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>JQuery ScrollTo滚动插件使用</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tags" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#插件" class='tag'>插件</a>
+
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+
+            
+          </div>
+          <p>##jQuery ScrollTo滚动插件##</p>
+<blockquote>
+<p>ScrollTo是一款基于jQuery的滚动插件<br>ScrollTo是一款基于jQuery的滚动插件，当点击页面的链接时，可以平滑地滚动到页面指定的位置。适用在一些页面内容比较多，页面长度有好几屏的场合</p>
+</blockquote>
+<p>##使用方法##</p>
+<ul>
+<li><p>1、准备jQuery库和scrollTo.js插件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.js&quot;&gt;&lt;/script&gt; </span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.scrollTo.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2、HTML</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;ul class=&quot;nav&quot;&gt; </span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;nav_pro&quot;&gt;产品展示&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;nav_news&quot;&gt;新闻中心&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;nav_ser&quot;&gt;服务支持&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;nav_con&quot;&gt;联系我们&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;nav_job&quot;&gt;人才招聘&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">&lt;/ul&gt; </span><br><span class="line">&lt;div id=&quot;pro&quot; class=&quot;box&quot;&gt; </span><br><span class="line">   &lt;h3&gt;产品展示&lt;/h3&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div id=&quot;news&quot; class=&quot;box&quot;&gt; </span><br><span class="line">   &lt;h3&gt;新闻中心&lt;/h3&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div id=&quot;ser&quot; class=&quot;box&quot;&gt; </span><br><span class="line">   &lt;h3&gt;服务支持&lt;/h3&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div id=&quot;con&quot; class=&quot;box&quot;&gt; </span><br><span class="line">   &lt;h3&gt;联系我们&lt;/h3&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div id=&quot;job&quot; class=&quot;box&quot;&gt; </span><br><span class="line">   &lt;h3&gt;人才招聘&lt;/h3&gt; </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><ol>
+<li>css<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.nav&#123;width:500px;margin:20px auto;&#125; </span><br><span class="line">.nav li&#123;float:left; width:100px; height:24px; line-height:24px&#125; </span><br><span class="line">.box&#123;height:500px&#125; </span><br><span class="line">.box h3&#123;height:32px; line-height:32px; padding-left:20px; font-size:14px&#125; </span><br><span class="line">#pro,#ser&#123;background:url(img/bg.jpg)&#125; </span><br><span class="line">#news,#con&#123;background:url(img/bg2.gif)&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>4、使用scrollTo.js插件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(function()&#123; </span><br><span class="line">    $(&quot;.nav_pro&quot;).click(function()&#123; </span><br><span class="line">        $.scrollTo(&apos;#pro&apos;,500); </span><br><span class="line">    &#125;); </span><br><span class="line">    $(&quot;.nav_news&quot;).click(function()&#123; </span><br><span class="line">        $.scrollTo(&apos;#news&apos;,800); </span><br><span class="line">    &#125;); </span><br><span class="line">    $(&quot;.nav_ser&quot;).click(function()&#123; </span><br><span class="line">        $.scrollTo(&apos;#ser&apos;,1000); </span><br><span class="line">    &#125;); </span><br><span class="line">    $(&quot;.nav_con&quot;).click(function()&#123; </span><br><span class="line">        $.scrollTo(&apos;#con&apos;,1200); </span><br><span class="line">    &#125;); </span><br><span class="line">    $(&quot;.nav_job&quot;).click(function()&#123; </span><br><span class="line">        $.scrollTo(&apos;#job&apos;,1500); </span><br><span class="line">    &#125;); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>当点击导航按钮时，触发scrollTo方法，$.scrollTo带有两个参数，第一个是指定要滚动的目的ID，第二个参数是滚动时间间隔，以毫秒为单位。在本例中，只应用了scrollTo的基本方法。其实scrollTo还可以指定横向纵向滚动，传冲效果等，具体可以参照官方网站的例子：<a href="http://demos.flesler.com/jquery/scrollTo/" target="_blank" rel="noopener">http://demos.flesler.com/jquery/scrollTo/</a></p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="/js/script.js"></script>
+
+
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

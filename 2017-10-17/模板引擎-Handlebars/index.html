@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>Handlebars | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>Handlebars</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/模板引擎/">模板引擎</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Handlebars" class='tag'>Handlebars</a>
+
+
+            
+          </div>
+          <p><a href="http://handlebarsjs.com" target="_blank" rel="noopener">Handlebars.js 模板引擎</a><br><a href="http://www.ghostchina.com/introducing-the-handlebars-js-templating-engine/" target="_blank" rel="noopener">Handlebars.js 中文博客</a></p>
+<blockquote>
+<p>Handlebars 是 JavaScript 一个语义模板库，通过对view和data的分离来快速构建Web模板。它采用”Logic-less template”（无逻辑模版）的思路，在加载时被预编译，而不是到了客户端执行到代码时再去编译， 这样可以保证模板加载和运行的速度。Handlebars兼容Mustache，你可以在Handlebars中导入Mustache模板。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;&#123;!--内容 语句 --&#125;&#125;  //注释语法</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="handlebars-基本实用"><a href="#handlebars-基本实用" class="headerlink" title="handlebars 基本实用"></a>handlebars 基本实用</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Handlebars.js 模版引擎&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;handlebars-v4.0.10.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;card&quot; id=&quot;card&quot;&gt;</span><br><span class="line">    &lt;!-- &lt;div&gt;姓名:凯文米特尼克&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;出生日期：1963年8月6日&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;出事地点：美国洛杉矶&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;职业：网络安全咨询师&lt;/div&gt; --&gt;   </span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script id=&quot;card-template&quot; type=&quot;text/x-handlebars-template&quot;&gt;</span><br><span class="line">    &lt;div&gt;姓名:&#123;&#123;name&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;出生日期: &#123;&#123;birth&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;出事地点: &#123;&#123;home&#125;&#125;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;职业: &#123;&#123;job&#125;&#125;&lt;/div&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">&lt;!-- data  数据 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var data = &#123;</span><br><span class="line">        name: &apos;凯文米特尼克&apos;,</span><br><span class="line">        birth: &apos;1963年8月6日&apos;,</span><br><span class="line">        home: &apos;美国洛杉矶&apos;,</span><br><span class="line">        job: &apos;网络安全咨询师&apos;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    var t = $(&apos;#card-template&apos;).html();  //拿到模版</span><br><span class="line">    var f = Handlebars.compile(t);  //通过 handlebars 模版编译函数</span><br><span class="line">    var h = f(data);  </span><br><span class="line">    $(&apos;#card&apos;).html(h);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>##handlebars 实例优化##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Handlebars.js 模版引擎&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;handlebars-v4.0.10.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">        .card&#123; font-size: 28px; margin: 20px; padding: 20px; float: left; background-color: #cd3444; &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=&quot;card&quot;&gt;</span><br><span class="line">    &lt;!-- &lt;div&gt;姓名:凯文米特尼克&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;出生日期：1963年8月6日&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;出事地点：美国洛杉矶&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;职业：网络安全咨询师&lt;/div&gt; --&gt;   </span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script id=&quot;card-template&quot; type=&quot;text/x-handlebars-template&quot;&gt;</span><br><span class="line">    &#123;&#123;#each this&#125;&#125;  //循环</span><br><span class="line">    &lt;div class=&quot;card&quot;&gt;</span><br><span class="line">        &lt;div&gt;姓名:&#123;&#123;name&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &#123;&#123;#if birth&#125;&#125;  //判断</span><br><span class="line">        &lt;div&gt;出生日期: &#123;&#123;birth&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &#123;&#123;/if&#125;&#125;</span><br><span class="line">        &lt;div&gt;出事地点: &#123;&#123;home&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;职业: &#123;&#123;job&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &#123;&#123;!--  //注释</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &#123;&#123;#each books&#125;&#125;</span><br><span class="line">            &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;</span><br><span class="line">            &#123;&#123;/each&#125;&#125;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">        --&#125;&#125;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &#123;&#123;#with books&#125;&#125;</span><br><span class="line">            &#123;&#123;#each this&#125;&#125;</span><br><span class="line">            &lt;li&gt;&#123;&#123;this&#125;&#125;&lt;/li&gt;</span><br><span class="line">            &#123;&#123;/each&#125;&#125;</span><br><span class="line">            &#123;&#123;/with&#125;&#125;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;&#123;/each&#125;&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">&lt;!-- data  数据 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var data = [&#123;</span><br><span class="line">        name: &apos;凯文米特尼克&apos;,</span><br><span class="line">        birth: &apos;1963年8月6日&apos;,</span><br><span class="line">        home: &apos;美国洛杉矶&apos;,</span><br><span class="line">        job: &apos;网络安全咨询师&apos;,</span><br><span class="line">        books: [</span><br><span class="line">            &apos;《欺骗的艺术》&apos;,</span><br><span class="line">            &apos;《入侵的艺术》&apos;,</span><br><span class="line">            &apos;《欺骗的艺术》&apos;</span><br><span class="line">        ]</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        name: &apos;沃兹尼亚克&apos;,</span><br><span class="line">        birth: &apos;1950年8月11日&apos;,</span><br><span class="line">        home: &apos;美国加利福尼亚&apos;,</span><br><span class="line">        job: &apos;电脑工程师&apos;,</span><br><span class="line">        books: [</span><br><span class="line">            &apos;《与苹果一起疯狂》&apos;,</span><br><span class="line">            &apos;《自哈佛是空间》&apos;</span><br><span class="line">        ]</span><br><span class="line"></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        name: &apos;大熊阿斯顿&apos;,</span><br><span class="line">        home: &apos;上海&apos;,</span><br><span class="line">        job: &apos;前端工程师&apos;,</span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">    var t = $(&apos;#card-template&apos;).html();  //拿到模版</span><br><span class="line">    var f = Handlebars.compile(t);  //通过 handlebars 模版编译函数</span><br><span class="line">    var h = f(data);  </span><br><span class="line">    $(&apos;#card&apos;).html(h);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>##handlebars 完整实例##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Handlebars.js 模版引擎&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;handlebars-v4.0.10.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">        .card&#123; font-size: 28px; margin: 20px; padding: 20px; float: left; background-color: #cd3444; &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div id=&quot;card&quot;&gt;</span><br><span class="line">    &lt;!-- &lt;div&gt;姓名:凯文米特尼克&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;出生日期：1963年8月6日&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;出事地点：美国洛杉矶&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;职业：网络安全咨询师&lt;/div&gt; --&gt;   </span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script id=&quot;card-template&quot; type=&quot;text/x-handlebars-template&quot;&gt;</span><br><span class="line">    &#123;&#123;#each this&#125;&#125;  //循环</span><br><span class="line">    &lt;div class=&quot;card&quot;&gt;</span><br><span class="line">        &lt;div&gt;&#123;&#123;chinese @index&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;姓名:&#123;&#123;name&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &#123;&#123;#if birth&#125;&#125;  //判断</span><br><span class="line">        &lt;div&gt;出生日期: &#123;&#123;birth&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &#123;&#123;/if&#125;&#125;</span><br><span class="line">        &lt;div&gt;出事地点: &#123;&#123;home&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;div&gt;职业: &#123;&#123;job&#125;&#125;&lt;/div&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &#123;&#123;#each books&#125;&#125;</span><br><span class="line">            &lt;li &#123;&#123;#isfirst @index&#125;&#125; style=&quot;color: red;&quot; &#123;&#123;/isfirst&#125;&#125;</span><br><span class="line">                &#123;&#123;#isblus ../books&#125;&#125; style=&quot;color: blue;&quot; &#123;&#123;/isblus&#125;&#125;&gt;</span><br><span class="line">                &#123;&#123;addone @../index&#125;&#125;-&#123;&#123;addone @index&#125;&#125; &#123;&#123;this&#125;&#125;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">            &#123;&#123;/each&#125;&#125;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &#123;&#123;/each&#125;&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">&lt;!-- data  数据 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var data = [&#123;</span><br><span class="line">        name: &apos;凯文米特尼克&apos;,</span><br><span class="line">        birth: &apos;1963年8月6日&apos;,</span><br><span class="line">        home: &apos;美国洛杉矶&apos;,</span><br><span class="line">        job: &apos;网络安全咨询师&apos;,</span><br><span class="line">        books: [</span><br><span class="line">            &apos;《欺骗的艺术》&apos;,</span><br><span class="line">            &apos;《入侵的艺术》&apos;,</span><br><span class="line">            &apos;《欺骗的艺术》&apos;</span><br><span class="line">        ]</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        name: &apos;沃兹尼亚克&apos;,</span><br><span class="line">        birth: &apos;1950年8月11日&apos;,</span><br><span class="line">        home: &apos;美国加利福尼亚&apos;,</span><br><span class="line">        job: &apos;电脑工程师&apos;,</span><br><span class="line">        books: [</span><br><span class="line">            &apos;《与苹果一起疯狂》&apos;,</span><br><span class="line">            &apos;《自哈佛是空间》&apos;</span><br><span class="line">        ]</span><br><span class="line"></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        name: &apos;大熊阿斯顿&apos;,</span><br><span class="line">        home: &apos;上海&apos;,</span><br><span class="line">        job: &apos;前端工程师&apos;,</span><br><span class="line">    &#125;];</span><br><span class="line"></span><br><span class="line">    /*registerHelper 自定义标签*/</span><br><span class="line"></span><br><span class="line">    Handlebars.registerHelper(&quot;chinese&quot;, function(value)&#123;</span><br><span class="line">        var arr = [&apos;第一&apos;, &apos;第二&apos;, &apos;第三&apos;];</span><br><span class="line">        return arr[value];</span><br><span class="line">    &#125;);</span><br><span class="line">    Handlebars.registerHelper(&quot;addone&quot;, function(value)&#123;</span><br><span class="line">        return value + 1;</span><br><span class="line">    &#125;);</span><br><span class="line">    Handlebars.registerHelper(&quot;isfirst&quot;, function(value, options)&#123;</span><br><span class="line">        if(value == 0)&#123;</span><br><span class="line">            return options.fn(this);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    Handlebars.registerHelper(&quot;isblus&quot;, function(value, options)&#123;</span><br><span class="line">        if(value &amp;&amp; value.length &gt;=2)&#123;</span><br><span class="line">            return options.fn(this);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    var t = $(&apos;#card-template&apos;).html();  //拿到模版</span><br><span class="line">    var f = Handlebars.compile(t);  //通过 handlebars 模版编译函数</span><br><span class="line">    var h = f(data);  </span><br><span class="line">    $(&apos;#card&apos;).html(h);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>##笔记本案例</p>
+<ul>
+<li><p><strong>html</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Handlebars.js&lt;/title&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt;</span><br><span class="line">    &lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;js/handlebars-v4.0.10.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div class=&quot;banner&quot;&gt;</span><br><span class="line">    &lt;h1&gt;我的笔记本&lt;/h1&gt;</span><br><span class="line">    &lt;h3&gt;你的指尖，有改变世界的力量&lt;/h3&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- 课程列表 --&gt;</span><br><span class="line">&lt;div class=&quot;classes&quot; id=&quot;classes&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;pag&quot; id=&quot;pag&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- handlebars-课程模块 --&gt;</span><br><span class="line">&lt;script id=&quot;class-template&quot; type=&quot;text/x-handlebars-template&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &#123;&#123;#each this&#125;&#125;</span><br><span class="line">        &lt;li&gt;</span><br><span class="line">            &lt;div class=&quot;imerbox&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;&#123;&#123;image&#125;&#125;&quot; alt=&quot;&#123;&#123;title&#125;&#125;&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;titilediv&quot;&gt;</span><br><span class="line">                    &lt;span class=&quot;title&quot;&gt;&#123;&#123;title&#125;&#125;&lt;/span&gt;</span><br><span class="line">                    &#123;&#123;#equal hasnote 1&#125;&#125;</span><br><span class="line">                    &lt;span class=&quot;note&quot;&gt;(有笔记)&lt;/span&gt;</span><br><span class="line">                    &#123;&#123;/equal&#125;&#125;</span><br><span class="line">                    &lt;div class=&quot;subtitle&quot;&gt;&#123;&#123;subtitle&#125;&#125;&lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;subtitle &#123;&#123;#long timespan&#125;&#125; long &#123;&#123;else&#125;&#125; short &#123;&#123;/long&#125;&#125;&quot;&gt;时间: &#123;&#123;timespan&#125;&#125;&lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">        &#123;&#123;/each&#125;&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;!-- handlebars-分页模块 --&gt;</span><br><span class="line">&lt;script id=&quot;pag-template&quot; type=&quot;text/x-handlebars-template&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &#123;&#123;#each this&#125;&#125;</span><br><span class="line">        &lt;li data-id=&#123;&#123;index&#125;&#125; &#123;&#123;#if cur&#125;&#125; class=&quot;cur&quot; &#123;&#123;/if&#125;&#125;</span><br><span class="line">            &#123;&#123;#if clickable&#125;&#125; class=&quot;clickable&quot; &#123;&#123;/if&#125;&#125;&gt;</span><br><span class="line">            &#123;&#123;&#123;text&#125;&#125;&#125;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">        &#123;&#123;/each&#125;&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=js/script.js&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>css</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*&#123;padding:0;margin:0;&#125;</span><br><span class="line">ul li&#123;list-style-type:none;&#125;</span><br><span class="line">.banner&#123;width:100%;height:200px;background-color:#eeeeee;display:inline-block;&#125;</span><br><span class="line">.banner h1&#123;font-size:50px;margin-top:40px;margin-left:20px;&#125;</span><br><span class="line">.banner h3&#123;font-size:20px;margin-top:20px;color:#6a6a6a;margin-left:20px;&#125;</span><br><span class="line">.classes,.pag&#123;min-width:1000px;margin:0px auto;width:100%;&#125;</span><br><span class="line">.classes&#123;float:left;&#125;</span><br><span class="line">.pag&#123;clear:both;&#125;</span><br><span class="line">.classes ul&#123;margin-top:20px;margin-bottom:20px;width:100%;float:left;&#125;</span><br><span class="line">.classes li&#123;float:left;width:29%;text-align:left;margin-left:2%;margin-right:2%;margin-top:20px;&#125;</span><br><span class="line">.classes li:hover&#123;cursor:pointer;box-shadow:10px 10px 20px gray;&#125;</span><br><span class="line">.classes .innerbox&#123;width:90%;margin:20px auto;&#125;</span><br><span class="line">.classes img&#123;width:100%;&#125;</span><br><span class="line">.classes .titlediv&#123;font-size:20px;margin-top:10px;&#125;</span><br><span class="line">.classes .title&#123;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;max-width:70%;display:inline-block;&#125;</span><br><span class="line">.classes .note&#123;font-size:14px;vertical-align:text-top;&#125;</span><br><span class="line">.classes .subtitle&#123;font-size:14px;margin-top:10px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;&#125;</span><br><span class="line">.classes .short&#123;color:#D64BD3;&#125;</span><br><span class="line">.classes .long&#123;color:#D6984D;&#125;</span><br><span class="line">/* 分页 */</span><br><span class="line">.pag ul&#123;margin-top:100px;margin-bottom:60px;text-align:center;&#125;</span><br><span class="line">.pag li&#123;width:40px;height:40px;line-height:40px;display:inline-block;border-radius:50%;background-color:#f0f0f0;cursor:pointer;&#125;</span><br><span class="line">.pag li.cur&#123;background-color:#ffedb2;&#125;</span><br><span class="line">.pag li.clickable&#123;background-color:#d6f2ff;&#125;</span><br><span class="line">.pag li.clcikable:hover&#123;cursor:pointer;background-color:#b9cbf7;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>js</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">(function($) &#123;</span><br><span class="line"></span><br><span class="line">    /*接口引用*/</span><br><span class="line">    var GETCLASSES = &quot;http://imoocnote.calfnote.com/inter/getClasses.php&quot;;</span><br><span class="line"></span><br><span class="line">    /*ajax 全局函数*/</span><br><span class="line">    $.ajaxSetup(&#123;</span><br><span class="line">        error: function() &#123;</span><br><span class="line">            alert(&apos;调用接口失败&apos;);</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    /* 合二为一 定义一个函数 */</span><br><span class="line">    function renderTemplate(templateSelector, data, htmlSelector) &#123;</span><br><span class="line">        var t = $(templateSelector).html();</span><br><span class="line">        var f = Handlebars.compile(t);</span><br><span class="line">        var h = f(data);</span><br><span class="line">        $(htmlSelector).html(h);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function refreshClasses(curPage) &#123;</span><br><span class="line">        $.getJSON(GETCLASSES, &#123;</span><br><span class="line">            curPage: curPage</span><br><span class="line">        &#125;, function(data) &#123;</span><br><span class="line">            renderTemplate(&quot;#class-template&quot;, data.data, &quot;#classes&quot;);</span><br><span class="line">            renderTemplate(&quot;#pag-template&quot;, formatPag(data), &quot;#pag&quot;);</span><br><span class="line">            /*$(&apos;li.clickable&apos;).on(&apos;click&apos;, function()&#123;</span><br><span class="line">                $this = $(this);</span><br><span class="line">                $this.data(&apos;id&apos;);*/</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function bindPageEvent() &#123;</span><br><span class="line">        $(&apos;#pag&apos;).delegate(&apos;li.clickable&apos;, &apos;click&apos;, function() &#123; //delegate()委托事件</span><br><span class="line">            $this = $(this);</span><br><span class="line">            $this.data(&apos;id&apos;);</span><br><span class="line">            refreshClasses($this.data(&apos;id&apos;));</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    bindPageEvent();</span><br><span class="line"></span><br><span class="line">    $.getJSON(GETCLASSES, &#123;</span><br><span class="line">        curPage: 1</span><br><span class="line">    &#125;, function(data) &#123;</span><br><span class="line">        renderTemplate(&quot;#class-template&quot;, data.data, &quot;#classes&quot;);</span><br><span class="line">        renderTemplate(&quot;#pag-template&quot;, formatPag(data), &quot;#pag&quot;);</span><br><span class="line">        /*$(&apos;li.clickable&apos;).on(&apos;click&apos;, function()&#123;</span><br><span class="line">            $this = $(this);</span><br><span class="line">            $this.data(&apos;id&apos;);</span><br><span class="line">            refreshClasses($this.data(&apos;id&apos;));</span><br><span class="line">        &#125;);*/</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /*ajax--渲染模版*/</span><br><span class="line">    /*$.getJSON(GETCLASSES, &#123;curPage: 1&#125;, function(data)&#123;</span><br><span class="line">        console.log(data);</span><br><span class="line">        var t = $(&quot;#class-template&quot;).html();</span><br><span class="line">        var f = Handlebars.compile(t);</span><br><span class="line">        var h = f(data.data);</span><br><span class="line">        $(&quot;#classes&quot;).html(h);</span><br><span class="line"></span><br><span class="line">        var t = $(&quot;#pag-template&quot;).html();</span><br><span class="line">        var f = Handlebars.compile(t);</span><br><span class="line">        var h = f(formatPag(data));</span><br><span class="line">        $(&quot;#pag&quot;).html(h);</span><br><span class="line">    &#125;);*/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /*是否有做笔记 的判断*/</span><br><span class="line">    Handlebars.registerHelper(&quot;equal&quot;, function(v1, v2, options) &#123;</span><br><span class="line">        if (v1 == v2) &#123;</span><br><span class="line">            return options.fn(this);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return options.inverse(this);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    /*是否超过1个小时的判断*/</span><br><span class="line">    Handlebars.registerHelper(&quot;long&quot;, function(v, options) &#123;</span><br><span class="line">        if (v.indexOf(&apos;小时&apos;) != -1) &#123;</span><br><span class="line">            return options.fn(this);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            return options.inverse(this);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    /*分页*/</span><br><span class="line">    function formatPag(pagData) &#123;</span><br><span class="line">        var arr = [];</span><br><span class="line">        var total = parseInt(pagData.totalCount);</span><br><span class="line">        var cur = parseInt(pagData.curPage);</span><br><span class="line">        // 处理到首页的逻辑</span><br><span class="line">        var toLeft = &#123;&#125;;</span><br><span class="line">        toLeft.index = 1;</span><br><span class="line">        toLeft.text = &apos;&amp;laquo;&apos;;</span><br><span class="line">        if (cur != 1) &#123;</span><br><span class="line">            toLeft.clickable = true;</span><br><span class="line">        &#125;</span><br><span class="line">        arr.push(toLeft);</span><br><span class="line"></span><br><span class="line">        //处理到上一页的逻辑</span><br><span class="line">        var pre = &#123;&#125;;</span><br><span class="line">        pre.index = cur - 1;</span><br><span class="line">        pre.text = &apos;&amp;lsaquo;&apos;;</span><br><span class="line">        if (cur != 1) &#123;</span><br><span class="line">            pre.clickable = true;</span><br><span class="line">        &#125;</span><br><span class="line">        arr.push(pre);</span><br><span class="line"></span><br><span class="line">        //处理到cur页前的逻辑</span><br><span class="line">        if (cur &lt;= 5) &#123;</span><br><span class="line">            for (var i = 1; i &lt; cur; i++) &#123;</span><br><span class="line">                var pag = &#123;&#125;;</span><br><span class="line">                pag.text = i;</span><br><span class="line">                pag.index = i;</span><br><span class="line">                pag.clickable = true;</span><br><span class="line">                arr.push(pag);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            //如果cur&gt;5,那么cur前的页面显示……</span><br><span class="line">            var pag = &#123;&#125;;</span><br><span class="line">            pag.text = 1;</span><br><span class="line">            pag.index = 1;</span><br><span class="line">            pag.clickable = true;</span><br><span class="line">            arr.push(pag);</span><br><span class="line">            var pag = &#123;&#125;;</span><br><span class="line">            pag.text = &apos;……&apos;;</span><br><span class="line">            arr.push(pag);</span><br><span class="line">            for (var i = cur - 2; i &lt; cur; i++) &#123;</span><br><span class="line">                var pag = &#123;&#125;;</span><br><span class="line">                pag.text = i;</span><br><span class="line">                pag.index = i;</span><br><span class="line">                pag.clickable = true;</span><br><span class="line">                arr.push(pag);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        //处理到cur页的逻辑</span><br><span class="line">        var pag = &#123;&#125;;</span><br><span class="line">        pag.text = cur;</span><br><span class="line">        pag.index = cur;</span><br><span class="line">        pag.cur = true;</span><br><span class="line">        arr.push(pag);</span><br><span class="line"></span><br><span class="line">        //处理到cur页后的逻辑</span><br><span class="line">        if (cur &gt;= total - 4) &#123;</span><br><span class="line">            for (var i = cur + 1; i &lt;= cur; i++) &#123;</span><br><span class="line">                var pag = &#123;&#125;;</span><br><span class="line">                pag.text = i;</span><br><span class="line">                pag.index = i;</span><br><span class="line">                pag.clickable = true;</span><br><span class="line">                arr.push(pag);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            //如果cur &lt;total-4,那么cur后的页面显示……</span><br><span class="line">            for (var i = cur + 1; i &lt;= cur + 2; i++) &#123;</span><br><span class="line">                var pag = &#123;&#125;;</span><br><span class="line">                pag.text = i;</span><br><span class="line">                pag.index = i;</span><br><span class="line">                pag.clickable = true;</span><br><span class="line">                arr.push(pag);</span><br><span class="line">            &#125;</span><br><span class="line">            var pag = &#123;&#125;;</span><br><span class="line">            pag.text = &quot;……&quot;;</span><br><span class="line">            arr.push(pag);</span><br><span class="line">            var pag = &#123;&#125;;</span><br><span class="line">            pag.text = total;</span><br><span class="line">            pag.index = total;</span><br><span class="line">            pag.clickable = true;</span><br><span class="line">            arr.push(pag);</span><br><span class="line">        &#125;</span><br><span class="line">        //处理到一下页面的逻辑</span><br><span class="line">        var next = &#123;&#125;;</span><br><span class="line">        next.index = cur + 1;</span><br><span class="line">        next.text = &apos;&amp;rsaquo;&apos;;</span><br><span class="line">        if (cur != total) &#123;</span><br><span class="line">            next.clickable = true;</span><br><span class="line">        &#125;</span><br><span class="line">        arr.push(next);</span><br><span class="line">        // 处理到尾页的逻辑</span><br><span class="line">        var toRight = &#123;&#125;;</span><br><span class="line">        toRight.index = total;</span><br><span class="line">        toRight.text = &apos;&amp;raquo;&apos;;</span><br><span class="line">        if (cur != total) &#123;</span><br><span class="line">            toRight.clickable = true;</span><br><span class="line">        &#125;</span><br><span class="line">        arr.push(toRight);</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#handlebars-基本实用"><span class="toc-number">1.</span> <span class="toc-text">handlebars 基本实用</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="/js/script.js"></script>
+
+
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

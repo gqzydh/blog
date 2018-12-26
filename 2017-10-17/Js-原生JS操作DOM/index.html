@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>原生JS 操作 DOM | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>原生JS 操作 DOM</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+
+            
+          </div>
+          <h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="按照ID查询"><a href="#按照ID查询" class="headerlink" title="按照ID查询"></a>按照ID查询</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.getElementById(id) // 兼容最好</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;</span><br><span class="line">const contentDom = document.getElementById(&apos;content&apos;);</span><br></pre></td></tr></table></figure>
+<h3 id="按照class查询"><a href="#按照class查询" class="headerlink" title="按照class查询"></a>按照class查询</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">element.getElementsByClassName // ie9+ </span><br><span class="line">element.querySelectorAll // ie8 </span><br><span class="line"></span><br><span class="line">// HTMl</span><br><span class="line">&lt;div id=&quot;content&quot;&gt;</span><br><span class="line">    &lt;p class=&quot;info test&quot;&gt;info1&lt;/p&gt;</span><br><span class="line">    &lt;p class=&quot;info&quot;&gt;info2&lt;/p&gt;</span><br><span class="line">    &lt;p class=&quot;info&quot;&gt;info3&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">// Script</span><br><span class="line">const mainDom = document.getElementById(&apos;content&apos;);</span><br><span class="line">const infoDomList1 = mainDom.querySelectorAll(&apos;.info.test&apos;);</span><br><span class="line">const infoDomList2 = mainDom.getElementsByClassName(&apos;info test&apos;);</span><br></pre></td></tr></table></figure>
+<h3 id="按照Tag查询"><a href="#按照Tag查询" class="headerlink" title="按照Tag查询"></a>按照Tag查询</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">element.getElementsByTagName // ie6+</span><br><span class="line"></span><br><span class="line">// HTMl</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;main&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;content&quot;&gt;</span><br><span class="line">      &lt;p class=&quot;info test&quot;&gt;info1&lt;/p&gt;</span><br><span class="line">      &lt;p class=&quot;info&quot;&gt;info2&lt;/p&gt;</span><br><span class="line">      &lt;p class=&quot;info&quot;&gt;info3&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">// Script</span><br><span class="line">const divDom = document.getElementsByTagName(&apos;div&apos;);</span><br><span class="line">const pDom = divDom[0].getElementsByTagName(&apos;p&apos;);</span><br></pre></td></tr></table></figure>
+<h3 id="按照属性查询"><a href="#按照属性查询" class="headerlink" title="按照属性查询"></a>按照属性查询</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">element.querySelector //ie8+ </span><br><span class="line">element.querySelectorAll() //ie8+ </span><br><span class="line">querySelector返回返回的是单个DOM元素，querySelectorAll返回NodeList</span><br></pre></td></tr></table></figure>
+<p>querySelector的语法很类似jquery里面的选择器，querySelector和querySelectorAll的使用方法是一样，所以下面的一些说法都是适用于两个。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// HTMl</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;main&quot;&gt;</span><br><span class="line">    &lt;div id=&quot;content&quot;&gt;</span><br><span class="line">      &lt;p class=&quot;info test&quot;&gt;info1&lt;/p&gt;</span><br><span class="line">      &lt;p class=&quot;info&quot;&gt;info2&lt;/p&gt;</span><br><span class="line">      &lt;p class=&quot;info&quot;&gt;info3&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">// Script</span><br><span class="line">const infoDom = document.querySelectorAll(&apos;.info&apos;);</span><br><span class="line">const infoDom2 = document.querySelectorAll(&apos;.info:not(.test)&apos;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="获取父元素"><a href="#获取父元素" class="headerlink" title="获取父元素"></a>获取父元素</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">element.parentNode // 基本都兼容</span><br></pre></td></tr></table></figure>
+<h3 id="获取子元素"><a href="#获取子元素" class="headerlink" title="获取子元素"></a>获取子元素</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">element.childNodes // 基本都兼容</span><br></pre></td></tr></table></figure>
+<p>element.childNodes不止会获取到DOM，也会获取到文字等，只有当nodeType === 1时才表示DOM。</p>
+<h3 id="获取兄弟节点"><a href="#获取兄弟节点" class="headerlink" title="获取兄弟节点"></a>获取兄弟节点</h3><ul>
+<li>获取前面的兄弟节点<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">element.previousSibling  //基本都兼容</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>获取所有前面的兄弟节点就是遍历previousSibling, 直到null</p>
+<ul>
+<li>获取后面的兄弟节点<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">element.nextSibling //基本都兼容</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>获取所有和注意点都和previousSibling一样</p>
+<h2 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h2><h3 id="创建DOM"><a href="#创建DOM" class="headerlink" title="创建DOM"></a>创建DOM</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">document.createElement(tagName)</span><br></pre></td></tr></table></figure>
+<h3 id="新增DOM"><a href="#新增DOM" class="headerlink" title="新增DOM"></a>新增DOM</h3><ul>
+<li><p>添加到节点的子节点的最后</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">paranetElement.appendChild(child);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加到节点的前面</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">paranetElement.insertBefore(newElement, Element)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>通过insertBefore方法可以将newElement插入到Element后面，如果Element是null则将newElement插入到paranetElement的尾部。<br>如果newElement是一个已经存在在文档中的DOM, insertBefore则会表现为移动该DOM(将会保留所有的事件)。</p>
+</blockquote>
+<ul>
+<li>添加到节点的后面<br>没有这个函数 😶 可以使用 insertBefore 方法和 nextSibling 来模拟它。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">parentDiv.insertBefore(sp1, sp2.nextSibling);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>如果sp2没有下一个节点，则它肯定是最后一个节点，则sp2.nextSibling返回null，且sp1被插入到子节点列表的最后面（即sp2后面）</p>
+</blockquote>
+<h2 id="修改DOM"><a href="#修改DOM" class="headerlink" title="修改DOM"></a>修改DOM</h2><h3 id="修改DOM的文案"><a href="#修改DOM的文案" class="headerlink" title="修改DOM的文案"></a>修改DOM的文案</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Element.innerHTML  // 获取标签内的所有内容 </span><br><span class="line">Element.innerText  // 只获取标签内的文字内容，不包括标签</span><br></pre></td></tr></table></figure>
+<h3 id="修改css"><a href="#修改css" class="headerlink" title="修改css"></a>修改css</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">element.style.cssAttribute</span><br><span class="line">document.getElementById(&quot;p2&quot;).style.color=&quot;blue&quot;;</span><br></pre></td></tr></table></figure>
+<h3 id="修改属性"><a href="#修改属性" class="headerlink" title="修改属性"></a>修改属性</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">element.setAttribute()  //方法添加指定的属性，并为其赋指定的值。</span><br><span class="line">element.removeAttribute()   //方法删除指定的属性。</span><br><span class="line">element.className   //属性设置或返回元素的 class 属性</span><br></pre></td></tr></table></figure>
+<h3 id="删除DOM"><a href="#删除DOM" class="headerlink" title="删除DOM"></a>删除DOM</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">paranetElement.removeChild(element)  //removeChild()方法指定元素的某个指定的子节点。</span><br></pre></td></tr></table></figure>
+<h3 id="清空子节点"><a href="#清空子节点" class="headerlink" title="清空子节点"></a>清空子节点</h3><blockquote>
+<p>没有专门的函数，可以遍历removeChild来实现</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var element = document.getElementById(&quot;top&quot;);</span><br><span class="line">while (element.firstChild) &#123;</span><br><span class="line">  element.removeChild(element.firstChild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#查询"><span class="toc-number">1.</span> <span class="toc-text">查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#按照ID查询"><span class="toc-number">1.1.</span> <span class="toc-text">按照ID查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按照class查询"><span class="toc-number">1.2.</span> <span class="toc-text">按照class查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按照Tag查询"><span class="toc-number">1.3.</span> <span class="toc-text">按照Tag查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#按照属性查询"><span class="toc-number">1.4.</span> <span class="toc-text">按照属性查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取父元素"><span class="toc-number">1.5.</span> <span class="toc-text">获取父元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取子元素"><span class="toc-number">1.6.</span> <span class="toc-text">获取子元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取兄弟节点"><span class="toc-number">1.7.</span> <span class="toc-text">获取兄弟节点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM操作"><span class="toc-number">2.</span> <span class="toc-text">DOM操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建DOM"><span class="toc-number">2.1.</span> <span class="toc-text">创建DOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新增DOM"><span class="toc-number">2.2.</span> <span class="toc-text">新增DOM</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改DOM"><span class="toc-number">3.</span> <span class="toc-text">修改DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#修改DOM的文案"><span class="toc-number">3.1.</span> <span class="toc-text">修改DOM的文案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改css"><span class="toc-number">3.2.</span> <span class="toc-text">修改css</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改属性"><span class="toc-number">3.3.</span> <span class="toc-text">修改属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除DOM"><span class="toc-number">3.4.</span> <span class="toc-text">删除DOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#清空子节点"><span class="toc-number">3.5.</span> <span class="toc-text">清空子节点</span></a></li></ol></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="/js/script.js"></script>
+
+
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

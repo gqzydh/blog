@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="前端博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>JS正则表达式常用实例 | 前端博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>前端博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>JS正则表达式常用实例</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_08_29</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#正则表达式" class='tag'>正则表达式</a>
+
+
+            
+          </div>
+          <p>正则表达式（英语：Regular Expression，在代码中常简写为regex、regexp或RE）使用单个字符串来描述、匹配一系列符合某个句法规则的字符串搜索模式。</p>
+<a id="more"></a>
+<ol>
+<li>验证手机号</li>
+<li>验证座机号</li>
+<li>验证邮箱</li>
+<li>验证只能是数字</li>
+<li>验证日期</li>
+<li>验证数字个数</li>
+<li>验证数字是带1-2位小数的正数或负数</li>
+<li>验证只能是汉字</li>
+<li>验证只能是英文</li>
+<li>验证只能是英文或者数字</li>
+<li>只能为数字或字母</li>
+<li>只能为数字,字母和英文逗号</li>
+<li>验证只能是英文和数字，只能是字母开头,6-16位</li>
+<li>验证只能是英文或者数字或者下划线</li>
+<li>验证域名</li>
+<li>验证用户名 (所有字符，2-20位)</li>
+<li>验证密码 (6-18位，字母、数字、特殊符)</li>
+<li>验证身份证（18位）</li>
+<li>判断输入的位数不超过16位</li>
+</ol>
+<h2 id="验证手机号"><a href="#验证手机号" class="headerlink" title="验证手机号"></a>验证手机号</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证手机号 eg:  checkTel(&quot;13812345678&quot;)</span><br><span class="line">function checkTel(value)&#123;</span><br><span class="line">	var re = /^1[3|4|5|7|8]\d&#123;9&#125;$/;//手机号码正则表达式</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证座机号"><a href="#验证座机号" class="headerlink" title="验证座机号"></a>验证座机号</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证座机号  eg:  checkPhone(&quot;0577-22345678&quot;)</span><br><span class="line">function checkPhone(value)&#123;</span><br><span class="line">	var re=/^(0[0-9]&#123;2,3&#125;\-)?([2-9][0-9]&#123;6,7&#125;)+(\-[0-9]&#123;1,4&#125;)?$/;//座机号正则表达式</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证邮箱"><a href="#验证邮箱" class="headerlink" title="验证邮箱"></a>验证邮箱</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证邮箱  eg:  checkEmail(&quot;123456@qq.com&quot;)</span><br><span class="line">function checkEmail(value)&#123;</span><br><span class="line">	var re=/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;//邮箱正则表达式</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证只能是数字"><a href="#验证只能是数字" class="headerlink" title="验证只能是数字"></a>验证只能是数字</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证只能是数字  eg:  checkNum(&quot;123&quot;)</span><br><span class="line">function checkNum(value)&#123;</span><br><span class="line">	var re=/^[0-9]*$/;</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证日期"><a href="#验证日期" class="headerlink" title="验证日期"></a>验证日期</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证日期  eg:  checkDate(&quot;2017-07-27&quot;)</span><br><span class="line">function checkDate(value)&#123;</span><br><span class="line">	var re=/^\d&#123;4&#125;-\d&#123;1,2&#125;-\d&#123;1,2&#125;(\s\d&#123;1,2&#125;(:\d&#123;1,2&#125;(:\d&#123;1,2&#125;)?)?)?$/;</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证数字个数"><a href="#验证数字个数" class="headerlink" title="验证数字个数"></a>验证数字个数</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证数字个数 eg:  checkNumCount(&quot;123456&quot;)</span><br><span class="line">function checkNumCount(value)&#123;</span><br><span class="line">	var re=/^\d&#123;6&#125;$/;//数字个数正则表达式(6位)</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证数字是带1-2位小数的正数或负数"><a href="#验证数字是带1-2位小数的正数或负数" class="headerlink" title="验证数字是带1-2位小数的正数或负数"></a>验证数字是带1-2位小数的正数或负数</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证数字是带1-2位小数的正数或负数(可以是不带小数点的整数) </span><br><span class="line">//eg:  checkNumDecimal(&quot;-12.55&quot;)  checkNumDecimal(&quot;12.3&quot;)  checkNumDecimal(&quot;12&quot;)</span><br><span class="line">function checkNumDecimal(value)&#123;</span><br><span class="line">	var re=/^(\-)?\d+(\.\d&#123;1,2&#125;)?$/;</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证只能是汉字"><a href="#验证只能是汉字" class="headerlink" title="验证只能是汉字"></a>验证只能是汉字</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证只能是汉字 eg:  checkChinese(&quot;中国&quot;)</span><br><span class="line">function checkChinese(value)&#123;</span><br><span class="line">	var re=/^[\u4e00-\u9fa5]&#123;0,&#125;$/;</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证只能是英文"><a href="#验证只能是英文" class="headerlink" title="验证只能是英文"></a>验证只能是英文</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证只能是英文 eg:  checkEnglish(&quot;aA&quot;)</span><br><span class="line">function checkEnglish(value)&#123;</span><br><span class="line">	var re=/^[A-Za-z]+$/;</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证只能是英文或者数字"><a href="#验证只能是英文或者数字" class="headerlink" title="验证只能是英文或者数字"></a>验证只能是英文或者数字</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证只能是英文或者数字 eg:  checkEngNum(&quot;123aaa&quot;)</span><br><span class="line">function checkEngNum(value)&#123;</span><br><span class="line">	var re=/^[A-Za-z0-9]+$/;</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="只能为数字或字母"><a href="#只能为数字或字母" class="headerlink" title="只能为数字或字母"></a>只能为数字或字母</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">reg=/^[0-9a-zA-Z]*$/g</span><br></pre></td></tr></table></figure>
+<h2 id="只能为数字-字母和英文逗号"><a href="#只能为数字-字母和英文逗号" class="headerlink" title="只能为数字,字母和英文逗号"></a>只能为数字,字母和英文逗号</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">reg=/^[0-9a-zA-Z,]*$/g</span><br></pre></td></tr></table></figure>
+<h2 id="验证只能是英文和数字，只能是字母开头-6-16位"><a href="#验证只能是英文和数字，只能是字母开头-6-16位" class="headerlink" title="验证只能是英文和数字，只能是字母开头,6-16位"></a>验证只能是英文和数字，只能是字母开头,6-16位</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证只能是英文和数字，只能是字母开头,6-16位  eg:  checkEngAndNum(&quot;aaa123AA&quot;)</span><br><span class="line">function checkEngAndNum(value)&#123;</span><br><span class="line">	var re=/^[A-Za-z]+[0-9A-Za-z]&#123;5,15&#125;$/;</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证只能是英文或者数字或者下划线"><a href="#验证只能是英文或者数字或者下划线" class="headerlink" title="验证只能是英文或者数字或者下划线"></a>验证只能是英文或者数字或者下划线</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证只能是英文或者数字或者下划线 eg:  checkEngNumXia(&quot;123_aaa&quot;)</span><br><span class="line">function checkEngNumXia(value)&#123;</span><br><span class="line">	var re=/^\w+$/;</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证域名"><a href="#验证域名" class="headerlink" title="验证域名"></a>验证域名</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证域名 eg:  checkUrl(&quot;http://www.baidu.com&quot;)</span><br><span class="line">function checkUrl(value)&#123;</span><br><span class="line">	var re=/([a-z0-9][a-z0-9\-]*?\.(?:com|cn|net|org|gov|info|la|ltd|wang|xyz|ren|biz|tv|cc|co|top|shop|我爱你|中国|公司|网络|集团)(?:\.(?:cn|jp))?)$/;</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证用户名"><a href="#验证用户名" class="headerlink" title="验证用户名"></a>验证用户名</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证用户名 (所有字符，2-20位)eg:  checkUserName(&quot;123456&quot;)</span><br><span class="line">function checkUserName(value)&#123;</span><br><span class="line">	var re=/^.&#123;2,20&#125;$/;</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证密码"><a href="#验证密码" class="headerlink" title="验证密码"></a>验证密码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证密码 (6-18位，字母、数字、特殊符)eg:  checkPassword(&quot;123456&quot;)</span><br><span class="line">function checkPassword(value)&#123;</span><br><span class="line">	var re=/^.&#123;6,18&#125;$/;//.代表任何字符</span><br><span class="line">	return re.test(value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="验证身份证（18位）"><a href="#验证身份证（18位）" class="headerlink" title="验证身份证（18位）"></a>验证身份证（18位）</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//验证身份证（18位）</span><br><span class="line">function checkIdCard(value)&#123;</span><br><span class="line">	var sfz18=0,	//身份证第18位</span><br><span class="line">	    sfz=value,</span><br><span class="line">	    test2=[1,0,&quot;X&quot;,9,8,7,6,5,4,3,2],</span><br><span class="line">	    sfz_array=sfz.split(&quot;&quot;);</span><br><span class="line">	if(sfz.length!=18&amp;&amp;sfz.length!=0)&#123;	//	身份证不是18位		</span><br><span class="line">		return false;</span><br><span class="line">	&#125;</span><br><span class="line">	if(sfz.length==18)&#123;</span><br><span class="line">		var test=[7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2];		    </span><br><span class="line">		for(var i=0;i&lt;17;i++)&#123;</span><br><span class="line">			sfz18+=test[i]*sfz_array[i];</span><br><span class="line">		&#125;</span><br><span class="line">		sfz18%=11;		</span><br><span class="line">		sfz18=test2[sfz18];</span><br><span class="line">		if(sfz18!=sfz_array[17])&#123;	//身份证的第18位按一定规律计算			</span><br><span class="line">			 return false;</span><br><span class="line">		&#125;</span><br><span class="line">		else return true;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="判断输入的位数不超过16位"><a href="#判断输入的位数不超过16位" class="headerlink" title="判断输入的位数不超过16位"></a>判断输入的位数不超过16位</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export const judgeNum1=(num1)=&gt;&#123;</span><br><span class="line">      if(num1.length&gt;16)&#123;</span><br><span class="line">        console.log(&apos;num1超过16位&apos;)</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="正则表达式-常用语句"><a href="#正则表达式-常用语句" class="headerlink" title="正则表达式 - 常用语句"></a>正则表达式 - 常用语句</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">正则表达式经常被用于字段或任意字符串的校验，比如下面这段校验基本日期格式的JavaScript代码：</span><br><span class="line">var reg = /^(\\d&#123;1,4&#125;)(-|\\/)(\\d&#123;1,2&#125;)\\2(\\d&#123;1,2&#125;)$/; </span><br><span class="line">var r = fieldValue.match(reg);             </span><br><span class="line">if(r==null)alert(&apos;Date format error!&apos;);</span><br><span class="line"></span><br><span class="line">1、校验密码强度</span><br><span class="line">密码的强度必须包含大小写字母和数字的组合，不能使用特殊字符，长度在8-10之间</span><br><span class="line">^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).&#123;8,10&#125;$</span><br><span class="line"></span><br><span class="line">2、校验中文</span><br><span class="line">字符串只能是中文</span><br><span class="line">^[\\u4e00-\\u9fa5]&#123;0,&#125;$</span><br><span class="line"></span><br><span class="line">3、由数字，26个英文字母或下划线组成的字符串</span><br><span class="line">^\\w+$</span><br><span class="line"></span><br><span class="line">4、校验E-Mail 地址</span><br><span class="line">[\\w!#$%&amp;&apos;*+/=?^_`&#123;|&#125;~-]+(?:\\.[\\w!#$%&amp;&apos;*+/=?^_`&#123;|&#125;~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[\\w](?:[\\w-]*[\\w])?</span><br><span class="line"></span><br><span class="line">5、校验身份证号码</span><br><span class="line">15位：</span><br><span class="line">^[1-9]\\d&#123;7&#125;((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d&#123;3&#125;$</span><br><span class="line">18位：</span><br><span class="line">^[1-9]\\d&#123;5&#125;[1-9]\\d&#123;3&#125;((0\\d)|(1[0-2]))(([0|1|2]\\d)|3[0-1])\\d&#123;3&#125;([0-9]|X)$</span><br><span class="line"></span><br><span class="line">6、校验日期</span><br><span class="line">“yyyy-mm-dd“ 格式的日期校验，已考虑平闰年</span><br><span class="line">^(?:(?!0000)[0-9]&#123;4&#125;-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]&#123;2&#125;(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$</span><br><span class="line"></span><br><span class="line">7、校验金额</span><br><span class="line">金额校验，精确到2位小数</span><br><span class="line">^[0-9]+(.[0-9]&#123;2&#125;)?$</span><br><span class="line"></span><br><span class="line">8、校验手机号</span><br><span class="line">下面是国内 13、15、18开头的手机号正则表达式</span><br><span class="line">^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d&#123;8&#125;$</span><br><span class="line"></span><br><span class="line">9、判断IE的版本</span><br><span class="line">^.*MSIE [5-8](?:\\.[0-9]+)?(?!.*Trident\\/[5-9]\\.0).*$</span><br><span class="line"></span><br><span class="line">10、校验IP-v4地址</span><br><span class="line">\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.)&#123;3&#125;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b</span><br><span class="line"></span><br><span class="line">11、校验IP-v6地址</span><br><span class="line">(([0-9a-fA-F]&#123;1,4&#125;:)&#123;7,7&#125;[0-9a-fA-F]&#123;1,4&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,7&#125;:|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,6&#125;:[0-9a-fA-F]&#123;1,4&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,5&#125;(:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,2&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,4&#125;(:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,3&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,3&#125;(:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,4&#125;|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,2&#125;(:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,5&#125;|[0-9a-fA-F]&#123;1,4&#125;:((:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,6&#125;)|:((:[0-9a-fA-F]&#123;1,4&#125;)&#123;1,7&#125;|:)|fe80:(:[0-9a-fA-F]&#123;0,4&#125;)&#123;0,4&#125;%[0-9a-zA-Z]&#123;1,&#125;|::(ffff(:0&#123;1,4&#125;)&#123;0,1&#125;:)&#123;0,1&#125;((25[0-5]|(2[0-4]|1&#123;0,1&#125;[0-9])&#123;0,1&#125;[0-9])\\.)&#123;3,3&#125;(25[0-5]|(2[0-4]|1&#123;0,1&#125;[0-9])&#123;0,1&#125;[0-9])|([0-9a-fA-F]&#123;1,4&#125;:)&#123;1,4&#125;:((25[0-5]|(2[0-4]|1&#123;0,1&#125;[0-9])&#123;0,1&#125;[0-9])\\.)&#123;3,3&#125;(25[0-5]|(2[0-4]|1&#123;0,1&#125;[0-9])&#123;0,1&#125;[0-9]))</span><br><span class="line"></span><br><span class="line">12、检查URL的前缀</span><br><span class="line">if (!s.match(/^[a-zA-Z]+:\\/\\//))&#123;</span><br><span class="line">   s = &apos;http://&apos; + s;&#125;</span><br><span class="line"></span><br><span class="line">13、提取URL链接</span><br><span class="line">^(f|ht)&#123;1&#125;(tp|tps):\\/\\/([\\w-]+\\.)+[\\w-]+(\\/[\\w- ./?%&amp;=]*)?</span><br><span class="line"></span><br><span class="line">14、文件路径及扩展名校验</span><br><span class="line">^([a-zA-Z]\\:|\\\\)\\\\([^\\\\]+\\\\)*[^\\/:*?&quot;&lt;&gt;|]+\\.txt(l)?$</span><br><span class="line"></span><br><span class="line">15、提取Color Hex  Codes</span><br><span class="line">^#([A-Fa-f0-9]&#123;6&#125;|[A-Fa-f0-9]&#123;3&#125;)$</span><br><span class="line"></span><br><span class="line">16、提取网页图片</span><br><span class="line">\\&lt; *[img][^\\\\&gt;]*[src] *= *[\\&quot;\\&apos;]&#123;0,1&#125;([^\\&quot;\\&apos;\\ &gt;]*)</span><br><span class="line"></span><br><span class="line">17、提取页面超链接</span><br><span class="line">(&lt;a\\s*(?!.*\\brel=)[^&gt;]*)(href=&quot;https?:\\/\\/)((?!(?:(?:www\\.)?&apos;.implode(&apos;|(?:www\\.)?&apos;, $follow_list).&apos;))[^&quot;]+)&quot;((?!.*\\brel=)[^&gt;]*)(?:[^&gt;]*)&gt;</span><br><span class="line"></span><br><span class="line">18、查找CSS属性</span><br><span class="line">^\\s*[a-zA-Z\\-]+\\s*[:]&#123;1&#125;\\s[a-zA-Z0-9\\s.#]+[;]&#123;1&#125;</span><br><span class="line"></span><br><span class="line">19、抽取注释</span><br><span class="line">&lt;!--(.*?)--&gt;</span><br><span class="line"></span><br><span class="line">20、匹配HTML标签</span><br><span class="line">&lt;\\/?\\w+((\\s+\\w+(\\s*=\\s*(?:&quot;.*?&quot;|&apos;.*?&apos;|[\\^&apos;&quot;&gt;\\s]+))?)+\\s*|\\s*)\\/?&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>正则表达式在线工具：<a href="http://regexper.com" target="_blank" rel="noopener">http://regexper.com</a></p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#验证手机号"><span class="toc-number">1.</span> <span class="toc-text">验证手机号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证座机号"><span class="toc-number">2.</span> <span class="toc-text">验证座机号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证邮箱"><span class="toc-number">3.</span> <span class="toc-text">验证邮箱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证只能是数字"><span class="toc-number">4.</span> <span class="toc-text">验证只能是数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证日期"><span class="toc-number">5.</span> <span class="toc-text">验证日期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证数字个数"><span class="toc-number">6.</span> <span class="toc-text">验证数字个数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证数字是带1-2位小数的正数或负数"><span class="toc-number">7.</span> <span class="toc-text">验证数字是带1-2位小数的正数或负数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证只能是汉字"><span class="toc-number">8.</span> <span class="toc-text">验证只能是汉字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证只能是英文"><span class="toc-number">9.</span> <span class="toc-text">验证只能是英文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证只能是英文或者数字"><span class="toc-number">10.</span> <span class="toc-text">验证只能是英文或者数字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#只能为数字或字母"><span class="toc-number">11.</span> <span class="toc-text">只能为数字或字母</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#只能为数字-字母和英文逗号"><span class="toc-number">12.</span> <span class="toc-text">只能为数字,字母和英文逗号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证只能是英文和数字，只能是字母开头-6-16位"><span class="toc-number">13.</span> <span class="toc-text">验证只能是英文和数字，只能是字母开头,6-16位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证只能是英文或者数字或者下划线"><span class="toc-number">14.</span> <span class="toc-text">验证只能是英文或者数字或者下划线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证域名"><span class="toc-number">15.</span> <span class="toc-text">验证域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证用户名"><span class="toc-number">16.</span> <span class="toc-text">验证用户名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证密码"><span class="toc-number">17.</span> <span class="toc-text">验证密码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#验证身份证（18位）"><span class="toc-number">18.</span> <span class="toc-text">验证身份证（18位）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#判断输入的位数不超过16位"><span class="toc-number">19.</span> <span class="toc-text">判断输入的位数不超过16位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式-常用语句"><span class="toc-number">20.</span> <span class="toc-text">正则表达式 - 常用语句</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="copyright">
+    <div>
+      <span style="padding-right:30px;">
+      &copy; 2018 | Powered by <a href="https://hexo.io" target="_blank">Hexo</a>&nbsp
+    </span>
+      
+       本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+       本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+      
+
+    </div>
+    <div>
+      <!-- Theme by <a href="https://github.com/lewis-geek/hexo-theme-Aath" target="_blank">Aath</a> -->
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="/js/script.js"></script>
+
+
+<script>
+  var isDown = true
+  var oldY = 0
+  inView.offset(50)
+
+  document.body.addEventListener('touchstart', function(){});
+
+  window.addEventListener('scroll', _.throttle(e => {
+    var currentY = window.scrollY
+    if((oldY - currentY) < 0) {
+      isDown = true
+    } else {
+      isDown = false
+    }
+    oldY = currentY
+  }, 250))
+
+  $("article img").each(function() {
+      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
+      $(this).wrapAll(strA);
+  });
+
+  $('.toc-link').each(function() {
+      var href = $(this).attr("href");
+
+      inView(href).on('exit', () => {
+        if (isDown) {
+          handleActive(href)
+        }
+      })
+
+      inView(href).on('enter', () => {
+        if (!isDown) {
+          handleActive(href)
+        }
+      })
+
+      this.onclick = function(e) {
+        var pos = $(href).offset().top - 10;
+        $("html,body").animate({scrollTop: pos}, 300);
+        setTimeout(() => {
+          handleActive(href)
+        }, 350)
+        return false
+      }
+  })
+
+  function handleActive(href) {
+    document.querySelectorAll('.toc-link').forEach(elm => {
+      elm.classList.remove('active')
+    })
+    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
+  }
+</script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
+
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

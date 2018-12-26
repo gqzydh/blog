@@ -7,7 +7,7 @@
   <meta name="description" content="前端博客">
   <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
   
-    <link rel="icon" href="/images/favicon_16X16.ico">
+    <link rel="icon" href="/images/favicon_32X32.ico">
   
   
   <title>前端博客</title>
@@ -66,7 +66,7 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017/10/17/代码-请使用竖屏浏览/">
+        <a href="/2017-10-17/代码-请使用竖屏浏览/">
           <h3 class='post-head'>
             wap-请使用竖屏浏览
           </h3>
@@ -81,12 +81,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/代码/">代码</a>
   </div>
+
+
 
 
 
@@ -105,7 +107,7 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/代码-魔法师微信分享/">
+        <a href="/2017-10-17/代码-魔法师微信分享/">
           <h3 class='post-head'>
             魔法师微信分享
           </h3>
@@ -120,12 +122,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/代码/">代码</a>
   </div>
+
+
 
 
 
@@ -146,9 +150,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/笔记-前后分离开发实践/">
+        <a href="/2017-10-17/代码-微信活动分享+用户ID/">
           <h3 class='post-head'>
-            前后分离开发实践
+            微信活动分享
           </h3>
         </a>
         
@@ -156,56 +160,19 @@
           
             
               
-                <p>基于 webpack 的前后端分离开发环境实践</p>
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(ua.match(/MicroMessenger/i)==&quot;micromessenger&quot;) &#123;</span><br><span class="line">    var activeidss = $(this.userData.name).selector;</span><br><span class="line">                        this.setXHR(&quot;weixin/sigin&quot;, function()&#123;</span><br><span class="line">                            var router = _this.getApiRouter(&quot;weixin/sigin&quot;, &#123;&#125;);</span><br><span class="line">                            return _this.postData(router.url, router.data, function(json)&#123;</span><br><span class="line">                                if(json.error == -1)&#123;</span><br><span class="line">                                    var jsapi_t = json.jsapi_ticket;</span><br><span class="line">                                    var access_t = json.access_token;</span><br><span class="line">                                    var wxTimes = new Date().getTime() ;</span><br><span class="line">                                    var stra_z = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;;</span><br><span class="line">                                    var n = 16, s = &quot;&quot;;</span><br><span class="line">                                    for(var i = 0; i &lt; n; i++)&#123;</span><br><span class="line">                                        var rand = Math.floor(Math.random() * stra_z.length);</span><br><span class="line">                                        s += stra_z.charAt(rand);</span><br><span class="line">                                    &#125;</span><br><span class="line">                                    var wxnoncestr = s</span><br><span class="line"></span><br><span class="line">                                    var wxurl = window.location.href.split(&apos;#&apos;)[0];</span><br><span class="line"></span><br><span class="line">                                    var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;   </span><br><span class="line"></span><br><span class="line">                                        //signature</span><br><span class="line">                                    var wxstring1 =&quot;jsapi_ticket=&quot;+jsapi_t + &quot;&amp;noncestr=&quot; + wxnoncestr + &quot;&amp;timestamp=&quot; + wxTimes+ &quot;&amp;url=&quot; + wxurl</span><br><span class="line">                                    var sha = hex_sha1(wxstring1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                                    wx.config(&#123;</span><br><span class="line">                                        debug: false,</span><br><span class="line">                                        appId: &apos;wxe7b476931&apos;,</span><br><span class="line">                                        timestamp: wxTimes,</span><br><span class="line">                                        nonceStr: wxnoncestr,</span><br><span class="line">                                        signature: sha,</span><br><span class="line">                                        jsApiList: [</span><br><span class="line">                                            // 所有要调用的 API 都要加到这个列表中</span><br><span class="line">                                            &apos;onMenuShareTimeline&apos;,</span><br><span class="line">                                            &apos;onMenuShareAppMessage&apos;,</span><br><span class="line">                                            &apos;hideMenuItems&apos;</span><br><span class="line">                                          ]</span><br><span class="line">                                    &#125;); </span><br><span class="line">                                    wx.ready(function () &#123;   </span><br><span class="line">                                        wx.hideMenuItems(&#123;menuList: [&apos;menuItem:share:qq&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:weiboApp&apos;,</span><br><span class="line">                                                       &apos;menuItem:favorite&apos;,</span><br><span class="line">                                                       // &apos;menuItem:share:appMessage&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:QZone&apos;,</span><br><span class="line">                                                       &apos;menuItem:openWithSafari&apos;,</span><br><span class="line">                                                       &apos;menuItem:openWithQQBrowser&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:email&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:brand&apos;,</span><br><span class="line">                                                       &apos;menuItem:editTag&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:facebook&apos;,</span><br><span class="line">                                                       &apos;menuItem:setFont&apos;,</span><br><span class="line">                                                       &apos;menuItem:exposeArticle&apos;,</span><br><span class="line">                                                       &apos;menuItem:copyUrl&apos;,</span><br><span class="line">                                                       &apos;menuItem:openWithSafari&apos;,</span><br><span class="line">                                                       &apos;menuItem:readMode&apos;,</span><br><span class="line">                                                       &apos;menuItem:originPage&apos;,</span><br><span class="line">                                                       &apos;menuItem:delete&apos;]</span><br><span class="line">                                        &#125;);</span><br><span class="line"></span><br><span class="line">                                        //分享到朋友圈</span><br><span class="line">                                        wx.onMenuShareTimeline(&#123;</span><br><span class="line">                                            title: &apos;新年大红包，快来开个“旺”运吧。&apos;, // 分享标题</span><br><span class="line">                                            link: &apos;http://wx.xxxx.com/#activity/chest?invite=&apos;+activeidss+&apos;&apos;, // 分享链接</span><br><span class="line">                                            imgUrl: &apos;http://wx.xxxx.com/static/img/chest/share.jpg&apos;, // 分享图标</span><br><span class="line">                                            success: function () &#123; </span><br><span class="line"></span><br><span class="line">                                            &#125;,</span><br><span class="line"></span><br><span class="line">                                            cancel: function () &#123; </span><br><span class="line">                                                // 用户取消分享后执行的回调函数</span><br><span class="line">                                            &#125;</span><br><span class="line">                                        &#125;);</span><br><span class="line">                                        //分享朋友</span><br><span class="line">                                        wx.onMenuShareAppMessage(&#123;</span><br><span class="line">                                            title: &apos;送红包！新年行“旺”运&apos;, // 分享标题</span><br><span class="line">                                            desc: &apos;新年大红包，快来开个“旺”运吧。&apos;, // 分享描述</span><br><span class="line">                                            link: &apos;http://wx.xxxx.com/#activity/chest?invite=&apos;+activeidss+&apos;&apos;, // 分享链接</span><br><span class="line">                                            imgUrl: &apos;http://wx.xxxx.com/static/img/chest/share.jpg&apos;, // 分享图标</span><br><span class="line">                                            success: function () &#123; </span><br><span class="line"></span><br><span class="line">                                            &#125;,</span><br><span class="line"></span><br><span class="line">                                            cancel: function () &#123; </span><br><span class="line">                                                // 用户取消分享后执行的回调函数</span><br><span class="line">                                            &#125;</span><br><span class="line">                                        &#125;);</span><br><span class="line">                                                            </span><br><span class="line">                                    &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                                &#125;</span><br><span class="line"></span><br><span class="line">                            &#125;);</span><br><span class="line"></span><br><span class="line">                        &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
               
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/笔记/">笔记</a>
+    <a class="article-category-link" href="/categories/代码/">代码</a>
   </div>
 
 
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#前后分离开" class='tag'>前后分离开</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017/10/17/命令-本地起服务/">
-          <h3 class='post-head'>
-            命令-本地起服务
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <p>##<strong>ssr</strong>##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm  install -g ssr</span><br><span class="line">cd 进入文件夹</span><br><span class="line">ssr</span><br><span class="line">localhost:1987  预览</span><br></pre></td></tr></table></figure></p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/命令/">命令</a>
-  </div>
 
 
 
@@ -216,9 +183,9 @@
                 <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#笔记" class='tag'>笔记</a>
+  <a href="/tags/#代码" class='tag'>代码</a>
 
-  <a href="/tags/#命令" class='tag'>命令</a>
+  <a href="/tags/#微信分享" class='tag'>微信分享</a>
 
 
           
@@ -226,7 +193,7 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/JQuery学习笔记【1】/">
+        <a href="/2017-10-17/JQuery学习笔记【1】/">
           <h3 class='post-head'>
             jQuery学习笔记
           </h3>
@@ -241,12 +208,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
   </div>
+
+
 
 
 
@@ -267,9 +236,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/工具-Atom/">
+        <a href="/2017-10-17/命令-本地起服务/">
           <h3 class='post-head'>
-            Atom
+            命令-本地起服务
           </h3>
         </a>
         
@@ -277,17 +246,19 @@
           
             
               
-                <h2 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a>Atom</h2><p><a href="https://atom.io/" target="_blank" rel="noopener">https://atom.io/</a>     atom官网<br><a href="https://atom-china.org/" target="_blank" rel="noopener">https://atom-china.org/</a>   中文社区<br><a href="http://wiki.jikexueyuan.com/project/atom/atom-minify.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/atom/atom-minify.html</a>     基础插件及应用</p>
+                <p>##<strong>ssr</strong>##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm  install -g ssr</span><br><span class="line">cd 进入文件夹</span><br><span class="line">ssr</span><br><span class="line">localhost:1987  预览</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/工具/">工具</a>
+    <a class="article-category-link" href="/categories/命令/">命令</a>
   </div>
+
+
 
 
 
@@ -298,9 +269,9 @@
                 <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#Atom" class='tag'>Atom</a>
+  <a href="/tags/#笔记" class='tag'>笔记</a>
 
-  <a href="/tags/#前端工具" class='tag'>前端工具</a>
+  <a href="/tags/#命令" class='tag'>命令</a>
 
 
           
@@ -308,7 +279,50 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/工具-Atom快捷键/">
+        <a href="/2017-10-17/网站-SEO优化/">
+          <h3 class='post-head'>
+            网站SEO优化
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h1 id="前端-页编人员主要负责站内优化，主要从四个方面入手"><a href="#前端-页编人员主要负责站内优化，主要从四个方面入手" class="headerlink" title="前端/页编人员主要负责站内优化，主要从四个方面入手"></a>前端/页编人员主要负责站内优化，主要从四个方面入手</h1><h2 id="1-站内结构优化"><a href="#1-站内结构优化" class="headerlink" title="1.站内结构优化"></a>1.站内结构优化</h2><p>合理规划站点结构(1、扁平化结构 2、辅助导航、面包屑导航、次导航)</p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/网站/">网站</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#网站" class='tag'>网站</a>
+
+  <a href="/tags/#SEO优化" class='tag'>SEO优化</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/工具-Atom快捷键/">
           <h3 class='post-head'>
             Atom快捷键
           </h3>
@@ -323,12 +337,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/工具/">工具</a>
   </div>
+
+
 
 
 
@@ -349,7 +365,7 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/工具-BrowserSync/">
+        <a href="/2017-10-17/工具-BrowserSync/">
           <h3 class='post-head'>
             BrowserSync
           </h3>
@@ -364,12 +380,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/工具/">工具</a>
   </div>
+
+
 
 
 
@@ -380,9 +398,9 @@
                 <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#前端工具" class='tag'>前端工具</a>
-
   <a href="/tags/#BrowserSync" class='tag'>BrowserSync</a>
+
+  <a href="/tags/#前端工具" class='tag'>前端工具</a>
 
 
           
@@ -390,7 +408,7 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/笔记-pc常用插件/">
+        <a href="/2017-10-17/笔记-pc常用插件/">
           <h3 class='post-head'>
             pc常用插件
           </h3>
@@ -405,12 +423,14 @@
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/笔记/">笔记</a>
   </div>
+
+
 
 
 
@@ -431,9 +451,9 @@
       </section>
     
       <section>
-        <a href="/2017/10/17/笔记-pc工作笔记/">
+        <a href="/2017-10-17/工具-Atom/">
           <h3 class='post-head'>
-            pc工作笔记
+            Atom
           </h3>
         </a>
         
@@ -441,17 +461,19 @@
           
             
               
-                <ol>
+                <h2 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a>Atom</h2><p><a href="https://atom.io/" target="_blank" rel="noopener">https://atom.io/</a>     atom官网<br><a href="https://atom-china.org/" target="_blank" rel="noopener">https://atom-china.org/</a>   中文社区<br><a href="http://wiki.jikexueyuan.com/project/atom/atom-minify.html" target="_blank" rel="noopener">http://wiki.jikexueyuan.com/project/atom/atom-minify.html</a>     基础插件及应用</p>
               
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017年10月17日</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/笔记/">笔记</a>
+    <a class="article-category-link" href="/categories/工具/">工具</a>
   </div>
+
+
 
 
 
@@ -462,9 +484,9 @@
                 <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#笔记" class='tag'>笔记</a>
+  <a href="/tags/#Atom" class='tag'>Atom</a>
 
-  <a href="/tags/#pc" class='tag'>pc</a>
+  <a href="/tags/#前端工具" class='tag'>前端工具</a>
 
 
           
