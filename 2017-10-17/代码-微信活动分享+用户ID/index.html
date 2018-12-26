@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="前端博客">
+  <meta name="description" content="郭庆的博客">
   <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
   
     <link rel="icon" href="/images/favicon_32X32.ico">
   
   
-  <title>微信活动分享 | 前端博客</title>
+  <title>微信活动分享 | GQ个人博客</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
@@ -21,7 +21,7 @@
   <div class="header-nav">
     <div class="header-container">
     <a class='logo' href="/">
-      <span>前端博客</span>
+      <span>GQ个人博客</span>
     </a>
 
     <ul class="right-header">
@@ -47,6 +47,12 @@
         <li class="nav-item">
           
             <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
           
         </li>
       
@@ -101,7 +107,7 @@
     
         <!-- livere 评论框 start -->
         <div class="comment">
-            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
         </div>
         <!-- livere 评论框 end -->
         
@@ -149,64 +155,6 @@
 <script src="/lib/in-view.min.js"></script>
 <script src="/lib/lodash.min.js"></script>
 <script src="/js/script.js"></script>
-
-
-<script>
-  var isDown = true
-  var oldY = 0
-  inView.offset(50)
-
-  document.body.addEventListener('touchstart', function(){});
-
-  window.addEventListener('scroll', _.throttle(e => {
-    var currentY = window.scrollY
-    if((oldY - currentY) < 0) {
-      isDown = true
-    } else {
-      isDown = false
-    }
-    oldY = currentY
-  }, 250))
-
-  $("article img").each(function() {
-      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
-      $(this).wrapAll(strA);
-  });
-
-  $('.toc-link').each(function() {
-      var href = $(this).attr("href");
-
-      inView(href).on('exit', () => {
-        if (isDown) {
-          handleActive(href)
-        }
-      })
-
-      inView(href).on('enter', () => {
-        if (!isDown) {
-          handleActive(href)
-        }
-      })
-
-      this.onclick = function(e) {
-        var pos = $(href).offset().top - 10;
-        $("html,body").animate({scrollTop: pos}, 300);
-        setTimeout(() => {
-          handleActive(href)
-        }, 350)
-        return false
-      }
-  })
-
-  function handleActive(href) {
-    document.querySelectorAll('.toc-link').forEach(elm => {
-      elm.classList.remove('active')
-    })
-    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
-  }
-</script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
-
 
 
 <div class="nodisplay">

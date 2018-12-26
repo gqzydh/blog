@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="前端博客">
+  <meta name="description" content="郭庆的博客">
   <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
   
     <link rel="icon" href="/images/favicon_32X32.ico">
   
   
-  <title>Hexo搭建博客笔记 | 前端博客</title>
+  <title>hexo搭建博客笔记 | GQ个人博客</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
@@ -21,7 +21,7 @@
   <div class="header-nav">
     <div class="header-container">
     <a class='logo' href="/">
-      <span>前端博客</span>
+      <span>GQ个人博客</span>
     </a>
 
     <ul class="right-header">
@@ -52,6 +52,12 @@
       
         <li class="nav-item">
           
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
             <a href="/about" class="item-link">关于</a>
           
         </li>
@@ -67,13 +73,13 @@
   <div class="content">
     <article>
         <section class="content markdown-body">
-          <h2>Hexo搭建博客笔记</h2>
+          <h2>hexo搭建博客笔记</h2>
           <div class='post-meta'>
             <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_12</time>
             
               | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/笔记/">笔记</a>
+    <a class="article-category-link" href="/categories/命令/">命令</a>
   </div>
 
 
@@ -83,12 +89,10 @@
             
             
               | 
-                  <i class="fa fa-tags" aria-hidden="true"></i>
+                  <i class="fa fa-tag" aria-hidden="true"></i>
                 
                
-  <a href="/tags/#笔记" class='tag'>笔记</a>
-
-  <a href="/tags/#Hexo" class='tag'>Hexo</a>
+  <a href="/tags/#hexo" class='tag'>hexo</a>
 
 
             
@@ -97,6 +101,7 @@
 <p>生命在于运动 ， 技术在于折腾</p>
 </blockquote>
 <a id="more"></a>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo -g  //安装</span><br><span class="line"></span><br><span class="line">npm install  //安装依赖库</span><br><span class="line"></span><br><span class="line">hexo generate   //生成一套静态网页</span><br><span class="line"></span><br><span class="line">hexo server  //运行测试</span><br><span class="line"></span><br><span class="line">hexo deploy   //进行部署。</span><br></pre></td></tr></table></figure>
 <h2 id="Hexo常用命令"><a href="#Hexo常用命令" class="headerlink" title="Hexo常用命令"></a>Hexo常用命令</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo -g   //安装  </span><br><span class="line">npm update hexo -g 	  //升级 </span><br><span class="line">hexo version  	      //查看hexo的版本</span><br><span class="line">hexo init nodejs-hexo   //创建nodejs-hexo 名字的本地文件</span><br><span class="line">hexo init nodejs-hexo    //创建博客</span><br><span class="line">hexo init blog          //初始化，生成文件夹为blog</span><br><span class="line">cd blog  	             //进入blog文件夹</span><br><span class="line">npm install            //安装依赖库</span><br><span class="line">hexo generate           //生成一套静态网页</span><br><span class="line">hexo server         //运行测试,浏览器打开地址，http://localhost:4000/</span><br><span class="line">hexo deploy         //进行部署</span><br><span class="line"></span><br><span class="line">hexo new &quot;new article&quot;  //新建文章‘new article’</span><br><span class="line">hexo new page &quot;about&quot;  //新建页面 ‘about’</span><br><span class="line"></span><br><span class="line">hexo n &quot;我的博客&quot;` == `hexo new` &quot;我的博客&quot;    //新建文章</span><br><span class="line">hexo g == hexo generate        //生成`</span><br><span class="line">hexo s == hexo server          //启动服务预览</span><br><span class="line">hexo d == hexo deploy          //部署</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>新建的笔记文件路径：<code>source/_posts</code> 目录下, <code>new-article.md</code> 的文件, 打开文件, 文件开头采用的是yaml格式，用三条短横线分隔。下面是文章正文，采用用的是markdown格式。</p>
@@ -212,7 +217,7 @@
     
         <!-- livere 评论框 start -->
         <div class="comment">
-            <div id="lv-container" data-id="city" data-uid="your_livere_uid"></div>
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
         </div>
         <!-- livere 评论框 end -->
         
@@ -222,7 +227,7 @@
     <div class="toc-container">
         <h2>目录</h2>
         <div class="content">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo常用命令"><span class="toc-number">1.</span> <span class="toc-text">Hexo常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo起服务"><span class="toc-number">2.</span> <span class="toc-text">Hexo起服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo写博客常用方法"><span class="toc-number">3.</span> <span class="toc-text">Hexo写博客常用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo文章属性设置"><span class="toc-number">4.</span> <span class="toc-text">Hexo文章属性设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo摘要"><span class="toc-number">5.</span> <span class="toc-text">Hexo摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo更换皮肤"><span class="toc-number">6.</span> <span class="toc-text">hexo更换皮肤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#找不到git部署"><span class="toc-number">7.</span> <span class="toc-text">找不到git部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo不常用的命令"><span class="toc-number">8.</span> <span class="toc-text">Hexo不常用的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#render"><span class="toc-number">9.</span> <span class="toc-text">render</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list"><span class="toc-number">10.</span> <span class="toc-text">list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo草稿"><span class="toc-number">11.</span> <span class="toc-text">Hexo草稿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github上hexo搭建博客-绑定域名"><span class="toc-number">12.</span> <span class="toc-text">github上hexo搭建博客-绑定域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签插件"><span class="toc-number">13.</span> <span class="toc-text">标签插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用块"><span class="toc-number">14.</span> <span class="toc-text">引用块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码块"><span class="toc-number">15.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iframe"><span class="toc-number">16.</span> <span class="toc-text">iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Image"><span class="toc-number">17.</span> <span class="toc-text">Image</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Link"><span class="toc-number">18.</span> <span class="toc-text">Link</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#include-Code"><span class="toc-number">19.</span> <span class="toc-text">include Code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Youtube"><span class="toc-number">20.</span> <span class="toc-text">Youtube</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用文章"><span class="toc-number">21.</span> <span class="toc-text">引用文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用资源"><span class="toc-number">22.</span> <span class="toc-text">引用资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSS不显示"><span class="toc-number">23.</span> <span class="toc-text">RSS不显示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启评论"><span class="toc-number">24.</span> <span class="toc-text">开启评论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">25.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">26.</span> <span class="toc-text">参考资料</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo"><span class="toc-number">1.</span> <span class="toc-text">Hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo常用命令"><span class="toc-number">2.</span> <span class="toc-text">Hexo常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo起服务"><span class="toc-number">3.</span> <span class="toc-text">Hexo起服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo写博客常用方法"><span class="toc-number">4.</span> <span class="toc-text">Hexo写博客常用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo文章属性设置"><span class="toc-number">5.</span> <span class="toc-text">Hexo文章属性设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo摘要"><span class="toc-number">6.</span> <span class="toc-text">Hexo摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo更换皮肤"><span class="toc-number">7.</span> <span class="toc-text">hexo更换皮肤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#找不到git部署"><span class="toc-number">8.</span> <span class="toc-text">找不到git部署</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo不常用的命令"><span class="toc-number">9.</span> <span class="toc-text">Hexo不常用的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#render"><span class="toc-number">10.</span> <span class="toc-text">render</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#list"><span class="toc-number">11.</span> <span class="toc-text">list</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo草稿"><span class="toc-number">12.</span> <span class="toc-text">Hexo草稿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github上hexo搭建博客-绑定域名"><span class="toc-number">13.</span> <span class="toc-text">github上hexo搭建博客-绑定域名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标签插件"><span class="toc-number">14.</span> <span class="toc-text">标签插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用块"><span class="toc-number">15.</span> <span class="toc-text">引用块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码块"><span class="toc-number">16.</span> <span class="toc-text">代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#iframe"><span class="toc-number">17.</span> <span class="toc-text">iframe</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Image"><span class="toc-number">18.</span> <span class="toc-text">Image</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Link"><span class="toc-number">19.</span> <span class="toc-text">Link</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#include-Code"><span class="toc-number">20.</span> <span class="toc-text">include Code</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Youtube"><span class="toc-number">21.</span> <span class="toc-text">Youtube</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用文章"><span class="toc-number">22.</span> <span class="toc-text">引用文章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#引用资源"><span class="toc-number">23.</span> <span class="toc-text">引用资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RSS不显示"><span class="toc-number">24.</span> <span class="toc-text">RSS不显示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启评论"><span class="toc-number">25.</span> <span class="toc-text">开启评论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">26.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">27.</span> <span class="toc-text">参考资料</span></a></li></ol>
         </div>
     </div>
     
@@ -267,64 +272,6 @@
 <script src="/lib/in-view.min.js"></script>
 <script src="/lib/lodash.min.js"></script>
 <script src="/js/script.js"></script>
-
-
-<script>
-  var isDown = true
-  var oldY = 0
-  inView.offset(50)
-
-  document.body.addEventListener('touchstart', function(){});
-
-  window.addEventListener('scroll', _.throttle(e => {
-    var currentY = window.scrollY
-    if((oldY - currentY) < 0) {
-      isDown = true
-    } else {
-      isDown = false
-    }
-    oldY = currentY
-  }, 250))
-
-  $("article img").each(function() {
-      var strA = "<a data-fancybox='gallery' href='" + this.src + "'></a>";
-      $(this).wrapAll(strA);
-  });
-
-  $('.toc-link').each(function() {
-      var href = $(this).attr("href");
-
-      inView(href).on('exit', () => {
-        if (isDown) {
-          handleActive(href)
-        }
-      })
-
-      inView(href).on('enter', () => {
-        if (!isDown) {
-          handleActive(href)
-        }
-      })
-
-      this.onclick = function(e) {
-        var pos = $(href).offset().top - 10;
-        $("html,body").animate({scrollTop: pos}, 300);
-        setTimeout(() => {
-          handleActive(href)
-        }, 350)
-        return false
-      }
-  })
-
-  function handleActive(href) {
-    document.querySelectorAll('.toc-link').forEach(elm => {
-      elm.classList.remove('active')
-    })
-    document.querySelector(".toc [href='"+ href +"']").classList.add('active')
-  }
-</script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script> -->
-
 
 
 <div class="nodisplay">
