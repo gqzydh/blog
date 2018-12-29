@@ -72,9 +72,9 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017-10-17/css-css中的一些黑科技/">
+        <a href="/2017-10-17/css-css常用技巧/">
           <h3 class='post-head'>
-            css中的一些黑科技
+            css 常用技巧
           </h3>
         </a>
         
@@ -82,7 +82,7 @@
           
             
               
-                <h1 id="css中的一些黑科技"><a href="#css中的一些黑科技" class="headerlink" title="css中的一些黑科技"></a>css中的一些黑科技</h1><ul>
+                <ol>
               
           
         </div>
@@ -106,47 +106,6 @@
               
              
   <a href="/tags/#css" class='tag'>css</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/vue.js 组件/">
-          <h3 class='post-head'>
-            vue.js 组件
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <p><strong>移动端组件</strong></p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
 
 
           
@@ -195,9 +154,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/vue.js笔记_01/">
+        <a href="/2017-10-17/JQuery事件/">
           <h3 class='post-head'>
-            vue笔记_01
+            JQuery事件
           </h3>
         </a>
         
@@ -205,48 +164,7 @@
           
             
               
-                <h2 id="一些注意事项"><a href="#一些注意事项" class="headerlink" title="一些注意事项"></a>一些注意事项</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● 一个 &lt;image&gt; 的 src 属性在赋值时会产生一个 HTTP 请求，所以当模板在第一次被解析时会产生一个 404 请求。这种情况下更适合用 v-attr。</span><br><span class="line">● Internet Explorer 在解析 HTML 时会移除非法的内联 style 属性，所以如果你想支持 IE，请在绑定内联 CSS 的时候始终使用 v-style。</span><br><span class="line">● 可以使用三对花括号来回避 HTML 代码，而这种写法会在底层转换为 v-html：&#123;&#123;&#123; safeHTMLString &#125;&#125;&#125;</span><br><span class="line">● 可以在你的 mustache 绑定里加入 * 来注明这是一个一次性撰写的数据，这样的话它就不会响应后续的数据变化：&#123;&#123;* onlyOnce &#125;&#125;</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/JQuery【锋利的JQuery】/">
-          <h3 class='post-head'>
-            JQuery【锋利的JQuery】
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="1-文本框"><a href="#1-文本框" class="headerlink" title="1. 文本框"></a>1. 文本框</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">focus  //文本框触发</span><br><span class="line">blur   //表单元素，离开表单框触发</span><br><span class="line">trigger() 方法触发被选元素的指定事件类型。</span><br><span class="line">triggerHandler() 方法触发被选元素的指定事件类型。但不会执行浏览器默认动作，也不会产生事件冒泡。</span><br><span class="line">triggerHandler() 方法与 trigger() 方法类似。不同的是它不会触发事件（比如表单提交）的默认行为，而且只影响第一个匹配元素。</span><br><span class="line"></span><br><span class="line">animate    //可以创建动画效果</span><br><span class="line">remove() 方法移除被选元素，包括所有文本和子节点。</span><br><span class="line">appendTo() 方法在被选元素的结尾（仍然在内部）插入指定内容。</span><br><span class="line">dblclick()当双击元素时，会发生 dblclick 事件。</span><br><span class="line">append() 方法在被选元素的结尾（仍然在内部）插入指定内容。</span><br><span class="line"></span><br><span class="line">keyup 事件能在用户每次松开按键时触发，实现即时提醒。</span><br><span class="line">focus 事件能在元素得到焦点时候触发，也可以实现即时提醒。</span><br></pre></td></tr></table></figure>
+                <h2 id="委托事件"><a href="#委托事件" class="headerlink" title="委托事件"></a>委托事件</h2><p>delegate()委托事件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bindPageEvent()&#123;</span><br><span class="line">    $(&apos;#pag&apos;).delegate(&apos;li.clickable&apos;, &apos;click&apos;, function()&#123;  </span><br><span class="line">            $this = $(this);</span><br><span class="line">            $this.data(&apos;id&apos;);</span><br><span class="line">            refreshClasses($this.data(&apos;id&apos;));</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">bindPageEvent();  //事件执行</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
@@ -266,12 +184,10 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tags" aria-hidden="true"></i>
+                <i class="fa fa-tag" aria-hidden="true"></i>
               
              
   <a href="/tags/#jQuery" class='tag'>jQuery</a>
-
-  <a href="/tags/#读书" class='tag'>读书</a>
 
 
           
@@ -320,9 +236,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/vue.js笔记_02/">
+        <a href="/2017-10-17/vue.js 组件/">
           <h3 class='post-head'>
-            vue笔记_02
+            vue.js 组件
           </h3>
         </a>
         
@@ -330,48 +246,7 @@
           
             
               
-                <h2 id="Vue-实例对象"><a href="#Vue-实例对象" class="headerlink" title="Vue 实例对象"></a>Vue 实例对象</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new Vue(&#123;   //根组建</span><br><span class="line">  el: &apos;#app&apos;,  //装载的位置</span><br><span class="line">  template: &apos;&lt;App/&gt;&apos;,  //模版</span><br><span class="line">  data: &#123;  </span><br><span class="line">    fruit: &apos;apple&apos; //数据</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/vue.js笔记_03/">
-          <h3 class='post-head'>
-            vue笔记_03
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="定义全局组件"><a href="#定义全局组件" class="headerlink" title="定义全局组件"></a>定义全局组件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Vue.component(&apos;ui-button&apos;,&#123;</span><br><span class="line">    template: &apos;&lt;button class=&quot;ui button&quot;&gt;buutonu&lt;/button&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+                <p><strong>移动端组件</strong></p>
               
           
         </div>
@@ -443,9 +318,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/代码-Base64加密/">
+        <a href="/2017-10-17/vue.js笔记_01/">
           <h3 class='post-head'>
-            base64加密
+            vue笔记_01
           </h3>
         </a>
         
@@ -453,7 +328,7 @@
           
             
               
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;base64加密&lt;/title&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 定义字符串  </span><br><span class="line">var string = &apos;15000870973&apos;;  </span><br><span class="line">  </span><br><span class="line">// 加密  </span><br><span class="line">var encodedString = Base64.encode(string);  </span><br><span class="line">console.log(encodedString); // 输出: &quot;SGVsbG8gV29ybGQh&quot;  </span><br><span class="line">  </span><br><span class="line">// 解密  </span><br><span class="line">var decodedString = Base64.decode(encodedString);  </span><br><span class="line">console.log(decodedString); // 输出: &quot;Hello World!&quot;  </span><br><span class="line">&lt;/script&gt;  </span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+                <h2 id="一些注意事项"><a href="#一些注意事项" class="headerlink" title="一些注意事项"></a>一些注意事项</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● 一个 &lt;image&gt; 的 src 属性在赋值时会产生一个 HTTP 请求，所以当模板在第一次被解析时会产生一个 404 请求。这种情况下更适合用 v-attr。</span><br><span class="line">● Internet Explorer 在解析 HTML 时会移除非法的内联 style 属性，所以如果你想支持 IE，请在绑定内联 CSS 的时候始终使用 v-style。</span><br><span class="line">● 可以使用三对花括号来回避 HTML 代码，而这种写法会在底层转换为 v-html：&#123;&#123;&#123; safeHTMLString &#125;&#125;&#125;</span><br><span class="line">● 可以在你的 mustache 绑定里加入 * 来注明这是一个一次性撰写的数据，这样的话它就不会响应后续的数据变化：&#123;&#123;* onlyOnce &#125;&#125;</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -462,7 +337,130 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/代码/">代码</a>
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/vue.js笔记_03/">
+          <h3 class='post-head'>
+            vue笔记_03
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="定义全局组件"><a href="#定义全局组件" class="headerlink" title="定义全局组件"></a>定义全局组件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Vue.component(&apos;ui-button&apos;,&#123;</span><br><span class="line">    template: &apos;&lt;button class=&quot;ui button&quot;&gt;buutonu&lt;/button&gt;&apos;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/vue.js笔记_02/">
+          <h3 class='post-head'>
+            vue笔记_02
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="Vue-实例对象"><a href="#Vue-实例对象" class="headerlink" title="Vue 实例对象"></a>Vue 实例对象</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new Vue(&#123;   //根组建</span><br><span class="line">  el: &apos;#app&apos;,  //装载的位置</span><br><span class="line">  template: &apos;&lt;App/&gt;&apos;,  //模版</span><br><span class="line">  data: &#123;  </span><br><span class="line">    fruit: &apos;apple&apos; //数据</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/Bootstrap实用扩展插件/">
+          <h3 class='post-head'>
+            Bootstrap实用扩展插件
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <ol>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Bootstrap/">Bootstrap</a>
   </div>
 
 
@@ -476,9 +474,9 @@
                 <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#代码" class='tag'>代码</a>
+  <a href="/tags/#Bootstrap" class='tag'>Bootstrap</a>
 
-  <a href="/tags/#加密" class='tag'>加密</a>
+  <a href="/tags/#插件" class='tag'>插件</a>
 
 
           
@@ -488,10 +486,20 @@
   </div>
   <!-- 右-侧边栏 -->
   <aside>
+    <div class="search">
+          <div id="clock" class="light">
+             <div class="display">
+                <div class="weekdays"></div>
+                <div class="ampm"></div>
+                <div class="digits"></div>
+            </div>
+         </div>
+    </div>
+
     
     <div class="search">
       <div class="content">
-        <form action="//www.google.com/search" target="_blank" class="search-form">
+         <form action="//www.google.com/search" target="_blank" class="search-form">
           <input type="text" name="q" maxlength="20" placeholder="搜索">
           <input type="hidden" name='sitesearch' value="http://gqblog.cn">
         </form>
@@ -589,6 +597,8 @@
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="/lib/in-view.min.js"></script>
 <script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
 <script src="/js/script.js"></script>
 <script>
   var now = new Date(); 

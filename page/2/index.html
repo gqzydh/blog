@@ -360,9 +360,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/JQuery最佳开发实践/">
+        <a href="/2017-10-17/Ajax-jQuery ajax读取json文件内容/">
           <h3 class='post-head'>
-            jquery最佳开发实践
+            jQuery ajax读取json文件内容
           </h3>
         </a>
         
@@ -370,50 +370,7 @@
           
             
               
-                <ol>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#jQuery" class='tag'>jQuery</a>
-
-  <a href="/tags/#读书" class='tag'>读书</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Ajax笔记/">
-          <h3 class='post-head'>
-            Ajax笔记
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">responseText： //获得字符串形式的响应数据</span><br><span class="line">responseXML： //获得 XML 形式的响应数据</span><br></pre></td></tr></table></figure>
+                <p>##<strong>ajax 代码</strong>##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">$(document).ready(function() &#123;  </span><br><span class="line">    $.ajax(&#123;  </span><br><span class="line">        type:&quot;GET&quot;,  //请求方式为get  </span><br><span class="line">        url:&quot;user.json&quot;, //json文件位置  </span><br><span class="line">        dataType: &quot;json&quot;,  //返回数据格式为json  </span><br><span class="line">        //请求成功完成后要执行的方法  </span><br><span class="line">        success: function(data)&#123;  </span><br><span class="line">         console.log(date.button);</span><br><span class="line">         var aav = date.button;</span><br><span class="line">            //使用$.each方法遍历返回的数据date,插入到id为#result中 </span><br><span class="line">           $.each(aav,function(ii,item)&#123;</span><br><span class="line">               var conter = item.type+&quot;,&quot;+item.name+&quot;,&quot;+item.key;  </span><br><span class="line">                $(&quot;#result&quot;).append(content);  </span><br><span class="line">            &#125;)  </span><br><span class="line">        &#125;,</span><br><span class="line">        error:function(jqXHR)&#123;                   alert(&quot;发生错误：&quot;+jqXHR.status);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)  </span><br><span class="line">&#125;);  </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
@@ -444,9 +401,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/JQuery根据页面窗口自动缩放的背景图片/">
+        <a href="/2017-10-17/Angular.js入门/">
           <h3 class='post-head'>
-            jQuery根据页面窗口自动缩放的背景图片
+            Angular.js入门
           </h3>
         </a>
         
@@ -454,7 +411,7 @@
           
             
               
-                <h2 id="自动缩放的背景图片"><a href="#自动缩放的背景图片" class="headerlink" title="自动缩放的背景图片"></a>自动缩放的背景图片</h2><blockquote>
+                <p>AngularJS 是一个 JavaScript 框架。它是一个以 JavaScript 编写的库。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script src=&quot;http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
@@ -463,7 +420,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+    <a class="article-category-link" href="/categories/Angular/">Angular</a>
   </div>
 
 
@@ -477,7 +434,48 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#jQuery" class='tag'>jQuery</a>
+  <a href="/tags/#Angular" class='tag'>Angular</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/JQuery常用方法/">
+          <h3 class='post-head'>
+            JQuery常用方法
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <ol>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JQuery/">JQuery</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#JQuery" class='tag'>JQuery</a>
 
 
           
@@ -487,10 +485,20 @@
   </div>
   <!-- 右-侧边栏 -->
   <aside>
+    <div class="search">
+          <div id="clock" class="light">
+             <div class="display">
+                <div class="weekdays"></div>
+                <div class="ampm"></div>
+                <div class="digits"></div>
+            </div>
+         </div>
+    </div>
+
     
     <div class="search">
       <div class="content">
-        <form action="//www.google.com/search" target="_blank" class="search-form">
+         <form action="//www.google.com/search" target="_blank" class="search-form">
           <input type="text" name="q" maxlength="20" placeholder="搜索">
           <input type="hidden" name='sitesearch' value="http://gqblog.cn">
         </form>
@@ -588,6 +596,8 @@
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="/lib/in-view.min.js"></script>
 <script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
 <script src="/js/script.js"></script>
 <script>
   var now = new Date(); 
