@@ -72,9 +72,9 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017-10-17/模板引擎-Jade命令/">
+        <a href="/2017-10-17/vue-axios/">
           <h3 class='post-head'>
-            Jade命令
+            axios
           </h3>
         </a>
         
@@ -82,7 +82,7 @@
           
             
               
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mkdir  新建文件夹</span><br><span class="line"></span><br><span class="line">subl .  打开目录/文件</span><br><span class="line"></span><br><span class="line">jade index.jade   编译当前的index.jade文件</span><br><span class="line"></span><br><span class="line">jade -P -w index.jade  -P:不压缩  -w:开启监视模式</span><br><span class="line"></span><br><span class="line">反编译：</span><br><span class="line">npm install html2jade -g</span><br><span class="line">html2jade http://www.imooc.com &gt; imooc.jade</span><br><span class="line">html2jade index.html &gt; index.jade</span><br><span class="line"></span><br><span class="line">子级元素必须要缩进。</span><br><span class="line">标签和文本必须要留有空行。</span><br><span class="line"></span><br><span class="line">block desc</span><br><span class="line"></span><br><span class="line">extends layout   关键字</span><br><span class="line"></span><br><span class="line">include head    模块引用</span><br><span class="line"></span><br><span class="line">npm install html2jade -g</span><br><span class="line"></span><br><span class="line">html2jade 文件.html &gt; 文件名</span><br></pre></td></tr></table></figure>
+                <p>一、安装<br>1、 利用npm安装npm install axios –save<br>2、 利用bower安装bower install axios –save<br>3、 直接利用cdn引入<script src="https://unpkg.com/axios/dist/axios.min.js"></script></p>
               
           
         </div>
@@ -91,7 +91,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/模板引擎/">模板引擎</a>
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
   </div>
 
 
@@ -105,7 +105,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#Jade" class='tag'>Jade</a>
+  <a href="/tags/#Vue.js, axios" class='tag'>Vue.js, axios</a>
 
 
           
@@ -113,9 +113,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/模板引擎-Jade入门系列之标签和注释/">
+        <a href="/2017-10-17/Js-事件/">
           <h3 class='post-head'>
-            Jade入门系列之标签和注释
+            Javascript事件
           </h3>
         </a>
         
@@ -123,7 +123,7 @@
           
             
               
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">    1、jade中标签如何解析：</span><br><span class="line"> </span><br><span class="line">  ● html</span><br><span class="line">     解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;html&gt;&lt;/html&gt;  </span><br><span class="line"> </span><br><span class="line">  ● div#wrap  或者 #wrap</span><br><span class="line">     解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;div id=&quot;wrap&quot;&gt;&lt;/div&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  ● div.wrap  或者.wrap</span><br><span class="line">      解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;div class=&quot;wrap&quot;&gt;&lt;/div&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  ● input#age.big.input</span><br><span class="line">      解析后：</span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;input id=&quot;age&quot; class=&quot;big input&quot;/&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  ● p 我是一个段落</span><br><span class="line">      解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;p&gt;我是一个段落&lt;/p&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">   2、 jade中注释如何解析：</span><br><span class="line"> </span><br><span class="line">  ● 单行注释：//单行注释</span><br><span class="line">       解析后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;!-- 单行注释 --&gt;  </span><br><span class="line"> </span><br><span class="line">  ● 支持不输出的注释，前面加一个-（短横线）</span><br><span class="line">       //-这个注释不会显示 </span><br><span class="line"> </span><br><span class="line">  ● 块注释</span><br><span class="line">   会根据注释来处理</span><br><span class="line"> </span><br><span class="line">Jade代码  </span><br><span class="line"></span><br><span class="line">  1. //  </span><br><span class="line">  2.  ul.test  </span><br><span class="line">  3.    li 第一版  </span><br><span class="line">  4.    li 第二版  </span><br><span class="line">  5.    li 第三版  </span><br><span class="line"> </span><br><span class="line">    编译后：</span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;!--  </span><br><span class="line">  2. &lt;ul class=&quot;test&quot;&gt;  </span><br><span class="line">  3.   &lt;li&gt;第一版&lt;/li&gt;  </span><br><span class="line">  4.   &lt;li&gt;第二版&lt;/li&gt;  </span><br><span class="line">  5.   &lt;li&gt;第三版&lt;/li&gt;  </span><br><span class="line">  6. &lt;/ul&gt;--&gt;  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  ● 条件注释：</span><br><span class="line">Jade代码  </span><br><span class="line"></span><br><span class="line">  1. // if lt IE 8  </span><br><span class="line">  2.    script(src=&quot;forIE.js&quot;)  </span><br><span class="line"> </span><br><span class="line">    编译后：</span><br><span class="line"> </span><br><span class="line">Html代码  </span><br><span class="line"></span><br><span class="line">  1. &lt;!--[if lt IE 8]&gt;&lt;script src=&quot;forIE.js&quot;&gt;&lt;/script&gt;&lt;![endif]--&gt;</span><br></pre></td></tr></table></figure>
+                <ol>
               
           
         </div>
@@ -132,7 +132,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/模板引擎/">模板引擎</a>
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
   </div>
 
 
@@ -146,7 +146,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#Jade" class='tag'>Jade</a>
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
 
 
           
@@ -154,9 +154,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/Web前端面试/">
+        <a href="/2017-10-17/css-css中的一些黑科技/">
           <h3 class='post-head'>
-            Web前端面试
+            css中的一些黑科技
           </h3>
         </a>
         
@@ -164,7 +164,7 @@
           
             
               
-                <h2 id="如何面试Web前端开发工程师"><a href="#如何面试Web前端开发工程师" class="headerlink" title="如何面试Web前端开发工程师"></a>如何面试Web前端开发工程师</h2><ul>
+                <h1 id="css中的一些黑科技"><a href="#css中的一些黑科技" class="headerlink" title="css中的一些黑科技"></a>css中的一些黑科技</h1><ul>
               
           
         </div>
@@ -173,7 +173,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
+    <a class="article-category-link" href="/categories/css/">css</a>
   </div>
 
 
@@ -187,7 +187,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#面试" class='tag'>面试</a>
+  <a href="/tags/#css" class='tag'>css</a>
 
 
           
@@ -229,62 +229,6 @@
               
              
   <a href="/tags/#bower" class='tag'>bower</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-15/笔记-wap常用插件/">
-          <h3 class='post-head'>
-            Wap常用插件
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            <ol>
-<li>遮罩层 2秒 后自动关闭</li>
-<li></li>
-</ol>
-<h2 id="遮罩层-2秒-后自动关闭"><a href="#遮罩层-2秒-后自动关闭" class="headerlink" title="遮罩层 2秒 后自动关闭"></a>遮罩层 2秒 后自动关闭</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot; style=&quot;width:100%; height:100%; overflow:hidden; background:rgba(0,0,0,0.6); position:fixed; top:0; left:0; padding-bottom:100%&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;div2&quot; style=&quot; position:fixed; top: 20%; left:5%; width:90%;&quot;&gt;&lt;a onclick=&quot;document.getElementById(&apos;div1&apos;).style.display=&apos;none&apos;;document.getElementById(&apos;div2&apos;).style.display=&apos;none&apos;;&quot; style=&quot;position: absolute; right:0; width:8%;&quot;&gt;&lt;img src=&quot;http://bank.wo.cn/public/upres/20170314152522.png&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;img src=&quot;http://bank.wo.cn/public/upres/20170314152506.png&quot; width=&quot;100%&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    setTimeout(function()&#123;document.getElementById(&apos;div1&apos;).style.display=&apos;none&apos;;document.getElementById(&apos;div2&apos;).style.display=&apos;none&apos;;&#125;,2000);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="应用到的Js技术"><a href="#应用到的Js技术" class="headerlink" title="应用到的Js技术"></a>应用到的Js技术</h2><h4 id="require-js"><a href="#require-js" class="headerlink" title="require.js"></a>require.js</h4><blockquote>
-<ol>
-<li>实现js文件的异步加载，避免网页失去响应；</li>
-<li>管理模块之间的依赖性，便于代码的编写和维护。</li>
-</ol>
-</blockquote>
-<ul>
-<li>使用AMD模块的写法<blockquote>
-<p>具体来说，就是模块必须采用特定的define()函数来定义,如果一个模块不依赖其他模块，那么可以直接定义在define()函数之中。</p>
-</blockquote>
-</li>
-</ul>
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_15</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/笔记/">笔记</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#笔记" class='tag'>笔记</a>
-
-  <a href="/tags/#wap" class='tag'>wap</a>
 
 
           
@@ -387,26 +331,39 @@
       </section>
     
       <section>
-        <a href="/2017-10-12/命令-node命令/">
+        <a href="/2017-10-15/笔记-wap常用插件/">
           <h3 class='post-head'>
-            nodejs 命令
+            Wap常用插件
           </h3>
         </a>
         
         <div class="post-content">
           
-            
-              
-                <ol>
-              
+            <ol>
+<li>遮罩层 2秒 后自动关闭</li>
+<li></li>
+</ol>
+<h2 id="遮罩层-2秒-后自动关闭"><a href="#遮罩层-2秒-后自动关闭" class="headerlink" title="遮罩层 2秒 后自动关闭"></a>遮罩层 2秒 后自动关闭</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;div1&quot; style=&quot;width:100%; height:100%; overflow:hidden; background:rgba(0,0,0,0.6); position:fixed; top:0; left:0; padding-bottom:100%&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;div2&quot; style=&quot; position:fixed; top: 20%; left:5%; width:90%;&quot;&gt;&lt;a onclick=&quot;document.getElementById(&apos;div1&apos;).style.display=&apos;none&apos;;document.getElementById(&apos;div2&apos;).style.display=&apos;none&apos;;&quot; style=&quot;position: absolute; right:0; width:8%;&quot;&gt;&lt;img src=&quot;http://bank.wo.cn/public/upres/20170314152522.png&quot; width=&quot;100%&quot;&gt;&lt;/a&gt;&lt;img src=&quot;http://bank.wo.cn/public/upres/20170314152506.png&quot; width=&quot;100%&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    setTimeout(function()&#123;document.getElementById(&apos;div1&apos;).style.display=&apos;none&apos;;document.getElementById(&apos;div2&apos;).style.display=&apos;none&apos;;&#125;,2000);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="应用到的Js技术"><a href="#应用到的Js技术" class="headerlink" title="应用到的Js技术"></a>应用到的Js技术</h2><h4 id="require-js"><a href="#require-js" class="headerlink" title="require.js"></a>require.js</h4><blockquote>
+<ol>
+<li>实现js文件的异步加载，避免网页失去响应；</li>
+<li>管理模块之间的依赖性，便于代码的编写和维护。</li>
+</ol>
+</blockquote>
+<ul>
+<li>使用AMD模块的写法<blockquote>
+<p>具体来说，就是模块必须采用特定的define()函数来定义,如果一个模块不依赖其他模块，那么可以直接定义在define()函数之中。</p>
+</blockquote>
+</li>
+</ul>
           
         </div>
         <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_12</time>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_15</time>
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/命令/">命令</a>
+    <a class="article-category-link" href="/categories/笔记/">笔记</a>
   </div>
 
 
@@ -417,10 +374,12 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tag" aria-hidden="true"></i>
+                <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#node" class='tag'>node</a>
+  <a href="/tags/#笔记" class='tag'>笔记</a>
+
+  <a href="/tags/#wap" class='tag'>wap</a>
 
 
           
@@ -461,6 +420,47 @@
               
              
   <a href="/tags/#hexo" class='tag'>hexo</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-12/命令-node命令/">
+          <h3 class='post-head'>
+            nodejs 命令
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <ol>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_12</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/命令/">命令</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#node" class='tag'>node</a>
 
 
           
@@ -593,6 +593,304 @@
 
 
 
+<style type="text/css">
+ /*-------------------------
+  The clocks 时间
+--------------------------*/
+
+#clock.light{
+  background-color:#f3f3f3;
+  color:#272e38;
+  position: relative;
+}
+
+#clock .display{
+  padding: 10px 7px 7px;
+  border-radius:6px;
+ /*  height: 54px; */
+}
+
+
+/*-------------------------
+  Light color theme
+--------------------------*/
+
+#clock.light:after{
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+#clock.light .digits div span{
+  background-color:#272e38;
+  border-color:#272e38; 
+}
+
+#clock.light .digits div.dots:before,
+#clock.light .digits div.dots:after{
+  background-color:#272e38;
+}
+
+#clock.light .display{
+  /* background-color:#dddddd; */
+  box-shadow:0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px #fafafa;
+}
+
+
+/*-------------------------
+  Dark color theme
+--------------------------*/
+
+
+#clock.dark{
+  background-color:#272e38;
+  color:#cacaca;
+  border-radius:6px;
+  position: relative;
+}
+
+#clock.dark:after{
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+#clock.dark .digits div span{
+  background-color:#cacaca;
+  border-color:#cacaca; 
+}
+
+#clock.dark .display{
+  background-color:#1d2935;
+  box-shadow:0 1px 1px rgba(0,0,0,0.08) inset, 0 1px 1px #2d3642;
+}
+
+#clock.dark .digits div.dots:before,
+#clock.dark .digits div.dots:after{
+  background-color:#cacaca;
+}
+
+#clock.dark .ampm{
+  position:absolute;
+  bottom:15px;
+  right:7px;
+  font-size:13px;
+  color:#cacaca;
+}
+
+/*-------------------------
+  The Digits
+--------------------------*/
+
+
+#clock .digits div{
+  text-align:left;
+  position:relative;
+  width: 24px;
+  height:50px;
+  display:inline-block;
+  margin:0 4px;
+}
+
+#clock .digits div span{
+  opacity:0;
+  position:absolute;
+
+  -webkit-transition:0.25s;
+  -moz-transition:0.25s;
+  transition:0.25s;
+}
+
+#clock .digits div span:before,
+#clock .digits div span:after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:0;
+  border:5px solid transparent;
+}
+
+#clock .digits .d1{     height:4px;width:14px;top:0;left:5px;}
+#clock .digits .d1:before{  border-width:0 4px 4px 0;border-right-color:inherit;left:-4px;}
+#clock .digits .d1:after{ border-width:0 0 4px 4px;border-left-color:inherit;right:-4px;}
+
+#clock .digits .d2{     height:4px;width:14px;top:18px;left:5px;}
+#clock .digits .d2:before{  border-width:3px 4px 2px;border-right-color:inherit;left:-8px;}
+#clock .digits .d2:after{ border-width:3px 4px 2px;border-left-color:inherit;right:-8px;}
+
+#clock .digits .d3{     height:4px;width:14px;top:39px;left:5px;}
+#clock .digits .d3:before{  border-width:4px 4px 0 0;border-right-color:inherit;left:-4px;}
+#clock .digits .d3:after{ border-width:4px 0 0 4px;border-left-color:inherit;right:-4px;}
+
+#clock .digits .d4{     width:4px;height:10px;top:6px;left:0;}
+#clock .digits .d4:before{  border-width:0 4px 4px 0;border-bottom-color:inherit;top:-4px;}
+#clock .digits .d4:after{ border-width:0 0 4px 4px;border-left-color:inherit;bottom:-4px;}
+
+#clock .digits .d5{     width:4px;height:10px;top:6px;right:0;}
+#clock .digits .d5:before{  border-width:0 0 4px 4px;border-bottom-color:inherit;top:-4px;}
+#clock .digits .d5:after{ border-width:4px 0 0 4px;border-top-color:inherit;bottom:-4px;}
+
+#clock .digits .d6{     width:4px;height:10px;top:26px;left:0;}
+#clock .digits .d6:before{  border-width:0 4px 4px 0;border-bottom-color:inherit;top:-4px;}
+#clock .digits .d6:after{ border-width:0 0 4px 4px;border-left-color:inherit;bottom:-4px;}
+
+#clock .digits .d7{     width:4px;height:10px;top:26px;right:0;}
+#clock .digits .d7:before{  border-width:0 0 4px 4px;border-bottom-color:inherit;top:-4px;}
+#clock .digits .d7:after{ border-width:4px 0 0 4px;border-top-color:inherit;bottom:-4px;}
+
+
+/* 1 */
+
+#clock .digits div.one .d5,
+#clock .digits div.one .d7{
+  opacity:1;
+}
+
+/* 2 */
+
+#clock .digits div.two .d1,
+#clock .digits div.two .d5,
+#clock .digits div.two .d2,
+#clock .digits div.two .d6,
+#clock .digits div.two .d3{
+  opacity:1;
+}
+
+/* 3 */
+
+#clock .digits div.three .d1,
+#clock .digits div.three .d5,
+#clock .digits div.three .d2,
+#clock .digits div.three .d7,
+#clock .digits div.three .d3{
+  opacity:1;
+}
+
+/* 4 */
+
+#clock .digits div.four .d5,
+#clock .digits div.four .d2,
+#clock .digits div.four .d4,
+#clock .digits div.four .d7{
+  opacity:1;
+}
+
+/* 5 */
+
+#clock .digits div.five .d1,
+#clock .digits div.five .d2,
+#clock .digits div.five .d4,
+#clock .digits div.five .d3,
+#clock .digits div.five .d7{
+  opacity:1;
+}
+
+/* 6 */
+
+#clock .digits div.six .d1,
+#clock .digits div.six .d2,
+#clock .digits div.six .d4,
+#clock .digits div.six .d3,
+#clock .digits div.six .d6,
+#clock .digits div.six .d7{
+  opacity:1;
+}
+
+
+/* 7 */
+
+#clock .digits div.seven .d1,
+#clock .digits div.seven .d5,
+#clock .digits div.seven .d7{
+  opacity:1;
+}
+
+/* 8 */
+
+#clock .digits div.eight .d1,
+#clock .digits div.eight .d2,
+#clock .digits div.eight .d3,
+#clock .digits div.eight .d4,
+#clock .digits div.eight .d5,
+#clock .digits div.eight .d6,
+#clock .digits div.eight .d7{
+  opacity:1;
+}
+
+/* 9 */
+
+#clock .digits div.nine .d1,
+#clock .digits div.nine .d2,
+#clock .digits div.nine .d3,
+#clock .digits div.nine .d4,
+#clock .digits div.nine .d5,
+#clock .digits div.nine .d7{
+  opacity:1;
+}
+
+/* 0 */
+
+#clock .digits div.zero .d1,
+#clock .digits div.zero .d3,
+#clock .digits div.zero .d4,
+#clock .digits div.zero .d5,
+#clock .digits div.zero .d6,
+#clock .digits div.zero .d7{
+  opacity:1;
+}
+
+
+/* The dots */
+
+#clock .digits div.dots{
+  width:5px;
+}
+
+#clock .digits div.dots:before,
+#clock .digits div.dots:after{
+  width:5px;
+  height:5px;
+  content:'';
+  position:absolute;
+  left:0;
+  top:10px;
+}
+
+#clock .digits div.dots:after{
+  top:30px;
+}
+
+
+/*-------------------------
+  Weekdays
+--------------------------*/
+
+
+#clock .weekdays{
+  font-size:12px;
+  width:100%;
+  padding-bottom: 14px;
+}
+
+
+#clock .weekdays span{
+  opacity:0.2;
+  padding:0 10px;
+}
+
+#clock .weekdays span.active{
+  opacity:1;
+}
+
+
+/*-------------------------
+    AM/PM
+--------------------------*/
+
+#clock .ampm{
+  position:absolute;
+  bottom:15px;
+  right:7px;
+  font-size:13px;
+} 
+</style>
+
   <footer id="fooler">
   <div class="copyright">
     <div>
@@ -605,7 +903,7 @@
     <div>
       <div class="fl">
         <span style="padding-right:30px;">
-        &copy; 2018 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        &copy; 2019 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
         
          本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
          本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
