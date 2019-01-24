@@ -64,7 +64,6 @@ header .header-nav {
   height: 60px;
   width: 100%;
   background: #1d2935;
-  border-bottom: 1px solid #f1f1f1;
   color: #909090;
   margin-bottom: 15px;
   box-shadow: 0 8px 16px 0 rgba(7, 17, 27, 0.05);
@@ -852,7 +851,6 @@ header .header-nav {
       color: #999999; }
 
 #index aside {
-  position: sticky;
   top: 15px;
   flex-basis: 30%; }
   #index aside > div {

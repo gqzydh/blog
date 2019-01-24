@@ -72,9 +72,9 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017-10-17/Wap-Js判断pc端和手机端/">
+        <a href="/2017-10-17/代码-纯CSS3实现多列的瀑布流布局/">
           <h3 class='post-head'>
-            Js判断pc端和手机端
+            纯CSS3实现多列的瀑布流布局
           </h3>
         </a>
         
@@ -82,7 +82,7 @@
           
             
               
-                <p><strong>方法一</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">function browserRedirect() &#123; </span><br><span class="line">var sUserAgent= navigator.userAgent.toLowerCase(); </span><br><span class="line">var bIsIpad= sUserAgent.match(/ipad/i) == &quot;ipad&quot;; </span><br><span class="line">var bIsIphoneOs= sUserAgent.match(/iphone os/i) == &quot;iphone os&quot;; </span><br><span class="line">var bIsMidp= sUserAgent.match(/midp/i) == &quot;midp&quot;; </span><br><span class="line">var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == &quot;rv:1.2.3.4&quot;; </span><br><span class="line">var bIsUc= sUserAgent.match(/ucweb/i) == &quot;ucweb&quot;; </span><br><span class="line">var bIsAndroid= sUserAgent.match(/android/i) == &quot;android&quot;; </span><br><span class="line">var bIsCE= sUserAgent.match(/windows ce/i) == &quot;windows ce&quot;; </span><br><span class="line">var bIsWM= sUserAgent.match(/windows mobile/i) == &quot;windows mobile&quot;; </span><br><span class="line"> </span><br><span class="line">if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) &#123; </span><br><span class="line">window.location.href= &apos;http://www.baidu.com&apos;; </span><br><span class="line">&#125; else &#123; </span><br><span class="line">window.location= &apos;https://www.taobao.com/&apos;; </span><br><span class="line">&#125; </span><br><span class="line">&#125; </span><br><span class="line">browserRedirect(); </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+                <h2 id="纯CSS3实现多列的瀑布流布局"><a href="#纯CSS3实现多列的瀑布流布局" class="headerlink" title="纯CSS3实现多列的瀑布流布局"></a>纯CSS3实现多列的瀑布流布局</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;纯CSS3实现多列的瀑布流布局 &lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot; media=&quot;screen&quot;&gt;</span><br><span class="line">body &#123;</span><br><span class="line">    background-color: #f6f6f6;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.container &#123;</span><br><span class="line">    width: 80%;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.waterfall &#123;</span><br><span class="line">    -moz-column-count: 3;</span><br><span class="line">    -webkit-column-count: 3;</span><br><span class="line">    column-count: 3;</span><br><span class="line">    -moz-column-width: 24em;</span><br><span class="line">    -webkit-column-width: 24em;</span><br><span class="line">    column-width: 24em;</span><br><span class="line">    -moz-column-gap: 1em;</span><br><span class="line">    -webkit-column-gap: 1em;</span><br><span class="line">    column-gap: 1em;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pin &#123;</span><br><span class="line">    padding: 1em;</span><br><span class="line">    margin: 0 0.125em 1em;</span><br><span class="line">    -moz-page-break-inside: avoid;</span><br><span class="line">    -webkit-column-break-inside: avoid;</span><br><span class="line">    break-inside: avoid;</span><br><span class="line">    background: white;</span><br><span class="line">    -moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);</span><br><span class="line">    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);</span><br><span class="line">    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.pin img &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    padding-bottom: 1em;</span><br><span class="line">    margin-bottom: 0.5em;</span><br><span class="line">    border-bottom: 1px solid #cccccc;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;waterfall&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://dummyimage.com/640x4:3&quot; /&gt;</span><br><span class="line">                &lt;p&gt;1 convallis timestamp&lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                2 Donec a fermentum nisi.</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://dummyimage.com/640x3:4&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    3 Nullam eget lectus augue. Donec eu sem sit amet ligula faucibus suscipit. Suspendisse rutrum turpis quis nunc convallis quis aliquam mauris suscipit.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://loremflickr.com/640/480/germany&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    4 Donec a fermentum nisi. Integer dolor est, commodo ut sagittis vitae, egestas at augue.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://dummyimage.com/480x4:3&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    5 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat consectetur pellentesque. Nam ac elit risus, ac blandit dui. Duis rutrum porta tortor ut convallis. Duis rutrum porta tortor ut convallis.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://dummyimage.com/480x3:4&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    6 Nullam eget lectus augue. Donec eu sem sit amet ligula faucibus suscipit. Suspendisse rutrum turpis quis nunc convallis quis aliquam mauris suscipit. Duis rutrum porta tortor ut convallis.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://dummyimage.com/640x21:10&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    7 Nullam eget lectus augue.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    8 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat consectetur pellentesque.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://dummyimage.com/800x4:3&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    9 Donec a fermentum nisi. Integer dolor est, commodo ut sagittis vitae, egestas at augue. Suspendisse id nulla ac urna vestibulum mattis. Duis rutrum porta tortor ut convallis.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://dummyimage.com/900x4:2&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    10 Donec a fermentum nisi. Integer dolor est, commodo ut sagittis vitae, egestas at augue. Suspendisse id nulla ac urna vestibulum mattis.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://dummyimage.com/640x5:4&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    11 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat consectetur pellentesque. Nam ac elit risus, ac blandit dui. Duis rutrum porta tortor ut convallis.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://loremflickr.com/1024/768/cool&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    12 Donec a fermentum nisi. Integer dolor est, commodo ut sagittis vitae, egestas at augue. Suspendisse id nulla ac urna vestibulum mattis.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://dummyimage.com/800x16:3&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    13 Donec a fermentum nisi. Integer dolor est, commodo ut sagittis vitae, egestas at augue. Suspendisse id nulla ac urna vestibulum mattis.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://loremflickr.com/1024/768/vw,golf,variant/all&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    14 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat consectetur pellentesque. Nam ac elit risus, ac blandit dui. Duis rutrum porta tortor ut convallis.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://dummyimage.com/300x4:3&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    15 Nullam eget lectus augue.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;pin&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;http://dummyimage.com/640x16:9&quot; /&gt;</span><br><span class="line">                &lt;p&gt;</span><br><span class="line">                    16 Nullam eget lectus augue.</span><br><span class="line">                &lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -91,7 +91,93 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/移动端/">移动端</a>
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#css" class='tag'>css</a>
+
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/代码-微信活动分享+用户ID/">
+          <h3 class='post-head'>
+            微信活动分享
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(ua.match(/MicroMessenger/i)==&quot;micromessenger&quot;) &#123;</span><br><span class="line">    var activeidss = $(this.userData.name).selector;</span><br><span class="line">                        this.setXHR(&quot;weixin/sigin&quot;, function()&#123;</span><br><span class="line">                            var router = _this.getApiRouter(&quot;weixin/sigin&quot;, &#123;&#125;);</span><br><span class="line">                            return _this.postData(router.url, router.data, function(json)&#123;</span><br><span class="line">                                if(json.error == -1)&#123;</span><br><span class="line">                                    var jsapi_t = json.jsapi_ticket;</span><br><span class="line">                                    var access_t = json.access_token;</span><br><span class="line">                                    var wxTimes = new Date().getTime() ;</span><br><span class="line">                                    var stra_z = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;;</span><br><span class="line">                                    var n = 16, s = &quot;&quot;;</span><br><span class="line">                                    for(var i = 0; i &lt; n; i++)&#123;</span><br><span class="line">                                        var rand = Math.floor(Math.random() * stra_z.length);</span><br><span class="line">                                        s += stra_z.charAt(rand);</span><br><span class="line">                                    &#125;</span><br><span class="line">                                    var wxnoncestr = s</span><br><span class="line"></span><br><span class="line">                                    var wxurl = window.location.href.split(&apos;#&apos;)[0];</span><br><span class="line"></span><br><span class="line">                                    var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;   </span><br><span class="line"></span><br><span class="line">                                        //signature</span><br><span class="line">                                    var wxstring1 =&quot;jsapi_ticket=&quot;+jsapi_t + &quot;&amp;noncestr=&quot; + wxnoncestr + &quot;&amp;timestamp=&quot; + wxTimes+ &quot;&amp;url=&quot; + wxurl</span><br><span class="line">                                    var sha = hex_sha1(wxstring1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                                    wx.config(&#123;</span><br><span class="line">                                        debug: false,</span><br><span class="line">                                        appId: &apos;wxe7b476931&apos;,</span><br><span class="line">                                        timestamp: wxTimes,</span><br><span class="line">                                        nonceStr: wxnoncestr,</span><br><span class="line">                                        signature: sha,</span><br><span class="line">                                        jsApiList: [</span><br><span class="line">                                            // 所有要调用的 API 都要加到这个列表中</span><br><span class="line">                                            &apos;onMenuShareTimeline&apos;,</span><br><span class="line">                                            &apos;onMenuShareAppMessage&apos;,</span><br><span class="line">                                            &apos;hideMenuItems&apos;</span><br><span class="line">                                          ]</span><br><span class="line">                                    &#125;); </span><br><span class="line">                                    wx.ready(function () &#123;   </span><br><span class="line">                                        wx.hideMenuItems(&#123;menuList: [&apos;menuItem:share:qq&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:weiboApp&apos;,</span><br><span class="line">                                                       &apos;menuItem:favorite&apos;,</span><br><span class="line">                                                       // &apos;menuItem:share:appMessage&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:QZone&apos;,</span><br><span class="line">                                                       &apos;menuItem:openWithSafari&apos;,</span><br><span class="line">                                                       &apos;menuItem:openWithQQBrowser&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:email&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:brand&apos;,</span><br><span class="line">                                                       &apos;menuItem:editTag&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:facebook&apos;,</span><br><span class="line">                                                       &apos;menuItem:setFont&apos;,</span><br><span class="line">                                                       &apos;menuItem:exposeArticle&apos;,</span><br><span class="line">                                                       &apos;menuItem:copyUrl&apos;,</span><br><span class="line">                                                       &apos;menuItem:openWithSafari&apos;,</span><br><span class="line">                                                       &apos;menuItem:readMode&apos;,</span><br><span class="line">                                                       &apos;menuItem:originPage&apos;,</span><br><span class="line">                                                       &apos;menuItem:delete&apos;]</span><br><span class="line">                                        &#125;);</span><br><span class="line"></span><br><span class="line">                                        //分享到朋友圈</span><br><span class="line">                                        wx.onMenuShareTimeline(&#123;</span><br><span class="line">                                            title: &apos;新年大红包，快来开个“旺”运吧。&apos;, // 分享标题</span><br><span class="line">                                            link: &apos;http://wx.xxxx.com/#activity/chest?invite=&apos;+activeidss+&apos;&apos;, // 分享链接</span><br><span class="line">                                            imgUrl: &apos;http://wx.xxxx.com/static/img/chest/share.jpg&apos;, // 分享图标</span><br><span class="line">                                            success: function () &#123; </span><br><span class="line"></span><br><span class="line">                                            &#125;,</span><br><span class="line"></span><br><span class="line">                                            cancel: function () &#123; </span><br><span class="line">                                                // 用户取消分享后执行的回调函数</span><br><span class="line">                                            &#125;</span><br><span class="line">                                        &#125;);</span><br><span class="line">                                        //分享朋友</span><br><span class="line">                                        wx.onMenuShareAppMessage(&#123;</span><br><span class="line">                                            title: &apos;送红包！新年行“旺”运&apos;, // 分享标题</span><br><span class="line">                                            desc: &apos;新年大红包，快来开个“旺”运吧。&apos;, // 分享描述</span><br><span class="line">                                            link: &apos;http://wx.xxxx.com/#activity/chest?invite=&apos;+activeidss+&apos;&apos;, // 分享链接</span><br><span class="line">                                            imgUrl: &apos;http://wx.xxxx.com/static/img/chest/share.jpg&apos;, // 分享图标</span><br><span class="line">                                            success: function () &#123; </span><br><span class="line"></span><br><span class="line">                                            &#125;,</span><br><span class="line"></span><br><span class="line">                                            cancel: function () &#123; </span><br><span class="line">                                                // 用户取消分享后执行的回调函数</span><br><span class="line">                                            &#125;</span><br><span class="line">                                        &#125;);</span><br><span class="line">                                                            </span><br><span class="line">                                    &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                                &#125;</span><br><span class="line"></span><br><span class="line">                            &#125;);</span><br><span class="line"></span><br><span class="line">                        &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#微信分享" class='tag'>微信分享</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/代码-请使用竖屏浏览/">
+          <h3 class='post-head'>
+            wap-请使用竖屏浏览
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p>手机防横屏浏览，为了更好的体验，请使用竖屏浏览<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line"> /* 样式放在结尾，防止 base64 图片造成拥塞 */</span><br><span class="line">    @-webkit-keyframes rotation &#123;</span><br><span class="line">        10% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        50%, 60% &#123; transform: rotate(0deg); -webkit-transform: rotate(0deg) &#125;</span><br><span class="line">        90% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        100% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    @keyframes rotation &#123;</span><br><span class="line">        10% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        50%, 60% &#123; transform: rotate(0deg); -webkit-transform: rotate(0deg) &#125;</span><br><span class="line">        90% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        100% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    #orientLayer &#123; display: none; &#125;</span><br><span class="line">    @media screen and (min-aspect-ratio: 13/9) &#123; #orientLayer &#123; display: block; &#125; &#125;</span><br><span class="line">    .mod-orient-layer &#123; display: none; position: fixed; width: 100%; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 9997 &#125;</span><br><span class="line">    .mod-orient-layer__content &#123; position: absolute; width: 100%; top: 45%; margin-top: -75px; text-align: center &#125;</span><br><span class="line">    .mod-orient-layer__icon-orient &#123;background-image:url(img/iphone.png);display: inline-block; width: 67px; height: 109px;</span><br><span class="line">        transform: rotate(90deg); -webkit-transform: rotate(90deg); -webkit-animation: rotation infinite 1.5s ease-in-out; animation: rotation infinite 1.5s ease-in-out; -webkit-background-size: 67px; background-size: 67px &#125;</span><br><span class="line">    .mod-orient-layer__desc &#123; margin-top: 20px; font-size: 15px; color: #fff &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;orientLayer&quot; class=&quot;mod-orient-layer&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;mod-orient-layer__content&quot;&gt; &lt;i class=&quot;icon mod-orient-layer__icon-orient&quot;&gt;&lt;/i&gt;</span><br><span class="line">    &lt;div class=&quot;mod-orient-layer__desc&quot;&gt;为了更好的体验，请使用竖屏浏览&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
   </div>
 
 
@@ -113,9 +199,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/Wap-移动端-bu g问题/">
+        <a href="/2017-10-17/Web前端工程师编程能力成长之路/">
           <h3 class='post-head'>
-            移动端-bug
+            web前端工程师编程能力成长之路
           </h3>
         </a>
         
@@ -123,212 +209,7 @@
           
             
               
-                <h2 id="针对安卓-选择框-出现边框问题"><a href="#针对安卓-选择框-出现边框问题" class="headerlink" title="针对安卓 选择框 出现边框问题"></a>针对安卓 选择框 出现边框问题</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.userHeight select&#123;</span><br><span class="line">    -webkit-appearance:none;</span><br><span class="line">    -moz-appearance: none;</span><br><span class="line">    appearance: none;</span><br><span class="line">    border: 0 none;</span><br><span class="line">    height: 56px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/移动端/">移动端</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#移动端" class='tag'>移动端</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Wap-移动端常用代码-框架/">
-          <h3 class='post-head'>
-            移动端常用代码-框架【仓库】
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <p>meta：移动端头部<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;</span><br></pre></td></tr></table></figure></p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/移动端/">移动端</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#移动端" class='tag'>移动端</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Wap-移动端常用技巧/">
-          <h3 class='post-head'>
-            移动端常用技巧
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <p>手机页面禁止长按保存图片<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">img &#123; pointer-events: none; &#125;</span><br><span class="line">img &#123; -webkit-user-select: none; &#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">window.ontouchstart = function(e) &#123; e.preventDefault(); &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/移动端/">移动端</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#移动端" class='tag'>移动端</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Wap-网页适配iPhoneX/">
-          <h3 class='post-head'>
-            网页适配 iPhoneX
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>iPhoneX 取消了物理按键，改成底部小黑条，这一改动导致网页出现了比较尴尬的屏幕适配问题。对于网页而言，顶部（刘海部位）的适配问题浏览器已经做了处理，所以我们只需要关注底部与小黑条的适配问题即可（即常见的吸底导航、返回顶部等各种相对底部 fixed 定位的元素）。</p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/移动端/">移动端</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#移动端" class='tag'>移动端</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Web前端框架/">
-          <h3 class='post-head'>
-            Web前端框架
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            <h2 id="Layui"><a href="#Layui" class="headerlink" title="Layui"></a>Layui</h2><blockquote>
-<p>Layui 是一款采用自身模块规范编写的情怀型前端UI框架，遵循原生HTML/CSS/JS的书写与组织形式，门槛极低，拿来即用。</p>
-</blockquote>
-<p><a href="http://www.layui.com" target="_blank" rel="noopener">layui - 经典模块化前端UI框架</a> / <a href="http://www.layui.com" target="_blank" rel="noopener">http://www.layui.com</a> - 经典模块化前端框架<br><a href="http://www.layui.com/demo/" target="_blank" rel="noopener">layui 在线示例</a> / <a href="http://www.layui.com/demo" target="_blank" rel="noopener">http://www.layui.com/demo</a><br><a href="https://gitee.com/sentsin/layui" target="_blank" rel="noopener">Layui源码地址：</a> /<a href="https://gitee.com/sentsin/layui" target="_blank" rel="noopener">https://gitee.com/sentsin/layui</a></p>
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Web前端框架" class='tag'>Web前端框架</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Web前端面试/">
-          <h3 class='post-head'>
-            Web前端面试
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="如何面试Web前端开发工程师"><a href="#如何面试Web前端开发工程师" class="headerlink" title="如何面试Web前端开发工程师"></a>如何面试Web前端开发工程师</h2><ul>
+                <h2 id="【前言】"><a href="#【前言】" class="headerlink" title="##【前言】##"></a>##【前言】##</h2><p>所谓的天才，只不过是比平常人更快的掌握技能、完成工作罢了； 只要你找到了正确的方向，并辅以足够的时间，你一样能够踏上成功彼岸。</p>
               
           
         </div>
@@ -351,7 +232,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#面试" class='tag'>面试</a>
+  <a href="/tags/#成长之路" class='tag'>成长之路</a>
 
 
           
@@ -359,9 +240,88 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/blog-Typecho-博客插件安装/">
+        <a href="/2017-10-17/命令-本地起服务/">
           <h3 class='post-head'>
-            Typecho 博客插件
+            命令-本地起服务
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="ssr"><a href="#ssr" class="headerlink" title="ssr"></a>ssr</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm  install -g ssr</span><br><span class="line">cd 进入文件夹</span><br><span class="line">ssr</span><br><span class="line">localhost:1987  预览</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/命令/">命令</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#命令" class='tag'>命令</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/命令-git常用命令/">
+          <h3 class='post-head'>
+            Git常用命令
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            <p><strong>Git</strong> 是目前世界上最先进的分布式版本控制系统。</p>
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/命令/">命令</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#git" class='tag'>git</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/工具-Sublime text3插件/">
+          <h3 class='post-head'>
+            Sublime text3插件
           </h3>
         </a>
         
@@ -378,7 +338,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/博客/">博客</a>
+    <a class="article-category-link" href="/categories/工具/">工具</a>
   </div>
 
 
@@ -394,7 +354,7 @@
              
   <a href="/tags/#笔记" class='tag'>笔记</a>
 
-  <a href="/tags/#Typecho" class='tag'>Typecho</a>
+  <a href="/tags/#Sublime Text3" class='tag'>Sublime Text3</a>
 
 
           
@@ -402,18 +362,15 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/blog-WordPress/">
+        <a href="/2017-10-17/工具-前端工具/">
           <h3 class='post-head'>
-            WordPress
+            前端编辑工具
           </h3>
         </a>
         
         <div class="post-content">
           
-            
-              
-                <p>WordPress  中文官网:<a href="https://cn.wordpress.org/" target="_blank" rel="noopener">https://cn.wordpress.org/</a><br>慕课网学习:<a href="http://www.imooc.com/video/10465" target="_blank" rel="noopener">http://www.imooc.com/video/10465</a></p>
-              
+            <p>前端常用工具汇聚</p>
           
         </div>
         <div class='post-meta'>
@@ -421,47 +378,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/博客/">博客</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#笔记" class='tag'>笔记</a>
-
-  <a href="/tags/#WordPress" class='tag'>WordPress</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/css-css3嵌入字体@font-face调用字体/">
-          <h3 class='post-head'>
-            CSS3嵌入字体@font-face调用字体
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            <p>@font-face可以实现从服务器端加载字体，所有浏览器中使用的字体就可以不受本地字体的限制。@font-face真的不是什么新鲜玩意，早在2001年时就被提出来，只不过近两年才被各浏览器广泛支持。而且各浏览器支持的字体文件格式也可能不同，一般来说如下四种格式可覆盖所有浏览器。</p>
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/css/">css</a>
+    <a class="article-category-link" href="/categories/工具/">工具</a>
   </div>
 
 
@@ -475,7 +392,89 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#css" class='tag'>css</a>
+  <a href="/tags/#前端工具" class='tag'>前端工具</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/Ajax笔记/">
+          <h3 class='post-head'>
+            Ajax笔记
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">responseText： //获得字符串形式的响应数据</span><br><span class="line">responseXML： //获得 XML 形式的响应数据</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Ajax" class='tag'>Ajax</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/工具-Sublime Text3/">
+          <h3 class='post-head'>
+            Sublime Text3
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            <p>Sublime Text3 工具，把在工作中使用到的技巧和遇到的问题，用笔记的方式记录下来, 还收集sublime text3 一些前端常用插件，包管理，快捷键，等相关内容， 进行学习和分享。</p>
+<h2 id="Sublime-text-安装，及安装插件"><a href="#Sublime-text-安装，及安装插件" class="headerlink" title="Sublime text 安装，及安装插件"></a>Sublime text 安装，及安装插件</h2><p>Sublime text 官网：<a href="http://www.sublimetext.com/" target="_blank" rel="noopener">http://www.sublimetext.com/</a><br>Sublime text 插件安装: <a href="https://packagecontrol.io/" target="_blank" rel="noopener">https://packagecontrol.io/</a></p>
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工具/">工具</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Sublime Text3" class='tag'>Sublime Text3</a>
+
+  <a href="/tags/#前端工具" class='tag'>前端工具</a>
 
 
           
@@ -512,7 +511,7 @@
           文章分类
         </h2>
         <div class="content">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Angular/">Angular</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Bootstrap/">Bootstrap</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Nodejs/">Nodejs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React/">React</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/React-Native/">React Native</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue-js/">Vue.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码/">代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/命令/">命令</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/模板引擎/">模板引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站/">网站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/资源/">资源</a></li></ul>
+          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue-js/">Vue.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码/">代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/命令/">命令</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/建议/">建议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心得/">心得</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/模板引擎/">模板引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站/">网站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/资源/">资源</a></li></ul>
         </div>
       </div>
     
@@ -524,7 +523,7 @@
           标签云
         </h2>
       <div class="content tagcloud">
-            <a href="/tags/Ajax/" style="font-size: 18px;">Ajax</a> <a href="/tags/Angular/" style="font-size: 14px;">Angular</a> <a href="/tags/Atom/" style="font-size: 16px;">Atom</a> <a href="/tags/Bootstrap/" style="font-size: 18px;">Bootstrap</a> <a href="/tags/BrowserSync/" style="font-size: 14px;">BrowserSync</a> <a href="/tags/Grunt/" style="font-size: 14px;">Grunt</a> <a href="/tags/HTML5/" style="font-size: 18px;">HTML5</a> <a href="/tags/Handlebars/" style="font-size: 14px;">Handlebars</a> <a href="/tags/JQuery/" style="font-size: 20px;">JQuery</a> <a href="/tags/Jade/" style="font-size: 16px;">Jade</a> <a href="/tags/Javascript/" style="font-size: 32px;">Javascript</a> <a href="/tags/Js设计/" style="font-size: 16px;">Js设计</a> <a href="/tags/Markdown/" style="font-size: 16px;">Markdown</a> <a href="/tags/MySQL/" style="font-size: 14px;">MySQL</a> <a href="/tags/Nodejs/" style="font-size: 14px;">Nodejs</a> <a href="/tags/React/" style="font-size: 14px;">React</a> <a href="/tags/React-Native/" style="font-size: 16px;">React Native</a> <a href="/tags/SEO优化/" style="font-size: 14px;">SEO优化</a> <a href="/tags/Sublime-Text3/" style="font-size: 18px;">Sublime Text3</a> <a href="/tags/Template-js/" style="font-size: 14px;">Template.js</a> <a href="/tags/Typecho/" style="font-size: 14px;">Typecho</a> <a href="/tags/Vue-js/" style="font-size: 24px;">Vue.js</a> <a href="/tags/Vue-js-axios/" style="font-size: 14px;">Vue.js, axios</a> <a href="/tags/Webpack/" style="font-size: 14px;">Webpack</a> <a href="/tags/Web前端框架/" style="font-size: 14px;">Web前端框架</a> <a href="/tags/Web前端资源/" style="font-size: 14px;">Web前端资源</a> <a href="/tags/WordPress/" style="font-size: 14px;">WordPress</a> <a href="/tags/Yeoman/" style="font-size: 14px;">Yeoman</a> <a href="/tags/bower/" style="font-size: 14px;">bower</a> <a href="/tags/create-react-app/" style="font-size: 14px;">create-react-app</a> <a href="/tags/css/" style="font-size: 26px;">css</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/html/" style="font-size: 18px;">html</a> <a href="/tags/jQuery/" style="font-size: 24px;">jQuery</a> <a href="/tags/node/" style="font-size: 14px;">node</a> <a href="/tags/pc/" style="font-size: 16px;">pc</a> <a href="/tags/wap/" style="font-size: 16px;">wap</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/代码/" style="font-size: 28px;">代码</a> <a href="/tags/前后分离开/" style="font-size: 14px;">前后分离开</a> <a href="/tags/前端工具/" style="font-size: 20px;">前端工具</a> <a href="/tags/前端框架/" style="font-size: 14px;">前端框架</a> <a href="/tags/加密/" style="font-size: 14px;">加密</a> <a href="/tags/命令/" style="font-size: 14px;">命令</a> <a href="/tags/工作/" style="font-size: 14px;">工作</a> <a href="/tags/微信分享/" style="font-size: 16px;">微信分享</a> <a href="/tags/成长之路/" style="font-size: 14px;">成长之路</a> <a href="/tags/插件/" style="font-size: 22px;">插件</a> <a href="/tags/正则表达式/" style="font-size: 20px;">正则表达式</a> <a href="/tags/注册登录/" style="font-size: 16px;">注册登录</a> <a href="/tags/移动端/" style="font-size: 22px;">移动端</a> <a href="/tags/笔记/" style="font-size: 30px;">笔记</a> <a href="/tags/网站/" style="font-size: 14px;">网站</a> <a href="/tags/设计/" style="font-size: 14px;">设计</a> <a href="/tags/读书/" style="font-size: 20px;">读书</a> <a href="/tags/跳转/" style="font-size: 14px;">跳转</a> <a href="/tags/面试/" style="font-size: 14px;">面试</a>
+            <a href="/tags/Ajax/" style="font-size: 18.5px;">Ajax</a> <a href="/tags/HTML5/" style="font-size: 18.5px;">HTML5</a> <a href="/tags/JQuery/" style="font-size: 20.75px;">JQuery</a> <a href="/tags/Javascript/" style="font-size: 14px;">Javascript</a> <a href="/tags/Markdown/" style="font-size: 16.25px;">Markdown</a> <a href="/tags/SEO优化/" style="font-size: 14px;">SEO优化</a> <a href="/tags/Sublime-Text3/" style="font-size: 18.5px;">Sublime Text3</a> <a href="/tags/Template-js/" style="font-size: 14px;">Template.js</a> <a href="/tags/Typecho/" style="font-size: 14px;">Typecho</a> <a href="/tags/Vue-js/" style="font-size: 25.25px;">Vue.js</a> <a href="/tags/Vue-js-axios/" style="font-size: 14px;">Vue.js, axios</a> <a href="/tags/Web前端框架/" style="font-size: 14px;">Web前端框架</a> <a href="/tags/Web前端资源/" style="font-size: 14px;">Web前端资源</a> <a href="/tags/WordPress/" style="font-size: 14px;">WordPress</a> <a href="/tags/css/" style="font-size: 27.5px;">css</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/html/" style="font-size: 18.5px;">html</a> <a href="/tags/jQuery/" style="font-size: 25.25px;">jQuery</a> <a href="/tags/node/" style="font-size: 14px;">node</a> <a href="/tags/pc/" style="font-size: 16.25px;">pc</a> <a href="/tags/wap/" style="font-size: 16.25px;">wap</a> <a href="/tags/代码/" style="font-size: 32px;">代码</a> <a href="/tags/前端工具/" style="font-size: 16.25px;">前端工具</a> <a href="/tags/前端框架/" style="font-size: 14px;">前端框架</a> <a href="/tags/加密/" style="font-size: 14px;">加密</a> <a href="/tags/命令/" style="font-size: 14px;">命令</a> <a href="/tags/学习/" style="font-size: 14px;">学习</a> <a href="/tags/工作/" style="font-size: 14px;">工作</a> <a href="/tags/建议/" style="font-size: 14px;">建议</a> <a href="/tags/微信分享/" style="font-size: 16.25px;">微信分享</a> <a href="/tags/心得/" style="font-size: 14px;">心得</a> <a href="/tags/成长之路/" style="font-size: 14px;">成长之路</a> <a href="/tags/插件/" style="font-size: 20.75px;">插件</a> <a href="/tags/正则表达式/" style="font-size: 14px;">正则表达式</a> <a href="/tags/注册登录/" style="font-size: 16.25px;">注册登录</a> <a href="/tags/移动端/" style="font-size: 23px;">移动端</a> <a href="/tags/笔记/" style="font-size: 29.75px;">笔记</a> <a href="/tags/网站/" style="font-size: 14px;">网站</a> <a href="/tags/设计/" style="font-size: 14px;">设计</a> <a href="/tags/读书/" style="font-size: 18.5px;">读书</a> <a href="/tags/跳转/" style="font-size: 14px;">跳转</a> <a href="/tags/面试/" style="font-size: 14px;">面试</a>
       </div>
     </div>
     
