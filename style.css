@@ -54,6 +54,12 @@ footer {
     margin: 0 auto;
     line-height: 3em;
     color: #BABABA; }
+    footer .copyright .social .icon-weibo {
+      display: inline-block;
+      width: 90px;
+      height: 90px;
+      background: url(../images/weibo.png) no-repeat 0 0;
+      background-size: 100%; }
     footer .copyright a:hover {
       color: #f70000; }
 
