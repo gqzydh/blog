@@ -917,9 +917,9 @@ header .header-nav {
   margin: 0 auto;
   padding-top: 1em; }
   .paging .paging-container {
-    display: flex;
     justify-: space-between;
-    width: 70%; }
+    width: 70%;
+    text-align: center; }
     .paging .paging-container > div {
       display: inline-block;
       border-radius: 2px;
@@ -930,11 +930,8 @@ header .header-nav {
         padding: 5px 15px; }
       .paging .paging-container > div:hover {
         border-color: #999; }
-    .paging .paging-container .page-prev {
-      border: 1px solid #ddd; }
     .paging .paging-container .page-next {
-      text-align: right;
-      border: 1px solid #ddd; }
+      text-align: right; }
 
 @media (min-width: 1032px) {
   #index {

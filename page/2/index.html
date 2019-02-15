@@ -72,9 +72,9 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2018-06-05/HTML-常用技巧/">
+        <a href="/2018-06-05/HTML-JS, Jq操作LocalStorage:SessionStorage的方法/">
           <h3 class='post-head'>
-            Html常用技巧
+            HTML5 JS,JQ操作LocalStorage/SessionStorage的方法
           </h3>
         </a>
         
@@ -82,7 +82,7 @@
           
             
               
-                <h2 id="去掉主页右面的滚动条"><a href="#去掉主页右面的滚动条" class="headerlink" title="去掉主页右面的滚动条"></a>去掉主页右面的滚动条</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body scroll=&quot;no&quot;&gt;</span><br><span class="line">&lt;body style=&quot;overflow-y:hidden&quot;&gt;</span><br></pre></td></tr></table></figure>
+                <h2 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h2><ul>
               
           
         </div>
@@ -91,7 +91,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/HTML/">HTML</a>
+    <a class="article-category-link" href="/categories/HTML5/">HTML5</a>
   </div>
 
 
@@ -105,7 +105,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#html" class='tag'>html</a>
+  <a href="/tags/#HTML5" class='tag'>HTML5</a>
 
 
           
@@ -442,9 +442,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/Ajax笔记/">
+        <a href="/2017-10-17/Ajax-jQuery.ajax()方法获取数据/">
           <h3 class='post-head'>
-            Ajax笔记
+            jQuery.ajax()方法获取数据
           </h3>
         </a>
         
@@ -452,7 +452,7 @@
           
             
               
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">responseText： //获得字符串形式的响应数据</span><br><span class="line">responseXML： //获得 XML 形式的响应数据</span><br></pre></td></tr></table></figure>
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line"> url: &quot;http://www.hzhuti.com&quot;, //请求的url地址</span><br><span class="line"> dataType: &quot;json&quot;, //返回格式为json</span><br><span class="line"> async: true, //请求是否异步，默认为异步，这也是ajax重要特性</span><br><span class="line"> data: &#123; &quot;id&quot;: &quot;value&quot; &#125;, //参数值</span><br><span class="line"> type: &quot;GET&quot;, //请求方式</span><br><span class="line"> beforeSend: function() &#123;</span><br><span class="line">  //请求前的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> success: function(req) &#123;</span><br><span class="line">  //请求成功时处理</span><br><span class="line"> &#125;,</span><br><span class="line"> complete: function() &#123;</span><br><span class="line">  //请求完成的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> error: function() &#123;</span><br><span class="line">  //请求出错处理</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
               
           
         </div>
