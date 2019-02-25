@@ -10,7 +10,7 @@
     <link rel="icon" href="/images/favicon_32X32.ico">
   
   
-  <title>分类 | GQ个人博客</title>
+  <title>JS常用词及概念 | GQ个人博客</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
@@ -34,7 +34,7 @@
       
         <li class="nav-item">
           
-            <a href="/categories" class="item-link active">分类</a>
+            <a href="/categories" class="item-link">分类</a>
           
         </li>
       
@@ -68,22 +68,81 @@
 
 </header>
 
-  <main id="categories">
-    <div class="content">
-        <div class="categories-wrap">
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>JS常用词及概念</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
             
-                <div class="categories">
-                    <h2>
-                      文章分类
-                    </h2>
-                    <div class="content">
-                      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue-js/">Vue.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ps/">ps</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码/">代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/健康/">健康</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/命令/">命令</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/建议/">建议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心得/">心得</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/模板引擎/">模板引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站/">网站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计/">设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/资源/">资源</a></li></ul>
-                    </div>
-                </div>
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+
+
             
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+
+            
+          </div>
+          <h2 id="JavaScript-闭包一闭包的概念"><a href="#JavaScript-闭包一闭包的概念" class="headerlink" title="JavaScript 闭包一闭包的概念"></a>JavaScript 闭包一闭包的概念</h2><p>阮一峰老师的总结:<em>闭包就是能够读取其他函数内部变量的函数</em>。<br>由于在JavaScript语言中，只有函数内部的子函数才能读取局部变量，因此可以把闭包简单理解成定义在一个函数内部的函数。所以，在本质上，闭包就是将函数内部和函数外部连接起来的- -座桥梁。</p>
+<h2 id="闭包一闭包的形成要素"><a href="#闭包一闭包的形成要素" class="headerlink" title="闭包一闭包的形成要素"></a>闭包一闭包的形成要素</h2><ul>
+<li>在一个外部函数中定义了一个内部函数。</li>
+<li>内部函数使用了外部函数中的局部变量。</li>
+<li>内部函数被当做返回值传出。</li>
+</ul>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript-闭包一闭包的概念"><span class="toc-number">1.</span> <span class="toc-text">JavaScript 闭包一闭包的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#闭包一闭包的形成要素"><span class="toc-number">2.</span> <span class="toc-text">闭包一闭包的形成要素</span></a></li></ol>
         </div>
     </div>
+    
+  </aside>
 </main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
   <footer id="fooler">
   <div class="copyright">
     <div>

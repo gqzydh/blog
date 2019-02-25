@@ -10,7 +10,7 @@
     <link rel="icon" href="/images/favicon_32X32.ico">
   
   
-  <title>分类 | GQ个人博客</title>
+  <title>【前端】Web前端性能优化 | GQ个人博客</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
@@ -34,7 +34,7 @@
       
         <li class="nav-item">
           
-            <a href="/categories" class="item-link active">分类</a>
+            <a href="/categories" class="item-link">分类</a>
           
         </li>
       
@@ -68,22 +68,106 @@
 
 </header>
 
-  <main id="categories">
-    <div class="content">
-        <div class="categories-wrap">
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>【前端】Web前端性能优化</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
             
-                <div class="categories">
-                    <h2>
-                      文章分类
-                    </h2>
-                    <div class="content">
-                      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue-js/">Vue.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ps/">ps</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码/">代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/健康/">健康</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/命令/">命令</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/建议/">建议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心得/">心得</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/模板引擎/">模板引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站/">网站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计/">设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/资源/">资源</a></li></ul>
-                    </div>
-                </div>
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+
+
+
+
             
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#前端" class='tag'>前端</a>
+
+
+            
+          </div>
+          <h2 id="前端性能优化点"><a href="#前端性能优化点" class="headerlink" title="前端性能优化点"></a>前端性能优化点</h2><p>涉及到的层面：</p>
+<ul>
+<li>网络层面</li>
+<li>构建层面</li>
+<li>浏览器渲染层面</li>
+<li>服务器层面</li>
+</ul>
+<p>涉及的功能</p>
+<ul>
+<li>资源的合并与压缩</li>
+<li>图片编解码原理和类型选择</li>
+<li>浏览器渲染机制</li>
+</ul>
+<h2 id="资源的合并与压缩"><a href="#资源的合并与压缩" class="headerlink" title="资源的合并与压缩"></a>资源的合并与压缩</h2><p>减少http请求数量和减少请求资源大小<br>html, css, js, 文件合并， 开启gzip</p>
+<h2 id="实战优化点"><a href="#实战优化点" class="headerlink" title="实战优化点"></a>实战优化点</h2><ol>
+<li><p>用translate替代top改变</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">transform:translate(50px,50px);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用opacity替代visibility</p>
+<blockquote>
+<p>即使不可见的元素也会占据页面上的空间</p>
+</blockquote>
+</li>
+<li>不要一条一条地修改 DOM 的样式，预先定义好 class，然后修改 DOM 的 className</li>
+<li>把 DOM 离线后修改，比如：先把 DOM 给 display:none (有一次 Reflow)，然后你修改100次，然后再把它显示出来</li>
+<li>不要把 DOM 结点的属性值放在一个循环里当成循环里的变量</li>
+<li>不要使用 table 布局，可能很小的一个小改动会造成整个 table 的重新布局</li>
+<li>动画实现的速度的选择</li>
+<li>对于动画新建图层</li>
+<li>启用 GPU 硬件加速</li>
+</ol>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前端性能优化点"><span class="toc-number">1.</span> <span class="toc-text">前端性能优化点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#资源的合并与压缩"><span class="toc-number">2.</span> <span class="toc-text">资源的合并与压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实战优化点"><span class="toc-number">3.</span> <span class="toc-text">实战优化点</span></a></li></ol>
         </div>
     </div>
+    
+  </aside>
 </main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
   <footer id="fooler">
   <div class="copyright">
     <div>
