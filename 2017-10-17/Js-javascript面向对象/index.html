@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="郭庆的博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>javascript面向对象 | GQ个人博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>GQ个人博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>javascript面向对象</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+
+            
+          </div>
+          <h2 id="JS面向对象"><a href="#JS面向对象" class="headerlink" title="JS面向对象"></a>JS面向对象</h2><h2 id="为何使用面向对象"><a href="#为何使用面向对象" class="headerlink" title="为何使用面向对象"></a>为何使用面向对象</h2><p>程序执行： 顺序，判断，循环  —实现程序机构化<br>面向对象 – 数据结构化</p>
+<p>编程应该： 简单+抽象</p>
+<h2 id="自定义对象"><a href="#自定义对象" class="headerlink" title="自定义对象"></a>自定义对象</h2><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>定义一个类跟定义一个函数一样简单<br><strong>示例</strong>，自定义了一个新类Person<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Person() &#123; &#125; </span><br><span class="line">// 或</span><br><span class="line">var Person = function()&#123; &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="对象（类的实例）"><a href="#对象（类的实例）" class="headerlink" title="对象（类的实例）"></a>对象（类的实例）</h2><p>使用 new obj 创建对象 obj 的新实例, 将结果（obj 类型）赋值给一个变量方便稍后调用。<br><strong>示例</strong>，我们定义了一个名为Person的类，然后我们创建了两个Person的实例(person1 and person2).<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Person() &#123; &#125;</span><br><span class="line">var person1 = new Person();</span><br><span class="line">var person2 = new Person();</span><br></pre></td></tr></table></figure></p>
+<h2 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h2><p>Person类实例化时构造器调用一个 alert函数。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Person() &#123;</span><br><span class="line">  alert(&apos;Person instantiated&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var person1 = new Person();</span><br><span class="line">var person2 = new Person();</span><br></pre></td></tr></table></figure></p>
+<h2 id="属性-对象属性"><a href="#属性-对象属性" class="headerlink" title="属性 (对象属性)"></a>属性 (对象属性)</h2><p>属性就是 类中包含的变量;每一个对象实例有若干个属性.为了正确的继承，属性应该被定义在类的原型属性 (函数)中。<br>可以使用 关键字 this调用类中的属性, this是对当前对象的引用。<br>从外部存取(读/写)其属性的语法是: InstanceName.Property; </p>
+<p><strong>示例</strong>，为定义Person类定义了一个属性 firstName 并在实例化时赋初值<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Person(firstName) &#123;</span><br><span class="line">  this.firstName = firstName;</span><br><span class="line">  alert(&apos;Person instantiated&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var person1 = new Person(&apos;Alice&apos;);</span><br><span class="line">var person2 = new Person(&apos;Bob&apos;);</span><br><span class="line"></span><br><span class="line">// Show the firstName properties of the objects</span><br><span class="line">alert(&apos;person1 is &apos; + person1.firstName); // alerts &quot;person1 is Alice&quot;</span><br><span class="line">alert(&apos;person2 is &apos; + person2.firstName); // alerts &quot;person2 is Bob&quot;</span><br></pre></td></tr></table></figure></p>
+<h2 id="方法（对象属性）"><a href="#方法（对象属性）" class="headerlink" title="方法（对象属性）"></a>方法（对象属性）</h2><p>方法与属性很相似， 不同的是：一个是函数，另一个可以被定义为函数。<br>调用方法很像，存取一个属性,  不同的是add () 在方法名后面很可能带着参数。<br>prototype 属性使您有能力向对象添加属性和方法。<br><strong>示例</strong>，给Person类定义了方法 sayHello()，并调用了它.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Person(firstName) &#123;</span><br><span class="line">  this.firstName = firstName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person.prototype.sayHello = function() &#123;</span><br><span class="line">  alert(&quot;Hello, I&apos;m &quot; + this.firstName);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var person1 = new Person(&quot;Alice&quot;);</span><br><span class="line">var person2 = new Person(&quot;Bob&quot;);</span><br><span class="line"></span><br><span class="line">// call the Person sayHello method.</span><br><span class="line">person1.sayHello(); // alerts &quot;Hello, I&apos;m Alice&quot;</span><br><span class="line">person2.sayHello(); // alerts &quot;Hello, I&apos;m Bob&quot;</span><br></pre></td></tr></table></figure></p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><h2 id="抽象"><a href="#抽象" class="headerlink" title="抽象"></a>抽象</h2><h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2>
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JS面向对象"><span class="toc-number">1.</span> <span class="toc-text">JS面向对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为何使用面向对象"><span class="toc-number">2.</span> <span class="toc-text">为何使用面向对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义对象"><span class="toc-number">3.</span> <span class="toc-text">自定义对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类"><span class="toc-number">4.</span> <span class="toc-text">类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象（类的实例）"><span class="toc-number">5.</span> <span class="toc-text">对象（类的实例）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造器"><span class="toc-number">6.</span> <span class="toc-text">构造器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-对象属性"><span class="toc-number">7.</span> <span class="toc-text">属性 (对象属性)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法（对象属性）"><span class="toc-number">8.</span> <span class="toc-text">方法（对象属性）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-number">9.</span> <span class="toc-text">继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#封装"><span class="toc-number">10.</span> <span class="toc-text">封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象"><span class="toc-number">11.</span> <span class="toc-text">抽象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多态"><span class="toc-number">12.</span> <span class="toc-text">多态</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="content">
+    <div class="copyright">
+      <div>
+        <ul>
+          <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+        </ul>
+    
+      </div>
+      <div class="social">
+          <ul>
+              <li><a href="https://github.com/gqzydh" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+              <li><a href="https://weibo.com/u/1975830895" title="Sina-Weibo" target="_blank"><i class="icon-weibo"></i></a>&nbsp;</li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="footerInfor">
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2019 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
+<script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>
