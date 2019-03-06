@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="郭庆的博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>vue.js 组件通信 | GQ个人博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>GQ个人博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>vue.js 组件通信</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2019_03_01</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
+
+
+            
+          </div>
+          <h2 id="组件的分类"><a href="#组件的分类" class="headerlink" title="组件的分类"></a>组件的分类</h2><h3 id="常规页面组件"><a href="#常规页面组件" class="headerlink" title="常规页面组件"></a>常规页面组件</h3><p>由 <code>vue-router</code> 产生的每个页面，它本质上也是一个组件（ .vue），主要承载当前页面的 HTML 结构，会包含数据获取、数据整理、数据可视化等常规业务。</p>
+<h3 id="功能性抽象组件"><a href="#功能性抽象组件" class="headerlink" title="功能性抽象组件"></a>功能性抽象组件</h3><p>不包含业务，独立、具体功能的基础组件，比如日期选择器、弹窗警告等。这类组件作为项目的基础控件，会被大量使用，因此组件的 API 进行过高强度的抽象，可以通过不同配置实现不同的功能。</p>
+<h3 id="业务组件"><a href="#业务组件" class="headerlink" title="业务组件"></a>业务组件</h3><p>它不像第二类独立组件只包含某个功能，而是在业务中被多个页面复用的，它与独立组件的区别是，业务组件只在当前项目中会用到，不具有通用性，而且会包含一些业务，比如数据请求；而独立组件不含业务，在任何项目中都可以使用，功能单一，比如一个具有数据校验功能的输入框。</p>
+<h2 id="组件的关系"><a href="#组件的关系" class="headerlink" title="组件的关系"></a>组件的关系</h2><h3 id="父子组件"><a href="#父子组件" class="headerlink" title="父子组件"></a>父子组件</h3><p>父子关系即是组件: A 在它的模板中使用了组件 B，那么组件 A 就是父组件，组件 B 就是子组件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 注册一个子组件</span><br><span class="line">Vue.component(&apos;child&apos;, &#123;</span><br><span class="line">    data: function()&#123;        </span><br><span class="line">        return &#123; text: &apos;我是father的子组件！&apos;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    template: &apos;&lt;span&gt;&#123;&#123; text &#125;&#125;&lt;/span&gt;&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 注册一个父组件</span><br><span class="line">Vue.component(&apos;father&apos;, &#123;</span><br><span class="line">    template: &apos;&lt;div&gt; &lt;child&gt;&lt;/child&gt; &lt;/div&gt;&apos; // 在模板中使用了 child 组件</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="兄弟组件"><a href="#兄弟组件" class="headerlink" title="兄弟组件"></a>兄弟组件</h3><p>两个组件互不引用，则为兄弟组件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Vue.component(&apos;brother1&apos;, &#123;</span><br><span class="line">    template: &apos;&lt;div&gt;我是大哥&lt;/div&gt;&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">Vue.component(&apos;brother2&apos;, &#123;</span><br><span class="line">    template: &apos;&lt;div&gt;我是小弟&lt;/div&gt;&apos;</span><br><span class="line">&#125;)</span><br><span class="line">使用组件的时候：</span><br><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;brother1&gt;&lt;/brother1&gt;</span><br><span class="line">    &lt;brother2&gt;&lt;/brother2&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="跨级组件"><a href="#跨级组件" class="headerlink" title="跨级组件"></a>跨级组件</h3><p>就是在父子关系中，中间跨了很多个层级。</p>
+<h3 id="组件的构成"><a href="#组件的构成" class="headerlink" title="组件的构成"></a>组件的构成</h3><p>一个再复杂的组件，都是由三部分组成的： <code>prop</code>、 <code>event</code>、 <code>slot</code>，它们构成了 Vue.js 组件的 API。</p>
+<ul>
+<li><p>属性 prop<br><code>prop</code> 定义了这个组件有哪些可配置的属性，组件的核心功能也都是它来确定的。写通用组件时， <code>props</code> 最好用对象的写法，这样可以针对每个属性设置类型、默认值或自定义校验属性的值，这点在组件开发中很重要，然而很多人却忽视，直接使用 <code>props</code> 的数组用法，这样的组件往往是不严谨的。</p>
+</li>
+<li><p>插槽 slot<br>插槽 <code>slot</code>，它可以分发组件的内容。和 HTML元素一样，我们经常需要向一个组件传递内容，<br>Vue 自定义的 <slot> 元素让这变得非常简单：</slot></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Vue.component(&apos;alert-box&apos;, &#123;</span><br><span class="line">    template: </span><br><span class="line">        `&lt;div class=&quot;demo-alert-box&quot;&gt;</span><br><span class="line">            &lt;strong&gt;Error!&lt;/strong&gt;</span><br><span class="line">                &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">         &lt;/div&gt; `</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如你所见，我们只要在需要的地方加入插槽就行了——就这么简单！</p>
+<ul>
+<li>自定义事件 event<br>在组件内部自定义事件 event<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;button @click=&quot;handleClick&quot;&gt;    </span><br><span class="line">        &lt;slot&gt;&lt;/slot&gt;  </span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;  </span><br><span class="line">    export default &#123; </span><br><span class="line">        methods: &#123;</span><br><span class="line">            handleClick (event) &#123;        </span><br><span class="line">                this.$emit(&apos;on-click&apos;, event);</span><br><span class="line">            &#125;    </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>通过 $emit，就可以触发自定义的事件 on-click ，在父级通过 @on-click 来监听：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;i-button @on-click=&quot;handleClick&quot;&gt;&lt;/i-button&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>还可以，用事件修饰符 .native 直接在父级声明<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;i-button @click.native=&quot;handleClick&quot;&gt;&lt;/i-button&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果不写 .native 修饰符，那上面的 @click 就是自定义事件 click，而非原生事件 click，但我们在组件内只触发了 on-click 事件，而不是 click，所以直接写 @click 会监听不到。</p>
+<h2 id="组件的通信"><a href="#组件的通信" class="headerlink" title="组件的通信"></a>组件的通信</h2><ul>
+<li>ref</li>
+<li>$parent</li>
+<li>$children</li>
+</ul>
+<p>Vue.js 内置的通信手段一般有两种：</p>
+<ul>
+<li>ref：给元素或组件注册引用信息；</li>
+<li>$parent / $children：访问父 / 子实例。</li>
+</ul>
+<p>用 <code>ref</code> 来访问组件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// component-a</span><br><span class="line">export default &#123;</span><br><span class="line">  data () &#123;    </span><br><span class="line">    return &#123;      </span><br><span class="line">        title: &apos;Vue.js&apos;    </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;, </span><br><span class="line"></span><br><span class="line">methods: &#123;    </span><br><span class="line">    sayHello () &#123;      </span><br><span class="line">        window.alert(&apos;Hello&apos;</span><br><span class="line">        );   </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;component-a ref=&quot;comA&quot;&gt;&lt;/component-a&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line"> </span><br><span class="line">export default &#123;</span><br><span class="line">   mounted () &#123;   </span><br><span class="line">        const comA = this.$refs.comA;</span><br><span class="line">        console.log(comA.title);  // Vue.js</span><br><span class="line">        comA.sayHello();  // 弹窗</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>$parent 和 $children 类似，也是基于当前上下文访问父组件或全部子组件的。<br>这两种方法的弊端是，无法在跨级或兄弟间通信.<br>示例：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// parent.vue</span><br><span class="line"></span><br><span class="line">&lt;component-a&gt;&lt;/component-a&gt;</span><br><span class="line">&lt;component-b&gt;&lt;/component-b&gt;</span><br><span class="line">&lt;component-b&gt;&lt;/component-b&gt;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>我们想在 component-a 中，访问到引用它的页面中（这里就是 parent.vue）的两个component-b 组件，那这种情况下,是暂时无法实现的，后面讲解方法。</p>
+</blockquote>
+<ul>
+<li>provide / inject<br>一种无依赖的组件通信方法：Vue.js 内置的 provide / inject 接口。<br>provide / inject 是 Vue.js 2.2.0 版本后新增的 API，在文档中这样介绍 ：<blockquote>
+<p>这对选项需要一起使用，以允许一个祖先组件向其所有子孙后代注入一个依赖，不论组件层次有多深，并在起上下游关系成立的时间里始终生效。如果你熟悉 React，这与 React 的上下文特性很相似。provide 和 inject 主要为高阶插件/组件库提供用例。并不推荐直接用于应用程序代码中。</p>
+</blockquote>
+</li>
+</ul>
+<p>假设有两个组件： A.vue 和 B.vue，B 是 A 的子组件：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// A.vue</span><br><span class="line">export default &#123;  </span><br><span class="line">    provide: &#123;    </span><br><span class="line">        name: &apos;Aresn&apos;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// B.vue</span><br><span class="line">export default&#123;  </span><br><span class="line">    inject: [&apos;name&apos;],  </span><br><span class="line">    mounted () &#123;    </span><br><span class="line">        console.log(this.name);  // Aresn  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>需要注意的是： provide 和 inject 绑定并不是可响应的。这是刻意为之的。然而，如果你传入了一个可监听的对象，那么其对象的属性还是可响应的。</p>
+</blockquote>
+<p>只要一个组件使用了 provide 向下提供数据，那其下所有的子组件都可以通过 inject 来注入，不管中间隔了多少代，而且可以注入多个来自不同父级提供的数据。需要注意的是，一旦注入了某个数据，那这个组件中就不能再声明 这个数据了，因为它已经被父级占有。</p>
+<p>provide / inject API 主要解决了跨级组件间的通信问题，不过它的使用场景，主要是子组件获取上级组件的状态，跨级组件间建立了一种主动提供与依赖注入的关系。然后有两种场景它不能很好的解决：</p>
+<ul>
+<li>父组件向子组件（支持跨级）传递数据；</li>
+<li>子组件向父组件（支持跨级）传递数据。<br>这种父子（含跨级）传递数据的通信方式，Vue.js 并没有提供原生的 API 来支持，下面介绍一种在父子组件间通信的方法 dispatch 和 broadcast。</li>
+</ul>
+<h3 id="attrs-和-listeners"><a href="#attrs-和-listeners" class="headerlink" title="$attrs 和 $listeners"></a>$attrs 和 $listeners</h3><p>如果父组件 A 下面有子组件 B，组件 B 下面有组件 C，这时如果组件 A 想传递数据给组件C怎么办呢？ Vue 2.4 开始提供了 $attrs 和 $listeners 来解决这个问题，能够让组件 A 之间传递消息给组件 C。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Vue.component(&apos;C&apos;,&#123;</span><br><span class="line">    template : `&lt;div&gt;&lt;input type=&quot;text&quot; v-model=&quot;$attrs.messagec&quot; @input=&quot;passCData($attrs.messagec)&quot;&gt; </span><br><span class="line">        &lt;/div&gt; `,       </span><br><span class="line">    methods:&#123;           </span><br><span class="line">        passCData(val)&#123;    //触发父组件A中的事件                </span><br><span class="line">            this.$emit(&apos;getCData&apos;,val)</span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;    </span><br><span class="line">&#125;)    </span><br><span class="line"></span><br><span class="line">Vue.component(&apos;B&apos;,&#123;</span><br><span class="line">    data()&#123;            </span><br><span class="line">        return &#123;</span><br><span class="line">            mymessage: this.message            </span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;,        </span><br><span class="line">    template: `&lt;div&gt;&lt;input type=&quot;text&quot; v-model=&quot;mymessage&quot; @input=&quot;passData(mymessage)&quot;&gt;                 </span><br><span class="line">    &lt;!-- C组件中能直接触发getCData的原因在于 B组件调用C组件时 使用 v-on 绑定了$listeners 属性 --&gt;                </span><br><span class="line">    &lt;!-- 通过v-bind 绑定$attrs属性，C组件可以直接获取到A组件中传递下来的props（除了B组件中props声明的） --&gt;               </span><br><span class="line">    &lt;C v-bind=&quot;$attrs&quot; v-on=&quot;$listeners&quot;&gt;&lt;/C&gt;&lt;/div&gt;`,       </span><br><span class="line">    </span><br><span class="line">    props:[&apos;message&apos;],  //得到父组件传递过来的数据        </span><br><span class="line">    methods:&#123;           </span><br><span class="line">        passData(val)&#123;   //触发父组件中的事件                </span><br><span class="line">            this.$emit(&apos;getChildData&apos;,val)            </span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;    </span><br><span class="line">&#125;)    </span><br><span class="line"></span><br><span class="line">Vue.component(&apos;A&apos;, &#123;        </span><br><span class="line">    template : `&lt;div&gt;&lt;p&gt;this is parent compoent!&lt;/p&gt;                </span><br><span class="line">        &lt;B :messagec=&quot;messagec&quot; :message=&quot;message&quot; v-on:getCData=&quot;getCData&quot; v-on:getChildData=&quot;getChildData(message)&quot;&gt;&lt;/B&gt;&lt;/div&gt;`,   data()&#123;            </span><br><span class="line">            return&#123;                </span><br><span class="line">                message: &apos;hello&apos;,               </span><br><span class="line">                messagec: &apos;hello c&apos;     //传递给c组件的数据            </span><br><span class="line">            &#125;        </span><br><span class="line">        &#125;,        </span><br><span class="line">    methods:&#123;            </span><br><span class="line">        getChildData(val)&#123;                </span><br><span class="line">            console.log(&apos;这是来自B组件的数据&apos;)            </span><br><span class="line">        &#125;,            //执行C子组件触发的事件            </span><br><span class="line">        getCData(val)&#123;                </span><br><span class="line">            console.log(&quot;这是来自C组件的数据：&quot; +val)            </span><br><span class="line">        &#125;        </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;)   </span><br><span class="line"></span><br><span class="line">var app = new Vue(&#123;        </span><br><span class="line">    el: &apos;#app&apos;,        </span><br><span class="line">    template : `&lt;div&gt;&lt;A&gt;&lt;/A&gt;&lt;/div&gt;`    </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="派发与广播-————-自行实现-dispatch-和-broadcast-方法"><a href="#派发与广播-————-自行实现-dispatch-和-broadcast-方法" class="headerlink" title="派发与广播 ———— 自行实现 dispatch 和 broadcast 方法"></a>派发与广播 ———— 自行实现 dispatch 和 broadcast 方法</h2><p>要实现的 dispatch 和 broadcast 方法，将具有以下功能：在子组件调用 dispatch 方法，向上级指定的组件实例（最近的）上触发自定义事件，并传递数据，且该上级组件已预先通过 $on 监听了这个事件；相反，在父组件调用 broadcast 方法，向下级指定的组件实例（最近的）上触发自定义事件，并传递数据，且该下级组件已预先通过 $on 监听了这个事件。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">import Emitter from &apos;../mixins/emitter.js&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    mixins: [ Emitter],</span><br><span class="line">    methods: &#123;</span><br><span class="line">        handleDispatch () &#123;</span><br><span class="line">            this.dispatch();  // ①</span><br><span class="line">        &#125;,</span><br><span class="line">        handleBroadcast () &#123;</span><br><span class="line">            this.broadcast(); // ②</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//emitter.js 的代码：</span><br><span class="line">function broadcast(componentName, eventName, params) &#123;</span><br><span class="line">    this.$children.forEach(child =&gt; &#123;</span><br><span class="line">        const name = child.$options.name;</span><br><span class="line">        if(name === componentName) &#123;</span><br><span class="line">            child.$emit.apply(child, [eventName].concat(params));</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            broadcast.apply(child, [componentName, eventName].concat([params]));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default&#123; methods: &#123;</span><br><span class="line">    dispatch (componentName, eventName,params) &#123;</span><br><span class="line">    let parent = this.$parent || this.$root;</span><br><span class="line">    let name = parent.$options.name;</span><br><span class="line">    while(parent &amp;&amp; (!name || name !== componentName)) &#123;</span><br><span class="line">        parent = parent.$parent;</span><br><span class="line">        if(parent) &#123;</span><br><span class="line">            name = parent.$options.name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">        if(parent) &#123;</span><br><span class="line">            parent.$emit.apply(parent, [eventName].concat(params));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    broadcast(componentName, eventName, params) &#123;</span><br><span class="line">        broadcast.call( this, componentName, eventName, params);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>因为是用作 mixins 导入，所以在 methods 里定义的 dispatch 和 broadcast 方法会被混合到组件里，自然就可以用 this.dispatch 和 this.broadcast 来使用。</p>
+<p>这两个方法都接收了三个参数，第一个是组件的 name 值，用于向上或向下递归遍历来寻找对应的组件，第二个和第三个就是上文分析的自定义事件名称和要传递的数据。</p>
+<p>可以看到，在 dispatch 里，通过 while 语句，不断向上遍历更新当前组件（即上下文为当前调用该方法的组件）的父组件实例（变量 parent 即为父组件实例），直到匹配到定义的 componentName 与某个上级组件的 name 选项一致时，结束循环，并在找到的组件实例上，调用 $emit 方法来触发自定义事件 eventName。broadcast 方法与之类似，只不过是向下遍历寻找。</p>
+<p>来看一下具体的使用方法。有 A.vue 和 B.vue 两个组件，其中 B 是 A 的子组件，中间可能跨多级，在 A 中向 B 通信：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- A.vue --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;button @ click=&quot;handleClick&quot;&gt;</span><br><span class="line">        触发事件</span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Emitter from &apos;../mixins/emitter.js&apos;;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &apos;componentA&apos;,</span><br><span class="line">    mixins: [</span><br><span class="line">        Emitter</span><br><span class="line">    ],</span><br><span class="line">    methods: &#123;</span><br><span class="line">        handleClick() &#123;</span><br><span class="line">            this.broadcast(</span><br><span class="line">                &apos;componentB&apos;,</span><br><span class="line">                &apos;on-message&apos;,</span><br><span class="line">                &apos;Hello Vue.js&apos;</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// B.vue</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &apos;componentB&apos;,</span><br><span class="line">    created () &#123;</span><br><span class="line">        this.$on(&apos;on-message&apos;,</span><br><span class="line">        this.showMessage);</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        showMessage (text) &#123;</span><br><span class="line">            window.alert(text);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同理，如果是 B 向 A 通信，在 B 中调用 dispatch 方法，在 A 中使用 $on 监听事件即可。</p>
+<p><strong> 以上就是自行实现的 dispatch 和 broadcast 方法。</strong></p>
+<h2 id="找到任意组件实例——findComponents-系列方法"><a href="#找到任意组件实例——findComponents-系列方法" class="headerlink" title="找到任意组件实例——findComponents 系列方法"></a>找到任意组件实例——findComponents 系列方法</h2><p>它适用于以下场景：</p>
+<pre><code>1. 由一个组件，向上找到最近的指定组件；
+2. 由一个组件，向上找到所有的指定组件；
+3. 由一个组件，向下找到最近的指定组件；
+4. 由一个组件，向下找到所有指定的组件；
+5. 由一个组件，找到指定组件的兄弟组件。
+</code></pre><p>这5个不同的场景，对应 5 个不同的函数，实现原理也大同小异。</p>
+<h3 id="1-向上找到最近的指定组件-——-findComponentUpward"><a href="#1-向上找到最近的指定组件-——-findComponentUpward" class="headerlink" title="1.向上找到最近的指定组件 —— findComponentUpward"></a>1.向上找到最近的指定组件 —— <code>findComponentUpward</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 由一个组件，向上找到最近的指定组件</span><br><span class="line">function findComponentUpward (context, componentName) &#123;</span><br><span class="line">  let parent = context.$parent;</span><br><span class="line">  let name = parent.$options.name;</span><br><span class="line">  while (parent &amp;&amp; (!name || [componentName].indexOf(name) &lt; 0 )) &#123;    </span><br><span class="line">    parent = parent.$parent; </span><br><span class="line">        if (parent) name=parent.$options.name; </span><br><span class="line">    &#125; </span><br><span class="line">    return parent; </span><br><span class="line">  &#125; </span><br><span class="line">  export &#123; findComponentUpward &#125;;</span><br></pre></td></tr></table></figure>
+<p>比如下面的示例，有组件 A 和组件 B，A 是 B 的父组件，在 B 中获取和调用 A 中的数据和方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- component-a.vue --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">         A组件</span><br><span class="line">        &lt;component-b&gt;&lt;/component-b&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import componentB from &apos;./component-b.vue&apos;;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &apos;componentA&apos;,</span><br><span class="line">    components: &#123; componentB &#125;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            name: &apos;Aresn&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    methods: &#123;</span><br><span class="line">        sayHello() &#123;</span><br><span class="line">            console.log(</span><br><span class="line">                &apos;Hello, Vue.js&apos;</span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!-- component-b.vue --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">       B 组件 </span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; findComponentUpward &#125; from &apos;../utils/assist.js&apos;;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &apos;componentB&apos;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line">        const</span><br><span class="line">            comA = findComponentUpward(</span><br><span class="line">                this,</span><br><span class="line">                &apos;componentA&apos;</span><br><span class="line">            );</span><br><span class="line">        if (comA) &#123;</span><br><span class="line">            console.log(comA.name);  // Aresn</span><br><span class="line">            comA.sayHello();    // Hello, Vue.js</span><br><span class="line">        &#125;  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-向上找到所有的指定组件-——-findComponentsUpward"><a href="#2-向上找到所有的指定组件-——-findComponentsUpward" class="headerlink" title="2. 向上找到所有的指定组件 —— findComponentsUpward"></a>2. 向上找到所有的指定组件 —— <code>findComponentsUpward</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 由一个组件，向上找到所有的指定组件</span><br><span class="line">function findComponentsUpward (context, componentName) &#123;</span><br><span class="line">  let parents = [];</span><br><span class="line">  const parent = context.$parent;</span><br><span class="line">  if(parent) &#123;</span><br><span class="line">    if(parent.$options.name === componentName) parents.push(parent);</span><br><span class="line">    return parents.concat(findComponentsUpward(parent, componentName));</span><br><span class="line">  &#125; else&#123;</span><br><span class="line">    return [];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">export &#123; findComponentsUpward &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="3、向下找到最近的指定组件——findComponentDownward"><a href="#3、向下找到最近的指定组件——findComponentDownward" class="headerlink" title="3、向下找到最近的指定组件——findComponentDownward"></a>3、向下找到最近的指定组件——findComponentDownward</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 由一个组件，向下找到最近的指定组件</span><br><span class="line">function findComponentDownward (context, componentName) &#123;</span><br><span class="line">    const childrens = context.$children;</span><br><span class="line">    let children = null;</span><br><span class="line">    if(childrens.length) &#123;</span><br><span class="line">        for(const child of childrens) &#123;</span><br><span class="line">            const name = child.$options.name;</span><br><span class="line">        if(name === componentName) &#123;</span><br><span class="line">            children = child;</span><br><span class="line">            break;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            children = findComponentDownward(child, componentName);</span><br><span class="line">            if(children)</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">return children;</span><br><span class="line">&#125;</span><br><span class="line">export&#123; findComponentDownward &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="4、向下找到所有指定的组件-——-findComponentsDownward"><a href="#4、向下找到所有指定的组件-——-findComponentsDownward" class="headerlink" title="4、向下找到所有指定的组件 —— findComponentsDownward"></a>4、向下找到所有指定的组件 —— <code>findComponentsDownward</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 由一个组件，向下找到所有指定的组件</span><br><span class="line">function findComponentsDownward (context, componentName) &#123;</span><br><span class="line">    return context.$children.reduce((components, child) =&gt; &#123;</span><br><span class="line">        if(child.$options.name === componentName) components.push(child);</span><br><span class="line">            const foundChilds = findComponentsDownward(child, componentName);</span><br><span class="line">                return components.concat(foundChilds);</span><br><span class="line">        &#125;, []);</span><br><span class="line">&#125;</span><br><span class="line">export</span><br><span class="line">&#123; findComponentsDownward &#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="5、找到指定组件的兄弟组件-——-findBrothersComponents"><a href="#5、找到指定组件的兄弟组件-——-findBrothersComponents" class="headerlink" title="5、找到指定组件的兄弟组件 —— findBrothersComponents"></a>5、找到指定组件的兄弟组件 —— <code>findBrothersComponents</code></h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 由一个组件，找到指定组件的兄弟组件</span><br><span class="line">function findBrothersComponents (context, componentName, exceptMe = true) &#123;</span><br><span class="line">    let res = context.$parent.$children.filter(item =&gt; &#123;</span><br><span class="line">        return item.$options.name === componentName;</span><br><span class="line">    &#125;);</span><br><span class="line">    let index = res.findIndex(item =&gt; item._uid === context._uid);</span><br><span class="line">    if (exceptMe) res.splice(index,1);</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line">export &#123; findBrothersComponents &#125;;</span><br></pre></td></tr></table></figure>
+<p>相比其它 4 个函数， <code>findBrothersComponents</code> 多了一个参数 exceptMe，是否把本身除外，默认是 true。寻找兄弟组件的方法，是先获取 context.$parent.$children，也就是父组件的全部子组件，这里面当前包含了本身，所有也会有第三个参数 exceptMe。Vue.js 在渲染组件时，都会给每个组件加一个内置的属性 _uid，这个 _uid 是不会重复的，借此我们可以从一系列兄弟组件中把自己排除掉。</p>
+<h2 id="Event-Bus"><a href="#Event-Bus" class="headerlink" title="Event Bus"></a>Event Bus</h2><p>有时候两个组件之间需要进行通信，但是它们彼此不是父子组件的关系。在一些简单场景，你可以使用一个空的 Vue 实例作为一个事件总线中心(central event bus)：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//中央事件总线</span><br><span class="line">var bus=new Vue();</span><br><span class="line">var app=newVue(&#123;</span><br><span class="line">    el: &apos;#app&apos;,</span><br><span class="line">    template:`</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;brother1&gt;&lt;/brother1&gt;</span><br><span class="line">            &lt;brother2&gt;&lt;/brother2&gt;</span><br><span class="line">        &lt;/div&gt;`</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 在组件 brother1 的 methods 方法中触发事件</span><br><span class="line">bus.$emit(&apos;say-hello&apos;, &apos;world&apos;)</span><br><span class="line"></span><br><span class="line">// 在组件 brother2 的 created 钩子函数中监听事件</span><br><span class="line">bus.$on(&apos;say-hello&apos;, function(arg) &#123;</span><br><span class="line">    console.log(&apos;hello &apos; + arg);  // hello world</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="vuex处理组件之间的数据交互"><a href="#vuex处理组件之间的数据交互" class="headerlink" title="vuex处理组件之间的数据交互"></a>vuex处理组件之间的数据交互</h2><p>如果业务逻辑复杂，很多组件之间需要同时处理一些公共的数据，这个时候才有上面这一些方法可能不利于项目的维护，vuex 的做法就是将这一些公共的数据抽离出来，然后其他组件就可以对这个公共数据进行读写操作，这样达到了解耦的目的。<br>详情可参考：<a href="https://vuex.vuejs.org/zh-cn/。" target="_blank" rel="noopener">https://vuex.vuejs.org/zh-cn/。</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>vue组件之间8种组件通信方式总结<br>(<a href="https://blog.csdn.net/zhoulu001/article/details/79548350" target="_blank" rel="noopener">https://blog.csdn.net/zhoulu001/article/details/79548350</a>)</p>
+<p><a href="https://github.com/iview/iview/blob/2.0/src/mixins/emitter.js" target="_blank" rel="noopener">https://github.com/iview/iview/blob/2.0/src/mixins/emitter.js</a></p>
+<p><a href="https://github.com/iview/iview/blob/2.0/src/utils/assist.js" target="_blank" rel="noopener">https://github.com/iview/iview/blob/2.0/src/utils/assist.js</a></p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#组件的分类"><span class="toc-number">1.</span> <span class="toc-text">组件的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常规页面组件"><span class="toc-number">1.1.</span> <span class="toc-text">常规页面组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#功能性抽象组件"><span class="toc-number">1.2.</span> <span class="toc-text">功能性抽象组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#业务组件"><span class="toc-number">1.3.</span> <span class="toc-text">业务组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件的关系"><span class="toc-number">2.</span> <span class="toc-text">组件的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#父子组件"><span class="toc-number">2.1.</span> <span class="toc-text">父子组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兄弟组件"><span class="toc-number">2.2.</span> <span class="toc-text">兄弟组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨级组件"><span class="toc-number">2.3.</span> <span class="toc-text">跨级组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#组件的构成"><span class="toc-number">2.4.</span> <span class="toc-text">组件的构成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件的通信"><span class="toc-number">3.</span> <span class="toc-text">组件的通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#attrs-和-listeners"><span class="toc-number">3.1.</span> <span class="toc-text">$attrs 和 $listeners</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#派发与广播-————-自行实现-dispatch-和-broadcast-方法"><span class="toc-number">4.</span> <span class="toc-text">派发与广播 ———— 自行实现 dispatch 和 broadcast 方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#找到任意组件实例——findComponents-系列方法"><span class="toc-number">5.</span> <span class="toc-text">找到任意组件实例——findComponents 系列方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-向上找到最近的指定组件-——-findComponentUpward"><span class="toc-number">5.1.</span> <span class="toc-text">1.向上找到最近的指定组件 —— findComponentUpward</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-向上找到所有的指定组件-——-findComponentsUpward"><span class="toc-number">5.2.</span> <span class="toc-text">2. 向上找到所有的指定组件 —— findComponentsUpward</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、向下找到最近的指定组件——findComponentDownward"><span class="toc-number">5.3.</span> <span class="toc-text">3、向下找到最近的指定组件——findComponentDownward</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、向下找到所有指定的组件-——-findComponentsDownward"><span class="toc-number">5.4.</span> <span class="toc-text">4、向下找到所有指定的组件 —— findComponentsDownward</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、找到指定组件的兄弟组件-——-findBrothersComponents"><span class="toc-number">5.5.</span> <span class="toc-text">5、找到指定组件的兄弟组件 —— findBrothersComponents</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Event-Bus"><span class="toc-number">6.</span> <span class="toc-text">Event Bus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vuex处理组件之间的数据交互"><span class="toc-number">7.</span> <span class="toc-text">vuex处理组件之间的数据交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">8.</span> <span class="toc-text">参考</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="content">
+    <div class="copyright">
+      <div>
+        <ul>
+          <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+        </ul>
+    
+      </div>
+      <div class="social">
+          <ul>
+              <li><a href="https://github.com/gqzydh" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+              <li><a href="https://weibo.com/u/1975830895" title="Sina-Weibo" target="_blank"><i class="icon-weibo"></i></a>&nbsp;</li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="footerInfor">
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2019 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
+<script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

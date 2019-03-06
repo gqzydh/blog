@@ -72,47 +72,6 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017-10-17/css-reset.css样式重置/">
-          <h3 class='post-head'>
-            CSS样式重置-reset.css
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <ol>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/css/">css</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#css" class='tag'>css</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
         <a href="/2017-10-17/vue.js 组件/">
           <h3 class='post-head'>
             vue.js 组件
@@ -154,9 +113,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/vue.js笔记/">
+        <a href="/2017-10-17/css-reset.css样式重置/">
           <h3 class='post-head'>
-            vue笔记
+            CSS样式重置-reset.css
           </h3>
         </a>
         
@@ -164,7 +123,7 @@
           
             
               
-                <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>绝大部分项目中，目录结构都会差不太多，我们可以综合一下来个通用的 src 目录：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">src</span><br><span class="line">├── assets          // 资源目录 图片，样式，iconfont</span><br><span class="line">├── components      // 全局通用组件目录</span><br><span class="line">├── config          // 项目配置，拦截器，开关</span><br><span class="line">├── plugins         // 插件相关，生成路由、请求、store 等实例，并挂载 Vue 实例</span><br><span class="line">├── directives      // 拓展指令集合</span><br><span class="line">├── routes          // 路由配置</span><br><span class="line">├── service         // 服务层</span><br><span class="line">├── utils           // 工具类</span><br><span class="line">└── views           // 视图层</span><br></pre></td></tr></table></figure></p>
+                <ol>
               
           
         </div>
@@ -173,7 +132,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
+    <a class="article-category-link" href="/categories/css/">css</a>
   </div>
 
 
@@ -187,7 +146,48 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
+  <a href="/tags/#css" class='tag'>css</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/JQuery事件/">
+          <h3 class='post-head'>
+            JQuery事件
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="委托事件"><a href="#委托事件" class="headerlink" title="委托事件"></a>委托事件</h2><p>delegate()委托事件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bindPageEvent()&#123;</span><br><span class="line">    $(&apos;#pag&apos;).delegate(&apos;li.clickable&apos;, &apos;click&apos;, function()&#123;  </span><br><span class="line">            $this = $(this);</span><br><span class="line">            $this.data(&apos;id&apos;);</span><br><span class="line">            refreshClasses($this.data(&apos;id&apos;));</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">bindPageEvent();  //事件执行</span><br></pre></td></tr></table></figure></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#jQuery" class='tag'>jQuery</a>
 
 
           
@@ -318,9 +318,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/代码-Base64加密/">
+        <a href="/2017-10-17/vue.js笔记/">
           <h3 class='post-head'>
-            base64加密
+            vue笔记
           </h3>
         </a>
         
@@ -328,7 +328,7 @@
           
             
               
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;base64加密&lt;/title&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 定义字符串  </span><br><span class="line">var string = &apos;15000870973&apos;;  </span><br><span class="line">  </span><br><span class="line">// 加密  </span><br><span class="line">var encodedString = Base64.encode(string);  </span><br><span class="line">console.log(encodedString); // 输出: &quot;SGVsbG8gV29ybGQh&quot;  </span><br><span class="line">  </span><br><span class="line">// 解密  </span><br><span class="line">var decodedString = Base64.decode(encodedString);  </span><br><span class="line">console.log(decodedString); // 输出: &quot;Hello World!&quot;  </span><br><span class="line">&lt;/script&gt;  </span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+                <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>绝大部分项目中，目录结构都会差不太多，我们可以综合一下来个通用的 src 目录：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">src</span><br><span class="line">├── assets          // 资源目录 图片，样式，iconfont</span><br><span class="line">├── components      // 全局通用组件目录</span><br><span class="line">├── config          // 项目配置，拦截器，开关</span><br><span class="line">├── plugins         // 插件相关，生成路由、请求、store 等实例，并挂载 Vue 实例</span><br><span class="line">├── directives      // 拓展指令集合</span><br><span class="line">├── routes          // 路由配置</span><br><span class="line">├── service         // 服务层</span><br><span class="line">├── utils           // 工具类</span><br><span class="line">└── views           // 视图层</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
@@ -337,7 +337,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/代码/">代码</a>
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
   </div>
 
 
@@ -348,12 +348,10 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tags" aria-hidden="true"></i>
+                <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#代码" class='tag'>代码</a>
-
-  <a href="/tags/#加密" class='tag'>加密</a>
+  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
 
 
           
@@ -372,47 +370,6 @@
             
               
                 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line"> url: &quot;http://www.hzhuti.com&quot;, //请求的url地址</span><br><span class="line"> dataType: &quot;json&quot;, //返回格式为json</span><br><span class="line"> async: true, //请求是否异步，默认为异步，这也是ajax重要特性</span><br><span class="line"> data: &#123; &quot;id&quot;: &quot;value&quot; &#125;, //参数值</span><br><span class="line"> type: &quot;GET&quot;, //请求方式</span><br><span class="line"> beforeSend: function() &#123;</span><br><span class="line">  //请求前的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> success: function(req) &#123;</span><br><span class="line">  //请求成功时处理</span><br><span class="line"> &#125;,</span><br><span class="line"> complete: function() &#123;</span><br><span class="line">  //请求完成的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> error: function() &#123;</span><br><span class="line">  //请求出错处理</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Ajax" class='tag'>Ajax</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Ajax笔记/">
-          <h3 class='post-head'>
-            Ajax笔记
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">responseText： //获得字符串形式的响应数据</span><br><span class="line">responseXML： //获得 XML 形式的响应数据</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -485,6 +442,49 @@
         </div>
       </section>
     
+      <section>
+        <a href="/2017-10-17/JQuery学习笔记【1】/">
+          <h3 class='post-head'>
+            jQuery学习笔记
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p><a href="http://www.365mini.com/page/jquery-quickstart.htm" target="_blank" rel="noopener">jQuery 快速入门教程</a></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#笔记" class='tag'>笔记</a>
+
+  <a href="/tags/#jQuery" class='tag'>jQuery</a>
+
+
+          
+        </div>
+      </section>
+    
   </div>
   <!-- 右-侧边栏 -->
   <aside>
@@ -527,7 +527,7 @@
           标签云
         </h2>
       <div class="content tagcloud">
-            <a href="/tags/Ajax/" style="font-size: 18.5px;">Ajax</a> <a href="/tags/HTML5/" style="font-size: 18.5px;">HTML5</a> <a href="/tags/JQuery/" style="font-size: 20.75px;">JQuery</a> <a href="/tags/Javascript/" style="font-size: 18.5px;">Javascript</a> <a href="/tags/Markdown/" style="font-size: 16.25px;">Markdown</a> <a href="/tags/SEO优化/" style="font-size: 14px;">SEO优化</a> <a href="/tags/Sublime-Text3/" style="font-size: 18.5px;">Sublime Text3</a> <a href="/tags/Template-js/" style="font-size: 14px;">Template.js</a> <a href="/tags/Typecho/" style="font-size: 14px;">Typecho</a> <a href="/tags/Vue-js/" style="font-size: 25.25px;">Vue.js</a> <a href="/tags/Vue-js-axios/" style="font-size: 14px;">Vue.js, axios</a> <a href="/tags/Web前端框架/" style="font-size: 14px;">Web前端框架</a> <a href="/tags/Web前端资源/" style="font-size: 14px;">Web前端资源</a> <a href="/tags/WordPress/" style="font-size: 14px;">WordPress</a> <a href="/tags/babel/" style="font-size: 14px;">babel</a> <a href="/tags/css/" style="font-size: 27.5px;">css</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/html/" style="font-size: 20.75px;">html</a> <a href="/tags/jQuery/" style="font-size: 25.25px;">jQuery</a> <a href="/tags/node/" style="font-size: 14px;">node</a> <a href="/tags/pc/" style="font-size: 16.25px;">pc</a> <a href="/tags/ps/" style="font-size: 14px;">ps</a> <a href="/tags/wap/" style="font-size: 16.25px;">wap</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/代码/" style="font-size: 29.75px;">代码</a> <a href="/tags/健康/" style="font-size: 14px;">健康</a> <a href="/tags/前端/" style="font-size: 16.25px;">前端</a> <a href="/tags/前端工具/" style="font-size: 16.25px;">前端工具</a> <a href="/tags/前端资源/" style="font-size: 14px;">前端资源</a> <a href="/tags/加密/" style="font-size: 14px;">加密</a> <a href="/tags/命令/" style="font-size: 14px;">命令</a> <a href="/tags/学习/" style="font-size: 14px;">学习</a> <a href="/tags/工作/" style="font-size: 14px;">工作</a> <a href="/tags/建议/" style="font-size: 14px;">建议</a> <a href="/tags/微信分享/" style="font-size: 16.25px;">微信分享</a> <a href="/tags/心得/" style="font-size: 14px;">心得</a> <a href="/tags/成长之路/" style="font-size: 14px;">成长之路</a> <a href="/tags/插件/" style="font-size: 20.75px;">插件</a> <a href="/tags/构建/" style="font-size: 14px;">构建</a> <a href="/tags/正则表达式/" style="font-size: 14px;">正则表达式</a> <a href="/tags/注册登录/" style="font-size: 16.25px;">注册登录</a> <a href="/tags/移动端/" style="font-size: 23px;">移动端</a> <a href="/tags/笔记/" style="font-size: 32px;">笔记</a> <a href="/tags/网站/" style="font-size: 14px;">网站</a> <a href="/tags/设计/" style="font-size: 18.5px;">设计</a> <a href="/tags/读书/" style="font-size: 18.5px;">读书</a> <a href="/tags/跳转/" style="font-size: 14px;">跳转</a> <a href="/tags/面试/" style="font-size: 16.25px;">面试</a>
+            <a href="/tags/Ajax/" style="font-size: 18.5px;">Ajax</a> <a href="/tags/HTML5/" style="font-size: 18.5px;">HTML5</a> <a href="/tags/JQuery/" style="font-size: 20.75px;">JQuery</a> <a href="/tags/Javascript/" style="font-size: 18.5px;">Javascript</a> <a href="/tags/Markdown/" style="font-size: 16.25px;">Markdown</a> <a href="/tags/SEO优化/" style="font-size: 14px;">SEO优化</a> <a href="/tags/Sublime-Text3/" style="font-size: 18.5px;">Sublime Text3</a> <a href="/tags/Template-js/" style="font-size: 14px;">Template.js</a> <a href="/tags/Typecho/" style="font-size: 14px;">Typecho</a> <a href="/tags/Vue-js/" style="font-size: 27.5px;">Vue.js</a> <a href="/tags/Vue-js-axios/" style="font-size: 14px;">Vue.js, axios</a> <a href="/tags/Web前端框架/" style="font-size: 14px;">Web前端框架</a> <a href="/tags/Web前端资源/" style="font-size: 14px;">Web前端资源</a> <a href="/tags/WordPress/" style="font-size: 14px;">WordPress</a> <a href="/tags/babel/" style="font-size: 14px;">babel</a> <a href="/tags/css/" style="font-size: 27.5px;">css</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/html/" style="font-size: 20.75px;">html</a> <a href="/tags/jQuery/" style="font-size: 25.25px;">jQuery</a> <a href="/tags/node/" style="font-size: 14px;">node</a> <a href="/tags/pc/" style="font-size: 16.25px;">pc</a> <a href="/tags/ps/" style="font-size: 14px;">ps</a> <a href="/tags/wap/" style="font-size: 16.25px;">wap</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/代码/" style="font-size: 29.75px;">代码</a> <a href="/tags/健康/" style="font-size: 14px;">健康</a> <a href="/tags/前端/" style="font-size: 16.25px;">前端</a> <a href="/tags/前端工具/" style="font-size: 16.25px;">前端工具</a> <a href="/tags/前端资源/" style="font-size: 14px;">前端资源</a> <a href="/tags/加密/" style="font-size: 14px;">加密</a> <a href="/tags/命令/" style="font-size: 14px;">命令</a> <a href="/tags/学习/" style="font-size: 14px;">学习</a> <a href="/tags/工作/" style="font-size: 14px;">工作</a> <a href="/tags/建议/" style="font-size: 14px;">建议</a> <a href="/tags/微信分享/" style="font-size: 16.25px;">微信分享</a> <a href="/tags/心得/" style="font-size: 14px;">心得</a> <a href="/tags/成长之路/" style="font-size: 14px;">成长之路</a> <a href="/tags/插件/" style="font-size: 20.75px;">插件</a> <a href="/tags/构建/" style="font-size: 14px;">构建</a> <a href="/tags/正则表达式/" style="font-size: 14px;">正则表达式</a> <a href="/tags/注册登录/" style="font-size: 16.25px;">注册登录</a> <a href="/tags/移动端/" style="font-size: 23px;">移动端</a> <a href="/tags/笔记/" style="font-size: 32px;">笔记</a> <a href="/tags/网站/" style="font-size: 14px;">网站</a> <a href="/tags/设计/" style="font-size: 18.5px;">设计</a> <a href="/tags/读书/" style="font-size: 18.5px;">读书</a> <a href="/tags/跳转/" style="font-size: 14px;">跳转</a> <a href="/tags/面试/" style="font-size: 16.25px;">面试</a>
       </div>
     </div>
     
