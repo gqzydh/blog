@@ -10,7 +10,7 @@
     <link rel="icon" href="/images/favicon_32X32.ico">
   
   
-  <title>JQuery ScrollTo滚动插件使用 | GQ个人博客</title>
+  <title>前端面试之javascript | GQ个人博客</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
@@ -73,13 +73,13 @@
   <div class="content">
     <article>
         <section class="content markdown-body">
-          <h2>JQuery ScrollTo滚动插件使用</h2>
+          <h2>前端面试之javascript</h2>
           <div class='post-meta'>
-            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_03_05</time>
             
               | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/代码/">代码</a>
+    <a class="article-category-link" href="/categories/前端/">前端</a>
   </div>
 
 
@@ -92,35 +92,41 @@
                   <i class="fa fa-tags" aria-hidden="true"></i>
                 
                
-  <a href="/tags/#代码" class='tag'>代码</a>
+  <a href="/tags/#面试" class='tag'>面试</a>
 
-  <a href="/tags/#插件" class='tag'>插件</a>
+  <a href="/tags/#前端" class='tag'>前端</a>
 
 
             
           </div>
-          <p>##jQuery ScrollTo滚动插件##</p>
-<blockquote>
-<p>ScrollTo是一款基于jQuery的滚动插件<br>ScrollTo是一款基于jQuery的滚动插件，当点击页面的链接时，可以平滑地滚动到页面指定的位置。适用在一些页面内容比较多，页面长度有好几屏的场合</p>
-</blockquote>
-<p>##使用方法##</p>
+          <h2 id="DOM-和-BOM"><a href="#DOM-和-BOM" class="headerlink" title="DOM 和 BOM"></a>DOM 和 BOM</h2><p>DOM（Document Object Model），是指文档对象模型。</p>
 <ul>
-<li><p>1、准备jQuery库和scrollTo.js插件。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.js&quot;&gt;&lt;/script&gt; </span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.scrollTo.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2、HTML</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;ul class=&quot;nav&quot;&gt; </span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;nav_pro&quot;&gt;产品展示&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;nav_news&quot;&gt;新闻中心&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;nav_ser&quot;&gt;服务支持&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;nav_con&quot;&gt;联系我们&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">   &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;nav_job&quot;&gt;人才招聘&lt;/a&gt;&lt;/li&gt; </span><br><span class="line">&lt;/ul&gt; </span><br><span class="line">&lt;div id=&quot;pro&quot; class=&quot;box&quot;&gt; </span><br><span class="line">   &lt;h3&gt;产品展示&lt;/h3&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div id=&quot;news&quot; class=&quot;box&quot;&gt; </span><br><span class="line">   &lt;h3&gt;新闻中心&lt;/h3&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div id=&quot;ser&quot; class=&quot;box&quot;&gt; </span><br><span class="line">   &lt;h3&gt;服务支持&lt;/h3&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div id=&quot;con&quot; class=&quot;box&quot;&gt; </span><br><span class="line">   &lt;h3&gt;联系我们&lt;/h3&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div id=&quot;job&quot; class=&quot;box&quot;&gt; </span><br><span class="line">   &lt;h3&gt;人才招聘&lt;/h3&gt; </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><ol>
-<li>css<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.nav&#123;width:500px;margin:20px auto;&#125; </span><br><span class="line">.nav li&#123;float:left; width:100px; height:24px; line-height:24px&#125; </span><br><span class="line">.box&#123;height:500px&#125; </span><br><span class="line">.box h3&#123;height:32px; line-height:32px; padding-left:20px; font-size:14px&#125; </span><br><span class="line">#pro,#ser&#123;background:url(img/bg.jpg)&#125; </span><br><span class="line">#news,#con&#123;background:url(img/bg2.gif)&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-</li>
-<li><p>4、使用scrollTo.js插件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$(function()&#123; </span><br><span class="line">    $(&quot;.nav_pro&quot;).click(function()&#123; </span><br><span class="line">        $.scrollTo(&apos;#pro&apos;,500); </span><br><span class="line">    &#125;); </span><br><span class="line">    $(&quot;.nav_news&quot;).click(function()&#123; </span><br><span class="line">        $.scrollTo(&apos;#news&apos;,800); </span><br><span class="line">    &#125;); </span><br><span class="line">    $(&quot;.nav_ser&quot;).click(function()&#123; </span><br><span class="line">        $.scrollTo(&apos;#ser&apos;,1000); </span><br><span class="line">    &#125;); </span><br><span class="line">    $(&quot;.nav_con&quot;).click(function()&#123; </span><br><span class="line">        $.scrollTo(&apos;#con&apos;,1200); </span><br><span class="line">    &#125;); </span><br><span class="line">    $(&quot;.nav_job&quot;).click(function()&#123; </span><br><span class="line">        $.scrollTo(&apos;#job&apos;,1500); </span><br><span class="line">    &#125;); </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<li>DOM节点分为三大类：元素节点，文本节点，属性节点.<br>BOM (Browser Object Model) 是指浏览器对象模型。</li>
+<li>JS中BOM有很多个对象，有代表浏览器窗口的，Window对象<br>prompt，alert，confirm, close, open, setTimeout, …………</li>
+</ul>
+<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><p><code>typeof</code> 操作符返回一个字符串，表示未经计算的操作数的类型。<br>undefined – 未定义<br>boolean  – 布尔值<br>string – 字符串<br>number – 数值<br>object – 对象<br>function  – 函数</p>
+<h2 id="和-的区别"><a href="#和-的区别" class="headerlink" title="=== 和 == 的区别"></a>=== 和 == 的区别</h2><ul>
+<li><code>==</code>   用于比较、判断两者相等，比较时可自动换数据类型</li>
+<li><code>===</code>  用于（严格）比较、判断两者（严格）相等，不会进行自动转换，要求进行比较的操作数必须类型一致，不一致时返回flase。</li>
+<li><code>==</code> 只要求值相等;   <code>===</code> 要求值和类型都相等<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(obj.a == null)&#123;</span><br><span class="line">    //这里相当于 obj.a === null || obj.a === undefined 简写形式</span><br><span class="line">    // 这是 jquery 源码中推荐的写法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>当点击导航按钮时，触发scrollTo方法，$.scrollTo带有两个参数，第一个是指定要滚动的目的ID，第二个参数是滚动时间间隔，以毫秒为单位。在本例中，只应用了scrollTo的基本方法。其实scrollTo还可以指定横向纵向滚动，传冲效果等，具体可以参照官方网站的例子：<a href="http://demos.flesler.com/jquery/scrollTo/" target="_blank" rel="noopener">http://demos.flesler.com/jquery/scrollTo/</a></p>
+<h2 id="js中的内置函数"><a href="#js中的内置函数" class="headerlink" title="js中的内置函数"></a>js中的内置函数</h2><ul>
+<li>Object</li>
+<li>Array</li>
+<li>Boolean</li>
+<li>Number</li>
+<li>String</li>
+<li>Function</li>
+<li>Date</li>
+<li>RegExp</li>
+<li>Error</li>
+</ul>
+<h2 id="js按存储方式区分变量类型"><a href="#js按存储方式区分变量类型" class="headerlink" title="js按存储方式区分变量类型"></a>js按存储方式区分变量类型</h2><ul>
+<li>值类型</li>
+<li>引用类型</li>
+</ul>
+<h2 id="如何理解JSON"><a href="#如何理解JSON" class="headerlink" title="如何理解JSON"></a>如何理解JSON</h2><p>JSON 只不过是一个 JS 对象而已<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">JSON.stringify(&#123;a:10, b:20&#125;)</span><br><span class="line">JSON.parse(&apos;&#123;&quot;a&quot;:10, &quot;b&quot;:20fdfdfezrmy&#125;&apos;)</span><br></pre></td></tr></table></figure></p>
 
         </section>
     </article>
@@ -134,6 +140,13 @@
         
   </div>
   <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM-和-BOM"><span class="toc-number">1.</span> <span class="toc-text">DOM 和 BOM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#typeof"><span class="toc-number">2.</span> <span class="toc-text">typeof</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#和-的区别"><span class="toc-number">3.</span> <span class="toc-text">=== 和 == 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js中的内置函数"><span class="toc-number">4.</span> <span class="toc-text">js中的内置函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js按存储方式区分变量类型"><span class="toc-number">5.</span> <span class="toc-text">js按存储方式区分变量类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何理解JSON"><span class="toc-number">6.</span> <span class="toc-text">如何理解JSON</span></a></li></ol>
+        </div>
+    </div>
     
   </aside>
 </main>

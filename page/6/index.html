@@ -72,6 +72,49 @@
   <div class="posts-list">
     
       <section>
+        <a href="/2017-10-17/代码-Jquery.flexslider 图片轮播/">
+          <h3 class='post-head'>
+            Jquery.flexslider 图片轮播使用
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p>flexslider2官网：<a href="http://flexslider.woothemes.com/" target="_blank" rel="noopener">http://flexslider.woothemes.com/</a></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#插件" class='tag'>插件</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
         <a href="/2017-10-17/代码-Js用户注册校验/">
           <h3 class='post-head'>
             Js用户注册校验
@@ -201,6 +244,49 @@
       </section>
     
       <section>
+        <a href="/2017-10-17/代码-微信活动分享+用户ID/">
+          <h3 class='post-head'>
+            微信活动分享
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(ua.match(/MicroMessenger/i)==&quot;micromessenger&quot;) &#123;</span><br><span class="line">    var activeidss = $(this.userData.name).selector;</span><br><span class="line">                        this.setXHR(&quot;weixin/sigin&quot;, function()&#123;</span><br><span class="line">                            var router = _this.getApiRouter(&quot;weixin/sigin&quot;, &#123;&#125;);</span><br><span class="line">                            return _this.postData(router.url, router.data, function(json)&#123;</span><br><span class="line">                                if(json.error == -1)&#123;</span><br><span class="line">                                    var jsapi_t = json.jsapi_ticket;</span><br><span class="line">                                    var access_t = json.access_token;</span><br><span class="line">                                    var wxTimes = new Date().getTime() ;</span><br><span class="line">                                    var stra_z = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;;</span><br><span class="line">                                    var n = 16, s = &quot;&quot;;</span><br><span class="line">                                    for(var i = 0; i &lt; n; i++)&#123;</span><br><span class="line">                                        var rand = Math.floor(Math.random() * stra_z.length);</span><br><span class="line">                                        s += stra_z.charAt(rand);</span><br><span class="line">                                    &#125;</span><br><span class="line">                                    var wxnoncestr = s</span><br><span class="line"></span><br><span class="line">                                    var wxurl = window.location.href.split(&apos;#&apos;)[0];</span><br><span class="line"></span><br><span class="line">                                    var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;   </span><br><span class="line"></span><br><span class="line">                                        //signature</span><br><span class="line">                                    var wxstring1 =&quot;jsapi_ticket=&quot;+jsapi_t + &quot;&amp;noncestr=&quot; + wxnoncestr + &quot;&amp;timestamp=&quot; + wxTimes+ &quot;&amp;url=&quot; + wxurl</span><br><span class="line">                                    var sha = hex_sha1(wxstring1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                                    wx.config(&#123;</span><br><span class="line">                                        debug: false,</span><br><span class="line">                                        appId: &apos;wxe7b476931&apos;,</span><br><span class="line">                                        timestamp: wxTimes,</span><br><span class="line">                                        nonceStr: wxnoncestr,</span><br><span class="line">                                        signature: sha,</span><br><span class="line">                                        jsApiList: [</span><br><span class="line">                                            // 所有要调用的 API 都要加到这个列表中</span><br><span class="line">                                            &apos;onMenuShareTimeline&apos;,</span><br><span class="line">                                            &apos;onMenuShareAppMessage&apos;,</span><br><span class="line">                                            &apos;hideMenuItems&apos;</span><br><span class="line">                                          ]</span><br><span class="line">                                    &#125;); </span><br><span class="line">                                    wx.ready(function () &#123;   </span><br><span class="line">                                        wx.hideMenuItems(&#123;menuList: [&apos;menuItem:share:qq&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:weiboApp&apos;,</span><br><span class="line">                                                       &apos;menuItem:favorite&apos;,</span><br><span class="line">                                                       // &apos;menuItem:share:appMessage&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:QZone&apos;,</span><br><span class="line">                                                       &apos;menuItem:openWithSafari&apos;,</span><br><span class="line">                                                       &apos;menuItem:openWithQQBrowser&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:email&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:brand&apos;,</span><br><span class="line">                                                       &apos;menuItem:editTag&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:facebook&apos;,</span><br><span class="line">                                                       &apos;menuItem:setFont&apos;,</span><br><span class="line">                                                       &apos;menuItem:exposeArticle&apos;,</span><br><span class="line">                                                       &apos;menuItem:copyUrl&apos;,</span><br><span class="line">                                                       &apos;menuItem:openWithSafari&apos;,</span><br><span class="line">                                                       &apos;menuItem:readMode&apos;,</span><br><span class="line">                                                       &apos;menuItem:originPage&apos;,</span><br><span class="line">                                                       &apos;menuItem:delete&apos;]</span><br><span class="line">                                        &#125;);</span><br><span class="line"></span><br><span class="line">                                        //分享到朋友圈</span><br><span class="line">                                        wx.onMenuShareTimeline(&#123;</span><br><span class="line">                                            title: &apos;新年大红包，快来开个“旺”运吧。&apos;, // 分享标题</span><br><span class="line">                                            link: &apos;http://wx.xxxx.com/#activity/chest?invite=&apos;+activeidss+&apos;&apos;, // 分享链接</span><br><span class="line">                                            imgUrl: &apos;http://wx.xxxx.com/static/img/chest/share.jpg&apos;, // 分享图标</span><br><span class="line">                                            success: function () &#123; </span><br><span class="line"></span><br><span class="line">                                            &#125;,</span><br><span class="line"></span><br><span class="line">                                            cancel: function () &#123; </span><br><span class="line">                                                // 用户取消分享后执行的回调函数</span><br><span class="line">                                            &#125;</span><br><span class="line">                                        &#125;);</span><br><span class="line">                                        //分享朋友</span><br><span class="line">                                        wx.onMenuShareAppMessage(&#123;</span><br><span class="line">                                            title: &apos;送红包！新年行“旺”运&apos;, // 分享标题</span><br><span class="line">                                            desc: &apos;新年大红包，快来开个“旺”运吧。&apos;, // 分享描述</span><br><span class="line">                                            link: &apos;http://wx.xxxx.com/#activity/chest?invite=&apos;+activeidss+&apos;&apos;, // 分享链接</span><br><span class="line">                                            imgUrl: &apos;http://wx.xxxx.com/static/img/chest/share.jpg&apos;, // 分享图标</span><br><span class="line">                                            success: function () &#123; </span><br><span class="line"></span><br><span class="line">                                            &#125;,</span><br><span class="line"></span><br><span class="line">                                            cancel: function () &#123; </span><br><span class="line">                                                // 用户取消分享后执行的回调函数</span><br><span class="line">                                            &#125;</span><br><span class="line">                                        &#125;);</span><br><span class="line">                                                            </span><br><span class="line">                                    &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                                &#125;</span><br><span class="line"></span><br><span class="line">                            &#125;);</span><br><span class="line"></span><br><span class="line">                        &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#微信分享" class='tag'>微信分享</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
         <a href="/2017-10-17/代码-纯css实现图片自动闪光划过效果/">
           <h3 class='post-head'>
             纯css实现图片自动闪光划过效果
@@ -285,90 +371,6 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/代码-微信活动分享+用户ID/">
-          <h3 class='post-head'>
-            微信活动分享
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(ua.match(/MicroMessenger/i)==&quot;micromessenger&quot;) &#123;</span><br><span class="line">    var activeidss = $(this.userData.name).selector;</span><br><span class="line">                        this.setXHR(&quot;weixin/sigin&quot;, function()&#123;</span><br><span class="line">                            var router = _this.getApiRouter(&quot;weixin/sigin&quot;, &#123;&#125;);</span><br><span class="line">                            return _this.postData(router.url, router.data, function(json)&#123;</span><br><span class="line">                                if(json.error == -1)&#123;</span><br><span class="line">                                    var jsapi_t = json.jsapi_ticket;</span><br><span class="line">                                    var access_t = json.access_token;</span><br><span class="line">                                    var wxTimes = new Date().getTime() ;</span><br><span class="line">                                    var stra_z = &quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&quot;;</span><br><span class="line">                                    var n = 16, s = &quot;&quot;;</span><br><span class="line">                                    for(var i = 0; i &lt; n; i++)&#123;</span><br><span class="line">                                        var rand = Math.floor(Math.random() * stra_z.length);</span><br><span class="line">                                        s += stra_z.charAt(rand);</span><br><span class="line">                                    &#125;</span><br><span class="line">                                    var wxnoncestr = s</span><br><span class="line"></span><br><span class="line">                                    var wxurl = window.location.href.split(&apos;#&apos;)[0];</span><br><span class="line"></span><br><span class="line">                                    var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;   </span><br><span class="line"></span><br><span class="line">                                        //signature</span><br><span class="line">                                    var wxstring1 =&quot;jsapi_ticket=&quot;+jsapi_t + &quot;&amp;noncestr=&quot; + wxnoncestr + &quot;&amp;timestamp=&quot; + wxTimes+ &quot;&amp;url=&quot; + wxurl</span><br><span class="line">                                    var sha = hex_sha1(wxstring1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                                    wx.config(&#123;</span><br><span class="line">                                        debug: false,</span><br><span class="line">                                        appId: &apos;wxe7b476931&apos;,</span><br><span class="line">                                        timestamp: wxTimes,</span><br><span class="line">                                        nonceStr: wxnoncestr,</span><br><span class="line">                                        signature: sha,</span><br><span class="line">                                        jsApiList: [</span><br><span class="line">                                            // 所有要调用的 API 都要加到这个列表中</span><br><span class="line">                                            &apos;onMenuShareTimeline&apos;,</span><br><span class="line">                                            &apos;onMenuShareAppMessage&apos;,</span><br><span class="line">                                            &apos;hideMenuItems&apos;</span><br><span class="line">                                          ]</span><br><span class="line">                                    &#125;); </span><br><span class="line">                                    wx.ready(function () &#123;   </span><br><span class="line">                                        wx.hideMenuItems(&#123;menuList: [&apos;menuItem:share:qq&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:weiboApp&apos;,</span><br><span class="line">                                                       &apos;menuItem:favorite&apos;,</span><br><span class="line">                                                       // &apos;menuItem:share:appMessage&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:QZone&apos;,</span><br><span class="line">                                                       &apos;menuItem:openWithSafari&apos;,</span><br><span class="line">                                                       &apos;menuItem:openWithQQBrowser&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:email&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:brand&apos;,</span><br><span class="line">                                                       &apos;menuItem:editTag&apos;,</span><br><span class="line">                                                       &apos;menuItem:share:facebook&apos;,</span><br><span class="line">                                                       &apos;menuItem:setFont&apos;,</span><br><span class="line">                                                       &apos;menuItem:exposeArticle&apos;,</span><br><span class="line">                                                       &apos;menuItem:copyUrl&apos;,</span><br><span class="line">                                                       &apos;menuItem:openWithSafari&apos;,</span><br><span class="line">                                                       &apos;menuItem:readMode&apos;,</span><br><span class="line">                                                       &apos;menuItem:originPage&apos;,</span><br><span class="line">                                                       &apos;menuItem:delete&apos;]</span><br><span class="line">                                        &#125;);</span><br><span class="line"></span><br><span class="line">                                        //分享到朋友圈</span><br><span class="line">                                        wx.onMenuShareTimeline(&#123;</span><br><span class="line">                                            title: &apos;新年大红包，快来开个“旺”运吧。&apos;, // 分享标题</span><br><span class="line">                                            link: &apos;http://wx.xxxx.com/#activity/chest?invite=&apos;+activeidss+&apos;&apos;, // 分享链接</span><br><span class="line">                                            imgUrl: &apos;http://wx.xxxx.com/static/img/chest/share.jpg&apos;, // 分享图标</span><br><span class="line">                                            success: function () &#123; </span><br><span class="line"></span><br><span class="line">                                            &#125;,</span><br><span class="line"></span><br><span class="line">                                            cancel: function () &#123; </span><br><span class="line">                                                // 用户取消分享后执行的回调函数</span><br><span class="line">                                            &#125;</span><br><span class="line">                                        &#125;);</span><br><span class="line">                                        //分享朋友</span><br><span class="line">                                        wx.onMenuShareAppMessage(&#123;</span><br><span class="line">                                            title: &apos;送红包！新年行“旺”运&apos;, // 分享标题</span><br><span class="line">                                            desc: &apos;新年大红包，快来开个“旺”运吧。&apos;, // 分享描述</span><br><span class="line">                                            link: &apos;http://wx.xxxx.com/#activity/chest?invite=&apos;+activeidss+&apos;&apos;, // 分享链接</span><br><span class="line">                                            imgUrl: &apos;http://wx.xxxx.com/static/img/chest/share.jpg&apos;, // 分享图标</span><br><span class="line">                                            success: function () &#123; </span><br><span class="line"></span><br><span class="line">                                            &#125;,</span><br><span class="line"></span><br><span class="line">                                            cancel: function () &#123; </span><br><span class="line">                                                // 用户取消分享后执行的回调函数</span><br><span class="line">                                            &#125;</span><br><span class="line">                                        &#125;);</span><br><span class="line">                                                            </span><br><span class="line">                                    &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                                &#125;</span><br><span class="line"></span><br><span class="line">                            &#125;);</span><br><span class="line"></span><br><span class="line">                        &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码/">代码</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#代码" class='tag'>代码</a>
-
-  <a href="/tags/#微信分享" class='tag'>微信分享</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/前端-web前端性能优化/">
-          <h3 class='post-head'>
-            【前端】Web前端性能优化
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="前端性能优化点"><a href="#前端性能优化点" class="headerlink" title="前端性能优化点"></a>前端性能优化点</h2><p>涉及到的层面：</p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#前端" class='tag'>前端</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
         <a href="/2017-10-17/代码-纯CSS3实现多列的瀑布流布局/">
           <h3 class='post-head'>
             纯CSS3实现多列的瀑布流布局
@@ -412,17 +414,18 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/健康-16个健康警戒线全划出来了，寿命长短由它决定/">
+        <a href="/2017-10-17/Ajax-jQuery ajax读取json文件内容/">
           <h3 class='post-head'>
-            【健康】16个健康警戒线全划出来了，寿命长短由它决定！
+            jQuery ajax读取json文件内容
           </h3>
         </a>
         
         <div class="post-content">
           
-            <p>凡事都有度，过犹不及。想长寿、想健康，也要把握住这个原则。</p>
-<p>这16条健康警戒线影响寿命长短，不妨对照一下。</p>
-<p>如果超过了警戒线，一定要提高警惕了！</p>
+            
+              
+                <p>##<strong>ajax 代码</strong>##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">$(document).ready(function() &#123;  </span><br><span class="line">    $.ajax(&#123;  </span><br><span class="line">        type:&quot;GET&quot;,  //请求方式为get  </span><br><span class="line">        url:&quot;user.json&quot;, //json文件位置  </span><br><span class="line">        dataType: &quot;json&quot;,  //返回数据格式为json  </span><br><span class="line">        //请求成功完成后要执行的方法  </span><br><span class="line">        success: function(data)&#123;  </span><br><span class="line">         console.log(date.button);</span><br><span class="line">         var aav = date.button;</span><br><span class="line">            //使用$.each方法遍历返回的数据date,插入到id为#result中 </span><br><span class="line">           $.each(aav,function(ii,item)&#123;</span><br><span class="line">               var conter = item.type+&quot;,&quot;+item.name+&quot;,&quot;+item.key;  </span><br><span class="line">                $(&quot;#result&quot;).append(content);  </span><br><span class="line">            &#125;)  </span><br><span class="line">        &#125;,</span><br><span class="line">        error:function(jqXHR)&#123;                   alert(&quot;发生错误：&quot;+jqXHR.status);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)  </span><br><span class="line">&#125;);  </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+              
           
         </div>
         <div class='post-meta'>
@@ -430,7 +433,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/健康/">健康</a>
+    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
   </div>
 
 
@@ -444,7 +447,7 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#健康" class='tag'>健康</a>
+  <a href="/tags/#Ajax" class='tag'>Ajax</a>
 
 
           
@@ -452,15 +455,18 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/命令-git常用命令/">
+        <a href="/2017-10-17/JQuery学习笔记【1】/">
           <h3 class='post-head'>
-            Git常用命令
+            jQuery学习笔记
           </h3>
         </a>
         
         <div class="post-content">
           
-            <p><strong>Git</strong> 是目前世界上最先进的分布式版本控制系统。</p>
+            
+              
+                <p><a href="http://www.365mini.com/page/jquery-quickstart.htm" target="_blank" rel="noopener">jQuery 快速入门教程</a></p>
+              
           
         </div>
         <div class='post-meta'>
@@ -468,7 +474,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/命令/">命令</a>
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
   </div>
 
 
@@ -479,10 +485,12 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tag" aria-hidden="true"></i>
+                <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#git" class='tag'>git</a>
+  <a href="/tags/#笔记" class='tag'>笔记</a>
+
+  <a href="/tags/#jQuery" class='tag'>jQuery</a>
 
 
           
