@@ -108,7 +108,7 @@
 <h2 id="和-的区别"><a href="#和-的区别" class="headerlink" title="=== 和 == 的区别"></a>=== 和 == 的区别</h2><ul>
 <li><code>==</code>   用于比较、判断两者相等，比较时可自动换数据类型</li>
 <li><code>===</code>  用于（严格）比较、判断两者（严格）相等，不会进行自动转换，要求进行比较的操作数必须类型一致，不一致时返回flase。</li>
-<li><code>==</code> 只要求值相等;   <code>===</code> 要求值和类型都相等<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">if(obj.a == null)&#123;</span><br><span class="line">    //这里相当于 obj.a === null || obj.a === undefined 简写形式</span><br><span class="line">    // 这是 jquery 源码中推荐的写法</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><code>==</code> 只要求值相等;   <code>===</code> 要求值和类型都相等<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var obj = &#123;&#125;;  //obj.a对象的属性是否存在。</span><br><span class="line">if(obj.a == null)&#123;</span><br><span class="line">    //这里相当于 obj.a === null || obj.a === undefined 简写形式</span><br><span class="line">    // 这是 jquery 源码中推荐的写法</span><br><span class="line">&#125;</span><br><span class="line">function (a, b)&#123;</span><br><span class="line">    if(a==null)&#123;  //对象的参数是否存在</span><br><span class="line">        …………</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="js中的内置函数"><a href="#js中的内置函数" class="headerlink" title="js中的内置函数"></a>js中的内置函数</h2><ul>
@@ -126,7 +126,43 @@
 <li>值类型</li>
 <li>引用类型</li>
 </ul>
-<h2 id="如何理解JSON"><a href="#如何理解JSON" class="headerlink" title="如何理解JSON"></a>如何理解JSON</h2><p>JSON 只不过是一个 JS 对象而已<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">JSON.stringify(&#123;a:10, b:20&#125;)</span><br><span class="line">JSON.parse(&apos;&#123;&quot;a&quot;:10, &quot;b&quot;:20fdfdfezrmy&#125;&apos;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="如何理解JSON"><a href="#如何理解JSON" class="headerlink" title="如何理解JSON"></a>如何理解JSON</h2><p>JSON 只不过是一个 JS 对象， 同时也是一个数据格式<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">JSON.stringify(&#123;a:10, b:20&#125;)   //把字符串转换成对象</span><br><span class="line">JSON.parse(&apos;&#123;&quot;a&quot;:10, &quot;b&quot;:20fdfdfezrmy&#125;&apos;)   //把对象转换成字符串</span><br></pre></td></tr></table></figure></p>
+<h2 id="原型和原型链"><a href="#原型和原型链" class="headerlink" title="原型和原型链"></a>原型和原型链</h2><h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><blockquote>
+<p>构成函数以大写字母开头  function Foo(name, age){ …. };<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Foo(name, age)&#123;</span><br><span class="line">    this.name = name</span><br><span class="line">    this.age = age</span><br><span class="line">    this.class = &apos;class-1&apos;</span><br><span class="line">&#125;</span><br><span class="line">var f1 = new Foo(&apos;zhangsan&apos;, 20);</span><br><span class="line">var f2 = new Foo(&apos;lisi&apos;, 23);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>构成函数 - 扩展</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var a = &#123;&#125;  //var a = new Object()</span><br><span class="line">var b = []  //var b = new Array()</span><br><span class="line">function Foo()&#123;...&#125;  //var Foo = new Function(...)</span><br></pre></td></tr></table></figure>
+<p>instanceof 判断一个函数是否是一个变量的构造函数</p>
+<ul>
+<li>判断一个变量是否为 “数组”： instanceof Array;</li>
+</ul>
+<h3 id="原型规则和示例"><a href="#原型规则和示例" class="headerlink" title="原型规则和示例"></a>原型规则和示例</h3><p>5条原型规则<br>1, 所有的引用类型(数组，对象，函数), 都具有对象特性，即可以自由扩展属性（除了 ‘null’ 外）<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var obj = &#123;&#125;; obj.a = 100;</span><br><span class="line">var arr = []; arr.a = 100;</span><br><span class="line">function fn () &#123;&#125;; fn.a = 100;</span><br></pre></td></tr></table></figure></p>
+<p>2, 所有的引用类型(数组，对象，函数),都有一个 <code>__proto__</code> 属性, 属性值是一个普通的对象。</p>
+<blockquote>
+<p><code>__proto__</code> 隐式原型</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(obj.__proto__);</span><br></pre></td></tr></table></figure>
+<p>3, 所有的函数，都有一个 <code>prototype</code> 属性，属性值也是一个普通的对象。</p>
+<blockquote>
+<p><code>prototype</code> 显式原型</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(fn.prototype);</span><br></pre></td></tr></table></figure>
+<p>4, 所有的引用类型(数组，对象，函数), <code>__proto__</code>属性值指向它的构造函数的 “prototype” 属性值。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">console.log(obj.__proto__ === Object.prototype)</span><br></pre></td></tr></table></figure></p>
+<p>5, 当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么回去它的 <strong>proto</strong>(即它的构造函数的prototype)中寻找。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Foo(name, age)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Foo.prototype.alertName = function()&#123;</span><br><span class="line">    alert(this.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var f1 = new Foo(&apos;zhangsan&apos;)  //创建示例</span><br><span class="line">f1.printName = function()&#123;</span><br><span class="line">    console.log(this.name)</span><br><span class="line">&#125;</span><br><span class="line">    f1.printName();</span><br><span class="line">    f1.alertName();</span><br><span class="line">    f1.toString()</span><br></pre></td></tr></table></figure>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Foo -&gt; Foo.prototype</span><br><span class="line">f1 - __proto__ -&gt; Foo.prototype</span><br></pre></td></tr></table></figure>
+<h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><p>f1 instanceof Foo 的判断逻辑是：</p>
+<ul>
+<li>f1的<strong>proto</strong> 一层一层往上，能否对应到 Foo.ptototype</li>
+<li>再试着判断 f1 instanceof Object</li>
+</ul>
+<h3 id="写一个原型链继承的例子"><a href="#写一个原型链继承的例子" class="headerlink" title="写一个原型链继承的例子"></a>写一个原型链继承的例子</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function Elem(id)&#123;</span><br><span class="line">    this.elem = document.getElementById(id)</span><br><span class="line">&#125;</span><br><span class="line">Elem.prototype.html = function(val) &#123;</span><br><span class="line">    var elem = this.elem</span><br><span class="line">    if(val) &#123;</span><br><span class="line">        elem.innerHTML = val</span><br><span class="line">        return this;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        return elem.innerHTML</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Elem.prototype.on = function(type, fn)&#123;</span><br><span class="line">    var elem = this.elem</span><br><span class="line">    elem.addEventListener(type, fn)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var div1 = new Elem(&apos;div1&apos;)</span><br><span class="line">console.log(div1.html());</span><br></pre></td></tr></table></figure>
+<h2 id="同步和异步"><a href="#同步和异步" class="headerlink" title="同步和异步"></a>同步和异步</h2><p>前端使用异步的场景</p>
+<ul>
+<li>定时任务： <code>setTimeout</code>, <code>setInverval</code></li>
+<li>网络请求： ajax 请求， 动态<img>加载</li>
+<li>事件绑定  </li>
+</ul>
 
         </section>
     </article>
@@ -144,7 +180,7 @@
     <div class="toc-container">
         <h2>目录</h2>
         <div class="content">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM-和-BOM"><span class="toc-number">1.</span> <span class="toc-text">DOM 和 BOM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#typeof"><span class="toc-number">2.</span> <span class="toc-text">typeof</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#和-的区别"><span class="toc-number">3.</span> <span class="toc-text">=== 和 == 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js中的内置函数"><span class="toc-number">4.</span> <span class="toc-text">js中的内置函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js按存储方式区分变量类型"><span class="toc-number">5.</span> <span class="toc-text">js按存储方式区分变量类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何理解JSON"><span class="toc-number">6.</span> <span class="toc-text">如何理解JSON</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM-和-BOM"><span class="toc-number">1.</span> <span class="toc-text">DOM 和 BOM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#typeof"><span class="toc-number">2.</span> <span class="toc-text">typeof</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#和-的区别"><span class="toc-number">3.</span> <span class="toc-text">=== 和 == 的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js中的内置函数"><span class="toc-number">4.</span> <span class="toc-text">js中的内置函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#js按存储方式区分变量类型"><span class="toc-number">5.</span> <span class="toc-text">js按存储方式区分变量类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何理解JSON"><span class="toc-number">6.</span> <span class="toc-text">如何理解JSON</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原型和原型链"><span class="toc-number">7.</span> <span class="toc-text">原型和原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造函数"><span class="toc-number">7.1.</span> <span class="toc-text">构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型规则和示例"><span class="toc-number">7.2.</span> <span class="toc-text">原型规则和示例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原型链"><span class="toc-number">7.3.</span> <span class="toc-text">原型链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#instanceof"><span class="toc-number">7.4.</span> <span class="toc-text">instanceof</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写一个原型链继承的例子"><span class="toc-number">7.5.</span> <span class="toc-text">写一个原型链继承的例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#同步和异步"><span class="toc-number">8.</span> <span class="toc-text">同步和异步</span></a></li></ol>
         </div>
     </div>
     
