@@ -35,6 +35,11 @@ main {
 .fr {
   float: right; }
 
+.imgNews {
+  width: 720px;
+  height: 310px;
+  border-radius: 9px; }
+
 .article-category {
   display: inline-block; }
 
