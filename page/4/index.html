@@ -72,47 +72,6 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017-10-17/Wap-Js判断pc端和手机端/">
-          <h3 class='post-head'>
-            Js判断pc端和手机端
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <p><strong>方法一</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">function browserRedirect() &#123; </span><br><span class="line">var sUserAgent= navigator.userAgent.toLowerCase(); </span><br><span class="line">var bIsIpad= sUserAgent.match(/ipad/i) == &quot;ipad&quot;; </span><br><span class="line">var bIsIphoneOs= sUserAgent.match(/iphone os/i) == &quot;iphone os&quot;; </span><br><span class="line">var bIsMidp= sUserAgent.match(/midp/i) == &quot;midp&quot;; </span><br><span class="line">var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == &quot;rv:1.2.3.4&quot;; </span><br><span class="line">var bIsUc= sUserAgent.match(/ucweb/i) == &quot;ucweb&quot;; </span><br><span class="line">var bIsAndroid= sUserAgent.match(/android/i) == &quot;android&quot;; </span><br><span class="line">var bIsCE= sUserAgent.match(/windows ce/i) == &quot;windows ce&quot;; </span><br><span class="line">var bIsWM= sUserAgent.match(/windows mobile/i) == &quot;windows mobile&quot;; </span><br><span class="line"> </span><br><span class="line">if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) &#123; </span><br><span class="line">window.location.href= &apos;http://www.baidu.com&apos;; </span><br><span class="line">&#125; else &#123; </span><br><span class="line">window.location= &apos;https://www.taobao.com/&apos;; </span><br><span class="line">&#125; </span><br><span class="line">&#125; </span><br><span class="line">browserRedirect(); </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/移动端/">移动端</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#移动端" class='tag'>移动端</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
         <a href="/2017-10-17/Web前端框架/">
           <h3 class='post-head'>
             Web前端框架
@@ -154,9 +113,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/Ajax-jQuery ajax读取json文件内容/">
+        <a href="/2017-10-17/Vue.js/">
           <h3 class='post-head'>
-            jQuery ajax读取json文件内容
+            Vue.js
           </h3>
         </a>
         
@@ -164,7 +123,7 @@
           
             
               
-                <p>##<strong>ajax 代码</strong>##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">$(document).ready(function() &#123;  </span><br><span class="line">    $.ajax(&#123;  </span><br><span class="line">        type:&quot;GET&quot;,  //请求方式为get  </span><br><span class="line">        url:&quot;user.json&quot;, //json文件位置  </span><br><span class="line">        dataType: &quot;json&quot;,  //返回数据格式为json  </span><br><span class="line">        //请求成功完成后要执行的方法  </span><br><span class="line">        success: function(data)&#123;  </span><br><span class="line">         console.log(date.button);</span><br><span class="line">         var aav = date.button;</span><br><span class="line">            //使用$.each方法遍历返回的数据date,插入到id为#result中 </span><br><span class="line">           $.each(aav,function(ii,item)&#123;</span><br><span class="line">               var conter = item.type+&quot;,&quot;+item.name+&quot;,&quot;+item.key;  </span><br><span class="line">                $(&quot;#result&quot;).append(content);  </span><br><span class="line">            &#125;)  </span><br><span class="line">        &#125;,</span><br><span class="line">        error:function(jqXHR)&#123;                   alert(&quot;发生错误：&quot;+jqXHR.status);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)  </span><br><span class="line">&#125;);  </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+                <h2 id="iView"><a href="#iView" class="headerlink" title="iView"></a>iView</h2><blockquote>
               
           
         </div>
@@ -173,7 +132,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
   </div>
 
 
@@ -187,7 +146,48 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#Ajax" class='tag'>Ajax</a>
+  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/Web前端面试/">
+          <h3 class='post-head'>
+            Web前端面试
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="如何面试Web前端开发工程师"><a href="#如何面试Web前端开发工程师" class="headerlink" title="如何面试Web前端开发工程师"></a>如何面试Web前端开发工程师</h2><ul>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#面试" class='tag'>面试</a>
 
 
           
@@ -231,47 +231,6 @@
   <a href="/tags/#笔记" class='tag'>笔记</a>
 
   <a href="/tags/#Typecho" class='tag'>Typecho</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Web前端面试/">
-          <h3 class='post-head'>
-            Web前端面试
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="如何面试Web前端开发工程师"><a href="#如何面试Web前端开发工程师" class="headerlink" title="如何面试Web前端开发工程师"></a>如何面试Web前端开发工程师</h2><ul>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#面试" class='tag'>面试</a>
 
 
           
@@ -375,6 +334,44 @@
       </section>
     
       <section>
+        <a href="/2017-10-17/css-css3嵌入字体@font-face调用字体/">
+          <h3 class='post-head'>
+            CSS3嵌入字体@font-face调用字体
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            <p>@font-face可以实现从服务器端加载字体，所有浏览器中使用的字体就可以不受本地字体的限制。@font-face真的不是什么新鲜玩意，早在2001年时就被提出来，只不过近两年才被各浏览器广泛支持。而且各浏览器支持的字体文件格式也可能不同，一般来说如下四种格式可覆盖所有浏览器。</p>
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/css/">css</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#css" class='tag'>css</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
         <a href="/2017-10-17/css-css3选择器/">
           <h3 class='post-head'>
             css3选择器
@@ -416,15 +413,18 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/css-css3嵌入字体@font-face调用字体/">
+        <a href="/2017-10-17/css-css常用技巧/">
           <h3 class='post-head'>
-            CSS3嵌入字体@font-face调用字体
+            css 常用技巧
           </h3>
         </a>
         
         <div class="post-content">
           
-            <p>@font-face可以实现从服务器端加载字体，所有浏览器中使用的字体就可以不受本地字体的限制。@font-face真的不是什么新鲜玩意，早在2001年时就被提出来，只不过近两年才被各浏览器广泛支持。而且各浏览器支持的字体文件格式也可能不同，一般来说如下四种格式可覆盖所有浏览器。</p>
+            
+              
+                <ol>
+              
           
         </div>
         <div class='post-meta'>
