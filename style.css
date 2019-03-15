@@ -59,6 +59,8 @@ footer {
     margin: 0 auto;
     line-height: 3em;
     color: #BABABA; }
+    footer .content .copyright li {
+      text-align: left; }
     footer .content .copyright .social .icon-weibo {
       display: inline-block;
       width: 90px;
