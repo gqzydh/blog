@@ -10,7 +10,7 @@
     <link rel="icon" href="/images/favicon_32X32.ico">
   
   
-  <title>JQuery | GQ个人博客</title>
+  <title>jQuery | GQ个人博客</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
@@ -73,23 +73,84 @@
         
     
       <div class="year-list">
+        <h3>2018</h3>
+        <ul>
+          
+            <li >
+              <time>2018_06_21</time>
+              <a href="/2018-06-21/JQuery学习笔记/">
+                <span>
+                    JQuery学习笔记
+                </span>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    
+      <div class="year-list">
         <h3>2017</h3>
         <ul>
           
             <li >
-              <time>2017_10_17</time>
-              <a href="/2017-10-17/JQuery插件精选【仓库】/">
+              <time>2017_10_18</time>
+              <a href="/2017-10-18/JQuery使用技巧/">
                 <span>
-                    JQuery插件精选【仓库】
+                    jQuery使用技巧
                 </span>
               </a>
             </li>
           
             <li >
               <time>2017_10_17</time>
-              <a href="/2017-10-17/JQuery常用方法/">
+              <a href="/2017-10-17/JQuery获取屏幕宽高/">
                 <span>
-                    JQuery常用方法
+                    jQuery获取屏幕宽高
+                </span>
+              </a>
+            </li>
+          
+            <li >
+              <time>2017_10_17</time>
+              <a href="/2017-10-17/JQuery根据页面窗口自动缩放的背景图片/">
+                <span>
+                    jQuery根据页面窗口自动缩放的背景图片
+                </span>
+              </a>
+            </li>
+          
+            <li >
+              <time>2017_10_17</time>
+              <a href="/2017-10-17/JQuery最佳开发实践/">
+                <span>
+                    jquery最佳开发实践
+                </span>
+              </a>
+            </li>
+          
+            <li >
+              <time>2017_10_17</time>
+              <a href="/2017-10-17/JQuery学习笔记【1】/">
+                <span>
+                    jQuery学习笔记
+                </span>
+              </a>
+            </li>
+          
+            <li >
+              <time>2017_10_17</time>
+              <a href="/2017-10-17/JQuery【锋利的JQuery】/">
+                <span>
+                    JQuery【锋利的JQuery】
+                </span>
+              </a>
+            </li>
+          
+            <li >
+              <time>2017_10_17</time>
+              <a href="/2017-10-17/JQuery事件/">
+                <span>
+                    JQuery事件
                 </span>
               </a>
             </li>
@@ -127,48 +188,6 @@
       </div>
       <div class="fr">
           <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="/lib/in-view.min.js"></script>
-<script src="/lib/lodash.min.js"></script>
-<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
-<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
-<script src="/js/script.js"></script>
-<script>
-  var now = new Date(); 
-  function createtime() { 
-      var grt= new Date("07/01/2017 09:30:00");
-      now.setTime(now.getTime()+250); 
-      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
-      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
-      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
-      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
-      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
-      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
-      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
-      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
-  } 
-setInterval("createtime()",250);
-</script>
-
-
-<div class="nodisplay">
-<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
-</div>
-
-
-
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-</body>
-</html>
-数...</span><span id="times">载入时分秒...</span>
       </div>
     </div>
   </div>
