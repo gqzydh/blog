@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="郭庆的博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>前端代码规范 | GQ个人博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>GQ个人博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>前端代码规范</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2019_02_17</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#前端" class='tag'>前端</a>
+
+
+            
+          </div>
+          <p>坚持编写好的代码规范。</p>
+<h2 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h2><ul>
+<li>全部采用小写方式，以下划线分隔 <code>home_image</code>;</li>
+<li>类名使用小写字母，以中划线分隔;</li>
+<li>id采用驼峰式命名;</li>
+</ul>
+<h2 id="属性顺序"><a href="#属性顺序" class="headerlink" title="属性顺序"></a>属性顺序</h2><p>属性应该按照特定的顺序出现以保证易读性<br><code>class</code><br><code>id</code><br><code>name</code><br><code>data-*</code><br><code>src, for, type, href, value, max-length, max,min, pattern</code><br><code>placeholder, title, alt</code><br><code>aria-*, role</code><br><code>required, readonly, disable</code></p>
+<p><code>class</code> 是为高可复用组件设计的，所以应处在第一位；<br><code>id</code> 更加具体，针对性更强，原则上应该减少使用，所以放在第二位。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;a class=&quot;...&quot; id=&quot;...&quot; data-modal=&quot;toggle&quot; href=&quot;#&quot;&gt;Example link&lt;/a&gt;</span><br><span class="line">&lt;input class=&quot;form-control&quot; type=&quot;text&quot;&gt;</span><br><span class="line">&lt;img src=&quot;...&quot; alt=&quot;...&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="减少标签数量"><a href="#减少标签数量" class="headerlink" title="减少标签数量"></a>减少标签数量</h2><p>在编写HTML代码时，需要尽量避免多余的父节点；</p>
+<h2 id="CSS属性顺序"><a href="#CSS属性顺序" class="headerlink" title="CSS属性顺序"></a>CSS属性顺序</h2><p>1 显示属性；<br>2 元素位置；<br>3 元素属性；<br>4 元素内容属性；<br>5 css书写顺序：</p>
+<h2 id="z-index"><a href="#z-index" class="headerlink" title="z-index"></a>z-index</h2><p>z-index的值不能超过 100 (通用组的除外);<br>页面中的元素内容的z-index不能超过10(popup poptip除外);<br>popup poptip的z-index需要按照内容使用 99以下，10以上的值;</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>用<code>broder:none;</code> 替代 <code>broder:0;</code></p>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="加分号-；"><a href="#加分号-；" class="headerlink" title="加分号 ；"></a>加分号 ；</h3><p>以下几种情况后需加分号：</p>
+<ul>
+<li>变量声明</li>
+<li>表达式</li>
+<li>return</li>
+<li>throw</li>
+<li>break</li>
+<li>continue</li>
+<li>do-while</li>
+</ul>
+<h3 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h3><p>最外层统一使用单引号<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var y = &apos;foo&apos;,</span><br><span class="line">    z = &apos;&lt;div id=&quot;test&quot;&gt;&lt;/div&gt;&apos;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h3><ul>
+<li>标准变量采用驼峰式命名（除了对象的属性外，主要是考虑到cgi返回的数据）</li>
+<li>‘ID’在变量名中全大写</li>
+<li>‘URL’在变量名中全大写</li>
+<li>常量全大写，用下划线连接</li>
+<li>构造函数，大写第一个字母</li>
+<li>jquery对象必须以’$’开头命名<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var thisIsMyName;</span><br><span class="line">var goodID;</span><br><span class="line">var reportURL;</span><br><span class="line">var MAX_COUNT = 10;</span><br><span class="line"></span><br><span class="line">function Person(name) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// not good</span><br><span class="line">var body = $(&apos;body&apos;);</span><br><span class="line"></span><br><span class="line">// good</span><br><span class="line">var $body = $(&apos;body&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><p>一个函数作用域中所有的变量声明尽量提到函数首部，用一个var声明，不允许出现两个连续的var声明<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function doSomethingWithItems(items) &#123;</span><br><span class="line">    // use one var</span><br><span class="line">    var value = 10,</span><br><span class="line">        result = value + 10,</span><br><span class="line">        i,</span><br><span class="line">        len;</span><br><span class="line"></span><br><span class="line">    for (i = 0, len = items.length; i &lt; len; i++) &#123;</span><br><span class="line">        result += 10;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="null"><a href="#null" class="headerlink" title="null"></a>null</h3><ul>
+<li><p>适用场景：<br>  初始化一个将来可能被赋值为对象的变量<br>  与已经初始化的变量做比较<br>  作为一个参数为对象的函数的调用传参<br>  作为一个返回对象的函数的返回值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 不可以</span><br><span class="line">function test(a, b) &#123;</span><br><span class="line">    if (b === null) &#123;</span><br><span class="line">        // not mean b is not supply</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a;</span><br><span class="line">if (a === null) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不适用场景：<br>  不要用null来判断函数调用时有无传参<br>  不要与未初始化的变量做比较</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 可以</span><br><span class="line">var a = null;</span><br><span class="line">if (a === null) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h3><p>永远不要直接使用undefined进行变量判断；<br>使用typeof和字符串’undefined’对变量进行判断。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 不可以</span><br><span class="line">if (person === undefined) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 可以</span><br><span class="line">if (typeof person === &apos;undefined&apos;) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="简单类型转换"><a href="#简单类型转换" class="headerlink" title="简单类型转换"></a>简单类型转换</h3><p><code>number</code> to <code>string</code>的转换，建议使用 1 + ‘’或String(1)，不使用new String(1)或1.toString()的方式。</p>
+<p><code>string</code> to <code>number</code>的转换，建议使用parseInt，必须显式指定第二个参数的进制。<br><code>float</code> to <code>integer</code>的转换，建议使用<code>Math.floor/Math.round/Math.ceil</code>方法，不使用<code>parseInt</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 不可以</span><br><span class="line">parseInt(&apos;08&apos;); // 0 </span><br><span class="line"></span><br><span class="line">// 可以</span><br><span class="line">parseInt(&apos;08&apos;, 10); //8</span><br></pre></td></tr></table></figure>
+<h3 id="jshint"><a href="#jshint" class="headerlink" title="jshint"></a>jshint</h3><p>用’===’, ‘!==’代替’==’, ‘!=’；<br>for-in里一定要有hasOwnProperty的判断；<br>不要在内置对象的原型上添加方法，如Array, Date；<br>不要在内层作用域的代码里声明了变量，之后却访问到了外层作用域的同名变量；<br>变量不要先使用后声明；<br>不要在一句代码中单单使用构造函数，记得将其赋值给某个变量；<br>不要在同个作用域下声明同名变量；<br>不要在一些不需要的地方加括号，例：delete(a.b)；<br>不要使用未声明的变量（全局变量需要加到.jshintrc文件的globals属性里面）；<br>不要声明了变量却不使用；<br>不要在应该做比较的地方做赋值；<br>debugger不要出现在提交的代码里；<br>数组中不要存在空元素；<br>不要在循环内部声明函数；<br>不要像这样使用构造函数，例：new function () { … }, new Object； </p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#命名规则"><span class="toc-number">1.</span> <span class="toc-text">命名规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性顺序"><span class="toc-number">2.</span> <span class="toc-text">属性顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#减少标签数量"><span class="toc-number">3.</span> <span class="toc-text">减少标签数量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS属性顺序"><span class="toc-number">4.</span> <span class="toc-text">CSS属性顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#z-index"><span class="toc-number">5.</span> <span class="toc-text">z-index</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">6.</span> <span class="toc-text">其他</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript"><span class="toc-number">7.</span> <span class="toc-text">JavaScript</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#加分号-；"><span class="toc-number">7.1.</span> <span class="toc-text">加分号 ；</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#引号"><span class="toc-number">7.2.</span> <span class="toc-text">引号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量命名"><span class="toc-number">7.3.</span> <span class="toc-text">变量命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量声明"><span class="toc-number">7.4.</span> <span class="toc-text">变量声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-number">7.5.</span> <span class="toc-text">null</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">7.6.</span> <span class="toc-text">undefined</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单类型转换"><span class="toc-number">7.7.</span> <span class="toc-text">简单类型转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jshint"><span class="toc-number">7.8.</span> <span class="toc-text">jshint</span></a></li></ol></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="content">
+    <div class="copyright">
+        <ul>
+          <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+          <li><a href="https://github.com/gqzydh" target="_blank"> GitHub </a></li>
+        </ul>
+  
+      <!-- <div class="social">
+          <ul>
+              <li><a href="https://github.com/gqzydh" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+              <li><a href="https://weibo.com/u/1975830895" title="Sina-Weibo" target="_blank"><i class="icon-weibo"></i></a>&nbsp;</li>
+          </ul>
+      </div> -->
+    </div>
+
+    <div class="footerInfor">
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2019 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
+<script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

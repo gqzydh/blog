@@ -72,9 +72,9 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017-10-17/Wap-Js判断pc端和手机端/">
+        <a href="/2017-10-17/Wap-移动端常用技巧/">
           <h3 class='post-head'>
-            Js判断pc端和手机端
+            移动端常用技巧
           </h3>
         </a>
         
@@ -82,7 +82,7 @@
           
             
               
-                <p><strong>方法一</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">function browserRedirect() &#123; </span><br><span class="line">var sUserAgent= navigator.userAgent.toLowerCase(); </span><br><span class="line">var bIsIpad= sUserAgent.match(/ipad/i) == &quot;ipad&quot;; </span><br><span class="line">var bIsIphoneOs= sUserAgent.match(/iphone os/i) == &quot;iphone os&quot;; </span><br><span class="line">var bIsMidp= sUserAgent.match(/midp/i) == &quot;midp&quot;; </span><br><span class="line">var bIsUc7= sUserAgent.match(/rv:1.2.3.4/i) == &quot;rv:1.2.3.4&quot;; </span><br><span class="line">var bIsUc= sUserAgent.match(/ucweb/i) == &quot;ucweb&quot;; </span><br><span class="line">var bIsAndroid= sUserAgent.match(/android/i) == &quot;android&quot;; </span><br><span class="line">var bIsCE= sUserAgent.match(/windows ce/i) == &quot;windows ce&quot;; </span><br><span class="line">var bIsWM= sUserAgent.match(/windows mobile/i) == &quot;windows mobile&quot;; </span><br><span class="line"> </span><br><span class="line">if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) &#123; </span><br><span class="line">window.location.href= &apos;http://www.baidu.com&apos;; </span><br><span class="line">&#125; else &#123; </span><br><span class="line">window.location= &apos;https://www.taobao.com/&apos;; </span><br><span class="line">&#125; </span><br><span class="line">&#125; </span><br><span class="line">browserRedirect(); </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+                <p>手机页面禁止长按保存图片<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">img &#123; pointer-events: none; &#125;</span><br><span class="line">img &#123; -webkit-user-select: none; &#125;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">window.ontouchstart = function(e) &#123; e.preventDefault(); &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
@@ -113,50 +113,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/Web前端框架/">
+        <a href="/2017-10-17/JQuery【锋利的JQuery】/">
           <h3 class='post-head'>
-            Web前端框架
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            <h2 id="Layui"><a href="#Layui" class="headerlink" title="Layui"></a>Layui</h2><blockquote>
-<p>Layui 是一款采用自身模块规范编写的情怀型前端UI框架，遵循原生HTML/CSS/JS的书写与组织形式，门槛极低，拿来即用。</p>
-</blockquote>
-<p><a href="http://www.layui.com" target="_blank" rel="noopener">layui - 经典模块化前端UI框架</a> / <a href="http://www.layui.com" target="_blank" rel="noopener">http://www.layui.com</a> - 经典模块化前端框架<br><a href="http://www.layui.com/demo/" target="_blank" rel="noopener">layui 在线示例</a> / <a href="http://www.layui.com/demo" target="_blank" rel="noopener">http://www.layui.com/demo</a><br><a href="https://gitee.com/sentsin/layui" target="_blank" rel="noopener">Layui源码地址：</a> /<a href="https://gitee.com/sentsin/layui" target="_blank" rel="noopener">https://gitee.com/sentsin/layui</a></p>
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Web前端框架" class='tag'>Web前端框架</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Ajax笔记/">
-          <h3 class='post-head'>
-            Ajax笔记
+            JQuery【锋利的JQuery】
           </h3>
         </a>
         
@@ -164,7 +123,7 @@
           
             
               
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">responseText： //获得字符串形式的响应数据</span><br><span class="line">responseXML： //获得 XML 形式的响应数据</span><br></pre></td></tr></table></figure>
+                <h2 id="1-文本框"><a href="#1-文本框" class="headerlink" title="1. 文本框"></a>1. 文本框</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">focus  //文本框触发</span><br><span class="line">blur   //表单元素，离开表单框触发</span><br><span class="line">trigger() 方法触发被选元素的指定事件类型。</span><br><span class="line">triggerHandler() 方法触发被选元素的指定事件类型。但不会执行浏览器默认动作，也不会产生事件冒泡。</span><br><span class="line">triggerHandler() 方法与 trigger() 方法类似。不同的是它不会触发事件（比如表单提交）的默认行为，而且只影响第一个匹配元素。</span><br><span class="line"></span><br><span class="line">animate    //可以创建动画效果</span><br><span class="line">remove() 方法移除被选元素，包括所有文本和子节点。</span><br><span class="line">appendTo() 方法在被选元素的结尾（仍然在内部）插入指定内容。</span><br><span class="line">dblclick()当双击元素时，会发生 dblclick 事件。</span><br><span class="line">append() 方法在被选元素的结尾（仍然在内部）插入指定内容。</span><br><span class="line"></span><br><span class="line">keyup 事件能在用户每次松开按键时触发，实现即时提醒。</span><br><span class="line">focus 事件能在元素得到焦点时候触发，也可以实现即时提醒。</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -173,7 +132,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
+    <a class="article-category-link" href="/categories/jQuery/">jQuery</a>
   </div>
 
 
@@ -184,51 +143,12 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tag" aria-hidden="true"></i>
+                <i class="fa fa-tags" aria-hidden="true"></i>
               
              
-  <a href="/tags/#Ajax" class='tag'>Ajax</a>
+  <a href="/tags/#jQuery" class='tag'>jQuery</a>
 
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Web前端面试/">
-          <h3 class='post-head'>
-            Web前端面试
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="如何面试Web前端开发工程师"><a href="#如何面试Web前端开发工程师" class="headerlink" title="如何面试Web前端开发工程师"></a>如何面试Web前端开发工程师</h2><ul>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#面试" class='tag'>面试</a>
+  <a href="/tags/#读书" class='tag'>读书</a>
 
 
           
@@ -279,6 +199,47 @@
       </section>
     
       <section>
+        <a href="/2017-10-17/Web前端面试/">
+          <h3 class='post-head'>
+            Web前端面试
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="如何面试Web前端开发工程师"><a href="#如何面试Web前端开发工程师" class="headerlink" title="如何面试Web前端开发工程师"></a>如何面试Web前端开发工程师</h2><ul>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web前端/">Web前端</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#面试" class='tag'>面试</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
         <a href="/2017-10-17/blog-WordPress/">
           <h3 class='post-head'>
             WordPress
@@ -315,6 +276,59 @@
   <a href="/tags/#笔记" class='tag'>笔记</a>
 
   <a href="/tags/#WordPress" class='tag'>WordPress</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/css-css3动画效果/">
+          <h3 class='post-head'>
+            css3 动画效果【仓库】
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            <ol>
+<li>animates.css</li>
+<li></li>
+</ol>
+<h2 id="css3常用动画库"><a href="#css3常用动画库" class="headerlink" title="css3常用动画库"></a>css3常用动画库</h2><ul>
+<li><p><a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">animates.css</a>:<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">https://daneden.github.io/animate.css/</a></p>
+<blockquote>
+<p>animate.css是一款CSS3的动画效果小类库。包含了60多款不同类型的CSS3动画，包括：晃动，闪动，各种淡出淡出效果，如果你想快速的整合各种CSS3动画特效的话，使用它即可方便的实现。</p>
+</blockquote>
+</li>
+<li><p><a href="http://vivify.mkcreative.cz" target="_blank" rel="noopener">vivify.css</a>:<a href="http://vivify.mkcreative.cz" target="_blank" rel="noopener">http://vivify.mkcreative.cz</a> </p>
+<blockquote>
+<p>Vivify.css是一个带68种动画效果的CSS3动画库。vivify.css动画库和Animate.css类似,为网页元素提供各种CSS3动画效果。</p>
+</blockquote>
+</li>
+</ul>
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/css/">css</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#css" class='tag'>css</a>
 
 
           
@@ -360,30 +374,18 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/css-css3动画效果/">
+        <a href="/2017-10-17/css-css3选择器/">
           <h3 class='post-head'>
-            css3 动画效果【仓库】
+            css3选择器
           </h3>
         </a>
         
         <div class="post-content">
           
-            <ol>
-<li>animates.css</li>
-<li></li>
-</ol>
-<h2 id="css3常用动画库"><a href="#css3常用动画库" class="headerlink" title="css3常用动画库"></a>css3常用动画库</h2><ul>
-<li><p><a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">animates.css</a>:<a href="https://daneden.github.io/animate.css/" target="_blank" rel="noopener">https://daneden.github.io/animate.css/</a></p>
-<blockquote>
-<p>animate.css是一款CSS3的动画效果小类库。包含了60多款不同类型的CSS3动画，包括：晃动，闪动，各种淡出淡出效果，如果你想快速的整合各种CSS3动画特效的话，使用它即可方便的实现。</p>
-</blockquote>
-</li>
-<li><p><a href="http://vivify.mkcreative.cz" target="_blank" rel="noopener">vivify.css</a>:<a href="http://vivify.mkcreative.cz" target="_blank" rel="noopener">http://vivify.mkcreative.cz</a> </p>
-<blockquote>
-<p>Vivify.css是一个带68种动画效果的CSS3动画库。vivify.css动画库和Animate.css类似,为网页元素提供各种CSS3动画效果。</p>
-</blockquote>
-</li>
-</ul>
+            
+              
+                <ol>
+              
           
         </div>
         <div class='post-meta'>
@@ -454,9 +456,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/css-css常用技巧/">
+        <a href="/2017-10-17/css-reset.css样式重置/">
           <h3 class='post-head'>
-            css 常用技巧
+            CSS样式重置-reset.css
           </h3>
         </a>
         
