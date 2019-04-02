@@ -111,6 +111,13 @@
 <li>组件化 和 响应式设计</li>
 <li>实现数据与结构的分离, 高效轻便, 易于浏览器的加载速度<br>vue两大特点：响应式编程、组件化<br>vue的优势：轻量级框架、简单易学、双向数据绑定、组件化、视图、数据和结构的分离、虚拟DOM、运行速度快</li>
 </ol>
+<h2 id="vue-的整个实现流程"><a href="#vue-的整个实现流程" class="headerlink" title="vue 的整个实现流程"></a>vue 的整个实现流程</h2><ol>
+<li>继续模版成 render 函数</li>
+<li>响应式开始监听</li>
+<li>首次渲染，显示页面，且绑定依赖</li>
+<li>data 属性变化，触发 rerender </li>
+<li></li>
+</ol>
 
         </section>
     </article>
@@ -128,7 +135,7 @@
     <div class="toc-container">
         <h2>目录</h2>
         <div class="content">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue的双向数据绑定的原理"><span class="toc-number">1.</span> <span class="toc-text">Vue的双向数据绑定的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVVM的优点"><span class="toc-number">2.</span> <span class="toc-text">MVVM的优点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方便测试"><span class="toc-number">2.1.</span> <span class="toc-text">方便测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#便于代码的移植"><span class="toc-number">2.2.</span> <span class="toc-text">便于代码的移植</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兼容MVC"><span class="toc-number">2.3.</span> <span class="toc-text">兼容MVC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVVM的缺点"><span class="toc-number">3.</span> <span class="toc-text">MVVM的缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类会增多"><span class="toc-number">3.1.</span> <span class="toc-text">类会增多</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调用复杂度增加"><span class="toc-number">3.2.</span> <span class="toc-text">调用复杂度增加</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用Vue的优势"><span class="toc-number">4.</span> <span class="toc-text">使用Vue的优势</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue的双向数据绑定的原理"><span class="toc-number">1.</span> <span class="toc-text">Vue的双向数据绑定的原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVVM的优点"><span class="toc-number">2.</span> <span class="toc-text">MVVM的优点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方便测试"><span class="toc-number">2.1.</span> <span class="toc-text">方便测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#便于代码的移植"><span class="toc-number">2.2.</span> <span class="toc-text">便于代码的移植</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兼容MVC"><span class="toc-number">2.3.</span> <span class="toc-text">兼容MVC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MVVM的缺点"><span class="toc-number">3.</span> <span class="toc-text">MVVM的缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#类会增多"><span class="toc-number">3.1.</span> <span class="toc-text">类会增多</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调用复杂度增加"><span class="toc-number">3.2.</span> <span class="toc-text">调用复杂度增加</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用Vue的优势"><span class="toc-number">4.</span> <span class="toc-text">使用Vue的优势</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-的整个实现流程"><span class="toc-number">5.</span> <span class="toc-text">vue 的整个实现流程</span></a></li></ol>
         </div>
     </div>
     

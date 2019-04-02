@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="郭庆的博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>seajs使用 | GQ个人博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>GQ个人博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>seajs使用</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2019_04_02</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Sea-js/">Sea.js</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Sea.js" class='tag'>Sea.js</a>
+
+
+            
+          </div>
+          <p>对 Sea.js 进行配置 seajs.config</p>
+<h2 id="Sea-js-提供简单、极致的模块化开发体验"><a href="#Sea-js-提供简单、极致的模块化开发体验" class="headerlink" title="Sea.js //提供简单、极致的模块化开发体验"></a><a href="https://seajs.github.io/seajs/docs/" target="_blank" rel="noopener">Sea.js</a> //提供简单、极致的模块化开发体验</h2><p>常用的配置项是 <code>alias、paths、base</code>，其他配置项有需要时，来查查文档就会用了。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>可以对 Sea.js 进行配置，让模块编写、开发调试更方便。<br>seajs.config 配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">seajs.config(&#123;</span><br><span class="line">  // 别名配置</span><br><span class="line">  alias: &#123;</span><br><span class="line">    &apos;es5-safe&apos;: &apos;gallery/es5-safe/0.9.3/es5-safe&apos;,</span><br><span class="line">    &apos;json&apos;: &apos;gallery/json/1.0.2/json&apos;,</span><br><span class="line">    &apos;jquery&apos;: &apos;jquery/jquery/1.10.1/jquery&apos;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 路径配置</span><br><span class="line">  paths: &#123;</span><br><span class="line">    &apos;gallery&apos;: &apos;https://a.alipayobjects.com/gallery&apos;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 变量配置</span><br><span class="line">  vars: &#123;</span><br><span class="line">    &apos;locale&apos;: &apos;zh-cn&apos;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  // 映射配置</span><br><span class="line">  map: [</span><br><span class="line">    [&apos;http://example.com/js/app/&apos;, &apos;http://localhost/js/app/&apos;]</span><br><span class="line">  ],</span><br><span class="line"></span><br><span class="line">  // 预加载项</span><br><span class="line">  preload: [</span><br><span class="line">    Function.prototype.bind ? &apos;&apos; : &apos;es5-safe&apos;,</span><br><span class="line">    this.JSON ? &apos;&apos; : &apos;json&apos;</span><br><span class="line">  ],</span><br><span class="line"></span><br><span class="line">  // 调试模式</span><br><span class="line">  debug: true,</span><br><span class="line"></span><br><span class="line">  // Sea.js 的基础路径</span><br><span class="line">  base: &apos;http://example.com/path/to/base/&apos;,</span><br><span class="line"></span><br><span class="line">  // 文件编码</span><br><span class="line">  charset: &apos;utf-8&apos;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="支持以下配置选项"><a href="#支持以下配置选项" class="headerlink" title="支持以下配置选项"></a>支持以下配置选项</h2><h3 id="alias-Object"><a href="#alias-Object" class="headerlink" title="alias Object"></a>alias Object</h3><p>当模块标识很长时，可以使用 alias 来简化。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">seajs.config(&#123;</span><br><span class="line">  alias: &#123;</span><br><span class="line">    &apos;jquery&apos;: &apos;jquery/jquery/1.10.1/jquery&apos;,</span><br><span class="line">    &apos;app/biz&apos;: &apos;http://path/to/app/biz.js&apos;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">define(function(require, exports, module) &#123;</span><br><span class="line"></span><br><span class="line">   var $ = require(&apos;jquery&apos;);</span><br><span class="line">     //=&gt; 加载的是 http://path/to/base/jquery/jquery/1.10.1/jquery.js</span><br><span class="line"></span><br><span class="line">   var biz = require(&apos;app/biz&apos;);</span><br><span class="line">     //=&gt; 加载的是 http://path/to/app/biz.js</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>使用 alias，可以让文件的真实路径与调用标识分开，有利于统一维护。</p>
+<h3 id="paths-Object"><a href="#paths-Object" class="headerlink" title="paths Object"></a>paths Object</h3><p>当目录比较深，或需要跨目录调用模块时，可以使用 paths 来简化书写。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">seajs.config(&#123;</span><br><span class="line">  paths: &#123;</span><br><span class="line">    &apos;gallery&apos;: &apos;https://a.alipayobjects.com/gallery&apos;,</span><br><span class="line">    &apos;app&apos;: &apos;path/to/app&apos;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">define(function(require, exports, module) &#123;</span><br><span class="line"></span><br><span class="line">   var underscore = require(&apos;gallery/underscore&apos;);</span><br><span class="line">     //=&gt; 加载的是 https://a.alipayobjects.com/gallery/underscore.js</span><br><span class="line"></span><br><span class="line">   var biz = require(&apos;app/biz&apos;);</span><br><span class="line">     //=&gt; 加载的是 path/to/app/biz.js</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>paths 配置可以结合 alias 配置一起使用，让模块引用非常方便。</p>
+<h3 id="vars-Object"><a href="#vars-Object" class="headerlink" title="vars Object"></a>vars Object</h3><p>有些场景下，模块路径在运行时才能确定，这时可以使用 vars 变量来配置。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">seajs.config(&#123;</span><br><span class="line">  vars: &#123;</span><br><span class="line">    &apos;locale&apos;: &apos;zh-cn&apos;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">define(function(require, exports, module) &#123;</span><br><span class="line"></span><br><span class="line">  var lang = require(&apos;./i18n/&#123;locale&#125;.js&apos;);</span><br><span class="line">     //=&gt; 加载的是 path/to/i18n/zh-cn.js</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>vars 配置的是模块标识中的变量值，在模块标识中用 {key} 来表示变量。</p>
+<h3 id="map-Array"><a href="#map-Array" class="headerlink" title="map Array"></a>map Array</h3><p>该配置可对模块路径进行映射修改，可用于路径转换、在线调试等。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">seajs.config(&#123;</span><br><span class="line">  map: [</span><br><span class="line">    [ &apos;.js&apos;, &apos;-debug.js&apos; ]</span><br><span class="line">  ]</span><br><span class="line">&#125;);</span><br><span class="line">define(function(require, exports, module) &#123;</span><br><span class="line"></span><br><span class="line">  var a = require(&apos;./a&apos;);</span><br><span class="line">     //=&gt; 加载的是 path/to/a-debug.js</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>更多用法可参考：<a href="https://github.com/seajs/seajs/issues/263" target="_blank" rel="noopener">调试实践</a></p>
+<h3 id="preload-Array"><a href="#preload-Array" class="headerlink" title="preload Array"></a>preload Array</h3><p>使用 preload 配置项，可以在普通模块加载前，提前加载并初始化好指定模块。</p>
+<blockquote>
+<p>在老浏览器中，提前加载好 ES5 和 json 模块</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">seajs.config(&#123;</span><br><span class="line">  preload: [</span><br><span class="line">    Function.prototype.bind ? &apos;&apos; : &apos;es5-safe&apos;,</span><br><span class="line">    this.JSON ? &apos;&apos; : &apos;json&apos;</span><br><span class="line">  ]</span><br><span class="line">&#125;);</span><br><span class="line">preload 中的空字符串会被忽略掉。</span><br></pre></td></tr></table></figure>
+<p><strong> 注意：preload 中的配置，需要等到 use 时才加载。比如：</strong><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">seajs.config(&#123;</span><br><span class="line">  preload: &apos;a&apos;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// 在加载 b 之前，会确保模块 a 已经加载并执行好</span><br><span class="line">seajs.use(&apos;./b&apos;);</span><br><span class="line">// preload 配置不能放在模块文件里面：</span><br><span class="line"></span><br><span class="line">seajs.config(&#123;</span><br><span class="line">  preload: &apos;a&apos;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">define(function(require, exports) &#123;</span><br><span class="line">  // 此处执行时，不能保证模块 a 已经加载并执行好</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="debug-Boolean"><a href="#debug-Boolean" class="headerlink" title="debug Boolean"></a>debug Boolean</h3><p>值为 true 时，加载器不会删除动态插入的 script 标签。插件也可以根据 debug 配置，来决策 log 等信息的输出。</p>
+<h3 id="base-String"><a href="#base-String" class="headerlink" title="base String"></a>base String</h3><p>Sea.js 在解析顶级标识时，会相对 base 路径来解析。详情请参阅 <a href="https://github.com/seajs/seajs/issues/258" target="_blank" rel="noopener">模块标识</a></p>
+<p>注意：一般请不要配置 base 路径，把 sea.js 放在合适的路径往往更简单一致。</p>
+<h3 id="charset-String-Function"><a href="#charset-String-Function" class="headerlink" title="charset String | Function"></a>charset String | Function</h3><p>获取模块文件时，<code>&lt;script&gt;</code> 或 <code>&lt;link&gt;</code> 标签的 <code>charset</code> 属性。 默认是 <code>utf-8</code></p>
+<p><code>charset</code> 还可以是一个函数：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">seajs.config(&#123;</span><br><span class="line">  charset: function(url) &#123;</span><br><span class="line">    // xxx 目录下的文件用 gbk 编码加载</span><br><span class="line">    if (url.indexOf(&apos;http://example.com/js/xxx&apos;) === 0) &#123;</span><br><span class="line">      return &apos;gbk&apos;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 其他文件用 utf-8 编码</span><br><span class="line">    return &apos;utf-8&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><h3 id="多次配置自动合并"><a href="#多次配置自动合并" class="headerlink" title="多次配置自动合并"></a>多次配置自动合并</h3><p>seajs.config 可以多次运行，每次运行时，会对配置项进行合并操作：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">seajs.config(&#123;</span><br><span class="line">  alias: &#123;</span><br><span class="line">    &apos;jquery&apos;: &apos;path/to/jquery.js&apos;,</span><br><span class="line">    &apos;a&apos;: &apos;path/to/a.js&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  preload: [&apos;seajs-text&apos;]</span><br><span class="line">&#125;);</span><br><span class="line">seajs.config(&#123;</span><br><span class="line">  alias: &#123;</span><br><span class="line">    &apos;underscore&apos;: &apos;path/to/underscore.js&apos;,</span><br><span class="line">    &apos;a&apos;: &apos;path/to/biz/a.js&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  preload: [&apos;seajs-combo&apos;]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>上面两处 config 运行的结果是：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alias = &#123;</span><br><span class="line">  &apos;jquery&apos;: &apos;path/to/jquery.js&apos;,</span><br><span class="line">  &apos;underscore&apos;: &apos;path/to/underscore.js&apos;,</span><br><span class="line">  &apos;a&apos;: &apos;path/to/biz/a.js&apos;</span><br><span class="line">&#125;;</span><br><span class="line">preload = [&apos;seajs-text&apos;, &apos;seajs-combo&apos;];</span><br></pre></td></tr></table></figure></p>
+<p>即：config 会自动合并不存在的项，对存在的项则进行覆盖。</p>
+<h3 id="插件的配置"><a href="#插件的配置" class="headerlink" title="插件的配置"></a>插件的配置</h3><p>插件可以给 Sea.js 添加配置项，请查看具体插件了解相关配置。</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>配置可以直接写在 html 页面上，也可以独立出来成为一个文件。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">config.js</span><br><span class="line"></span><br><span class="line">seajs.config(&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>独立成一个文件时，一般通过 script 标签在页面中同步引入。</p>
+</blockquote>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Sea-js-提供简单、极致的模块化开发体验"><span class="toc-number">1.</span> <span class="toc-text">Sea.js //提供简单、极致的模块化开发体验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">2.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#支持以下配置选项"><span class="toc-number">3.</span> <span class="toc-text">支持以下配置选项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#alias-Object"><span class="toc-number">3.1.</span> <span class="toc-text">alias Object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#paths-Object"><span class="toc-number">3.2.</span> <span class="toc-text">paths Object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vars-Object"><span class="toc-number">3.3.</span> <span class="toc-text">vars Object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#map-Array"><span class="toc-number">3.4.</span> <span class="toc-text">map Array</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#preload-Array"><span class="toc-number">3.5.</span> <span class="toc-text">preload Array</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#debug-Boolean"><span class="toc-number">3.6.</span> <span class="toc-text">debug Boolean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#base-String"><span class="toc-number">3.7.</span> <span class="toc-text">base String</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#charset-String-Function"><span class="toc-number">3.8.</span> <span class="toc-text">charset String | Function</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提示"><span class="toc-number">4.</span> <span class="toc-text">提示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#多次配置自动合并"><span class="toc-number">4.1.</span> <span class="toc-text">多次配置自动合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插件的配置"><span class="toc-number">4.2.</span> <span class="toc-text">插件的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-number">4.3.</span> <span class="toc-text">配置文件</span></a></li></ol></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="content">
+    <div class="copyright">
+        <ul>
+          <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+          <li><a href="https://github.com/gqzydh" target="_blank"> GitHub </a></li>
+        </ul>
+  
+      <!-- <div class="social">
+          <ul>
+              <li><a href="https://github.com/gqzydh" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+              <li><a href="https://weibo.com/u/1975830895" title="Sina-Weibo" target="_blank"><i class="icon-weibo"></i></a>&nbsp;</li>
+          </ul>
+      </div> -->
+    </div>
+
+    <div class="footerInfor">
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2019 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
+<script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>
