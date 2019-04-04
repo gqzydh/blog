@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="郭庆的博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>TypeScript 基础 | GQ个人博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>GQ个人博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>TypeScript 基础</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2019_04_02</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TypeScript/">TypeScript</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#TypeScript" class='tag'>TypeScript</a>
+
+
+            
+          </div>
+          <p>TypeScript 是 JavaScript 的类型的超集，它可以编译成纯 JavaScript。编译出来的 JavaScript 可以运行在任何浏览器上。TypeScript 编译工具可以运行在任何服务器和任何系统上。TypeScript 是开源的。<br><a href="https://www.tslang.cn/docs/handbook/interfaces.html" target="_blank" rel="noopener">TypeScript 中文网</a><br><a href="https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/tsconfig.json.html" target="_blank" rel="noopener">TypeScript Handbook（工程配置 中文版）</a></p>
+<blockquote>
+<p>学习TypeScript, 需要理解接口（Interfaces）、泛型（Generics）、类（Classes）、枚举类型（Enums）等前端工程师可能不是很熟悉的概念</p>
+</blockquote>
+<h2 id="TypeScript安装使用"><a href="#TypeScript安装使用" class="headerlink" title="TypeScript安装使用"></a>TypeScript安装使用</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g typescript</span><br><span class="line">tsc hello.ts    //tsc 命令了编译 TypeScript文件</span><br></pre></td></tr></table></figure>
+<p>TypeScript 编写的文件以 .ts 为后缀，<br>TypeScript 编写 React 时，以 .tsx 为后缀</p>
+<h2 id="原始数据类型在TypeScript中的应用"><a href="#原始数据类型在TypeScript中的应用" class="headerlink" title="原始数据类型在TypeScript中的应用"></a>原始数据类型在TypeScript中的应用</h2><p>原始数据类型：</p>
+<ul>
+<li><code>boolean</code> 布尔值、</li>
+<li><code>number</code> 数值、</li>
+<li><code>string</code> 字符串、</li>
+<li>null、undefined </li>
+<li>Enum </li>
+<li>及 ES6 中的新类型 <code>Symbol</code> </li>
+<li><code>void</code> 表示没有任何返回值的函数</li>
+<li><code>any</code> 表示允许赋值为任意类型</li>
+<li>TypeScript 会在没有明确的指定类型的时候推测出一个类型，这就是类型推论。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let myFavoriteNumber;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果定义的时候没有赋值，不管之后有没有赋值，都会被推断成 any 类型而完全不被类型检查</p>
+<ul>
+<li>联合类型<br>联合类型,表示取值可以为多种类型中的一种<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let myFavoriteNumber: string | number;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//定义接口</span><br><span class="line">interface Person&#123;</span><br><span class="line">    name: string,</span><br><span class="line">    age: number,  // 必选属性</span><br><span class="line">    job?: string, //可选属性，表示不是必须的参数，</span><br><span class="line">    readonly salary: id,  //表示是只读的属性,但是在初始化之后不能重新赋值，否则会报错</span><br><span class="line">    [ propName : string ] : any,  // 任意类型</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//定义一个变量，它的类型时接口Person，这样就约束了接口的内容</span><br><span class="line">let person: Person = &#123;</span><br><span class="line">    name: &apos;jack&apos;,</span><br><span class="line">    age: 28,</span><br><span class="line">    job: &apos;IT dog&apos;,</span><br><span class="line">    id: 9872,</span><br><span class="line">    salary: 9999,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function printMan(person) &#123;</span><br><span class="line">    console.log( `我是 $&#123;person.name&#125;, 我今年 $&#123;person.age&#125;,我的工作是$&#123;person.job&#125;`);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>必选属性 =&gt; “：”   带冒号的属性是必须存在的，不可以多也不能少</li>
+<li>可选属性 =&gt; “ ? “  表示有选择的选项，可有可无</li>
+<li>只读属性 =&gt; “ readonly “  对象的字段只在创建的时候赋值，注意哦，注意，只读的约束存在于第一次给对象赋值的时候，而不是第一次给只读属性赋值的时候：</li>
+<li>任意属性 [ propName : 类型 ]  : any    表示定义了任意属性取string 类型的值<br>需要注意的是，一旦定义了任意类型，那么确定属性和可选属性都必须是它的子属性</li>
+</ol>
+</blockquote>
+<h2 id="对象的类型——接口"><a href="#对象的类型——接口" class="headerlink" title="对象的类型——接口"></a>对象的类型——接口</h2><p><code>Interfaces</code> 来定义对象的类型。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">interface Person &#123;   //接口一般首字母大写</span><br><span class="line">    name: string;</span><br><span class="line">    age: number;</span><br><span class="line">&#125;</span><br><span class="line">let tom: Person = &#123;</span><br><span class="line">    name: &apos;Tom&apos;,</span><br><span class="line">    age: 25</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="数组的类型"><a href="#数组的类型" class="headerlink" title="数组的类型"></a>数组的类型</h2><ul>
+<li><p>「类型 + 方括号」表示法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let fibonacci: number[] = [1, 1, 2, 3, 5];</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用接口表示数组</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">interface NumberArray &#123;</span><br><span class="line">    [index: number]: number;</span><br><span class="line">&#125;</span><br><span class="line">let fibonacci: NumberArray = [1, 1, 2, 3, 5];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>NumberArray 表示：只要 index 的类型是 number，那么值的类型必须是 number。</p>
+<ul>
+<li>any 在数组中的应用<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let list: any[] = [&apos;Xcat Liu&apos;, 25, &#123; website: &apos;http://xcatliu.com&apos; &#125;];</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="函数的类型"><a href="#函数的类型" class="headerlink" title="函数的类型"></a>函数的类型</h2><p>两种常见的定义函数的方式<br>— 函数声明</p>
+<ul>
+<li>函数表达式<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 函数声明</span><br><span class="line">function sum(x: number, y: number): number &#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;</span><br><span class="line">// 函数表达式</span><br><span class="line">let mySum = function (x: number, y: number): number &#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let mySum: (x: number, y: number) =&gt; number = function (x: number, y: number): number &#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>TypeScript 的类型定义中，<code>=&gt;</code>用来表示函数的定义，左边是输入类型，需要用括号括起来，右边是输出类型。</p>
+<blockquote>
+<p>注意不要混淆了 TypeScript 中的 =&gt; 和 ES6 中的 =&gt;</p>
+</blockquote>
+<h2 id="用接口定义函数的形状"><a href="#用接口定义函数的形状" class="headerlink" title="用接口定义函数的形状"></a>用接口定义函数的形状</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">interface SearchFunc &#123;</span><br><span class="line">    (source: string, subString: string): boolean;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let mySearch: SearchFunc;</span><br><span class="line">mySearch = function(source: string, subString: string) &#123;</span><br><span class="line">    return source.search(subString) !== -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="可选参数"><a href="#可选参数" class="headerlink" title="可选参数"></a>可选参数</h2><p>与接口中的可选属性类似，我们用 ? 表示可选的参数<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function buildName(firstName: string, lastName?: string) &#123;</span><br><span class="line">    if (lastName) &#123;</span><br><span class="line">        return firstName + &apos; &apos; + lastName;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return firstName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let tomcat = buildName(&apos;Tom&apos;, &apos;Cat&apos;);</span><br><span class="line">let tom = buildName(&apos;Tom&apos;);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>需要注意的是，可选参数必须接在必需参数后面。换句话说，可选参数后面不允许再出现必须参数了</p>
+</blockquote>
+<h2 id="参数默认值"><a href="#参数默认值" class="headerlink" title="参数默认值"></a>参数默认值</h2><p>在ES6中，我们允许给函数的参数添加默认值，<br><code>TypeScript</code> 会将添加了默认值的参数识别为可选参数：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function buildName(firstName: string, lastName: string = &apos;Cat&apos;) &#123;</span><br><span class="line">    return firstName + &apos; &apos; + lastName;</span><br><span class="line">&#125;</span><br><span class="line">let tomcat = buildName(&apos;Tom&apos;, &apos;Cat&apos;);</span><br><span class="line">let tom = buildName(&apos;Tom&apos;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="剩余参数"><a href="#剩余参数" class="headerlink" title="剩余参数"></a>剩余参数</h2><p>ES6 中，可以使用 …rest 的方式获取函数中的剩余参数（rest 参数）</p>
+<blockquote>
+<p>注意，rest 参数只能是最后一个参数，关于 rest 参数，可以参考 <a href="http://es6.ruanyifeng.com/#docs/function#rest参数" target="_blank" rel="noopener">ES6 中的 rest 参数</a>。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function push(array: any[], ...items: any[]) &#123;</span><br><span class="line">    items.forEach(function(item) &#123;</span><br><span class="line">        array.push(item);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let a = [];</span><br><span class="line">push(a, 1, 2, 3);</span><br></pre></td></tr></table></figure>
+<h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><p>允许一个函数接受不同数量或类型的参数时，作出不同的处理。<br>可以使用重载定义多个 reverse 的函数类型：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function reverse(x: number): number;</span><br><span class="line">function reverse(x: string): string;</span><br><span class="line">function reverse(x: number | string): number | string &#123;</span><br><span class="line">    if(typeof x === &apos;number&apos;)&#123;</span><br><span class="line">        return Number(x.toString().split(&apos;&apos;).reverse().join(&apos;&apos;));</span><br><span class="line">    &#125;else if(typeof x === &apos;string&apos;)&#123;</span><br><span class="line">        return x.split(&apos;&apos;),reverse().join(&apos;&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h2><ul>
+<li>语法<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;类型&gt;值  或  值 as 类型</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在 tsx 语法（React 的 jsx 语法的 ts 版）中必须用后一种</p>
+<ul>
+<li>将一个联合类型的变量指定为一个更加具体的类型<br>当 TypeScript 不确定一个联合类型的变量到底是哪个类型的时候，我们只能访问此联合类型的所有类型里共有的属性或方法：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function getLength(something: string | number): number &#123;</span><br><span class="line">    if ((&lt;string&gt;something).length) &#123;</span><br><span class="line">        return (&lt;string&gt;something).length;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return something.toString().length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>类型断言的用法如上，在需要断言的变量前加上 <type> 即可。<br>类型断言不是类型转换，断言成一个联合类型中不存在的类型是不允许的</type></p>
+</blockquote>
+<h2 id="声明文件"><a href="#声明文件" class="headerlink" title="声明文件"></a>声明文件</h2><p>当使用第三方库时，我们需要引用它的声明文件，才能获得对应的代码补全、接口提示等功能。</p>
+<ul>
+<li>使用 declare var 来定义它的类型<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">declare var jQuery: (selector: string) =&gt; any;</span><br><span class="line">jQuery(&apos;#foo&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>除了 declare var 之外，还有其他很多种声明语句</p>
+<blockquote>
+<p>通常我们会把声明语句放到一个单独的文件（jQuery.d.ts）中，这就是声明文件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// src/jQuery.d.ts</span><br><span class="line">declare var jQuery: (selector: string) =&gt; any;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="第三方声明文件"><a href="#第三方声明文件" class="headerlink" title="第三方声明文件"></a>第三方声明文件</h3><p>推荐的是使用 <code>@types</code> 统一管理第三方库的声明文件。</p>
+<ul>
+<li>@types 的使用方式很简单，直接用 npm 安装对应的声明模块即可，<br>以 jQuery 举例：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install @types/jquery --save-dev</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="http://microsoft.github.io/TypeSearch/" target="_blank" rel="noopener">更多声明文件</a></p>
+<h3 id="书写声明文件"><a href="#书写声明文件" class="headerlink" title="书写声明文件"></a>书写声明文件</h3><p>在不同的场景下，声明文件的内容和使用方式会有所区别<br>库的使用场景主要有以下几种：</p>
+<ol>
+<li>全局变量：通过 <code>&lt;script&gt;</code> 标签引入第三方库，注入全局变量</li>
+<li>npm 包：通过 import foo from ‘foo’ 导入，符合 ES6 模块规范</li>
+<li>UMD 库：既可以通过 <code>&lt;script&gt;</code> 标签引入，又可以通过 <code>import</code> 导入</li>
+<li>模块插件：通过 <code>import</code> 导入后，可以改变另一个模块的结构</li>
+<li>直接扩展全局变量：通过 <code>&lt;script&gt;</code> 标签引入后，改变一个全局变量的结构。比如为 String.prototype 新增了一个方法</li>
+<li>通过导入扩展全局变量：通过 import 导入后，可以改变一个全局变量的结构</li>
+</ol>
+<p>如果是以 <code>npm install @types/xxx --save-dev</code> 安装的，则不需要任何配置。</p>
+<p>如果是将声明文件直接存放于当前项目中，则建议和其他源码一起放到 src 目录下（或者对应的源码目录下）<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">/path/to/project</span><br><span class="line">├── README.md</span><br><span class="line">├── src</span><br><span class="line">|  ├── index.ts</span><br><span class="line">|  └── jQuery.d.ts</span><br><span class="line">└── tsconfig.json</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>如果没有生效，可以检查下 tsconfig.json 中的 files、include 和 exclude 配置，确保其包含了 jQuery.d.ts 文件。</p>
+</blockquote>
+<h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><p>全局变量的声明文件主要有以下几种语法：</p>
+<ul>
+<li><code>declare var</code> 声明全局变量</li>
+<li><code>declare function</code> 声明全局方法</li>
+<li><code>declare class</code> 声明全局类</li>
+<li><code>declare enum</code> 声明全局枚举类型</li>
+<li><code>declare namespace</code> 声明全局对象（含有子属性）</li>
+<li><code>interface</code> 和 <code>type</code> 声明全局类型</li>
+</ul>
+<p><code>declare let</code> 和 <code>declare const</code> 定义一个全局变量的类型,<br><code>declare const</code> 表示此时的全局变量是一个常量，不允许再去修改它的值</p>
+<p>一般来说，全局变量都是禁止修改的常量，所以大部分情况都应该使用 const 而不是 var 或 let。</p>
+<blockquote>
+<p>需要注意的是，声明语句中只能定义类型，切勿在声明语句中定义具体的值.</p>
+</blockquote>
+<h3 id="declare-namespace"><a href="#declare-namespace" class="headerlink" title="declare namespace"></a>declare namespace</h3><p>namespace 是 ts 早期时为了解决模块化而创造的关键字，中文称为命名空间。<br>namespace 被淘汰了，但是在声明文件中，declare namespace 还是比较常用的，它用来表示全局变量是一个对象，包含很多子属性。</p>
+<h3 id="防止命名冲突"><a href="#防止命名冲突" class="headerlink" title="防止命名冲突"></a>防止命名冲突</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// src/jQuery.d.ts</span><br><span class="line">declare namespace jQuery &#123;</span><br><span class="line">    interface AjaxSettings &#123;</span><br><span class="line">        method?: &apos;GET&apos; | &apos;POST&apos;</span><br><span class="line">        data?: any;</span><br><span class="line">    &#125;</span><br><span class="line">    function ajax(url: string, settings?: AjaxSettings): void;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意，在使用这个 interface 的时候，也应该加上 jQuery 前缀了<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// src/index.ts</span><br><span class="line"></span><br><span class="line">let settings: jQuery.AjaxSettings = &#123;</span><br><span class="line">    method: &apos;POST&apos;,</span><br><span class="line">    data: &#123;</span><br><span class="line">        name: &apos;foo&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">jQuery.ajax(&apos;/api/post_something&apos;, settings);</span><br></pre></td></tr></table></figure></p>
+<h3 id="声明合并"><a href="#声明合并" class="headerlink" title="声明合并"></a>声明合并</h3><p>假如 jQuery 既是一个函数，可以直接被调用 jQuery(‘#foo’)，又是一个对象，拥有子属性 jQuery.ajax()（事实确实如此），则我们可以组合多个声明语句，它们会不冲突的合并起来：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">declare function jQuery(selector: string): any;</span><br><span class="line">declare namespace jQuery &#123;</span><br><span class="line">    function ajax(url: string, settings?: any): void;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">jQuery(&apos;#foo&apos;);</span><br><span class="line">jQuery.ajax(&apos;/api/get_something&apos;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="npm-包"><a href="#npm-包" class="headerlink" title="npm 包"></a>npm 包</h2><p>一般我们通过 <code>import foo from &#39;foo&#39;</code> 导入一个 npm 包，这是符合 ES6 模块规范的。</p>
+<p>参考： <a href="https://ts.xcatliu.com/advanced/string-literal-types.html" target="_blank" rel="noopener">TypeScript入门教程</a></p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TypeScript安装使用"><span class="toc-number">1.</span> <span class="toc-text">TypeScript安装使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#原始数据类型在TypeScript中的应用"><span class="toc-number">2.</span> <span class="toc-text">原始数据类型在TypeScript中的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实例"><span class="toc-number">2.1.</span> <span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象的类型——接口"><span class="toc-number">3.</span> <span class="toc-text">对象的类型——接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组的类型"><span class="toc-number">4.</span> <span class="toc-text">数组的类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数的类型"><span class="toc-number">5.</span> <span class="toc-text">函数的类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用接口定义函数的形状"><span class="toc-number">6.</span> <span class="toc-text">用接口定义函数的形状</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可选参数"><span class="toc-number">7.</span> <span class="toc-text">可选参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参数默认值"><span class="toc-number">8.</span> <span class="toc-text">参数默认值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#剩余参数"><span class="toc-number">9.</span> <span class="toc-text">剩余参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#重载"><span class="toc-number">10.</span> <span class="toc-text">重载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类型断言"><span class="toc-number">11.</span> <span class="toc-text">类型断言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#声明文件"><span class="toc-number">12.</span> <span class="toc-text">声明文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第三方声明文件"><span class="toc-number">12.1.</span> <span class="toc-text">第三方声明文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#书写声明文件"><span class="toc-number">12.2.</span> <span class="toc-text">书写声明文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全局变量"><span class="toc-number">12.3.</span> <span class="toc-text">全局变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#declare-namespace"><span class="toc-number">12.4.</span> <span class="toc-text">declare namespace</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防止命名冲突"><span class="toc-number">12.5.</span> <span class="toc-text">防止命名冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#声明合并"><span class="toc-number">12.6.</span> <span class="toc-text">声明合并</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm-包"><span class="toc-number">13.</span> <span class="toc-text">npm 包</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="content">
+    <div class="copyright">
+        <ul>
+          <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+          <li><a href="https://github.com/gqzydh" target="_blank"> GitHub </a></li>
+        </ul>
+  
+      <!-- <div class="social">
+          <ul>
+              <li><a href="https://github.com/gqzydh" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+              <li><a href="https://weibo.com/u/1975830895" title="Sina-Weibo" target="_blank"><i class="icon-weibo"></i></a>&nbsp;</li>
+          </ul>
+      </div> -->
+    </div>
+
+    <div class="footerInfor">
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2019 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
+<script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>
