@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="郭庆的博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>package.json说配置明 | GQ个人博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>GQ个人博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>package.json说配置明</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2019_04_02</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/配置/">配置</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#配置" class='tag'>配置</a>
+
+
+            
+          </div>
+          <p>Node.js项目遵循模块化的架构，当我们创建了一个Node.js项目，意味着创建了一个模块，这个模块的描述文件，被称为<code>package.json</code>。</p>
+<blockquote>
+<p>通常情况下package.json内容出错，会导致项目出现bug，甚至阻止项目的运行。</p>
+</blockquote>
+<h2 id="生成package-json文件"><a href="#生成package-json文件" class="headerlink" title="生成package.json文件"></a>生成package.json文件</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm init     //生成package.json文件</span><br></pre></td></tr></table></figure>
+<h2 id="package-json属性说明"><a href="#package-json属性说明" class="headerlink" title="package.json属性说明"></a>package.json属性说明</h2><ul>
+<li>name - 包名.</li>
+<li>version - 包的版本号,一般是【主版本 . 次要版本 . 补丁版本】</li>
+<li>description - 包的描述。</li>
+<li>homepage - 包的官网URL。</li>
+<li>author - 包的作者，它的值是你在<a href="https://npmjs.org网站的有效账户名，遵循“账户名" target="_blank" rel="noopener">https://npmjs.org网站的有效账户名，遵循“账户名</a>&lt;邮件&gt;”的规则，例如：gqzydh <a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#x67;&#113;&#122;&#121;&#100;&#x68;&#x40;&#x31;&#x36;&#x33;&#x2e;&#99;&#111;&#109;">&#x67;&#113;&#122;&#121;&#100;&#x68;&#x40;&#x31;&#x36;&#x33;&#x2e;&#99;&#111;&#109;</a>。</li>
+<li>contributors - 包的其他贡献者。</li>
+<li>repository - 包代码的Repo信息，包括type和URL，type可以是git或svn，URL则是包的Repo地址。</li>
+<li>main - main 字段指定了程序的主入口文件，require(‘moduleName’) 就会加载这个文件。这个字段的默认值是模块根目录下面的 index.js。</li>
+<li>keywords - 关键字</li>
+<li>dependencies / devDependencies - 生产/开发环境依赖包列表。它们将会被安装在 node_module 目录下。</li>
+</ul>
+<blockquote>
+<p>另外还可以设置script、license等等。除了官方必须的一些参数外，我们也可以存储我们自己的关于模块的描述信息在package.json。</p>
+</blockquote>
+<hr>
+<h2 id="devDependencies-开发环境依赖包"><a href="#devDependencies-开发环境依赖包" class="headerlink" title="devDependencies 开发环境依赖包"></a>devDependencies 开发环境依赖包</h2><h3 id="babel"><a href="#babel" class="headerlink" title="babel"></a>babel</h3><p>Babel是一个JavaScript编译器,<br>Babel是一个工具链，主要用于将ECMAScript 2015+版本的代码转换为向后兼容的JavaScript语法，以便能够运行在当前和旧版本的浏览器或其他环境中.</p>
+<ul>
+<li>babel 工具<ul>
+<li><code>@babel/cli</code></li>
+<li><code>@babel/core</code> </li>
+<li><code>@babel/plugin-transform-runtime</code> </li>
+<li><code>@babel/preset-env</code></li>
+<li><code>@babel/preset-typescript</code></li>
+<li><code>@babel/polyfill</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/polyfill</span><br></pre></td></tr></table></figure>
+<p><strong>参考</strong><br>(babel/cli)[<a href="https://babeljs.io/docs/en/babel-cli/" target="_blank" rel="noopener">https://babeljs.io/docs/en/babel-cli/</a>]</p>
+<h3 id="bannerjs"><a href="#bannerjs" class="headerlink" title="bannerjs"></a>bannerjs</h3><p>获取基于package.json的单行/多行注释标题。<br>(bannerjs)[<a href="https://github.com/jaywcjlove/bannerjs" target="_blank" rel="noopener">https://github.com/jaywcjlove/bannerjs</a>]</p>
+<h3 id="jest"><a href="#jest" class="headerlink" title="jest"></a>jest</h3><p>(jestjs官网)[<a href="https://jestjs.io/" target="_blank" rel="noopener">https://jestjs.io/</a>]<br>是facebook推出的一款测试框架，集成了 Mocha，chai，jsdom，sinon等功能</p>
+<blockquote>
+<p>运行命令 jest 后会自动运行项目下所有.test.js和.spec.js这种格式的文件。涉及到运用 ES 或 react 的，要与babel相结合，加上.babelrc文件即可。jest的配置默认只需要在package.json中配置即可，当然也可以用独立的配置文件。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install --save-dev jest</span><br><span class="line">npm install -g jest</span><br></pre></td></tr></table></figure>
+<p>将 jest 的运行范围限定在test文件夹下，而不是全部，在package.json中加入如下配置：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;jest&quot;: &#123;</span><br><span class="line">    &quot;testRegex&quot;: &quot;/test/.*.test.jsx?$&quot;</span><br><span class="line"> &#125;</span><br><span class="line">// 注意到这里的匹配规则是正则表达式</span><br></pre></td></tr></table></figure></p>
+<p><strong>参考</strong><br>-（Jest官方文档)[<a href="https://jestjs.io/zh-Hans/" target="_blank" rel="noopener">https://jestjs.io/zh-Hans/</a>]</p>
+<ul>
+<li>(使用Jest测试JavaScript )[<a href="https://www.jianshu.com/p/70a4f026a0f1" target="_blank" rel="noopener">https://www.jianshu.com/p/70a4f026a0f1</a>]</li>
+</ul>
+<h3 id="rollup"><a href="#rollup" class="headerlink" title="rollup"></a>rollup</h3><p>(rollup.js官网)[<a href="https://www.rollupjs.com/guide/zh" target="_blank" rel="noopener">https://www.rollupjs.com/guide/zh</a>]<br>Rollup 是一个 JavaScript 模块打包器，可以将小块代码编译成大块复杂的代码。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install rollup -g   //全局安装</span><br><span class="line">npm install rollup --save-dev   //进入项目,项目本地安装</span><br></pre></td></tr></table></figure>
+<p>在package.json文件中<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;build&quot;: &quot;rollup -c&quot;,  //</span><br><span class="line">  &#125;,</span><br><span class="line">// 在命令行中输入npm run build来进行打包</span><br></pre></td></tr></table></figure></p>
+<p><strong>参考</strong></p>
+<ul>
+<li>(JS打包工具rollup——完全入门指南)[<a href="https://segmentfault.com/a/1190000010628352" target="_blank" rel="noopener">https://segmentfault.com/a/1190000010628352</a>]</li>
+<li>(如何通过 Rollup.js 打包 JavaScript —— 知乎专栏)[<a href="https://zhuanlan.zhihu.com/p/28096758" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28096758</a>]</li>
+</ul>
+<h3 id="typescript"><a href="#typescript" class="headerlink" title="typescript"></a>typescript</h3><h3 id="tslint"><a href="#tslint" class="headerlink" title="tslint"></a>tslint</h3><p>TSLint是一种可扩展的静态分析工具，可检查TypeScript代码的可读性，可维护性和功能性错误。它在现代编辑器和构建系统中得到广泛支持，可以使用您自己的lint规则，配置和格式化程序进行自定义</p>
+<ul>
+<li><code>tslint-react</code> - 与React和JSX相关的Lint规则。</li>
+</ul>
+<p><strong>参考</strong></p>
+<ul>
+<li>(npm-tslint)[<a href="https://www.npmjs.com/package/tslint" target="_blank" rel="noopener">https://www.npmjs.com/package/tslint</a>]</li>
+</ul>
+<h2 id="dependencies-生产环境依赖包"><a href="#dependencies-生产环境依赖包" class="headerlink" title="dependencies 生产环境依赖包"></a>dependencies 生产环境依赖包</h2>
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#生成package-json文件"><span class="toc-number">1.</span> <span class="toc-text">生成package.json文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#package-json属性说明"><span class="toc-number">2.</span> <span class="toc-text">package.json属性说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#devDependencies-开发环境依赖包"><span class="toc-number">3.</span> <span class="toc-text">devDependencies 开发环境依赖包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#babel"><span class="toc-number">3.1.</span> <span class="toc-text">babel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bannerjs"><span class="toc-number">3.2.</span> <span class="toc-text">bannerjs</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jest"><span class="toc-number">3.3.</span> <span class="toc-text">jest</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rollup"><span class="toc-number">3.4.</span> <span class="toc-text">rollup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#typescript"><span class="toc-number">3.5.</span> <span class="toc-text">typescript</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tslint"><span class="toc-number">3.6.</span> <span class="toc-text">tslint</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dependencies-生产环境依赖包"><span class="toc-number">4.</span> <span class="toc-text">dependencies 生产环境依赖包</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="content">
+    <div class="copyright">
+        <ul>
+          <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+          <li><a href="https://github.com/gqzydh" target="_blank"> GitHub </a></li>
+        </ul>
+  
+      <!-- <div class="social">
+          <ul>
+              <li><a href="https://github.com/gqzydh" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+              <li><a href="https://weibo.com/u/1975830895" title="Sina-Weibo" target="_blank"><i class="icon-weibo"></i></a>&nbsp;</li>
+          </ul>
+      </div> -->
+    </div>
+
+    <div class="footerInfor">
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2019 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
+<script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>
