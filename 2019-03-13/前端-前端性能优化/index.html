@@ -10,7 +10,7 @@
     <link rel="icon" href="/images/favicon_32X32.ico">
   
   
-  <title>前端性能优化 | GQ个人博客</title>
+  <title>Jsonp 实现跨域请求 | GQ个人博客</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
@@ -73,7 +73,7 @@
   <div class="content">
     <article>
         <section class="content markdown-body">
-          <h2>前端性能优化</h2>
+          <h2>Jsonp 实现跨域请求</h2>
           <div class='post-meta'>
             <i class="fa fa-calendar" aria-hidden="true"></i> <time>2019_03_13</time>
             
@@ -89,43 +89,33 @@
             
             
               | 
-                  <i class="fa fa-tag" aria-hidden="true"></i>
+                  <i class="fa fa-tags" aria-hidden="true"></i>
                 
                
   <a href="/tags/#前端" class='tag'>前端</a>
 
+  <a href="/tags/#Jsonp" class='tag'>Jsonp</a>
+
+  <a href="/tags/#跨域" class='tag'>跨域</a>
+
 
             
           </div>
-          <p>前端性能优化<br>如今浏览器能够实现的特性越来越多，并且网络逐渐向移动设备转移，使我们的前端代码更加紧凑，如何优化，就变得越来越重要了。</p>
-<h2 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h2><ul>
-<li>减少 CPU 计算， 减少网络请求</li>
-<li>多使用内存，缓存或者其他方法</li>
+          <pre><code>由于浏览器存在同源策略的机制,所谓同源策略就是阻止从一个源(域名,包括同一个根域名下的不同二级域名)加载的文档或者脚本获取/或者设置另一个源加载的文档属性.
+但比较特别的是:由于同源策略是浏览器的限制,所以请求的响应和发送是可以进行的,只不过浏览器不支持罢了.
+</code></pre><h2 id="同源策略限制"><a href="#同源策略限制" class="headerlink" title="同源策略限制"></a>同源策略限制</h2><p>浏览器的同源策略并不是对所有的请求都有限制</p>
+<ul>
+<li>限制:XmlHttpRequest</li>
+<li>不限制:<code>img</code> <code>iframe</code> <code>script</code>等等具有 <code>src</code>属性的标签, 利用src属性标签实现跨域请求</li>
 </ul>
-<h2 id="加载资源优化"><a href="#加载资源优化" class="headerlink" title="加载资源优化"></a>加载资源优化</h2><ol>
-<li>静态资源css,js文件压缩合并；</li>
-<li>小图片，使用雪碧图；</li>
-<li>静态资源缓存；</li>
-<li>使用CDN让资源加载更快；</li>
-<li>使用SSR 后端渲染，数据直接输出到HTML中；</li>
-</ol>
-<h2 id="渲染优化"><a href="#渲染优化" class="headerlink" title="渲染优化"></a>渲染优化</h2><ol>
-<li>CSS 放前面，js放后面；</li>
-<li>懒加载（lazyload, 图片懒加载，下拉加载更多）；</li>
-<li>减少DOM查询，对DOM查询做缓存；</li>
-<li>减少DOM操作，多个操作尽量合并在一起执行；</li>
-<li>事件节流</li>
-<li>尽早执行操作（如 DOMContentLoaded)；</li>
-</ol>
-<h2 id="减少-HTTP-请求数量"><a href="#减少-HTTP-请求数量" class="headerlink" title="减少 HTTP 请求数量"></a>减少 HTTP 请求数量</h2><p>在浏览器与服务器进行通信时，主要是通过 HTTP 进行通信。 浏览器与服务器需要经过三次通信，每次通信需要花费大量时间。<br>而且不同浏览器对资源文件并发请求数量有限（不同浏览器允许并发数），一旦 HTTP 请求数量达到一定数量，资源请求就存在等待状态，因此减少 HTTP 的请求数量可以很大程度上对网站性能进行优化。</p>
-<h2 id="性能优化的方法"><a href="#性能优化的方法" class="headerlink" title="性能优化的方法"></a>性能优化的方法</h2><p>（1） 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。</p>
-<p>（2） 前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数</p>
-<p>（3） 用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。</p>
-<p>（4） 当需要设置的样式很多时设置className而不是直接操作style。</p>
-<p>（5） 少用全局变量、缓存DOM节点查找的结果。减少IO读取操作。</p>
-<p>（6） 避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)。</p>
-<p>（7） 图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html" target="_blank" rel="noopener">网页性能管理详解-阮一峰的网络日志</a></p>
+<h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p>利用script标签,src导入目标域名的接口,在文档数的head标签中添加一行script标签,得到内容后将scprit标签删除,返回的解析后的参数即为得到的数据.</p>
+<h2 id="利用script标签实现跨域"><a href="#利用script标签实现跨域" class="headerlink" title="利用script标签实现跨域"></a>利用script标签实现跨域</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;Index&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">    &lt;input type=&quot;button&quot; onclick=&quot;Ajax();&quot; value=&quot;普通AJax&quot;/&gt;</span><br><span class="line">    &lt;input type=&quot;button&quot; onclick=&quot;Ajax2();&quot; value=&quot;跨域普通AJax&quot;/&gt;</span><br><span class="line">    &lt;input type=&quot;button&quot; onclick=&quot;Ajax3();&quot; value=&quot;跨域牛逼AJax&quot;/&gt;</span><br><span class="line">    &lt;input type=&quot;button&quot; onclick=&quot;Ajax4();&quot; value=&quot;江西TV&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">            // 原生ajax,测试无效</span><br><span class="line">        function Ajax()&#123;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: &apos;/get_data/&apos;,</span><br><span class="line">                type: &apos;POST&apos;,</span><br><span class="line">                data: &#123;&apos;k1&apos;: &apos;v1&apos;&#125;,</span><br><span class="line">                success: function (arg) &#123;</span><br><span class="line">                    alert(arg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">            // 使用ajax跨域请求,测试无效</span><br><span class="line">        function Ajax2()&#123;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: &apos;http://wupeiqi.com:8001/api/&apos;,</span><br><span class="line">                type: &apos;GET&apos;,</span><br><span class="line">                data: &#123;&apos;k1&apos;: &apos;v1&apos;&#125;,</span><br><span class="line">                success: function (arg) &#123;</span><br><span class="line">                    alert(arg);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        // 利用script标签,得到数据</span><br><span class="line">        function Ajax3()&#123;</span><br><span class="line">            // script</span><br><span class="line">            // alert(api)</span><br><span class="line">            var tag = document.createElement(&apos;script&apos;);</span><br><span class="line">            tag.src = &apos;http://wupeiqi.com:8001/api/&apos;;</span><br><span class="line">            document.head.appendChild(tag);</span><br><span class="line">            document.head.removeChild(tag);</span><br><span class="line">        &#125;</span><br><span class="line">        function fafafa(arg)&#123;</span><br><span class="line">            console.log(arg);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        // 例子,获取江西卫视的节目单</span><br><span class="line">        function Ajax4()&#123;</span><br><span class="line">            // script</span><br><span class="line">            // alert(api)</span><br><span class="line">            var tag = document.createElement(&apos;script&apos;);</span><br><span class="line">            tag.src = &apos;http://www.jxntv.cn/data/jmd-jxtv2.html?callback=list&amp;_=1454376870403&apos;;</span><br><span class="line">            document.head.appendChild(tag);</span><br><span class="line">            document.head.removeChild(tag);</span><br><span class="line">        &#125;</span><br><span class="line">        function list(arg)&#123;</span><br><span class="line">            console.log(arg);</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><h2 id="JSONP实现ajax跨域"><a href="#JSONP实现ajax跨域" class="headerlink" title="JSONP实现ajax跨域"></a>JSONP实现ajax跨域</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head lang=&quot;en&quot;&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">        &lt;input type=&quot;button&quot; onclick=&quot;Jsonp1();&quot; value=&apos;提交&apos;/&gt;</span><br><span class="line">        &lt;input type=&quot;button&quot; onclick=&quot;Jsonp2();&quot; value=&apos;提交&apos;/&gt;</span><br><span class="line">        &lt;input type=&quot;button&quot; onclick=&quot;Jsonp3();&quot; value=&apos;提交&apos;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        function Jsonp1()&#123;</span><br><span class="line">            var tag = document.createElement(&apos;script&apos;);</span><br><span class="line">            tag.src = &quot;http://c2.com:8000/test/&quot;;</span><br><span class="line">            document.head.appendChild(tag);</span><br><span class="line">            document.head.removeChild(tag);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        function Jsonp2()&#123;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: &quot;http://c2.com:8000/test/&quot;,</span><br><span class="line">                type: &apos;GET&apos;,</span><br><span class="line">                dataType: &apos;JSONP&apos;,</span><br><span class="line">                success: function(data, statusText, xmlHttpRequest)&#123;</span><br><span class="line">                    console.log(data);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        function Jsonp3()&#123;</span><br><span class="line">            var url = &apos;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su&apos;;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: url,</span><br><span class="line">                type: &apos;GET&apos;,</span><br><span class="line">                dataType: &quot;jsonp&quot;,</span><br><span class="line">                jsonp: &quot;cb&quot;,   //发送给请求处理程序的,被请求端通过request.GET.get(&quot;callback&quot;),获得jsonp回调函数的参数</span><br><span class="line">               // cache: true,    //禁止缓存</span><br><span class="line">               // jsonpCallback: &apos;wd&apos;,  //定义回调函数的名称,然后后面通过list(...)来处理获取数据</span><br><span class="line">                data: &#123;&apos;wd&apos;: &apos;0&apos;&#125;,</span><br><span class="line">                success: function(res) &#123;</span><br><span class="line">                    var data = JSON.parse(res.bodyText).s</span><br><span class="line">                   console.log(&quot;跨域请求&quot;, data);</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>JSONP不能发送POST请求<br> 究其根源,通过script标签的src属性进行跨域请求,<code>&lt;script src=&#39;http://www.jxntv.cn/data/jmd-jxtv2.html?callback=qwerqweqwe&amp;_=1454376870403&#39;&gt;</code>最后全部都会转换成GET请求,哪怕是你把type改为POST.</p>
+</blockquote>
+<h1 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h1><h2 id="JSONP实现Vue跨域"><a href="#JSONP实现Vue跨域" class="headerlink" title="JSONP实现Vue跨域"></a>JSONP实现Vue跨域</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.bootcss.com/vue/2.6.10/vue.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&quot;https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;!--百du接口--&gt;</span><br><span class="line">&lt;ul id=&quot;box&quot;&gt;</span><br><span class="line">    &lt;li v-for=&quot;item in v1&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var vue = new Vue( &#123;</span><br><span class="line">    el: &apos;#box&apos;,</span><br><span class="line">    data () &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            v1:&quot;0&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">   mounted:function()&#123;</span><br><span class="line"> //                请求路径</span><br><span class="line">            this.$http.jsonp(&quot;https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su&quot;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        //请求参数</span><br><span class="line">                        params: &#123;</span><br><span class="line">                            wd:this.v1</span><br><span class="line">                        &#125;,</span><br><span class="line">                        jsonp:&apos;cb&apos;</span><br><span class="line">//                        回调参数</span><br><span class="line">                    &#125;).then(function(res)&#123;</span><br><span class="line">//                字符串转成json对象</span><br><span class="line">//                console.log(JSON.parse(res.bodyText).s);</span><br><span class="line">//                JSON.parse() 方法将数据转换为 JavaScript 对象。</span><br><span class="line">               vue.v1 = JSON.parse(res.bodyText).s;</span><br><span class="line">            &#125;</span><br><span class="line">              ,function()&#123;</span><br><span class="line">                console.log(&quot;抱歉无法调取&quot;)</span><br><span class="line">            &#125;</span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">/*同源策略下，某个服务器是无法获取到服务器以外的数据，</span><br><span class="line">但是html里面的img,iframe和script等标签是个例外，</span><br><span class="line">这些标签可以通过src属性请求到其他服务器上的数据。</span><br><span class="line">而JSONP就是通过script节点src调用跨域的请求。*/</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
         </section>
     </article>
@@ -143,7 +133,7 @@
     <div class="toc-container">
         <h2>目录</h2>
         <div class="content">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#原则"><span class="toc-number">1.</span> <span class="toc-text">原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加载资源优化"><span class="toc-number">2.</span> <span class="toc-text">加载资源优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#渲染优化"><span class="toc-number">3.</span> <span class="toc-text">渲染优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#减少-HTTP-请求数量"><span class="toc-number">4.</span> <span class="toc-text">减少 HTTP 请求数量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#性能优化的方法"><span class="toc-number">5.</span> <span class="toc-text">性能优化的方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">6.</span> <span class="toc-text">参考</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#同源策略限制"><span class="toc-number">1.</span> <span class="toc-text">同源策略限制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本思路"><span class="toc-number">2.</span> <span class="toc-text">基本思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用script标签实现跨域"><span class="toc-number">3.</span> <span class="toc-text">利用script标签实现跨域</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Ajax"><span class="toc-number"></span> <span class="toc-text">Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JSONP实现ajax跨域"><span class="toc-number">1.</span> <span class="toc-text">JSONP实现ajax跨域</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue"><span class="toc-number"></span> <span class="toc-text">Vue</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JSONP实现Vue跨域"><span class="toc-number">1.</span> <span class="toc-text">JSONP实现Vue跨域</span></a></li></ol>
         </div>
     </div>
     
