@@ -72,6 +72,47 @@
   <div class="posts-list">
     
       <section>
+        <a href="/2017-10-17/vue.js笔记_01/">
+          <h3 class='post-head'>
+            vue笔记_01
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="一些注意事项"><a href="#一些注意事项" class="headerlink" title="一些注意事项"></a>一些注意事项</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">● 一个 &lt;image&gt; 的 src 属性在赋值时会产生一个 HTTP 请求，所以当模板在第一次被解析时会产生一个 404 请求。这种情况下更适合用 v-attr。</span><br><span class="line">● Internet Explorer 在解析 HTML 时会移除非法的内联 style 属性，所以如果你想支持 IE，请在绑定内联 CSS 的时候始终使用 v-style。</span><br><span class="line">● 可以使用三对花括号来回避 HTML 代码，而这种写法会在底层转换为 v-html：&#123;&#123;&#123; safeHTMLString &#125;&#125;&#125;</span><br><span class="line">● 可以在你的 mustache 绑定里加入 * 来注明这是一个一次性撰写的数据，这样的话它就不会响应后续的数据变化：&#123;&#123;* onlyOnce &#125;&#125;</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
         <a href="/2017-10-17/vue.js笔记_02/">
           <h3 class='post-head'>
             vue笔记_02
@@ -154,9 +195,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/代码-Base64加密/">
+        <a href="/2017-10-17/JQuery获取屏幕宽高/">
           <h3 class='post-head'>
-            base64加密
+            jQuery获取屏幕宽高
           </h3>
         </a>
         
@@ -164,134 +205,7 @@
           
             
               
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;base64加密&lt;/title&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 定义字符串  </span><br><span class="line">var string = &apos;15000870973&apos;;  </span><br><span class="line">  </span><br><span class="line">// 加密  </span><br><span class="line">var encodedString = Base64.encode(string);  </span><br><span class="line">console.log(encodedString); // 输出: &quot;SGVsbG8gV29ybGQh&quot;  </span><br><span class="line">  </span><br><span class="line">// 解密  </span><br><span class="line">var decodedString = Base64.decode(encodedString);  </span><br><span class="line">console.log(decodedString); // 输出: &quot;Hello World!&quot;  </span><br><span class="line">&lt;/script&gt;  </span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码/">代码</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#代码" class='tag'>代码</a>
-
-  <a href="/tags/#加密" class='tag'>加密</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/vue.js笔记/">
-          <h3 class='post-head'>
-            vue笔记
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>绝大部分项目中，目录结构都会差不太多，我们可以综合一下来个通用的 src 目录：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">src</span><br><span class="line">├── assets          // 资源目录 图片，样式，iconfont</span><br><span class="line">├── components      // 全局通用组件目录</span><br><span class="line">├── config          // 项目配置，拦截器，开关</span><br><span class="line">├── plugins         // 插件相关，生成路由、请求、store 等实例，并挂载 Vue 实例</span><br><span class="line">├── directives      // 拓展指令集合</span><br><span class="line">├── routes          // 路由配置</span><br><span class="line">├── service         // 服务层</span><br><span class="line">├── utils           // 工具类</span><br><span class="line">└── views           // 视图层</span><br></pre></td></tr></table></figure></p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/代码-JQuery ScrollTo滚动插件/">
-          <h3 class='post-head'>
-            JQuery ScrollTo滚动插件使用
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <p>##jQuery ScrollTo滚动插件##</p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/代码/">代码</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#代码" class='tag'>代码</a>
-
-  <a href="/tags/#插件" class='tag'>插件</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/JQuery最佳开发实践/">
-          <h3 class='post-head'>
-            jquery最佳开发实践
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <ol>
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">alert($(window).height()); //浏览器当前窗口可视区域高度 </span><br><span class="line">alert($(document).height()); //浏览器当前窗口文档的高度 </span><br><span class="line">alert($(document.body).height());//浏览器当前窗口文档body的高度 </span><br><span class="line">alert($(document.body).outerHeight(true));//浏览器当前窗口文档body的总高度 包括border padding margin </span><br><span class="line">alert($(window).width()); //浏览器当前窗口可视区域宽度 </span><br><span class="line">alert($(document).width());//浏览器当前窗口文档对象宽度 </span><br><span class="line">alert($(document.body).width());//浏览器当前窗口文档body的高度 </span><br><span class="line">alert($(document.body).outerWidth(true));//浏览器当前窗口文档body的总宽度 包括border padding margin</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -311,12 +225,10 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tags" aria-hidden="true"></i>
+                <i class="fa fa-tag" aria-hidden="true"></i>
               
              
   <a href="/tags/#jQuery" class='tag'>jQuery</a>
-
-  <a href="/tags/#读书" class='tag'>读书</a>
 
 
           
@@ -367,6 +279,92 @@
       </section>
     
       <section>
+        <a href="/2017-10-17/代码-Base64加密/">
+          <h3 class='post-head'>
+            base64加密
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;base64加密&lt;/title&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt; </span><br><span class="line">var Base64=&#123;_keyStr:&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;,encode:function(e)&#123;var t=&quot;&quot;;var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f&lt;e.length)&#123;n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n&gt;&gt;2;o=(n&amp;3)&lt;&lt;4|r&gt;&gt;4;u=(r&amp;15)&lt;&lt;2|i&gt;&gt;6;a=i&amp;63;if(isNaN(r))&#123;u=a=64&#125;else if(isNaN(i))&#123;a=64&#125;t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)&#125;return t&#125;,decode:function(e)&#123;var t=&quot;&quot;;var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,&quot;&quot;);while(f&lt;e.length)&#123;s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&amp;15)&lt;&lt;4|u&gt;&gt;2;i=(u&amp;3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64)&#123;t=t+String.fromCharCode(r)&#125;if(a!=64)&#123;t=t+String.fromCharCode(i)&#125;&#125;t=Base64._utf8_decode(t);return t&#125;,_utf8_encode:function(e)&#123;e=e.replace(/rn/g,&quot;n&quot;);var t=&quot;&quot;;for(var n=0;n&lt;e.length;n++)&#123;var r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r)&#125;else if(r&gt;127&amp;&amp;r&lt;2048)&#123;t+=String.fromCharCode(r&gt;&gt;6|192);t+=String.fromCharCode(r&amp;63|128)&#125;else&#123;t+=String.fromCharCode(r&gt;&gt;12|224);t+=String.fromCharCode(r&gt;&gt;6&amp;63|128);t+=String.fromCharCode(r&amp;63|128)&#125;&#125;return t&#125;,_utf8_decode:function(e)&#123;var t=&quot;&quot;;var n=0;var r=c1=c2=0;while(n&lt;e.length)&#123;r=e.charCodeAt(n);if(r&lt;128)&#123;t+=String.fromCharCode(r);n++&#125;else if(r&gt;191&amp;&amp;r&lt;224)&#123;c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&amp;31)&lt;&lt;6|c2&amp;63);n+=2&#125;else&#123;c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&amp;15)&lt;&lt;12|(c2&amp;63)&lt;&lt;6|c3&amp;63);n+=3&#125;&#125;return t&#125;&#125;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 定义字符串  </span><br><span class="line">var string = &apos;15000870973&apos;;  </span><br><span class="line">  </span><br><span class="line">// 加密  </span><br><span class="line">var encodedString = Base64.encode(string);  </span><br><span class="line">console.log(encodedString); // 输出: &quot;SGVsbG8gV29ybGQh&quot;  </span><br><span class="line">  </span><br><span class="line">// 解密  </span><br><span class="line">var decodedString = Base64.decode(encodedString);  </span><br><span class="line">console.log(decodedString); // 输出: &quot;Hello World!&quot;  </span><br><span class="line">&lt;/script&gt;  </span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#加密" class='tag'>加密</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/代码-JQuery ScrollTo滚动插件/">
+          <h3 class='post-head'>
+            JQuery ScrollTo滚动插件使用
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <p>##jQuery ScrollTo滚动插件##</p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#代码" class='tag'>代码</a>
+
+  <a href="/tags/#插件" class='tag'>插件</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
         <a href="/2017-10-17/代码-Js用户注册校验/">
           <h3 class='post-head'>
             Js用户注册校验
@@ -410,9 +408,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/Ajax-jQuery.ajax()方法获取数据/">
+        <a href="/2017-10-17/Ajax-jQuery ajax读取json文件内容/">
           <h3 class='post-head'>
-            jQuery.ajax()方法获取数据
+            jQuery ajax读取json文件内容
           </h3>
         </a>
         
@@ -420,7 +418,7 @@
           
             
               
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line"> url: &quot;http://www.hzhuti.com&quot;, //请求的url地址</span><br><span class="line"> dataType: &quot;json&quot;, //返回格式为json</span><br><span class="line"> async: true, //请求是否异步，默认为异步，这也是ajax重要特性</span><br><span class="line"> data: &#123; &quot;id&quot;: &quot;value&quot; &#125;, //参数值</span><br><span class="line"> type: &quot;GET&quot;, //请求方式</span><br><span class="line"> beforeSend: function() &#123;</span><br><span class="line">  //请求前的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> success: function(req) &#123;</span><br><span class="line">  //请求成功时处理</span><br><span class="line"> &#125;,</span><br><span class="line"> complete: function() &#123;</span><br><span class="line">  //请求完成的处理</span><br><span class="line"> &#125;,</span><br><span class="line"> error: function() &#123;</span><br><span class="line">  //请求出错处理</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+                <p>##<strong>ajax 代码</strong>##<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">$(document).ready(function() &#123;  </span><br><span class="line">    $.ajax(&#123;  </span><br><span class="line">        type:&quot;GET&quot;,  //请求方式为get  </span><br><span class="line">        url:&quot;user.json&quot;, //json文件位置  </span><br><span class="line">        dataType: &quot;json&quot;,  //返回数据格式为json  </span><br><span class="line">        //请求成功完成后要执行的方法  </span><br><span class="line">        success: function(data)&#123;  </span><br><span class="line">         console.log(date.button);</span><br><span class="line">         var aav = date.button;</span><br><span class="line">            //使用$.each方法遍历返回的数据date,插入到id为#result中 </span><br><span class="line">           $.each(aav,function(ii,item)&#123;</span><br><span class="line">               var conter = item.type+&quot;,&quot;+item.name+&quot;,&quot;+item.key;  </span><br><span class="line">                $(&quot;#result&quot;).append(content);  </span><br><span class="line">            &#125;)  </span><br><span class="line">        &#125;,</span><br><span class="line">        error:function(jqXHR)&#123;                   alert(&quot;发生错误：&quot;+jqXHR.status);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)  </span><br><span class="line">&#125;);  </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
@@ -451,9 +449,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/代码-Jquery.flexslider 图片轮播/">
+        <a href="/2017-10-17/代码-同意协议-注册登录/">
           <h3 class='post-head'>
-            Jquery.flexslider 图片轮播使用
+            同意协议【注册登录】
           </h3>
         </a>
         
@@ -461,7 +459,7 @@
           
             
               
-                <p>flexslider2官网：<a href="http://flexslider.woothemes.com/" target="_blank" rel="noopener">http://flexslider.woothemes.com/</a></p>
+                <h2 id="同意协议"><a href="#同意协议" class="headerlink" title="同意协议"></a>同意协议</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;label&gt;&lt;input type=&quot;checkbox&quot; id=&quot;yes&quot; /&gt;同意！&lt;/label&gt;</span><br><span class="line">&lt;button id=&quot;zhuce&quot; disabled=&quot;true&quot;&gt;注册&lt;/button&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">(function()&#123;</span><br><span class="line">var cb=document.getElementById(&quot;yes&quot;);</span><br><span class="line">cb.onclick=function()&#123;</span><br><span class="line">    if(cb.checked==true)&#123;</span><br><span class="line">        document.getElementById(&quot;zhuce&quot;).disabled=false;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">        document.getElementById(&quot;zhuce&quot;).disabled=true;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
               
           
         </div>
@@ -486,7 +484,7 @@
              
   <a href="/tags/#代码" class='tag'>代码</a>
 
-  <a href="/tags/#插件" class='tag'>插件</a>
+  <a href="/tags/#注册登录" class='tag'>注册登录</a>
 
 
           
