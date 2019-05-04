@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="郭庆的博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>ES6 基础知识 | GQ个人博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>GQ个人博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>ES6 基础知识</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2019_05_02</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tags" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+  <a href="/tags/#ES6" class='tag'>ES6</a>
+
+
+            
+          </div>
+          <p>ES6 中许多特性其实是为了简化代码,解构运算符，扩展运算符，和rest运算符就是其中很好的特性，它们可以通过减少赋值语句的使用，或者减少通过下标访问数组或对象的方式，使代码更加简洁优雅，可读性更佳。</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li>Number、Boolean、String、Symbol、Null、Undefined、Object</li>
+</ul>
+<h3 id="Symbol"><a href="#Symbol" class="headerlink" title="Symbol"></a>Symbol</h3><ul>
+<li>Symbol类型的值通过Symbol函数生成，相同Symbol函数返回的值是唯一的</li>
+<li>Symbol不能作为构造函数使用<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var Person = (function() &#123;    //属性私有化 - 数据保护</span><br><span class="line">  let _p =  Symbol(&apos;age&apos;);</span><br><span class="line">  function P(name, age) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this[_p] = age;</span><br><span class="line">  &#125;</span><br><span class="line">  return P;</span><br><span class="line">&#125;)();</span><br><span class="line">var p1 = new Person(&apos;阿迪&apos;, &apos;男&apos;);</span><br><span class="line">console.log(p1);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="变量声明-var、let、const"><a href="#变量声明-var、let、const" class="headerlink" title="变量声明 var、let、const"></a>变量声明 var、let、const</h2><ul>
+<li><p>var</p>
+<ul>
+<li>支持变量声明预解析</li>
+<li>不支持块作用域</li>
+<li>允许重复声明</li>
+</ul>
+</li>
+<li><p>let</p>
+<ul>
+<li>不支持变量声明预解析（先声明后使用）</li>
+<li>支持块作用域</li>
+<li>不允许重复声明（暂存死区）</li>
+</ul>
+</li>
+<li><p>const</p>
+<ul>
+<li>不支持变量声明预解析（先声明后使用）</li>
+<li>支持块作用域</li>
+<li>不允许重复声明（暂存死区）</li>
+<li>常量（值一旦确定，不允许修改，所以必须初始化）</li>
+</ul>
+</li>
+</ul>
+<h3 id="let选项卡实例"><a href="#let选项卡实例" class="headerlink" title="let选项卡实例"></a>let选项卡实例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    p&#123;display: none;&#125;</span><br><span class="line">    p.active&#123;display: block;&#125;</span><br><span class="line">  &lt;/style&gt;</span><br><span class="line">  &lt;button class=&quot;active&quot;&gt;选项一&lt;/button&gt;</span><br><span class="line">  &lt;button class=&quot;&quot;&gt;选项二&lt;/button&gt;</span><br><span class="line">  &lt;button class=&quot;&quot;&gt;选项三&lt;/button&gt;</span><br><span class="line">  &lt;p class=&quot;active&quot;&gt;内容一&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;内容二&lt;/p&gt;</span><br><span class="line">  &lt;p&gt;内容三&lt;/p&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    var buttons = document.querySelectorAll(&apos;button&apos;);</span><br><span class="line">    var ps = document.querySelectorAll(&apos;p&apos;);</span><br><span class="line"></span><br><span class="line">    for(let i=0; i&lt;buttons.length; i++) &#123;</span><br><span class="line">      buttons[i].onclick = function() &#123;</span><br><span class="line">      //  buttons[i].index = i; //下标</span><br><span class="line">      //  console.log(buttons[i].index );</span><br><span class="line">        for (let i=0; i&lt;buttons.length; i++) &#123;</span><br><span class="line">                    buttons[i].className = &apos;&apos;;</span><br><span class="line">                    ps[i].className = &apos;&apos;;</span><br><span class="line">        &#125;</span><br><span class="line">        this.className = &apos;active&apos;;</span><br><span class="line">        ps[i].className = &apos;active&apos;;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="解构"><a href="#解构" class="headerlink" title="解构"></a>解构</h2><p>解构的作用是可以快速取得数组或对象当中的元素或属性，而无需使用arr[x]或者obj[key]等传统方式进行赋值</p>
+<h2 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h2><p>允许按照一定模式，从数组和对象中提取值，并对变量进行赋值，这被称为解构赋值</p>
+<h3 id="数组解构"><a href="#数组解构" class="headerlink" title="数组解构"></a>数组解构</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr = [&apos;this is a strung&apos;, 2, 3];</span><br><span class="line">let[a,b,c] = arr;   // 顺序对应</span><br></pre></td></tr></table></figure>
+<h3 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let &#123;foo, bar&#125; = &#123;foo: &apos;aaa&apos;, bar: &apos;bbb&apos;&#125; //左侧中变量的名称必须是右侧对象中存在的key，解构的顺序不需要对应</span><br><span class="line">console.log(bar, foo);   // key 值对应</span><br></pre></td></tr></table></figure>
+<h3 id="函数传参解构"><a href="#函数传参解构" class="headerlink" title="函数传参解构"></a>函数传参解构</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr = [&apos;this is a string&apos;, 2, 3];</span><br><span class="line">function fn1([a, b, c]) &#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">    console.log(b);</span><br><span class="line">    console.log(c);</span><br><span class="line">&#125;</span><br><span class="line">fn1(arr);  // this is a string ,2, 3 依次输出</span><br></pre></td></tr></table></figure>
+<h3 id="解构赋值-别名"><a href="#解构赋值-别名" class="headerlink" title="解构赋值-别名"></a>解构赋值-别名</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let &#123;left: L, top: T&#125; = &#123;left: 100, top: 200&#125;;</span><br><span class="line">console.log(L, T);  //别名</span><br></pre></td></tr></table></figure>
+<h3 id="多重解构"><a href="#多重解构" class="headerlink" title="多重解构"></a>多重解构</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let&#123;foo: [a, b]&#125; = &#123;foo: [10, 20], bar: &quot;bbb&quot;&#125;   //多重解构</span><br></pre></td></tr></table></figure>
+<h3 id="对象赋值解构"><a href="#对象赋值解构" class="headerlink" title="对象赋值解构"></a>对象赋值解构</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    name: &apos;chris&apos;,</span><br><span class="line">    sex: &apos;male&apos;,</span><br><span class="line">    age: 26,</span><br><span class="line">    son: &#123;</span><br><span class="line">        sonname: &apos;大熊&apos;,</span><br><span class="line">        sonsex: &apos;male&apos;,</span><br><span class="line">        sonage: 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var &#123;name, sex, age, son&#125; = obj;</span><br><span class="line">console.log(name + &apos; &apos; + sex + &apos; &apos; + age); //chris male 26</span><br><span class="line">console.log(son); // &#123; sonname: &apos;大熊&apos;, sonsex: &apos;male&apos;, sonage: 1 &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="对象传参解构"><a href="#对象传参解构" class="headerlink" title="对象传参解构"></a>对象传参解构</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    name: &apos;chris&apos;,</span><br><span class="line">    sex: &apos;male&apos;,</span><br><span class="line">    age: 26,</span><br><span class="line">    son: &#123;</span><br><span class="line">        sonname: &apos;大熊&apos;,</span><br><span class="line">        sonsex: &apos;male&apos;,</span><br><span class="line">        sonage: 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">function fn2(&#123;sex, age, name&#125;) &#123;</span><br><span class="line">    console.log(name + &apos; &apos; + sex + &apos; &apos; + age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn2(obj);  //  chris male 26</span><br></pre></td></tr></table></figure>
+<h3 id="变量名与对象属性名不一致解构："><a href="#变量名与对象属性名不一致解构：" class="headerlink" title="变量名与对象属性名不一致解构："></a>变量名与对象属性名不一致解构：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    name: &apos;chris&apos;,</span><br><span class="line">    sex: &apos;male&apos;,</span><br><span class="line">    age: 26</span><br><span class="line">&#125;;</span><br><span class="line">var &#123;name: nickname, age: howold&#125; = obj;</span><br><span class="line">console.log(nickname + &apos; &apos; + howold);  // chris 26</span><br></pre></td></tr></table></figure>
+<h3 id="嵌套对象解构"><a href="#嵌套对象解构" class="headerlink" title="嵌套对象解构"></a>嵌套对象解构</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    name: &apos;chris&apos;,</span><br><span class="line">    sex: &apos;male&apos;,</span><br><span class="line">    age: 26,</span><br><span class="line">    son: &#123;</span><br><span class="line">        sonname: &apos;大熊&apos;,</span><br><span class="line">        sonsex: &apos;male&apos;,</span><br><span class="line">        sonage: 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">var &#123;name, sex, age, son: &#123;sonname, sonsex, sonage&#125;&#125; = obj;</span><br><span class="line">console.log(sonname + &apos; &apos; + sonsex + &apos; &apos; + sonage);  //  大熊 male 1</span><br><span class="line"></span><br><span class="line">//Babel暂不支持这种嵌套解构</span><br><span class="line">obj = &#123;</span><br><span class="line">    name: &apos;chris&apos;,</span><br><span class="line">    sex: &apos;male&apos;,</span><br><span class="line">    age: [1, 2, 3]</span><br><span class="line">&#125;</span><br><span class="line">&#123;name, sex, age: [a, b, c]&#125; = obj;</span><br><span class="line">console.log(c);</span><br></pre></td></tr></table></figure>
+<h3 id="嵌套对象属性重名，解构时需要更改变量名"><a href="#嵌套对象属性重名，解构时需要更改变量名" class="headerlink" title="嵌套对象属性重名，解构时需要更改变量名"></a>嵌套对象属性重名，解构时需要更改变量名</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    name: &apos;chris&apos;,</span><br><span class="line">    sex: &apos;male&apos;,</span><br><span class="line">    age: 26,</span><br><span class="line">    son: &#123;</span><br><span class="line">        name: &apos;大熊&apos;,</span><br><span class="line">        sex: &apos;male&apos;,</span><br><span class="line">        age: 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">//赋值解构</span><br><span class="line">var &#123;name: fathername, son: &#123;name, sex, age&#125;&#125; = obj;</span><br><span class="line">console.log(fathername); //chris</span><br><span class="line">console.log(name); //大熊</span><br><span class="line"></span><br><span class="line">//传参解构</span><br><span class="line">function fn3(&#123;sex, age, name, son: &#123;name: sonname&#125;&#125;) &#123;</span><br><span class="line">    console.log(name + &apos; &apos; + sex + &apos; &apos; + age + &apos; &apos; + sonname);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn3(obj);  //  chris male 26 大熊</span><br></pre></td></tr></table></figure>
+<h3 id="循环解构对象"><a href="#循环解构对象" class="headerlink" title="循环解构对象"></a>循环解构对象</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr = [&#123;name: &apos;chris&apos;, age: 26&#125;, &#123;name: &apos;jack&apos;,    age: 27&#125;, &#123;name: &apos;peter&apos;,age: 28&#125;];</span><br><span class="line"></span><br><span class="line">for (let &#123;age, name&#125; of arr) &#123;</span><br><span class="line">    console.log(name + &apos; &apos; + age);</span><br><span class="line">&#125;</span><br><span class="line">//chris 26</span><br><span class="line">//jack 27</span><br><span class="line">//peter 28</span><br></pre></td></tr></table></figure>
+<h3 id="解构的特殊应用场景"><a href="#解构的特殊应用场景" class="headerlink" title="解构的特殊应用场景"></a>解构的特殊应用场景</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//变量互换</span><br><span class="line">var x = 1,</span><br><span class="line">    y = 2;</span><br><span class="line">var [x, y] = [y, x];</span><br><span class="line">console.log(x); //2</span><br><span class="line">console.log(y); //1</span><br><span class="line"></span><br><span class="line">//字符串解构</span><br><span class="line">var str = &apos;love&apos;;</span><br><span class="line">var [a, b, c, d] = str;</span><br><span class="line">console.log(a);   // l</span><br><span class="line">console.log(b);  // o</span><br><span class="line">console.log(c);  // v</span><br><span class="line">console.log(d);  // e</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<h2 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h2><h3 id=""><a href="#" class="headerlink" title="..."></a><code>...</code></h3><p>扩展运算符用三个点号表示，功能是把数组或类数组对象展开成一系列用逗号隔开的值.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var foo = function(a, b, c) &#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">    console.log(b);</span><br><span class="line">    console.log(c);</span><br><span class="line">&#125;</span><br><span class="line">var arr = [1, 2, 3];</span><br><span class="line"></span><br><span class="line">//传统写法</span><br><span class="line">foo(arr[0], arr[1], arr[2]);</span><br><span class="line"></span><br><span class="line">//使用扩展运算符</span><br><span class="line">foo(...arr);</span><br></pre></td></tr></table></figure></p>
+<h3 id="特殊应用场景"><a href="#特殊应用场景" class="headerlink" title="特殊应用场景"></a>特殊应用场景</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//数组深拷贝</span><br><span class="line">var arr2 = arr;</span><br><span class="line">var arr3 = [...arr];</span><br><span class="line">console.log(arr===arr2);  //true, 说明arr和arr2指向同一个数组</span><br><span class="line">console.log(arr===arr3);  //false, 说明arr3和arr指向不同数组</span><br><span class="line"></span><br><span class="line">//把一个数组插入另一个数组字面量</span><br><span class="line">var arr4 = [...arr, 4, 5, 6];</span><br><span class="line">console.log(arr4);  // [1, 2, 3, 4, 5, 6]</span><br><span class="line"></span><br><span class="line">//字符串转数组</span><br><span class="line">var str = &apos;love&apos;;</span><br><span class="line">var arr5 = [...str];</span><br><span class="line">console.log(arr5);  // [ &apos;l&apos;, &apos;o&apos;, &apos;v&apos;, &apos;e&apos; ]</span><br><span class="line">console.log(arr5.join(&apos;&apos;));   // love</span><br><span class="line"></span><br><span class="line">var arr = &#123;1, 4, 22, 14, 7, 9&#125;;</span><br><span class="line">console.log(Math.max(...arr));  //22    //输出最大的数</span><br></pre></td></tr></table></figure>
+<h3 id="rest运算符"><a href="#rest运算符" class="headerlink" title="rest运算符"></a>rest运算符</h3><p>rest运算符也是三个点号，不过其功能与扩展运算符恰好相反，把逗号隔开的值序列组合成一个数组<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//主要用于不定参数，所以ES6开始可以不再使用arguments对象</span><br><span class="line">var bar = function(...args) &#123;</span><br><span class="line">    for (let el of args) &#123;</span><br><span class="line">        console.log(el);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar(1, 2, 3, 4);</span><br><span class="line">//1</span><br><span class="line">//2</span><br><span class="line">//3</span><br><span class="line">//4</span><br><span class="line"></span><br><span class="line">bar = function(a, ...args) &#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">    console.log(args);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar(1, 2, 3, 4);</span><br><span class="line">//1</span><br><span class="line">//[ 2, 3, 4 ]</span><br></pre></td></tr></table></figure></p>
+<h3 id="rest运算符配合解构使用："><a href="#rest运算符配合解构使用：" class="headerlink" title="rest运算符配合解构使用："></a>rest运算符配合解构使用：</h3><p>剩余参数<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var [a, ...rest] = [1, 2, 3, 4];</span><br><span class="line">console.log(a);//1</span><br><span class="line">console.log(rest);//[2, 3, 4]</span><br></pre></td></tr></table></figure></p>
+<p>从第二个参数开始，后面的数据全部赋值给<code>newData</code> 这个参数<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function arrayPush(arr, ...newData) &#123;</span><br><span class="line">  for(var i=0; i&lt;newData.length; i++) &#123;</span><br><span class="line">    arr.push(newData[i]);;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">arr1= [1,2,3];</span><br><span class="line">arrayPush(arr1, &apos;a&apos;, &apos;b&apos;, &apos;c&apos;);</span><br><span class="line">console.log(arr1)</span><br></pre></td></tr></table></figure></p>
+<h2 id="函数扩展"><a href="#函数扩展" class="headerlink" title="函数扩展"></a>函数扩展</h2><h3 id="函数传参默认值"><a href="#函数传参默认值" class="headerlink" title="函数传参默认值"></a>函数传参默认值</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function fn1(x =0, y = 0) &#123;  //在形参中设置默认的值</span><br><span class="line">    console.log(x, y); </span><br><span class="line">&#125;</span><br><span class="line">fn1(1, 2);   //1, 2</span><br><span class="line">fn1();</span><br><span class="line">&gt; 如果形参中不是所有的参数都有默认值，那么热有默认值的通常写在形参后面</span><br></pre></td></tr></table></figure>
+<h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><blockquote>
+<p>() =&gt; {}    //参数列表 指向 函数体</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let fn1 = () =&gt; &#123;consle.log(&apos;fn1&apos;)&#125;</span><br><span class="line">let fn2 = (x) =&gt; &#123;console.log(x + 100)&#125;;</span><br><span class="line">fn2(3);   //103;</span><br></pre></td></tr></table></figure>
+<p>函数体内仅有一条语句，<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let fn3 = x =&gt; x + 100;   //简写</span><br><span class="line">console.log(fn3(2));   // 102</span><br></pre></td></tr></table></figure></p>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(let i=0; i&lt;list.length; i++) &#123;</span><br><span class="line">  list[i].onclick = function() &#123;</span><br><span class="line">    let fnn = () =&gt; &#123;</span><br><span class="line">      this.style.background = &apos;red&apos;;</span><br><span class="line">    &#125;;</span><br><span class="line">    setTimeout(fnn, 1000);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="箭头函数-注意事项"><a href="#箭头函数-注意事项" class="headerlink" title="箭头函数-注意事项"></a>箭头函数-注意事项</h3><ul>
+<li>内部this对象指向创建期上下文对象</li>
+<li>不能作为构造函数</li>
+<li>没有 <code>arguments</code></li>
+<li>不能作为生成器函数</li>
+</ul>
+<h2 id="for-循环解构"><a href="#for-循环解构" class="headerlink" title="for 循环解构"></a>for 循环解构</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var arr = [[11, 12], [21, 22], [31, 32]];</span><br><span class="line">for (let [a, b] of arr) &#123;</span><br><span class="line">    console.log(a);</span><br><span class="line">    console.log(b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h2><p>等号表达式是典型的赋值形式，函数传参和for循环的变量都是特殊形式的赋值。解构的原理是赋值的两边具有相同的结构，就可以正确取出数组或对象里面的元素或属性值，省略了使用下标逐个赋值的麻烦。</p>
+<p>对于三个点号，三点放在形参或者等号左边为rest运算符; 放在实参或者等号右边为spread运算符，或者说，放在被赋值一方为rest运算符，放在赋值一方为扩展运算符。</p>
+<hr>
+<h2 id="经验："><a href="#经验：" class="headerlink" title="经验："></a>经验：</h2><ul>
+<li>在等号赋值或for循环中，如果需要从数组或对象中取值，尽量使用解构。</li>
+<li>在自己定义函数的时候，如果调用者传来的是数组或对象，形参尽量使用解构方式，优先使用对象解构，其次是数组解构。代码可读性会很好。</li>
+<li>在调用第三方函数的时候，如果该函数接受多个参数，并且你要传入的实参为数组，则使用扩展运算符。可以避免使用下标形式传入参数。也可以避免很多人习惯的使用apply方法传入数组。</li>
+<li>rest运算符使用场景应该稍少一些，主要是处理不定数量参数，可以避免arguments对象的使用。</li>
+</ul>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数据类型"><span class="toc-number">1.</span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Symbol"><span class="toc-number">1.1.</span> <span class="toc-text">Symbol</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量声明-var、let、const"><span class="toc-number">2.</span> <span class="toc-text">变量声明 var、let、const</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#let选项卡实例"><span class="toc-number">2.1.</span> <span class="toc-text">let选项卡实例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解构"><span class="toc-number">3.</span> <span class="toc-text">解构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解构赋值"><span class="toc-number">4.</span> <span class="toc-text">解构赋值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组解构"><span class="toc-number">4.1.</span> <span class="toc-text">数组解构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象解构"><span class="toc-number">4.2.</span> <span class="toc-text">对象解构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数传参解构"><span class="toc-number">4.3.</span> <span class="toc-text">函数传参解构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解构赋值-别名"><span class="toc-number">4.4.</span> <span class="toc-text">解构赋值-别名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多重解构"><span class="toc-number">4.5.</span> <span class="toc-text">多重解构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象赋值解构"><span class="toc-number">4.6.</span> <span class="toc-text">对象赋值解构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象传参解构"><span class="toc-number">4.7.</span> <span class="toc-text">对象传参解构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量名与对象属性名不一致解构："><span class="toc-number">4.8.</span> <span class="toc-text">变量名与对象属性名不一致解构：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#嵌套对象解构"><span class="toc-number">4.9.</span> <span class="toc-text">嵌套对象解构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#嵌套对象属性重名，解构时需要更改变量名"><span class="toc-number">4.10.</span> <span class="toc-text">嵌套对象属性重名，解构时需要更改变量名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环解构对象"><span class="toc-number">4.11.</span> <span class="toc-text">循环解构对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解构的特殊应用场景"><span class="toc-number">4.12.</span> <span class="toc-text">解构的特殊应用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#扩展运算符"><span class="toc-number">5.</span> <span class="toc-text">扩展运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">5.1.</span> <span class="toc-text">...</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊应用场景"><span class="toc-number">5.2.</span> <span class="toc-text">特殊应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rest运算符"><span class="toc-number">5.3.</span> <span class="toc-text">rest运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rest运算符配合解构使用："><span class="toc-number">5.4.</span> <span class="toc-text">rest运算符配合解构使用：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数扩展"><span class="toc-number">6.</span> <span class="toc-text">函数扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#函数传参默认值"><span class="toc-number">6.1.</span> <span class="toc-text">函数传参默认值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#箭头函数"><span class="toc-number">7.</span> <span class="toc-text">箭头函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#this"><span class="toc-number">7.1.</span> <span class="toc-text">this</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#箭头函数-注意事项"><span class="toc-number">7.2.</span> <span class="toc-text">箭头函数-注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for-循环解构"><span class="toc-number">8.</span> <span class="toc-text">for 循环解构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小结："><span class="toc-number">9.</span> <span class="toc-text">小结：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#经验："><span class="toc-number">10.</span> <span class="toc-text">经验：</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="content">
+    <div class="copyright">
+        <ul>
+          <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+          <li><a href="https://github.com/gqzydh" target="_blank"> GitHub </a></li>
+        </ul>
+  
+      <!-- <div class="social">
+          <ul>
+              <li><a href="https://github.com/gqzydh" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+              <li><a href="https://weibo.com/u/1975830895" title="Sina-Weibo" target="_blank"><i class="icon-weibo"></i></a>&nbsp;</li>
+          </ul>
+      </div> -->
+    </div>
+
+    <div class="footerInfor">
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2019 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
+<script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>
