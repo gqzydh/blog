@@ -99,11 +99,35 @@
           </div>
           <p>mongodb 是一个分布式的文件存储数据库，属于非关系型数据库</p>
 <p>mongo   //用于连接 mongodb 数据库服务器（管理器）<br>mongod  //用于开启服务器 </p>
-<h2 id="MongoDB常用命令"><a href="#MongoDB常用命令" class="headerlink" title="MongoDB常用命令"></a>MongoDB常用命令</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 启用mongodb 服务后</span><br><span class="line">use newDatabase    //创建或切换数据库 newDatabase</span><br><span class="line">show dbs       //显示数据库列表</span><br><span class="line">db     //显示当前正在使用的数据库</span><br><span class="line"></span><br><span class="line">db.集合名.insert(&#123;&quot;name&quot;:&quot;张三&quot;, &quot;age&quot;:&quot;18&quot;&#125;)  //新增数据</span><br><span class="line"></span><br><span class="line">// 先进入要删除的数据库，再删除</span><br><span class="line">use runoob    //切换到runoob 数据库</span><br><span class="line">db.dropDatabase()     // 删除数据库 </span><br><span class="line"></span><br><span class="line">db.集合名.insert(&#123;&quot;键名&quot;: &quot;值&quot;, &quot;键名2&quot;: &quot;值2&quot; &#125;)   //集合名存在则写入新数据，反之就创建集合</span><br></pre></td></tr></table></figure>
-<h2 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">db.createCollection(&apos;集合名&apos;, 参数)   //创建数据时，自动创建集合</span><br><span class="line">show collections    //查看集合</span><br><span class="line"></span><br><span class="line">db.集合名.drop();    //删除集合</span><br><span class="line">db.集合名.find();    //查看集合数据</span><br><span class="line">db.集合名.find().pretty();   //查看格式化数据</span><br><span class="line"></span><br><span class="line">db.集合名.update(&#123;查询条件&#125;, &#123;修改的目标&#125;);   //修改集合数据</span><br><span class="line">db.集合名.update(&#123;&quot;name&quot;:&quot;张三&quot;&#125;,&#123;$set:&#123;&quot;age&quot;:20&#125;&#125;)    //只改某一个 </span><br><span class="line"> </span><br><span class="line">db.集合名.remove(&#123;&quot;age&quot;:19&#125;);  //remove(&#123;查询条件&#125;)</span><br><span class="line"></span><br><span class="line">exit   //退出</span><br></pre></td></tr></table></figure>
-<p><code>mongodump</code> 命令来备份MongoDB数据, 也可以导出所有数据到指定目录中<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mongodump -h dbhost -d dbname -o dbdirectory</span><br><span class="line"></span><br><span class="line">-h：MongDB所在服务器地址，例如：127.0.0.1，（我这里是阿里云服务器地址）</span><br><span class="line">-d：需要备份的数据库实例</span><br><span class="line">-o：备份的数据存放目录，系统自动在转储目录下建立一个备份的数据库名称的目录，这个目录里面存放该数据库实例的备份数据</span><br></pre></td></tr></table></figure></p>
-<p><code>mongorestore</code> 命令来恢复备份的数据<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mongorestore -h dbhost -d dbname -directoryperdb dbdirectory</span><br><span class="line"></span><br><span class="line">-h：MongoDB中的所在服务器地址</span><br><span class="line">-d：需要恢复的数据库实例</span><br><span class="line">-directoryperdb：备份数据所在位置</span><br></pre></td></tr></table></figure></p>
-
+<h2 id="MongoDB常用命令"><a href="#MongoDB常用命令" class="headerlink" title="MongoDB常用命令"></a>MongoDB常用命令</h2><blockquote>
+<p>启用mongodb 服务后</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">show dbs         //显示数据库列表</span><br><span class="line">show collections     //查看集合</span><br><span class="line">show users       //显示用户</span><br><span class="line">show profile     //查看执行时间，分析性能</span><br><span class="line">show logs        //现实所有的log文档</span><br><span class="line">show log [name]     //显示名字为name的log文档的信息</span><br><span class="line"></span><br><span class="line">db.createCollection(&apos;集合名&apos;, 参数)   //创建数据时，自动创建集合</span><br><span class="line"></span><br><span class="line">db     //显示当前正在使用的数据库</span><br><span class="line">db.集合名.insert(&#123;&quot;name&quot;:&quot;张三&quot;, &quot;age&quot;:&quot;18&quot;&#125;)  //新增数据</span><br><span class="line"></span><br><span class="line">use newDatabase    //创建或切换数据库 newDatabase</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 先进入要删除的数据库，再删除</span><br><span class="line">use runoob    //切换到runoob 数据库</span><br><span class="line">db.dropDatabase()     // 删除数据库 </span><br><span class="line"></span><br><span class="line">db.集合名.insert(&#123;&quot;键名&quot;: &quot;值&quot;, &quot;键名2&quot;: &quot;值2&quot; &#125;)   //集合名存在则写入新数据，反之就创建集合</span><br></pre></td></tr></table></figure>
+<h2 id="集合操作"><a href="#集合操作" class="headerlink" title="集合操作"></a>集合操作</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">show collections     //查看集合</span><br><span class="line">db.集合名.drop();    //删除集合</span><br><span class="line">db.集合名.find();    //查看集合数据</span><br><span class="line">db.集合名.find().pretty();   //查看格式化数据</span><br><span class="line">db.foo.find( &#123; a : 1 &#125; )     //显示数据库.集合....下所有符合条件的a=1的文档</span><br><span class="line"></span><br><span class="line">db.集合名.update(&#123;查询条件&#125;, &#123;修改的目标&#125;);   //修改集合数据</span><br><span class="line">db.集合名.update(&#123;&quot;name&quot;:&quot;张三&quot;&#125;,&#123;$set:&#123;&quot;age&quot;:20&#125;&#125;)    //只改某一个 </span><br><span class="line"> </span><br><span class="line">db.集合名.remove(&#123;&quot;age&quot;:19&#125;);  //remove(&#123;查询条件&#125;)</span><br><span class="line">exit   //退出</span><br></pre></td></tr></table></figure>
+<h2 id="备份-恢复"><a href="#备份-恢复" class="headerlink" title="备份/恢复"></a>备份/恢复</h2><p><code>mongodump</code> 命令来备份MongoDB数据, 也可以导出所有数据到指定目录中</p>
+<blockquote>
+<p><code>ctrl+c</code> 先退出当前mongo环境。再备份</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mongodump -h 127.0.0.1 -d health-engagement -o /data/dump</span><br><span class="line"></span><br><span class="line">-h：MongDB所在服务器地址，例如：127.0.0.1，（我这里是阿里云服务器地址）</span><br><span class="line">-d：需要备份的数据库实例 health-engagement</span><br><span class="line">-o：备份的数据存放目录，系统自动在转储目录下建立一个备份的数据库名称的目录，这个目录里面存放该数据库实例的备份数据</span><br></pre></td></tr></table></figure>
+<p><code>mongorestore</code> 命令来恢复备份的数据</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mongorestore -h dbhost -d dbname -directoryperdb dbdirectory</span><br></pre></td></tr></table></figure>
+<p>-h：MongoDB中的所在服务器地址<br>-d：需要恢复的数据库实例<br>-directoryperdb：备份数据所在位置</p>
+<p><code>mongodb</code> 保留的数据库 <code>admin、local、config</code></p>
+<ul>
+<li><p><code>admin</code>数据库，是一个root数据库，在这个数据库中添加用户，该用户将继承所有的数据库的权限，以后讲权限的时候会用到。</p>
+</li>
+<li><p><code>local</code>数据库，这个数据库不会被复制，只存储本地服务器才能访问的数据库。以后再分片的时候会降到。</p>
+</li>
+<li><p><code>config</code>数据库用于保存分片的相关信息。</p>
+</li>
+</ul>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>1.Sat Jul 27 10:43:29 SyntaxError: missing ; before statement (shell):1</p>
+<p>语法错误，有可能是忘记了函数的方法要加（）也有可能是忘记了加 “,”等等</p>
+<p>2.&gt; foo.insert(test)<br>   Sat Jul 27 10:23:28 ReferenceError: foo is not defined (shell):1</p>
+<p>foo是我定义的数据库名字，所以不能直接使用数据库执行insert()方法，只有集合才执行更删改查文档的方法。</p>
+<p>3.&gt; foo[‘bar’].insert({‘name’: ‘hhx’})<br>Sat Jul 27 11:11:34 ReferenceError: foo is not defined (shell):1</p>
+<pre><code>当前处于foo数据库中（命令db），使用数据库名字的地方都用db统一代替，所以正确的使用方法是db[&apos;bar&apos;].insert({&apos;name&apos;: &apos;hhx&apos;})
+</code></pre>
         </section>
     </article>
     
@@ -120,7 +144,7 @@
     <div class="toc-container">
         <h2>目录</h2>
         <div class="content">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MongoDB常用命令"><span class="toc-number">1.</span> <span class="toc-text">MongoDB常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集合操作"><span class="toc-number">2.</span> <span class="toc-text">集合操作</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MongoDB常用命令"><span class="toc-number">1.</span> <span class="toc-text">MongoDB常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集合操作"><span class="toc-number">2.</span> <span class="toc-text">集合操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#备份-恢复"><span class="toc-number">3.</span> <span class="toc-text">备份/恢复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">4.</span> <span class="toc-text">问题</span></a></li></ol>
         </div>
     </div>
     

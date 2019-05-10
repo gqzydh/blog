@@ -10,7 +10,7 @@
     <link rel="icon" href="/images/favicon_32X32.ico">
   
   
-  <title>HTML5 | GQ个人博客</title>
+  <title>js打怪升级之Array对象 | GQ个人博客</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
@@ -68,46 +68,81 @@
 
 </header>
 
-  <main id="archive">
+  <!-- 帖子 -->
+<main id='post'>
   <div class="content">
-        
-    
-      <div class="year-list">
-        <h3>2018</h3>
-        <ul>
-          
-            <li >
-              <time>2018_12_20</time>
-              <a href="/2018-12-20/HTML5-文件上传下载/">
-                <span>
-                    HTML5 文件上传下载
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2018_12_20</time>
-              <a href="/2018-12-20/HTML5-web Storage/">
-                <span>
-                    HTML5 存储：web Storage
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2018_06_05</time>
-              <a href="/2018-06-05/HTML-JS, Jq操作LocalStorage:SessionStorage的方法/">
-                <span>
-                    HTML5 JS,JQ操作LocalStorage/SessionStorage的方法
-                </span>
-              </a>
-            </li>
-          
-        </ul>
-      </div>
-    
+    <article>
+        <section class="content markdown-body">
+          <h2>js打怪升级之Array对象</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
   </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+
+            
+          </div>
+          <h1 id="Array对象"><a href="#Array对象" class="headerlink" title="Array对象"></a>Array对象</h1><p>Array 对象用于在变量中存储多个值</p>
+<h2 id="map，forEach"><a href="#map，forEach" class="headerlink" title="map，forEach"></a>map，forEach</h2><h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><blockquote>
+<p>没有返回值<br>方法用于调用数组的每个元素，并将元素传递给回调函数。<br>注意: forEach() 对于空数组是不会执行回调函数的。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var array = [10,34,57,43,76];  </span><br><span class="line">var res = array.forEach(function (item,index,input) &#123;  </span><br><span class="line">       input[index] = item*10;  </span><br><span class="line">&#125;)  </span><br><span class="line">console.log(res);  //--&gt; undefined;  </span><br><span class="line">console.log(array);  //--&gt; 通过数组索引改变了原数组；</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><blockquote>
+<p>有返回值，可以return出来<br><code>arr[].map(function(value,index,array){}</code><br>参数：value数组中的当前项，index当前项的索引，array原始数组<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var array = [10,34,57,43,76];  </span><br><span class="line">var res = array.map(function (item,index,input) &#123;  </span><br><span class="line">       return item*10;   </span><br><span class="line">&#125;)  </span><br><span class="line">console.log(res);   //执行后返回的新数组</span><br><span class="line">console.log(array);  //不变</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Array对象"><span class="toc-number">1.</span> <span class="toc-text">Array对象</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#map，forEach"><span class="toc-number">1.1.</span> <span class="toc-text">map，forEach</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#forEach"><span class="toc-number">1.1.1.</span> <span class="toc-text">forEach</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#map"><span class="toc-number">1.1.2.</span> <span class="toc-text">map</span></a></li></ol></li></ol></li></ol>
+        </div>
+    </div>
+    
+  </aside>
 </main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
 
   <footer id="fooler">
   <div class="content">
