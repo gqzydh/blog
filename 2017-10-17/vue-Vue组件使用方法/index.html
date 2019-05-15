@@ -10,7 +10,7 @@
     <link rel="icon" href="/images/favicon_32X32.ico">
   
   
-  <title>Vue.js | GQ个人博客</title>
+  <title>Vue组件使用方法. | GQ个人博客</title>
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
@@ -68,150 +68,82 @@
 
 </header>
 
-  <main id="archive">
+  <!-- 帖子 -->
+<main id='post'>
   <div class="content">
-        
-    
-      <div class="year-list">
-        <h3>2019</h3>
-        <ul>
-          
-            <li >
-              <time>2019_03_06</time>
-              <a href="/2019-03-06/vue-vue2.0 组件库/">
-                <span>
-                    vue2.0 组件库
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2019_03_01</time>
-              <a href="/2019-03-01/vue.js 组件通信/">
-                <span>
-                    vue.js 组件通信
-                </span>
-              </a>
-            </li>
-          
-        </ul>
-      </div>
-    
-      <div class="year-list">
-        <h3>2018</h3>
-        <ul>
-          
-            <li >
-              <time>2018_07_17</time>
-              <a href="/2018-07-17/vue.js组件之间传递数据/">
-                <span>
-                    vue.js组件之间传递数据
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2018_05_12</time>
-              <a href="/2018-05-12/vue.js 2.0 开发环境搭建/">
-                <span>
-                    Vue.js 2.0 开发环境搭建
-                </span>
-              </a>
-            </li>
-          
-        </ul>
-      </div>
-    
-      <div class="year-list">
-        <h3>2017</h3>
-        <ul>
-          
-            <li >
-              <time>2017_10_17</time>
-              <a href="/2017-10-17/vue.js笔记_01/">
-                <span>
-                    vue笔记_01
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2017_10_17</time>
-              <a href="/2017-10-17/vue.js笔记_02/">
-                <span>
-                    vue笔记_02
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2017_10_17</time>
-              <a href="/2017-10-17/vue-Vue组件使用方法/">
-                <span>
-                    Vue组件使用方法.
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2017_10_17</time>
-              <a href="/2017-10-17/vue.js笔记_03/">
-                <span>
-                    vue笔记_03
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2017_10_17</time>
-              <a href="/2017-10-17/vue-axios/">
-                <span>
-                    axios
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2017_10_17</time>
-              <a href="/2017-10-17/vue.js 组件/">
-                <span>
-                    vue.js 组件
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2017_10_17</time>
-              <a href="/2017-10-17/vue-vue-property-decorator使用/">
-                <span>
-                    Vue组件使用方法.
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2017_10_17</time>
-              <a href="/2017-10-17/Vue.js/">
-                <span>
-                    Vue.js
-                </span>
-              </a>
-            </li>
-          
-            <li >
-              <time>2017_10_17</time>
-              <a href="/2017-10-17/vue.js笔记/">
-                <span>
-                    vue笔记
-                </span>
-              </a>
-            </li>
-          
-        </ul>
-      </div>
-    
+    <article>
+        <section class="content markdown-body">
+          <h2>Vue组件使用方法.</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
   </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
+
+
+            
+          </div>
+          <h2 id="vue-class"><a href="#vue-class" class="headerlink" title="vue-class"></a>vue-class</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123;  </span><br><span class="line">    State,    // 共同维护的一个状态，state里面可以是很多个全局状态</span><br><span class="line">    Getter,   // 获取数据并渲染</span><br><span class="line">    Action,   // 数据的异步操作</span><br><span class="line">    Mutation, // 处理数据的唯一途径，state的改变或赋值只能在这里</span><br><span class="line">    namespace</span><br><span class="line">&#125; from &apos;vuex-class&apos;;</span><br></pre></td></tr></table></figure>
+<h2 id="namespaced"><a href="#namespaced" class="headerlink" title="namespaced"></a>namespaced</h2><p>export default {<br>    namespaced: true, // namespaced为false的时候，state,mutations,actions全局可以调用，为true，生成作用域，引用时要声明模块名称<br>    state,<br>    mutations,<br>    actions,<br>};</p>
+<h3 id="store"><a href="#store" class="headerlink" title="store"></a>store</h3><ul>
+<li>actons.ts   //给 action注册事件处理函数。当这个函数被触发时候，将状态提交到mutations中处理</li>
+<li>mutations.ts  //提交 mutations是更改Vuex状态的唯一合法方法</li>
+<li>getters.ts   //获取最终的状态信息</li>
+<li>state.ts  //首先声明一个需要全局维护的状态 state</li>
+</ul>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-class"><span class="toc-number">1.</span> <span class="toc-text">vue-class</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#namespaced"><span class="toc-number">2.</span> <span class="toc-text">namespaced</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#store"><span class="toc-number">2.1.</span> <span class="toc-text">store</span></a></li></ol></li></ol>
+        </div>
+    </div>
+    
+  </aside>
 </main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
 
   <footer id="fooler">
   <div class="content">

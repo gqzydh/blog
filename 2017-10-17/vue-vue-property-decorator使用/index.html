@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="郭庆的博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>Vue组件使用方法. | GQ个人博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>GQ个人博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>Vue组件使用方法.</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Vue-js/">Vue.js</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Vue.js" class='tag'>Vue.js</a>
+
+
+            
+          </div>
+          <p>vue-class-component提供了Vue、Component等；</p>
+<p>vue-property-decorator深度依赖了vue-class-component，拓展出了更多操作符：@Prop、@Emit、@Inject、@Model、@Provide、@Watch；</p>
+<h2 id="vue-property-decorator"><a href="#vue-property-decorator" class="headerlink" title="vue-property-decorator"></a>vue-property-decorator</h2><p>提供了7个装饰器<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Component, @Emit、@Model、@Prop、@Inject、@Provide、@Watch、</span><br></pre></td></tr></table></figure></p>
+<p>引入<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &#123; Component, Emit, Inject, Model, Prop, Provide, Vue, Watch &#125; from &apos;vue-property-decorator&apos;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Component"><a href="#Component" class="headerlink" title="@Component"></a>@Component</h3><p>组件引用<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Component(&#123;</span><br><span class="line">    components: &#123;</span><br><span class="line">        Banner,</span><br><span class="line">        TitleBar,</span><br><span class="line">        MyWallet,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="Emit"><a href="#Emit" class="headerlink" title="@Emit"></a>@Emit</h3><p>子组件向父组件传递<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">this.$emit(&apos;showCityName&apos;,data);</span><br></pre></td></tr></table></figure></p>
+<p>Ts 用法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Emit(&apos;changeName&apos;)</span><br><span class="line">  greet(this)&#123;</span><br><span class="line">      /code/</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><code>this.$emit(&#39;showCityName&#39;,data);</code>这种用法可以给父组件传递参数。<br>但是下面ts的用法@Emit()他只接受0到1个参数。所以还不知道该怎么给父组件传值。</p>
+</blockquote>
+<h2 id="Model-组件之间"><a href="#Model-组件之间" class="headerlink" title="@Model(组件之间)"></a>@Model(组件之间)</h2><p>父组件没什么变化。还是照常使用  v-model = “checked”<br>子组件变化稍微大一点</p>
+<h2 id="Watch"><a href="#Watch" class="headerlink" title="@Watch"></a>@Watch</h2><p>平常用法<br>补充：immediate：其值是true或false；确认是否以当前的初始值执行handler的函数。<br><em>就是页面一开始就执行这个回调函数</em><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">watch:&#123;</span><br><span class="line">      editData:&#123;</span><br><span class="line">        handler:function(newVal, oldVal)&#123;</span><br><span class="line">        &#125;,</span><br><span class="line">        deep:true，</span><br><span class="line">        immediate:true,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">```</span><br></pre></td></tr></table></figure></p>
+<p>Ts的使用方法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Watch(&apos;checked&apos;,&#123;deep: true&#125;)</span><br><span class="line">  checkChange() &#123;</span><br><span class="line">        console.log(this.checked)</span><br><span class="line">        console.log(&apos;变化&apos;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Provide提供-Inject注入"><a href="#Provide提供-Inject注入" class="headerlink" title="@Provide提供, @Inject注入"></a>@Provide提供, @Inject注入</h2><p><code>provide</code>和<code>Inject</code>有点类似于react中的store。就是在组件嵌套层级过深时。父组件不便于向子组件传递数据。就把数据通过<code>Provide</code>传递下去。然后子组件通过<code>Inject</code>来获取</p>
+<ul>
+<li><p>父级</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Provide(&apos;users&apos;)</span><br><span class="line">    users = [&#123;</span><br><span class="line">        name: &apos;test&apos;,</span><br><span class="line">        id: 0</span><br><span class="line">    &#125; ]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子集</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Inject(&apos;users&apos;) users;</span><br><span class="line">    mounted()&#123;</span><br><span class="line">        console.log(this.users)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue-property-decorator"><span class="toc-number">1.</span> <span class="toc-text">vue-property-decorator</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Component"><span class="toc-number">1.1.</span> <span class="toc-text">@Component</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Emit"><span class="toc-number">1.2.</span> <span class="toc-text">@Emit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Model-组件之间"><span class="toc-number">2.</span> <span class="toc-text">@Model(组件之间)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Watch"><span class="toc-number">3.</span> <span class="toc-text">@Watch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Provide提供-Inject注入"><span class="toc-number">4.</span> <span class="toc-text">@Provide提供, @Inject注入</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="content">
+    <div class="copyright">
+        <ul>
+          <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+          <li><a href="https://github.com/gqzydh" target="_blank"> GitHub </a></li>
+        </ul>
+  
+      <!-- <div class="social">
+          <ul>
+              <li><a href="https://github.com/gqzydh" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+              <li><a href="https://weibo.com/u/1975830895" title="Sina-Weibo" target="_blank"><i class="icon-weibo"></i></a>&nbsp;</li>
+          </ul>
+      </div> -->
+    </div>
+
+    <div class="footerInfor">
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2019 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
+<script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>
