@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="郭庆的博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>Lodash【数组Array】中文文档 | GQ个人博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>GQ个人博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>Lodash【数组Array】中文文档</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2019_07_01</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tags" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#JS" class='tag'>JS</a>
+
+  <a href="/tags/#Lodash" class='tag'>Lodash</a>
+
+
+            
+          </div>
+          <h3 id="分割-拆分-移除"><a href="#分割-拆分-移除" class="headerlink" title="分割/拆分/移除"></a>分割/拆分/移除</h3><p><code>_.chunk(array, [size=1])</code><br>将数组（array）拆分成多个 size 长度的区块，并将这些区块组成一个新数组。 如果array 无法被分割成全部等长的区块，那么最后剩余的元素将组成一个区块。</p>
+<p><code>_.slice(array, [start=0], [end=array.length])</code><br>裁剪数组array，从 start 位置开始到end结束，但不包括 end 本身的位置。 返回 数组array 裁剪部分的新数组。</p>
+<p><code>_.drop(array, [n=1])</code><br>创建一个切片数组，去除array前面的n个元素。（n默认值为1。）返回array剩余切片。</p>
+<p><code>_.dropRight(array, [n=1])</code><br>创建一个切片数组，去除array尾部的n个元素。（n默认值为1。）返回array剩余切片。</p>
+<p><code>_.dropRightWhile(array, [predicate=_.identity])</code></p>
+<p><code>_.dropWhile(array, [predicate=_.identity])</code><br>创建一个切片数组，去除array中从起点开始到 predicate 返回假值结束部分。predicate 会传入3个参数： (value, index, array)。返回array剩余切片。</p>
+<hr>
+<p><code>_.take(array, [n=1])</code><br>创建一个数组切片，从array数组的起始元素开始提取n个元素。</p>
+<p><code>_.takeWhile(array, [predicate=_.identity])</code><br>从array数组的起始元素开始提取元素，，直到 predicate 返回假值。predicate 会传入三个参数： (value, index, array)。</p>
+<p><code>_.takeRight(array, [n=1])</code><br>创建一个数组切片，从array数组的最后一个元素开始提取n个元素。</p>
+<p><code>_.takeRightWhile(array, [predicate=_.identity])</code><br>从array数组的最后一个元素开始提取元素，直到 predicate 返回假值。predicate 会传入三个参数： (value, index, array)。</p>
+<hr>
+<p><code>_.initial(array)</code><br>获取数组array中除了最后一个元素之外的所有元素, 返回截取后的数组array。</p>
+<p><code>_.intersection([arrays])</code><br>返回一个包含所有传入数组交集元素的新数组。</p>
+<p><code>_.intersectionBy([arrays], [iteratee=_.identity])</code></p>
+<p><code>_.intersectionWith([arrays], [comparator])</code></p>
+<hr>
+<p><code>_.pull(array, [values])</code><br>移除数组array中所有和给定值相等的元素，使用 相同的值 进行全等比较。 </p>
+<p><code>_.pullAll(array, values)</code><br>这个方法类似_.pull，区别是这个方法接收一个要移除值的数组。 </p>
+<p><code>_.pullAllBy(array, values, [iteratee=_.identity])</code><br>这个方法类似于_.pullAll ，区别是这个方法接受一个 iteratee（迭代函数） 调用 array 和 values的每个值以产生一个值，通过产生的值进行了比较。iteratee 会传入一个参数： (value)。 </p>
+<p><code>_.pullAllWith(array, values, [comparator])</code></p>
+<p><code>_.pullAt(array, [indexes])</code><br>根据索引 indexes，移除array中对应的元素，并返回被移除元素的数组。返回移除元素组成的新数组。</p>
+<hr>
+<p><code>_.remove(array, [predicate=_.identity])</code><br>移除数组中predicate（断言）返回为真值的所有元素，并返回移除元素组成的数组。predicate（断言） 会传入3个参数： (value, index, array)。 返回移除元素组成的新数组。</p>
+<blockquote>
+<p>和 <em>.filter不同, 这个方法会改变数组 array。使用</em>.pull来根据提供的value值从数组中移除元素。</p>
+</blockquote>
+<h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><p><code>_.compact(array)</code><br>创建一个新数组，不包含原数组中所有的假值元素。例如false, null, 0, “”, undefined, 和 NaN 都是被认为是“假值”。<br>返回过滤掉假值的新数组。</p>
+<p><code>_.difference(array, [values])</code><br>创建一个新数组，这个数组中的值，为第一个数字（array 参数）排除了给定数组中的值。结果值的顺序是由第一个数组中的顺序确定。<br>返回一个过滤值后的新数组。</p>
+<p><code>_.differenceBy(array, [values], [iteratee=_.identity])</code><br>首先使用迭代器分别迭代array 和 values中的每个元素，返回的值作为比较值.<br>返回一个过滤值后的新数组。</p>
+<p><code>_.differenceWith(array, [values], [comparator])</code></p>
+<hr>
+<h3 id="连接-合并"><a href="#连接-合并" class="headerlink" title="连接/合并"></a>连接/合并</h3><p><code>_.concat(array, [values])</code><br>创建一个新数组，将array与任何数组 或 值连接在一起。返回连接后的新数组。</p>
+<p><code>_.union([arrays])</code><br>创建一个按顺序排列的唯一值的数组。arrays（数组）的并集，按顺序返回，返回数组的元素是唯一的.返回一个新的联合数组。</p>
+<p><code>_.unionBy([arrays], [iteratee=_.identity])</code></p>
+<p><code>_.unionWith([arrays], [comparator])</code></p>
+<h3 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h3><p><code>_.fill(array, value, [start=0], [end=array.length])</code><br>使用 value 值来填充（替换） array，从start位置开始, 到end位置结束（但不包含end位置）。</p>
+<blockquote>
+<p>这个方法会改变原数组 array</p>
+</blockquote>
+<h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p><code>_.findIndex(array, [predicate=_.identity], [fromIndex=0])</code><br>该方法类似_.find，区别是该方法返回第一个通过 predicate 判断为真值的元素的索引值（index），而不是元素本身。<br>返回找到元素的 索引值（index），否则返回 -1。</p>
+<p><code>_.findLastIndex(array, [predicate=_.identity], [fromIndex=array.length-1])</code><br>这个方式类似 _.findIndex， 区别是它是从右到左的迭代集合array中的元素。<br>返回找到元素的 索引值（index），否则返回 -1。</p>
+<p><code>_.indexOf(array, value, [fromIndex=0])</code><br>使用相同的值,等值比较，返回首次 value 在数组array中被找到的 索引值， 如果 fromIndex 为负值，将从数组array尾端索引进行匹配。返回 值value在数组中的索引位置,</p>
+<hr>
+<p><code>_.sortedIndex(array, value)</code><br>使用二进制的方式检索来决定 value值 应该插入到数组中 尽可能小的索引位置，以保证array的排序。<br>返回 value值 应该在数组array中插入的索引位置 index。</p>
+<p><code>_.sortedIndexBy(array, value, [iteratee=_.identity])</code><br>这个方法类似 _.sortedIndex ，除了它接受一个 iteratee （迭代函数），调用每一个数组（array）元素，返回结果和value 值比较来计算排序。iteratee 会传入一个参数：(value)。<br>返回 value值 应该在数组array中插入的索引位置 index。</p>
+<p><code>_.sortedIndexOf(array, value)</code><br>这个方法类似 _.indexOf，除了它是在已经排序的数组array上执行二进制检索.返回匹配值的索引位置，否则返回 -1。</p>
+<p><code>_.sortedLastIndex(array, value)</code><br>此方法类似于_.sortedIndex，除了 它返回 value值 在 array 中尽可能大的索引位置（index）。</p>
+<p><code>_.sortedLastIndexBy(array, value, [iteratee=_.identity])</code></p>
+<p><code>_.sortedLastIndexOf(array, value)</code></p>
+<h3 id="获取-返回"><a href="#获取-返回" class="headerlink" title="获取/返回"></a>获取/返回</h3><p><code>_.head(array)</code><br>获取数组 array 的第一个元素。</p>
+<p><code>_.flatten(array)</code><br>减少一级array嵌套深度。返回减少嵌套层级后的新数组。</p>
+<p><code>_.flattenDeep(array)</code><br>将array递归为一维数组。返回一个的新一维数组。</p>
+<p><code>_.flattenDepth(array, [depth=1])</code><br>根据 depth 递归减少 array 的嵌套层级, 返回减少嵌套层级后的新数组。</p>
+<hr>
+<p><code>_.fromPairs(pairs)</code> /正好相反/ <code>_.toPairs</code><br>这个方法返回一个由键值对pairs构成的对象。返回一个新对象。</p>
+<p><code>_.join(array, [separator=&#39;,&#39;])</code><br>将 array 中的所有元素转换为由 分隔符 分割的字符串。返回连接字符串。</p>
+<p><code>_.last(array)</code><br>获取array中的最后一个元素。</p>
+<p><code>_.lastIndexOf(array, value, [fromIndex=array.length-1])</code><br>这个方法类似 _.indexOf ，区别是它是从右到左遍历array的元素。</p>
+<p><code>_.nth(array, [n=0])</code><br>获取array数组的第n个元素。如果n为负数，则返回从数组结尾开始的第n个元素。</p>
+<p><code>_.reverse(array)</code><br>反转数组顺序 Array</p>
+<hr>
+<p><code>_.sortedUniq(array)</code><br>这个方法类似 <code>_.uniq</code>，除了它会优化排序数组。返回一个新的不重复的数组。</p>
+<p><code>_.sortedUniqBy(array, [iteratee])</code><br>这个方法类似 <code>_.uniqBy</code>，除了它会优化排序数组。返回一个新的不重复的数组。</p>
+<p><code>_.tail(array)</code><br>获取除了array数组第一个元素以外的全部元素。</p>
+<h3 id="去重"><a href="#去重" class="headerlink" title="去重"></a>去重</h3><p><code>_.uniq(array)</code><br>创建一个去重后的array数组副本。使用了 SameValueZero 做等值比较。只有第一次出现的元素才会被保留。返回新的去重后的数组。</p>
+<p><code>_.uniqBy(array, [iteratee=_.identity])</code></p>
+<p><code>_.uniqWith(array, [comparator])</code></p>
+<h3 id="重组"><a href="#重组" class="headerlink" title="重组"></a>重组</h3><p><code>_.unzip(array)</code><br>返回数组的第一个元素包含所有的输入数组的第一元素，第一个元素包含了所有的输入数组的第二元素，依此类推。返回重组元素的新数组。</p>
+<p><code>_.unzipWith(array, [iteratee=_.identity])</code></p>
+<p><code>_.without(array, [values])</code><br>创建一个剔除所有给定值的新数组，剔除值的时候，使用SameValueZero做相等比较。返回过滤值后的新数组。</p>
+<p><code>_.xor([arrays])</code><br>创建一个给定数组唯一值的数组，使用symmetric difference做等值比较。返回值的顺序取决于他们数组的出现顺序。返回过滤值后的新数组。</p>
+<p><code>_.xorBy([arrays], [iteratee=_.identity])</code></p>
+<p><code>_.xorWith([arrays], [comparator])</code></p>
+<p><code>_.zip([arrays])</code><br>创建一个分组元素的数组，数组的第一个元素包含所有给定数组的第一个元素，数组的第二个元素包含所有给定数组的第二个元素，以此类推。</p>
+<p><code>_.zipObject([props=[]], [values=[]])</code></p>
+<p><code>_.zipObjectDeep([props=[]], [values=[]])</code></p>
+<p><code>_.zipWith([arrays], [iteratee=_.identity])</code></p>
+<hr>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#分割-拆分-移除"><span class="toc-number">1.</span> <span class="toc-text">分割/拆分/移除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤"><span class="toc-number">2.</span> <span class="toc-text">过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#连接-合并"><span class="toc-number">3.</span> <span class="toc-text">连接/合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#替换"><span class="toc-number">4.</span> <span class="toc-text">替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#索引"><span class="toc-number">5.</span> <span class="toc-text">索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取-返回"><span class="toc-number">6.</span> <span class="toc-text">获取/返回</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#去重"><span class="toc-number">7.</span> <span class="toc-text">去重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#重组"><span class="toc-number">8.</span> <span class="toc-text">重组</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="content">
+    <div class="copyright">
+        <ul>
+          <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+          <li><a href="https://github.com/gqzydh" target="_blank"> GitHub </a></li>
+        </ul>
+  
+      <!-- <div class="social">
+          <ul>
+              <li><a href="https://github.com/gqzydh" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+              <li><a href="https://weibo.com/u/1975830895" title="Sina-Weibo" target="_blank"><i class="icon-weibo"></i></a>&nbsp;</li>
+          </ul>
+      </div> -->
+    </div>
+
+    <div class="footerInfor">
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2019 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
+<script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

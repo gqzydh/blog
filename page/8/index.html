@@ -72,17 +72,18 @@
   <div class="posts-list">
     
       <section>
-        <a href="/2017-10-17/健康-16个健康警戒线全划出来了，寿命长短由它决定/">
+        <a href="/2017-10-17/代码-请使用竖屏浏览/">
           <h3 class='post-head'>
-            【健康】16个健康警戒线全划出来了，寿命长短由它决定！
+            wap-请使用竖屏浏览
           </h3>
         </a>
         
         <div class="post-content">
           
-            <p>凡事都有度，过犹不及。想长寿、想健康，也要把握住这个原则。</p>
-<p>这16条健康警戒线影响寿命长短，不妨对照一下。</p>
-<p>如果超过了警戒线，一定要提高警惕了！</p>
+            
+              
+                <p>手机防横屏浏览，为了更好的体验，请使用竖屏浏览<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line"> /* 样式放在结尾，防止 base64 图片造成拥塞 */</span><br><span class="line">    @-webkit-keyframes rotation &#123;</span><br><span class="line">        10% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        50%, 60% &#123; transform: rotate(0deg); -webkit-transform: rotate(0deg) &#125;</span><br><span class="line">        90% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        100% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    @keyframes rotation &#123;</span><br><span class="line">        10% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        50%, 60% &#123; transform: rotate(0deg); -webkit-transform: rotate(0deg) &#125;</span><br><span class="line">        90% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">        100% &#123; transform: rotate(90deg); -webkit-transform: rotate(90deg) &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    #orientLayer &#123; display: none; &#125;</span><br><span class="line">    @media screen and (min-aspect-ratio: 13/9) &#123; #orientLayer &#123; display: block; &#125; &#125;</span><br><span class="line">    .mod-orient-layer &#123; display: none; position: fixed; width: 100%; left: 0; top: 0; right: 0; bottom: 0; background: #000; z-index: 9997 &#125;</span><br><span class="line">    .mod-orient-layer__content &#123; position: absolute; width: 100%; top: 45%; margin-top: -75px; text-align: center &#125;</span><br><span class="line">    .mod-orient-layer__icon-orient &#123;background-image:url(img/iphone.png);display: inline-block; width: 67px; height: 109px;</span><br><span class="line">        transform: rotate(90deg); -webkit-transform: rotate(90deg); -webkit-animation: rotation infinite 1.5s ease-in-out; animation: rotation infinite 1.5s ease-in-out; -webkit-background-size: 67px; background-size: 67px &#125;</span><br><span class="line">    .mod-orient-layer__desc &#123; margin-top: 20px; font-size: 15px; color: #fff &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;div id=&quot;orientLayer&quot; class=&quot;mod-orient-layer&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;mod-orient-layer__content&quot;&gt; &lt;i class=&quot;icon mod-orient-layer__icon-orient&quot;&gt;&lt;/i&gt;</span><br><span class="line">    &lt;div class=&quot;mod-orient-layer__desc&quot;&gt;为了更好的体验，请使用竖屏浏览&lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+              
           
         </div>
         <div class='post-meta'>
@@ -90,7 +91,7 @@
           
             | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/健康/">健康</a>
+    <a class="article-category-link" href="/categories/代码/">代码</a>
   </div>
 
 
@@ -104,7 +105,50 @@
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#健康" class='tag'>健康</a>
+  <a href="/tags/#移动端" class='tag'>移动端</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/代码-Js用户注册校验的副本/">
+          <h3 class='post-head'>
+            JQuery 滚动到页面指定元素位置
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="1-滚动到页面指定元素位置"><a href="#1-滚动到页面指定元素位置" class="headerlink" title="1. 滚动到页面指定元素位置"></a>1. 滚动到页面指定元素位置</h2><p> Js<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">//JQuery  引用</span><br><span class="line">&lt;script src=&quot;https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;scripttype=&quot;text/javascript&quot;&gt;</span><br><span class="line">$(document).ready(function() &#123;</span><br><span class="line">    $(&quot;#scroll&quot;).click(function() &#123;</span><br><span class="line">        $(&apos;html, body&apos;).animate(&#123;</span><br><span class="line">            scrollTop: $(&quot;#commentlist&quot;).offset().top   //指定id位置</span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/代码/">代码</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#JQuery" class='tag'>JQuery</a>
+
+  <a href="/tags/#代码" class='tag'>代码</a>
 
 
           
@@ -153,6 +197,46 @@
       </section>
     
       <section>
+        <a href="/2017-10-17/健康-16个健康警戒线全划出来了，寿命长短由它决定/">
+          <h3 class='post-head'>
+            【健康】16个健康警戒线全划出来了，寿命长短由它决定！
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            <p>凡事都有度，过犹不及。想长寿、想健康，也要把握住这个原则。</p>
+<p>这16条健康警戒线影响寿命长短，不妨对照一下。</p>
+<p>如果超过了警戒线，一定要提高警惕了！</p>
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/健康/">健康</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#健康" class='tag'>健康</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
         <a href="/2017-10-17/前端-web前端性能优化/">
           <h3 class='post-head'>
             【前端】Web前端性能优化
@@ -187,88 +271,6 @@
               
              
   <a href="/tags/#前端" class='tag'>前端</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Js-js事件/">
-          <h3 class='post-head'>
-            js事件
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <p>JavaScript 事件通常与函数配合使用，这样就可以通过发生的事件来驱动函数执行。</p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Javascript" class='tag'>Javascript</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Js-js打怪升级/">
-          <h3 class='post-head'>
-            js打怪升级之Array对象
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <h1 id="Array对象"><a href="#Array对象" class="headerlink" title="Array对象"></a>Array对象</h1><p>Array 对象用于在变量中存储多个值</p>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
-                <i class="fa fa-tag" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#Javascript" class='tag'>Javascript</a>
 
 
           
@@ -317,9 +319,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/Js-常用词及概念/">
+        <a href="/2017-10-17/Js-常用正则实例/">
           <h3 class='post-head'>
-            JS常用词及概念
+            js常用正则实例
           </h3>
         </a>
         
@@ -327,7 +329,7 @@
           
             
               
-                <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>作用域：就是变量和函数的可访问范围，影响变量和函数的可见性与生命周期。</p>
+                <p>将工作中遇到的各种正则表达式汇总</p>
               
           
         </div>
@@ -347,10 +349,12 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tag" aria-hidden="true"></i>
+                <i class="fa fa-tags" aria-hidden="true"></i>
               
              
   <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+  <a href="/tags/#正则表达式" class='tag'>正则表达式</a>
 
 
           
@@ -399,9 +403,9 @@
       </section>
     
       <section>
-        <a href="/2017-10-17/JQuery【锋利的JQuery】/">
+        <a href="/2017-10-17/Js-常用词及概念/">
           <h3 class='post-head'>
-            JQuery【锋利的JQuery】
+            JS常用词及概念
           </h3>
         </a>
         
@@ -409,7 +413,48 @@
           
             
               
-                <h2 id="1-文本框"><a href="#1-文本框" class="headerlink" title="1. 文本框"></a>1. 文本框</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">focus  //文本框触发</span><br><span class="line">blur   //表单元素，离开表单框触发</span><br><span class="line">trigger() 方法触发被选元素的指定事件类型。</span><br><span class="line">triggerHandler() 方法触发被选元素的指定事件类型。但不会执行浏览器默认动作，也不会产生事件冒泡。</span><br><span class="line">triggerHandler() 方法与 trigger() 方法类似。不同的是它不会触发事件（比如表单提交）的默认行为，而且只影响第一个匹配元素。</span><br><span class="line"></span><br><span class="line">animate    //可以创建动画效果</span><br><span class="line">remove() 方法移除被选元素，包括所有文本和子节点。</span><br><span class="line">appendTo() 方法在被选元素的结尾（仍然在内部）插入指定内容。</span><br><span class="line">dblclick()当双击元素时，会发生 dblclick 事件。</span><br><span class="line">append() 方法在被选元素的结尾（仍然在内部）插入指定内容。</span><br><span class="line"></span><br><span class="line">keyup 事件能在用户每次松开按键时触发，实现即时提醒。</span><br><span class="line">focus 事件能在元素得到焦点时候触发，也可以实现即时提醒。</span><br></pre></td></tr></table></figure>
+                <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>作用域：就是变量和函数的可访问范围，影响变量和函数的可见性与生命周期。</p>
+              
+          
+        </div>
+        <div class='post-meta'>
+          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
+          
+            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+
+
+          
+          
+            <span class="seperator">|</span>
+             
+                <i class="fa fa-tag" aria-hidden="true"></i>
+              
+             
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+
+          
+        </div>
+      </section>
+    
+      <section>
+        <a href="/2017-10-17/JQuery事件/">
+          <h3 class='post-head'>
+            JQuery事件
+          </h3>
+        </a>
+        
+        <div class="post-content">
+          
+            
+              
+                <h2 id="委托事件"><a href="#委托事件" class="headerlink" title="委托事件"></a>委托事件</h2><p>delegate()委托事件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bindPageEvent()&#123;</span><br><span class="line">    $(&apos;#pag&apos;).delegate(&apos;li.clickable&apos;, &apos;click&apos;, function()&#123;  </span><br><span class="line">            $this = $(this);</span><br><span class="line">            $this.data(&apos;id&apos;);</span><br><span class="line">            refreshClasses($this.data(&apos;id&apos;));</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">bindPageEvent();  //事件执行</span><br></pre></td></tr></table></figure></p>
               
           
         </div>
@@ -429,53 +474,10 @@
           
             <span class="seperator">|</span>
              
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              
-             
-  <a href="/tags/#jQuery" class='tag'>jQuery</a>
-
-  <a href="/tags/#读书" class='tag'>读书</a>
-
-
-          
-        </div>
-      </section>
-    
-      <section>
-        <a href="/2017-10-17/Ajax笔记/">
-          <h3 class='post-head'>
-            Ajax笔记
-          </h3>
-        </a>
-        
-        <div class="post-content">
-          
-            
-              
-                <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">responseText： //获得字符串形式的响应数据</span><br><span class="line">responseXML： //获得 XML 形式的响应数据</span><br></pre></td></tr></table></figure>
-              
-          
-        </div>
-        <div class='post-meta'>
-          <i class="fa fa-calendar" aria-hidden="true"></i> <time>2017_10_17</time>
-          
-            | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Ajax/">Ajax</a>
-  </div>
-
-
-
-
-
-          
-          
-            <span class="seperator">|</span>
-             
                 <i class="fa fa-tag" aria-hidden="true"></i>
               
              
-  <a href="/tags/#Ajax" class='tag'>Ajax</a>
+  <a href="/tags/#jQuery" class='tag'>jQuery</a>
 
 
           
@@ -512,7 +514,7 @@
           文章分类
         </h2>
         <div class="content">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Grunt/">Grunt</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MongoDB/">MongoDB</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sea-js/">Sea.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TypeScript/">TypeScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue-js/">Vue.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/npm/">npm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ps/">ps</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码/">代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/健康/">健康</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/命令/">命令</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/小程序/">小程序</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/建议/">建议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心得/">心得</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/构建/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/模板引擎/">模板引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站/">网站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计/">设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/资源/">资源</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/配置/">配置</a></li></ul>
+          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Ajax/">Ajax</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Grunt/">Grunt</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML/">HTML</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTML5/">HTML5</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JQuery/">JQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Javascript/">Javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Markdown/">Markdown</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/MongoDB/">MongoDB</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Sea-js/">Sea.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/TypeScript/">TypeScript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Vue-js/">Vue.js</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web前端/">Web前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jQuery/">jQuery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/npm/">npm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ps/">ps</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码/">代码</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/健康/">健康</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/命令/">命令</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/学习/">学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/小程序/">小程序</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/建议/">建议</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/心得/">心得</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/构建/">构建</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/模板引擎/">模板引擎</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/移动端/">移动端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/笔记/">笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/网站/">网站</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/设计/">设计</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/资源/">资源</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/配置/">配置</a></li></ul>
         </div>
       </div>
     
@@ -524,7 +526,7 @@
           标签云
         </h2>
       <div class="content tagcloud">
-            <a href="/tags/Ajax/" style="font-size: 17.27px;">Ajax</a> <a href="/tags/ES6/" style="font-size: 14px;">ES6</a> <a href="/tags/Grunt/" style="font-size: 14px;">Grunt</a> <a href="/tags/HTML5/" style="font-size: 17.27px;">HTML5</a> <a href="/tags/JQuery/" style="font-size: 18.91px;">JQuery</a> <a href="/tags/Javascript/" style="font-size: 23.82px;">Javascript</a> <a href="/tags/Jsonp/" style="font-size: 14px;">Jsonp</a> <a href="/tags/Markdown/" style="font-size: 15.64px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/SEO优化/" style="font-size: 14px;">SEO优化</a> <a href="/tags/Sea-js/" style="font-size: 14px;">Sea.js</a> <a href="/tags/Sublime-Text3/" style="font-size: 17.27px;">Sublime Text3</a> <a href="/tags/Template-js/" style="font-size: 14px;">Template.js</a> <a href="/tags/TypeScript/" style="font-size: 17.27px;">TypeScript</a> <a href="/tags/Typecho/" style="font-size: 14px;">Typecho</a> <a href="/tags/Vue-js/" style="font-size: 30.36px;">Vue.js</a> <a href="/tags/Vue-js-axios/" style="font-size: 14px;">Vue.js, axios</a> <a href="/tags/Web前端框架/" style="font-size: 14px;">Web前端框架</a> <a href="/tags/Web前端资源/" style="font-size: 14px;">Web前端资源</a> <a href="/tags/WordPress/" style="font-size: 14px;">WordPress</a> <a href="/tags/babel/" style="font-size: 14px;">babel</a> <a href="/tags/css/" style="font-size: 27.09px;">css</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/html/" style="font-size: 18.91px;">html</a> <a href="/tags/jQuery/" style="font-size: 25.45px;">jQuery</a> <a href="/tags/node/" style="font-size: 14px;">node</a> <a href="/tags/npm/" style="font-size: 14px;">npm</a> <a href="/tags/pc/" style="font-size: 17.27px;">pc</a> <a href="/tags/ps/" style="font-size: 14px;">ps</a> <a href="/tags/wap/" style="font-size: 15.64px;">wap</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/代码/" style="font-size: 30.36px;">代码</a> <a href="/tags/健康/" style="font-size: 14px;">健康</a> <a href="/tags/前端/" style="font-size: 28.73px;">前端</a> <a href="/tags/前端工具/" style="font-size: 15.64px;">前端工具</a> <a href="/tags/前端资源/" style="font-size: 14px;">前端资源</a> <a href="/tags/加密/" style="font-size: 14px;">加密</a> <a href="/tags/命令/" style="font-size: 14px;">命令</a> <a href="/tags/学习/" style="font-size: 14px;">学习</a> <a href="/tags/小程序/" style="font-size: 14px;">小程序</a> <a href="/tags/工作/" style="font-size: 14px;">工作</a> <a href="/tags/建议/" style="font-size: 14px;">建议</a> <a href="/tags/微信分享/" style="font-size: 15.64px;">微信分享</a> <a href="/tags/心得/" style="font-size: 14px;">心得</a> <a href="/tags/成长之路/" style="font-size: 14px;">成长之路</a> <a href="/tags/插件/" style="font-size: 20.55px;">插件</a> <a href="/tags/构建/" style="font-size: 14px;">构建</a> <a href="/tags/正则表达式/" style="font-size: 14px;">正则表达式</a> <a href="/tags/注册登录/" style="font-size: 15.64px;">注册登录</a> <a href="/tags/移动端/" style="font-size: 22.18px;">移动端</a> <a href="/tags/笔记/" style="font-size: 32px;">笔记</a> <a href="/tags/网站/" style="font-size: 14px;">网站</a> <a href="/tags/设计/" style="font-size: 17.27px;">设计</a> <a href="/tags/读书/" style="font-size: 17.27px;">读书</a> <a href="/tags/跨域/" style="font-size: 14px;">跨域</a> <a href="/tags/跳转/" style="font-size: 14px;">跳转</a> <a href="/tags/配置/" style="font-size: 14px;">配置</a> <a href="/tags/面试/" style="font-size: 22.18px;">面试</a>
+            <a href="/tags/Ajax/" style="font-size: 17.6px;">Ajax</a> <a href="/tags/ES6/" style="font-size: 14px;">ES6</a> <a href="/tags/Grunt/" style="font-size: 14px;">Grunt</a> <a href="/tags/HTML5/" style="font-size: 17.6px;">HTML5</a> <a href="/tags/JQuery/" style="font-size: 19.4px;">JQuery</a> <a href="/tags/JS/" style="font-size: 19.4px;">JS</a> <a href="/tags/Javascript/" style="font-size: 26.6px;">Javascript</a> <a href="/tags/Jsonp/" style="font-size: 14px;">Jsonp</a> <a href="/tags/Lodash/" style="font-size: 19.4px;">Lodash</a> <a href="/tags/Markdown/" style="font-size: 15.8px;">Markdown</a> <a href="/tags/MongoDB/" style="font-size: 14px;">MongoDB</a> <a href="/tags/SEO优化/" style="font-size: 14px;">SEO优化</a> <a href="/tags/Sea-js/" style="font-size: 14px;">Sea.js</a> <a href="/tags/Sublime-Text3/" style="font-size: 17.6px;">Sublime Text3</a> <a href="/tags/Template-js/" style="font-size: 14px;">Template.js</a> <a href="/tags/TypeScript/" style="font-size: 17.6px;">TypeScript</a> <a href="/tags/Typecho/" style="font-size: 14px;">Typecho</a> <a href="/tags/Vue-js/" style="font-size: 30.2px;">Vue.js</a> <a href="/tags/Vue-js-axios/" style="font-size: 14px;">Vue.js, axios</a> <a href="/tags/Web前端框架/" style="font-size: 14px;">Web前端框架</a> <a href="/tags/Web前端资源/" style="font-size: 14px;">Web前端资源</a> <a href="/tags/WordPress/" style="font-size: 14px;">WordPress</a> <a href="/tags/babel/" style="font-size: 14px;">babel</a> <a href="/tags/css/" style="font-size: 26.6px;">css</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/html/" style="font-size: 19.4px;">html</a> <a href="/tags/jQuery/" style="font-size: 24.8px;">jQuery</a> <a href="/tags/node/" style="font-size: 14px;">node</a> <a href="/tags/npm/" style="font-size: 14px;">npm</a> <a href="/tags/pc/" style="font-size: 17.6px;">pc</a> <a href="/tags/ps/" style="font-size: 14px;">ps</a> <a href="/tags/wap/" style="font-size: 15.8px;">wap</a> <a href="/tags/webpack/" style="font-size: 14px;">webpack</a> <a href="/tags/代码/" style="font-size: 30.2px;">代码</a> <a href="/tags/健康/" style="font-size: 14px;">健康</a> <a href="/tags/前端/" style="font-size: 28.4px;">前端</a> <a href="/tags/前端工具/" style="font-size: 15.8px;">前端工具</a> <a href="/tags/前端资源/" style="font-size: 14px;">前端资源</a> <a href="/tags/加密/" style="font-size: 14px;">加密</a> <a href="/tags/命令/" style="font-size: 14px;">命令</a> <a href="/tags/学习/" style="font-size: 14px;">学习</a> <a href="/tags/小程序/" style="font-size: 14px;">小程序</a> <a href="/tags/工作/" style="font-size: 14px;">工作</a> <a href="/tags/建议/" style="font-size: 14px;">建议</a> <a href="/tags/微信分享/" style="font-size: 15.8px;">微信分享</a> <a href="/tags/心得/" style="font-size: 14px;">心得</a> <a href="/tags/成长之路/" style="font-size: 14px;">成长之路</a> <a href="/tags/插件/" style="font-size: 21.2px;">插件</a> <a href="/tags/构建/" style="font-size: 14px;">构建</a> <a href="/tags/正则表达式/" style="font-size: 15.8px;">正则表达式</a> <a href="/tags/注册登录/" style="font-size: 15.8px;">注册登录</a> <a href="/tags/移动端/" style="font-size: 23px;">移动端</a> <a href="/tags/笔记/" style="font-size: 32px;">笔记</a> <a href="/tags/网站/" style="font-size: 14px;">网站</a> <a href="/tags/设计/" style="font-size: 17.6px;">设计</a> <a href="/tags/读书/" style="font-size: 17.6px;">读书</a> <a href="/tags/跨域/" style="font-size: 14px;">跨域</a> <a href="/tags/跳转/" style="font-size: 14px;">跳转</a> <a href="/tags/配置/" style="font-size: 14px;">配置</a> <a href="/tags/面试/" style="font-size: 23px;">面试</a>
       </div>
     </div>
     
