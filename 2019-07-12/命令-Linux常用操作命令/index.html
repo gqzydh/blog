@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="郭庆的博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>Linux常用操作命令 | GQ个人博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>GQ个人博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>Linux常用操作命令</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2019_07_12</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/命令/">命令</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Linux" class='tag'>Linux</a>
+
+
+            
+          </div>
+          <h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">mkdir folder   //创建文件夹或目录,创建多个中间用空格隔开，</span><br><span class="line">touch file.js    //创建文件,创建多个中间用空格隔开，</span><br></pre></td></tr></table></figure>
+<h4 id="vi创建文件"><a href="#vi创建文件" class="headerlink" title="vi创建文件"></a>vi创建文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi filename :打开或新建文件，并将光标置于第一行首</span><br><span class="line">vi +n filename ：打开文件，并将光标置于第n行首</span><br><span class="line">vi + filename ：打开文件，并将光标置于最后一行首</span><br><span class="line">vi +/pattern filename：打开文件，并将光标置于第一个与pattern匹配的串处</span><br><span class="line">vi -r filename ：在上次正用vi编辑时发生系统崩溃，恢复filename</span><br><span class="line">vi filename....filename ：打开多个文件，依次进行编辑</span><br></pre></td></tr></table></figure>
+<h3 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h3><p><code>chmod</code>   //修改文件的属性有两种用法</p>
+<ol>
+<li>种是包含字母和操作符表达式的文字设定法</li>
+<li>是包含数字的数字设定法。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chmod 用户+权限 文件名，例如：chmod a+x textfile1 ,其中a表示所有用户，u（文件所有用户）、g（同组用户）、o（其它用户）</span><br><span class="line"></span><br><span class="line">chmod 750 textfile2   //数字来修改文件的权限</span><br><span class="line">chmod 777 textfile3   //让所有的用户都拥有完全的操作权限</span><br></pre></td></tr></table></figure>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p><code>rm</code></p>
+<p>-i 删除前逐一询问确认。<br>-f 即使原档案属性设为唯读，亦直接删除，无需逐一确认。<br>-r 将目录及以下之档案亦逐一删除,递归所有的子目录,逐一询问。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rm -i *.c    //删除所有C语言程序文档；删除前逐一询问确认。</span><br><span class="line">rm -f abc.txt   //强制删除文件。如果文件不存在，也不要提示</span><br><span class="line">rm -r Finished  //将 Finished 子目录及子目录中所有档案删除</span><br><span class="line">rm -rf abc   //删除目录abc，同时要求命令不要产生任何提示。</span><br></pre></td></tr></table></figure>
+<p>`   m</p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建"><span class="toc-number">1.</span> <span class="toc-text">创建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vi创建文件"><span class="toc-number">1.1.</span> <span class="toc-text">vi创建文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改"><span class="toc-number">2.</span> <span class="toc-text">修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除"><span class="toc-number">3.</span> <span class="toc-text">删除</span></a></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="content">
+    <div class="copyright">
+        <ul>
+          <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+          <li><a href="https://github.com/gqzydh" target="_blank"> GitHub </a></li>
+        </ul>
+  
+      <!-- <div class="social">
+          <ul>
+              <li><a href="https://github.com/gqzydh" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+              <li><a href="https://weibo.com/u/1975830895" title="Sina-Weibo" target="_blank"><i class="icon-weibo"></i></a>&nbsp;</li>
+          </ul>
+      </div> -->
+    </div>
+
+    <div class="footerInfor">
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2020 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
+<script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>

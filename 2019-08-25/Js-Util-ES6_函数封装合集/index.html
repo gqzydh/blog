@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="郭庆的博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>Util-ES6.js | GQ个人博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>GQ个人博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>Util-ES6.js</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2019_08_25</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Javascript/">Javascript</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tags" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#Javascript" class='tag'>Javascript</a>
+
+  <a href="/tags/#Util.js" class='tag'>Util.js</a>
+
+
+            
+          </div>
+          <p>[前端】Util.js–ES6实现的常用100多个javaScript简短函数封装合集（持续更新……）<br>前端  ecmascript  es6  javascript  函数  Util.js</p>
+<blockquote>
+<p>项目地址： <a href="https://github.com/gqzydh/Util.js" target="_blank" rel="noopener">https://github.com/gqzydh/Util.js</a></p>
+</blockquote>
+<h1 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h1><p>Util.js 是对常用函数的封装，方便在实际项目中使用，主要内容包含：数组类、浏览器类、日期类、函数类、数学类、媒体类、节点类、对象类、字符串类、类型检测类、正则表达式类等内容。</p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="arrayMax"><a href="#arrayMax" class="headerlink" title="arrayMax"></a>arrayMax</h3><blockquote>
+<p>返回数组中的最大值。<br>将Math.max()与扩展运算符 (…) 结合使用以获取数组中的最大值。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const arrayMax = arr =&gt; Math.max(...arr);</span><br><span class="line">// arrayMax([10, 2 ,5, 7])   -&gt; 10</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="arrayMin"><a href="#arrayMin" class="headerlink" title="arrayMin"></a>arrayMin</h3><blockquote>
+<p>返回数组中的最小值。<br>将Math.min()与扩展运算符 (…) 结合使用以获取数组中的最小值。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const arrayMin = arr =&gt; Math.min(...arr);</span><br><span class="line">// arrayMin([10, 1, 5]) -&gt; 1</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="chunk"><a href="#chunk" class="headerlink" title="chunk"></a>chunk</h3><blockquote>
+<p>将数组块划分为指定大小的较小数组。<br>使用Array.from()创建新的数组, 这符合将生成的区块数。使用Array.slice()将新数组的每个元素映射到size长度的区块。如果原始数组不能均匀拆分, 则最终的块将包含剩余的元素。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const chunk = (arr, size) =&gt; </span><br><span class="line">Array.from(&#123;length: Math.ceil(arr.length / size)&#125;, (v, i) =&gt; arr.size(i * size, i * size + size));</span><br><span class="line">// chunk([1,2,3,4,5,], 2) -&gt; [[1,2], [3,4],[5]]</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#描述"><span class="toc-number">1.</span> <span class="toc-text">描述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#目录"><span class="toc-number">2.</span> <span class="toc-text">目录</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#数组"><span class="toc-number">2.1.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#arrayMax"><span class="toc-number">2.1.1.</span> <span class="toc-text">arrayMax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#arrayMin"><span class="toc-number">2.1.2.</span> <span class="toc-text">arrayMin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chunk"><span class="toc-number">2.1.3.</span> <span class="toc-text">chunk</span></a></li></ol></li></ol></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="content">
+    <div class="copyright">
+        <ul>
+          <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+          <li><a href="https://github.com/gqzydh" target="_blank"> GitHub </a></li>
+        </ul>
+  
+      <!-- <div class="social">
+          <ul>
+              <li><a href="https://github.com/gqzydh" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+              <li><a href="https://weibo.com/u/1975830895" title="Sina-Weibo" target="_blank"><i class="icon-weibo"></i></a>&nbsp;</li>
+          </ul>
+      </div> -->
+    </div>
+
+    <div class="footerInfor">
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2020 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
+<script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>
