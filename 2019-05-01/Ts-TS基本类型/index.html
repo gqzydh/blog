@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="郭庆的博客">
+  <meta name="keywords" content="web前端, Web, 前端开发, 前端博客">
+  
+    <link rel="icon" href="/images/favicon_32X32.ico">
+  
+  
+  <title>TypeScript 基本类型 | GQ个人博客</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" /> -->
+</head>
+
+<body>
+  <header>
+  <div class="header-nav">
+    <div class="header-container">
+    <a class='logo' href="/">
+      <span>GQ个人博客</span>
+    </a>
+
+    <ul class="right-header">
+      
+        <li class="nav-item">
+          
+            <a href="/" class="item-link">首页</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/categories" class="item-link">分类</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/archives" class="item-link">归档</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/tags" class="item-link">标签</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/post" class="item-link">帖子</a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a href="/about" class="item-link">关于</a>
+          
+        </li>
+      
+    </ul>
+  </div>
+  </div>
+
+</header>
+
+  <!-- 帖子 -->
+<main id='post'>
+  <div class="content">
+    <article>
+        <section class="content markdown-body">
+          <h2>TypeScript 基本类型</h2>
+          <div class='post-meta'>
+            <i class="fa fa-calendar" aria-hidden="true"></i> <time>2019_05_01</time>
+            
+              | <i class="fa fa-folder-open-o" aria-hidden="true"></i> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/TypeScript/">TypeScript</a>
+  </div>
+
+
+
+
+
+            
+            
+              | 
+                  <i class="fa fa-tag" aria-hidden="true"></i>
+                
+               
+  <a href="/tags/#TypeScript" class='tag'>TypeScript</a>
+
+
+            
+          </div>
+          <p>在 TS 中，用 let 的变量需要指定类型</p>
+<h2 id="boolean-类型"><a href="#boolean-类型" class="headerlink" title="boolean 类型"></a>boolean 类型</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let isDone: boolean = false;</span><br></pre></td></tr></table></figure>
+<h2 id="Number-类型"><a href="#Number-类型" class="headerlink" title="Number 类型"></a>Number 类型</h2><p>支持十六进制、十进制、八进制和二进制；<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let hex: number = 0xf00d;  //十六进制</span><br><span class="line">let decimal: number = 6;  //十进制</span><br><span class="line">let octal: number = 0o744;  //八进制</span><br><span class="line">let binary: number = 0b1010;  //二进制</span><br></pre></td></tr></table></figure></p>
+<h2 id="String-类型"><a href="#String-类型" class="headerlink" title="String 类型"></a>String 类型</h2><p>也可以用单引号或双引号去包裹 <code>string</code> 数据<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let color: string = &quot;red&quot;;</span><br></pre></td></tr></table></figure></p>
+<p>如果字符串和变量拼接或者换行的话可以使用 <code>&#39;</code>（反引号）来包裹整个数据，内部变量通过 ${ expr }方式导入<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let myName: string = &quot;June&quot;;</span><br><span class="line">let myAge: number = 21;</span><br><span class="line">let mySay: string = `Hello, my name is $&#123; myName &#125;.I&apos;ll be $&#123; myAge + 1 &#125; years old next month.`;</span><br></pre></td></tr></table></figure></p>
+<p>相当于：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let mySay: string = &quot;Hello, my name is &quot; + myName + &quot;. \n\n&quot; + &quot;I&apos;ll be &quot; + (age + 1) + &quot; years old next month.&quot;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Array-类型"><a href="#Array-类型" class="headerlink" title="Array 类型:"></a>Array 类型:</h2><p>两种定义方式：</p>
+<ol>
+<li>基本数据类型加上 [] 定义数组</li>
+<li>数组类型加&lt;基本类型&gt;定义数组<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let list: number[] = [1, 2, 3, 4];</span><br><span class="line">let list: Array&lt;number&gt; = [1, 2, 3, 4];</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Any-类型：（任何）"><a href="#Any-类型：（任何）" class="headerlink" title="Any 类型：（任何）"></a>Any 类型：（任何）</h2><p>没有强制限定哪种类型，随时切换类型都可以<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let notSure: any = 4;</span><br><span class="line">notSure = &quot;maybe a string instead&quot;;</span><br><span class="line">notSure = false;</span><br></pre></td></tr></table></figure></p>
+<p>相比于对象，也可调用其中的方法</p>
+<blockquote>
+<p>对象类型的变量只允许你给它赋值，不能调用它的任意方法，即使这个方法是存在的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let notSure: any = &#123;abc: 4, ddd: function()&#123; return true; &#125;&#125;;</span><br><span class="line">console.log(notSure.ddd());// true</span><br><span class="line">let object: Object = 4;</span><br><span class="line">object = &#123; toFixed: function() &#123; return 123; &#125; &#125;;</span><br><span class="line">console.log(object.toFixed());// Error: Property &apos;toFixed&apos; doesn&apos;t exist on type &apos;object&apos;;</span><br></pre></td></tr></table></figure>
+<p>当你知道部分类型但是不全的时候也可使用 any 类型<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let list: any[] = [1, true, &quot;free&quot;];</span><br><span class="line">list[1] = 100;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Void-类型："><a href="#Void-类型：" class="headerlink" title="Void 类型："></a>Void 类型：</h2><p>有点和 any 类型相反，意思为没有任何类型；<br>通常可视为不返回值的返回类型<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function warnUser(): void &#123;</span><br><span class="line">  alert(&quot;this is my warning message&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>不适合用来声明变量，因为只能用来声明 undefined 和 null；<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let unusable: void = undefined;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Null-and-Undefined-类型："><a href="#Null-and-Undefined-类型：" class="headerlink" title="Null and Undefined 类型："></a>Null and Undefined 类型：</h2><p>事实上 null 和 undefined 有它们各自的类型名，就是 null 和 undefined<br>他们只能用来声明自己<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let u: undefined = undefined;</span><br><span class="line">let n: null = null;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>默认的 null 和 undefined 是其他类型的子类型</li>
+<li>意味着你可以将 null 和 undefined 赋值给其他所有类型如 number</li>
+<li>然而，当使用 – strictNullChecks 标记的时候，它们只能被分配给 void 和它们自己的类型</li>
+<li>这对验证很多公共错误很有帮助</li>
+<li>当你要通过 string、null 和 undefined 中任一个的验证时，可用联合类型 string | null | undefined 来校验</li>
+</ul>
+<h2 id="Tuple-类型：（数组）"><a href="#Tuple-类型：（数组）" class="headerlink" title="Tuple 类型：（数组）"></a>Tuple 类型：（数组）</h2><p>允许你表达一个固定数量的元素类型是已知的数组，比如你想表达一对字符串和数字的值；<br>意思就是初始化数组的时候前面的数据必须和指定的元素类型和顺序一致，超出指定数量的只限定类型，不限定顺序；</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let x: [string, number];//声明一个数组类型</span><br><span class="line">x = [&quot;hello&quot;, 10];//OK 初始化</span><br><span class="line">x = [10, &quot;hello&quot;];//Error 错误的初始化</span><br><span class="line">x[3] = &quot;world&quot;;//OK, &apos;string&apos; can be assigned to &apos;string | number&apos;</span><br><span class="line">x[4] = true;//Error, &apos;boolean&apos; isn&apos;t &apos;string | number&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="Enum-类型：（列举，枚举）"><a href="#Enum-类型：（列举，枚举）" class="headerlink" title="Enum 类型：（列举，枚举）"></a>Enum 类型：（列举，枚举）</h2><p>枚举是一种更友好的名称数值集<br>默认的，枚举里面分子的开始数字是0，你可以手动的设置第一个值得数字来改变其开始数字；<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enum Color &#123; Red = 2, Green, Blur &#125;</span><br><span class="line">let c: Color = Color.Green;</span><br><span class="line">console.log(c);// 3</span><br></pre></td></tr></table></figure></p>
+<p>也可以设置所有你想自己设置的值对应的数字;<br>没设置的值对应数字会从前面一个值递增<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enum Color &#123; Red = 2, Green = 4, Black, Blue = 8 &#125;</span><br><span class="line">let c: Color = Color.Green;</span><br><span class="line">console.log(c);// 4</span><br><span class="line">let d: Color = Color.Black;</span><br><span class="line">console.log(d);// 5</span><br></pre></td></tr></table></figure></p>
+<p>甚至可以通过数字值去获取枚举中的值<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">enum Color &#123; Red = 2, Green = 4, Black, Blue = 8 &#125;</span><br><span class="line">let e: string = Color[]4;</span><br><span class="line">console.log(e);// Green</span><br></pre></td></tr></table></figure></p>
+<h2 id="Never-类型"><a href="#Never-类型" class="headerlink" title="Never 类型"></a>Never 类型</h2><p>表示用不存在值得类型</p>
+<ul>
+<li>例如：是那些总是抛出异常或不会有返回值的函数表达式或箭头函数表达式的返回类型</li>
+<li>变量也可能是 never 类型，当它们被永不为真的类型所约束时<br>是任何类型的子类型，也可以赋值给任何类型<br>没有类型是 never 类型的子类型，除了 never 类型外没有类型可以赋值给 never 类型（包括 any）<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// 返回never的函数必须存在无法达到的终点</span><br><span class="line">function error(message: string): never &#123;</span><br><span class="line">    throw new Error(message);</span><br><span class="line">&#125;</span><br><span class="line">// 推断的返回值类型为never</span><br><span class="line">function fail() &#123;</span><br><span class="line">    return error(&quot;Something failed&quot;);</span><br><span class="line">&#125;</span><br><span class="line">// 返回never的函数必须存在无法达到的终点</span><br><span class="line">function infiniteLoop(): never &#123;</span><br><span class="line">    while (true) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="assertions-类型：（断言）"><a href="#assertions-类型：（断言）" class="headerlink" title="assertions 类型：（断言）"></a>assertions 类型：（断言）</h2><ul>
+<li>有时候会出现一种情况，你会比 TypeScript 更了解某个值得信息<br>这通常会发生在你知道一个实体具有比它现有类型更确切的类型</li>
+<li>断言类型是一种告诉编译器「相信我，我知道我在做什么」的方法</li>
+<li>断言类型就好比其他语言的类型转换，但是不进行特殊的数据校验和重组</li>
+<li>它没有运行时的影响，只在编译阶段起作用，TypeScript 会假设你已经进行了必须的检查</li>
+</ul>
+<h3 id="断言类型有两种形式："><a href="#断言类型有两种形式：" class="headerlink" title="断言类型有两种形式："></a>断言类型有两种形式：</h3><p>一种是「尖括号」语法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let someValue: any = &quot;this is a string&quot;;</span><br><span class="line">let strLength: number = (&lt;string&gt;someValue).length;</span><br></pre></td></tr></table></figure></p>
+<p>另外一种是 as 语法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let someValue: any = &quot;this is a string&quot;;</span><br><span class="line">let strLength: number = (someValue as string).length;</span><br></pre></td></tr></table></figure></p>
+<p>两种形式是等价的。 至于使用哪个大多数情况下是凭个人喜好；然而，当你在 TypeScript 里使用 JSX 时，只有 as 语法断言是被允许的。</p>
+
+        </section>
+    </article>
+    
+    
+        <!-- livere 评论框 start -->
+        <div class="comment">
+            <div id="lv-container" data-id="city" data-uid="MTAyMC80MTgzNy8xODM4Mw=="></div>
+        </div>
+        <!-- livere 评论框 end -->
+        
+  </div>
+  <aside>
+    
+    <div class="toc-container">
+        <h2>目录</h2>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#boolean-类型"><span class="toc-number">1.</span> <span class="toc-text">boolean 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number-类型"><span class="toc-number">2.</span> <span class="toc-text">Number 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-类型"><span class="toc-number">3.</span> <span class="toc-text">String 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-类型"><span class="toc-number">4.</span> <span class="toc-text">Array 类型:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Any-类型：（任何）"><span class="toc-number">5.</span> <span class="toc-text">Any 类型：（任何）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Void-类型："><span class="toc-number">6.</span> <span class="toc-text">Void 类型：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Null-and-Undefined-类型："><span class="toc-number">7.</span> <span class="toc-text">Null and Undefined 类型：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tuple-类型：（数组）"><span class="toc-number">8.</span> <span class="toc-text">Tuple 类型：（数组）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Enum-类型：（列举，枚举）"><span class="toc-number">9.</span> <span class="toc-text">Enum 类型：（列举，枚举）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Never-类型"><span class="toc-number">10.</span> <span class="toc-text">Never 类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#assertions-类型：（断言）"><span class="toc-number">11.</span> <span class="toc-text">assertions 类型：（断言）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#断言类型有两种形式："><span class="toc-number">11.1.</span> <span class="toc-text">断言类型有两种形式：</span></a></li></ol></li></ol>
+        </div>
+    </div>
+    
+  </aside>
+</main>
+
+
+<script type="text/javascript">
+  (function(d, s) {
+      var j, e = d.getElementsByTagName(s)[0];
+
+      if (typeof LivereTower === 'function') { return; }
+
+      j = d.createElement(s);
+      j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+      j.async = true;
+
+      e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+
+  <footer id="fooler">
+  <div class="content">
+    <div class="copyright">
+        <ul>
+          <li><a href="https://gqzydh.github.io/nav/" target="_blank"> GQ个人导航网 </a></li>
+          <li><a href="https://github.com/gqzydh" target="_blank"> GitHub </a></li>
+        </ul>
+  
+      <!-- <div class="social">
+          <ul>
+              <li><a href="https://github.com/gqzydh" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+              <li><a href="https://weibo.com/u/1975830895" title="Sina-Weibo" target="_blank"><i class="icon-weibo"></i></a>&nbsp;</li>
+          </ul>
+      </div> -->
+    </div>
+
+    <div class="footerInfor">
+      <div class="fl">
+        <span style="padding-right:30px;">
+        &copy; 2020 |  <a href="http://gqblog.cn" target="_blank">GQ个人博客</a>&nbsp</span>
+        
+         本站总访客数 : <span id="busuanzi_value_site_uv"></span>人次 |
+         本站总访问量 : <span id="busuanzi_value_site_pv"></span>次
+        
+      </div>
+      <div class="fr">
+          <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="/lib/in-view.min.js"></script>
+<script src="/lib/lodash.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://cdn.staticfile.org/moment.js/2.23.0/locale/zh-cn.js"></script>
+<script src="/js/script.js"></script>
+<script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/01/2017 09:30:00");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+      document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+  } 
+setInterval("createtime()",250);
+</script>
+
+
+<div class="nodisplay">
+<script src="https://s22.cnzz.com/z_stat.php?id=1272859133&web_id=1272859133" language="JavaScript"></script>
+</div>
+
+
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+</body>
+</html>
